@@ -1,0 +1,5 @@
+[user]
+	name = carseven
+	email = carles.serra@hotmail.es
+[core]
+	excludesfile = ~/.gitignore_global
