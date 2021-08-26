@@ -36,8 +36,6 @@ alias ...="cd ../.."
 
 # CODE
 alias c="code ."
-alias cai="code ~/dev/master-ai && code ."
-
 
 # CONDA
 alias cam="conda activate master"
