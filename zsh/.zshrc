@@ -29,7 +29,7 @@ source $ZSH/oh-my-zsh.sh
 
 # ZSHRC CONFIG
 alias update="source ~/.zshrc"
-alias czsh="code ~/.zshrc"
+alias czsh="code ~/.dotfiles/zsh/.zshrc"
 
 # NAVEGACION
 alias ...="cd ../.."
