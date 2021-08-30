@@ -21,13 +21,26 @@ if test ! $(which brew); then
   echo "Homebrew already installed"
 fi
 
+# Update homebrew recipes
+echo "Updating homebrew..."
+brew update
+
+# Upgrade any already-installed formulae.
+brew upgrade
+
 echo "Copying dotfiles from Github"
 cd ~
 git clone git@github.com:bradp/dotfiles.git .dotfiles
-cd .dotfiles
-sh symdotfiles
+cd ~/.dotfiles
 
-#Install Zsh & Oh My Zsh
+# Stow
+# Probar antes de -n para que no lo haga
+echo "Install stow and generate dotfiles symlinks via stow"
+brew install stow
+
+stow -nvSt ~ qmk alfred alt-tab git iterm rectangle zsh
+
+# Install Zsh & Oh My Zsh
 echo "Installing Oh My ZSH..."
 curl -L http://install.ohmyz.sh | sh
 
@@ -37,13 +50,6 @@ git clone git://github.com/zsh-users/zsh-syntax-highlighting.git
 
 echo "Setting ZSH as shell..."
 chsh -s /bin/zsh
-
-# Update homebrew recipes
-echo "Updating homebrew..."
-brew update
-
-# Upgrade any already-installed formulae.
-brew upgrade
 
 # Taps
 # The tap command allows Homebrew to tap into another repository of formulae. 
@@ -66,6 +72,7 @@ brew install --cask alt-tab
 brew install --cask the-unarchiver
 brew install --cask dozer
 brew install --cask mos
+brew install --cask clipy
 # brew install --cask divvy # window managers
 # brew install --cask kap # screen recorder
 
@@ -88,5 +95,13 @@ brew install font-jetbrains-mono
 brew install font-fira-code
 brew install font-victor-mono
 
+# qmk
+# qmk compile -kb planck/rev6 -km carseven
+# qmk flash -kb planck/rev6 -km carseven
+brew install qmk/qmk/qmk
+
 echo "Cleaning up brew"
 brew cleanup
+
+echo "Create dev folder"
+mkdir ~/dev

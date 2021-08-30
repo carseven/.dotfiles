@@ -19,7 +19,6 @@ plugins=(
     zsh-autosuggestions
     zsh-syntax-highlighting
     history
-    osx
     extract
 )
 
