@@ -1,0 +1,58 @@
+{
+    "window.title": "${dirty}${activeEditorMedium}${separator}${rootName}",
+    "workbench.editor.tabSizing": "shrink",
+    "workbench.activityBar.visible": false,
+    "workbench.sideBar.location": "right",
+    "workbench.startupEditor": "none",
+    "editor.fontFamily": "Cascadia Code",
+    "editor.fontSize": 14,
+    "editor.fontLigatures": true,
+    "terminal.integrated.fontSize": 14,
+    "terminal.integrated.fontFamily": "Jetbrains Mono",
+    "terminal.integrated.fontWeight": "400",
+    "terminal.integrated.cursorStyle": "line",
+    "terminal.integrated.defaultLocation": "editor",
+    "terminal.integrated.defaultProfile.osx": "zsh",
+    "editor.minimap.enabled": false,
+    "editor.scrollbar.vertical": "auto",
+    "editor.scrollbar.verticalScrollbarSize": 10, // Default 14
+    "editor.scrollbar.scrollByPage": false, // Default
+    "editor.formatOnSaveMode": "file",
+    "editor.formatOnSave": true,
+    "editor.renderWhitespace": "boundary",
+    "breadcrumbs.enabled": false,
+    "[python]": {
+        "editor.rulers": [
+            80
+        ],
+    },
+    "python.analysis.typeCheckingMode": "basic",
+    "python.formatting.provider": "autopep8",
+    "python.formatting.autopep8Path": "~/miniforge3/envs/master/bin/autopep8",
+    "python.linting.pylintEnabled": false,
+    "python.linting.flake8Enabled": true,
+    "python.linting.flake8Path": "~/miniforge3/envs/master/bin/flake8",
+    "python.linting.enabled": true,
+    "python.languageServer": "Pylance",
+    "workbench.editorAssociations": {
+        "*.ipynb": "jupyter-notebook"
+    },
+    "notebook.cellToolbarLocation": {
+        "default": "right",
+        "jupyter-notebook": "left"
+    },
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/CVS": true,
+        "**/.DS_Store": true,
+        "**/*.pyc": {
+            "when": "$(basename).py"
+        },
+        "**/__pycache__": true
+    },
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "editor.suggestSelection": "first",
+    "terminal.external.osxExec": "iTerm 2.app"
+}

@@ -1,0 +1,15 @@
+// Place your key bindings in this file to override the defaultsauto[]
+[
+    {
+        "key": "cmd+[IntlBackslash]",
+        "command": "python.execInTerminal"
+    },
+    {
+        "key": "ctrl+cmd+[Semicolon]",
+        "command": "jupyter.runFileInteractive"
+    },
+    {
+        "key": "ctrl+cmd+-",
+        "command": "jupyter.execSelectionInteractive"
+    }
+]
