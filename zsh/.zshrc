@@ -63,3 +63,6 @@ alias gpull="git pull"
 
 # FZF
 alias dev="ls ~/dev | fzf | xargs -I_ code ~/dev/_"
+
+source $(brew --prefix git)
+source $(brew --prefix zsh)
