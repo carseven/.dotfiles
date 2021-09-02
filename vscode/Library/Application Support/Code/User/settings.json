@@ -4,23 +4,22 @@
     "workbench.activityBar.visible": false,
     "workbench.sideBar.location": "right",
     "workbench.startupEditor": "none",
-    "editor.fontFamily": "Cascadia Code",
-    "editor.fontSize": 14,
-    "editor.fontLigatures": true,
     "terminal.integrated.fontSize": 14,
     "terminal.integrated.fontFamily": "Jetbrains Mono",
     "terminal.integrated.fontWeight": "400",
     "terminal.integrated.cursorStyle": "line",
     "terminal.integrated.defaultLocation": "editor",
     "terminal.integrated.defaultProfile.osx": "zsh",
+    "terminal.external.osxExec": "iTerm 2.app",
     "editor.minimap.enabled": false,
+    "editor.bracketPairColorization.enabled": true,
     "editor.scrollbar.vertical": "auto",
-    "editor.scrollbar.verticalScrollbarSize": 10, // Default 14
-    "editor.scrollbar.scrollByPage": false, // Default
     "editor.formatOnSaveMode": "file",
     "editor.formatOnSave": true,
-    "editor.renderWhitespace": "boundary",
-    "breadcrumbs.enabled": false,
+    "editor.formatOnPaste": true,
+    "editor.fontFamily": "Cascadia Code",
+    "editor.fontSize": 14,
+    "editor.fontLigatures": true,
     "[python]": {
         "editor.rulers": [
             80
@@ -37,10 +36,6 @@
     "workbench.editorAssociations": {
         "*.ipynb": "jupyter-notebook"
     },
-    "notebook.cellToolbarLocation": {
-        "default": "right",
-        "jupyter-notebook": "left"
-    },
     "files.exclude": {
         "**/.git": true,
         "**/.svn": true,
@@ -52,7 +47,5 @@
         },
         "**/__pycache__": true
     },
-    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
-    "editor.suggestSelection": "first",
-    "terminal.external.osxExec": "iTerm 2.app"
+    "breadcrumbs.enabled": false
 }

@@ -26,8 +26,7 @@ brew install --cask alfred
 brew install --cask google-backup-and-sync
 brew install --cask iterm2
 brew install --cask spotify
-brew install --cask brave-browser # Add notion web clipper
-brew install --cask adguard
+brew install --cask brave-browser # Add notion web clipper, vimium and adguard
 brew install --cask visual-studio-code
 brew install --cask notion
 brew install --cask rectangle
@@ -36,6 +35,7 @@ brew install --cask the-unarchiver
 brew install --cask dozer
 brew install --cask mos
 brew install --cask clipy
+brew install --cask dbeaver-community
 # brew install --cask divvy # window managers
 # brew install --cask kap # screen recorder
 

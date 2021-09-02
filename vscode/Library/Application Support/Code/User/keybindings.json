@@ -2,14 +2,33 @@
 [
     {
         "key": "cmd+[IntlBackslash]",
-        "command": "python.execInTerminal"
+        "command": "python.execInTerminal",
+        "args": {
+            "openToSide": true
+        }
     },
     {
+        // ctrl+cmd+ñ
+        // Ejecutar el archivo entero en ipykernel
         "key": "ctrl+cmd+[Semicolon]",
         "command": "jupyter.runFileInteractive"
     },
     {
+        // ctrl+cmd+ñ
+        // Ejecutar el código seleccionado en ipykernel
         "key": "ctrl+cmd+-",
         "command": "jupyter.execSelectionInteractive"
+    },
+    {
+        "key": "cmd+d",
+        "command": "workbench.action.terminal.split",
+        "when": "terminalFocus && terminalProcessSupported"
+    },
+    {
+        "key": "cmd+,",
+        "command": "workbench.action.openSettings",
+        "args": {
+            "openToSide": true
+        }
     }
 ]

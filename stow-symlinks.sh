@@ -24,5 +24,5 @@ echo "Press [Enter] key after this..."
 read
 for d in */ ; do
     echo "Stowing $d..."
-    stow -nvDt ~ $d
+    stow -nvSt ~ $d
 done
