@@ -1,9 +1,9 @@
 {
     "window.title": "${dirty}${activeEditorMedium}${separator}${rootName}",
     "workbench.editor.tabSizing": "shrink",
-    "workbench.activityBar.visible": false,
-    "workbench.sideBar.location": "right",
     "workbench.startupEditor": "none",
+    "workbench.sideBar.location": "right",
+    "workbench.activityBar.visible": false,
     "terminal.integrated.fontSize": 14,
     "terminal.integrated.fontFamily": "Jetbrains Mono",
     "terminal.integrated.fontWeight": "400",
@@ -25,17 +25,14 @@
             80
         ],
     },
-    "python.analysis.typeCheckingMode": "basic",
+    "python.analysis.typeCheckingMode": "basic", // Default pylance
     "python.formatting.provider": "autopep8",
     "python.formatting.autopep8Path": "~/miniforge3/envs/master/bin/autopep8",
     "python.linting.pylintEnabled": false,
     "python.linting.flake8Enabled": true,
     "python.linting.flake8Path": "~/miniforge3/envs/master/bin/flake8",
     "python.linting.enabled": true,
-    "python.languageServer": "Pylance",
-    "workbench.editorAssociations": {
-        "*.ipynb": "jupyter-notebook"
-    },
+    "python.languageServer": "Pylance", // default vscode language server
     "files.exclude": {
         "**/.git": true,
         "**/.svn": true,
@@ -47,5 +44,5 @@
         },
         "**/__pycache__": true
     },
-    "breadcrumbs.enabled": false
+    "breadcrumbs.enabled": false,
 }
