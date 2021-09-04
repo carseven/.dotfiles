@@ -19,7 +19,7 @@ echo "Copying dotfiles from Github..."
 cd ~
 # git clone git@github.com:bradp/dotfiles.git .dotfiles
 
-# source ~/.dotfiles/brew.sh
+source ~/.dotfiles/brew.sh
 source ~/.dotfiles/vscode-extensions.sh
 source ~/.dotfiles/zsh-setup.sh
 source ~/.dotfiles/stow-symlinks.sh

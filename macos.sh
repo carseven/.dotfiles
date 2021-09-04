@@ -744,7 +744,6 @@ for app in \
   "Activity Monitor" "Address Book" "Calendar" \
   "Contacts" "Dock" "Finder" "Mail" "Messages" \
   "SystemUIServer" "Terminal" "Transmission" "iCal"; do
-  echo "Killing app ${app}"
   killall "${app}" > /dev/null 2>&1
 done
 

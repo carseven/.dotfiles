@@ -29,4 +29,5 @@ for dir in */ ; do
     if [ -d ${dir} ]; then
         echo "Stowing $dir..."
         stow -nvSt ~ $dir
+    fi    
 done
