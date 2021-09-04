@@ -30,5 +30,29 @@
         "args": {
             "openToSide": true
         }
+    },
+    {
+        // Move tab to next group (to right)
+        // Hyper + ->
+        "key": "ctrl+shift+alt+cmd+left",
+        "command": "workbench.action.moveEditorToPreviousGroup"
+    },
+    {
+        // Move tab to previous group (to right)
+        // Hyper + <-
+        "key": "ctrl+shift+alt+cmd+right",
+        "command": "workbench.action.moveEditorToNextGroup"
+    },
+    {
+        // Move tab to above group (up)
+        // Hyper + up arroy key
+        "key": "ctrl+shift+alt+cmd+up",
+        "command": "workbench.action.moveEditorToAboveGroup"
+    },
+    {
+        // Move tab to below group (down)
+        // Hyper + down arroy key
+        "key": "ctrl+shift+alt+cmd+down",
+        "command": "workbench.action.moveEditorToBelowGroup"
     }
 ]
