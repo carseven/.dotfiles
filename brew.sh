@@ -65,5 +65,5 @@ brew install font-victor-mono
 # qmk flash -kb planck/rev6 -km carseven
 brew install qmk/qmk/qmk
 
-echo "Cleaning up brew"
+echo "Cleaning up brew..."
 brew cleanup

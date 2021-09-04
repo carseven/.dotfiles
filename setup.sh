@@ -9,12 +9,13 @@ sudo -v
 while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
 # Install all recommended available updates and restart if needed (macos)
+echo "Install all recommended available macos updates..."
 sudo softwareupdate --install --all --restart --recommended
 
-echo "Installing xcode developmente dependencies"
+echo "Installing xcode developmente dependencies..."
 xcode-select --install
 
-echo "Copying dotfiles from Github"
+echo "Copying dotfiles from Github..."
 cd ~
 git clone git@github.com:bradp/dotfiles.git .dotfiles
 cd ~/.dotfiles
@@ -25,7 +26,7 @@ source ~/.dotfiles/zsh-setup.sh
 source ~/.dotfiles/stow-symlinks.sh
 source ~/.dotfiles/macos.sh
 
-echo "Create dev folder"
+echo "Creating dev folder..."
 mkdir ~/dev
 
 echo "Setup script has ended. Enjoy your fresh set up :)"

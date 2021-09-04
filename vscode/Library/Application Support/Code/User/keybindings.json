@@ -14,7 +14,7 @@
         "command": "jupyter.runFileInteractive"
     },
     {
-        // ctrl+cmd+ñ
+        // ctrl+cmd+-
         // Ejecutar el código seleccionado en ipykernel
         "key": "ctrl+cmd+-",
         "command": "jupyter.execSelectionInteractive"
