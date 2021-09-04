@@ -8,6 +8,7 @@ curl -L http://install.ohmyz.sh | sh
 echo "Setting up Zsh plugins..."
 cd ~/.oh-my-zsh/custom/plugins
 git clone git://github.com/zsh-users/zsh-syntax-highlighting.git
+git clone https://github.com/zsh-users/zsh-autosuggestions
 
 # Alternative
 # brew install zsh-syntax-highlighting

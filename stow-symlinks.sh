@@ -13,6 +13,9 @@
 # Manually stow dir
 #stow -nvSt ~ alfred alt-tab git iterm qmk rectangle vscode zsh
 
+echo "CD ~/.dotfiles ..."
+cd ~/.dotfiles
+
 echo "Generate dotfiles symlinks with stow"
 # Stow every directory from .dotfiles directory
 for d in */ ; do
@@ -22,7 +25,8 @@ done
 echo "Verify symlinks"
 echo "Press [Enter] key after this..."
 read
-for d in */ ; do
-    echo "Stowing $d..."
-    stow -nvSt ~ $d
+for dir in */ ; do
+    if [ -d ${dir} ]; then
+        echo "Stowing $dir..."
+        stow -nvSt ~ $dir
 done

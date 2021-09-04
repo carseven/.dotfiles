@@ -1,6 +1,7 @@
 #! /bin/bash
 # Macos settings
-
+echo "Settings macos..."
+echo "Set computer name..."
 # Set computer name (as done via System Preferences → Sharing)
 sudo scutil --set ComputerName "m1"
 sudo scutil --set HostName "m1"
@@ -11,6 +12,8 @@ sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.serve
 ## ----------------------------------------
 ##  System and Extras
 ## ----------------------------------------
+echo "Set System and Extras..."
+
 # Disable DS_STORE in Network and USB
 defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true
 defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true 
@@ -48,6 +51,7 @@ sudo defaults write /Library/Preferences/com.apple.loginwindow showInputMenu -bo
 ## ----------------------------------------
 ##  Activity Monitor
 ## ----------------------------------------
+echo "Set Activity monitor..."
 
 # Show the main window when launching Activity Monitor
 defaults write com.apple.ActivityMonitor OpenMainWindow -bool true
@@ -65,6 +69,7 @@ defaults write com.apple.ActivityMonitor SortDirection -int 0
 ## ----------------------------------------
 ##  Mail
 ## ----------------------------------------
+echo "Set mail..."
 
 # Add the keyboard shortcut ⌘ + Enter to send an email in Mail.app
 defaults write com.apple.mail NSUserKeyEquivalents -dict-add "Send" "@\U21a9"
@@ -75,7 +80,7 @@ defaults write com.apple.mail AddressesIncludeNameOnPasteboard -bool false
 ## ----------------------------------------
 ##  Safari
 ## ----------------------------------------
-
+echo "Set safari..."
 # Disable auto-playing video
 defaults write com.apple.Safari WebKitMediaPlaybackAllowsInline -bool false
 defaults write com.apple.SafariTechnologyPreview WebKitMediaPlaybackAllowsInline -bool false
@@ -156,7 +161,7 @@ defaults write org.m0k.transmission IncompleteDownloadFolder -string "~/Download
 ## ----------------------------------------
 ##  General
 ## ----------------------------------------
-
+echo "Set general settings..."
 # Apprerance
 # - Light
 # defaults delete .GlobalPreferences AppleInterfaceStyleSwitchesAutomatically > /dev/null 2>&1
@@ -215,6 +220,7 @@ defaults -currentHost delete .GlobalPreferences AppleFontSmoothing > /dev/null 2
 ## ----------------------------------------
 ##  Dock
 ## ----------------------------------------
+echo "Set dock..."
 
 # Size
 # @int: size
@@ -298,6 +304,7 @@ defaults delete com.apple.dock persistent-apps > /dev/null 2>&1
 ## ----------------------------------------
 ##  Mision control
 ## ----------------------------------------
+echo "Set mision control..."
 
 # Automatically rearrange Spaces based on most recent use
 defaults write com.apple.dock mru-spaces -bool false
@@ -347,6 +354,7 @@ defaults write com.apple.Siri StatusMenuVisible -bool false
 ## ----------------------------------------
 ##  Region and language
 ## ----------------------------------------
+echo "Set region and language..."
 
 # Region
 # Set language and text formats
@@ -393,6 +401,7 @@ defaults write .GlobalPreferences AppleTemperatureUnit -string "Celsius"
 ## ----------------------------------------
 ##  Security privacy
 ## ----------------------------------------
+echo "Set security privacy..."
 
 # Require password ~ after sleep or screen saver begins
 # - Checked
@@ -405,6 +414,7 @@ defaults write com.apple.screensaver askForPasswordDelay -int 0
 ## ----------------------------------------
 ##  Sound
 ## ----------------------------------------
+echo "Set sound..."
 
 # Increase sound quality for Bluetooth headphones/headsets
 defaults write com.apple.BluetoothAudioAgent "Apple Bitpool Min (editable)" -int 40
@@ -426,6 +436,7 @@ defaults write com.apple.systemsound "com.apple.sound.uiaudio.enabled" -int 0
 ## ----------------------------------------
 ##  Displays
 ## ----------------------------------------
+echo "Set displays..."
 
 # Nightshift Schedule
 NPLIST="/private/var/root/Library/Preferences/com.apple.CoreBrightness.plist"
@@ -451,6 +462,7 @@ sudo /usr/libexec/PlistBuddy \
 ## ----------------------------------------
 ##  Energy
 ## ----------------------------------------
+echo "Set energy..."
 
 # Show Battery status in menu bar
 # - Checked
@@ -476,6 +488,7 @@ sudo pmset -b lessbright 0
 ## ----------------------------------------
 ##  DateTime
 ## ----------------------------------------
+echo "Set dateTime..."
 
 # Set date and time automatically
 # - Checked
@@ -504,6 +517,7 @@ defaults write com.apple.menuextra.clock ShowDayOfMonth -bool true
 ## ----------------------------------------
 ##  iCLoud, Time machine and Handoff
 ## ----------------------------------------
+echo "Set iCloud, time machine and handoff..."
 
 # Show warning before removing from iCloud Drive
 defaults write com.apple.finder FXEnableRemoveFromICloudDriveWarning -bool false
@@ -545,6 +559,7 @@ defaults write com.apple.TimeMachine DoNotOfferNewDisksForBackup -bool true
 ## ----------------------------------------
 ##  Keyboard
 ## ----------------------------------------
+echo "Set keyboard..."
 
 # Key Repeat
 # @int: 15 is the fastest in GUI, but real is 10
@@ -607,6 +622,8 @@ defaults write -g WebAutomaticTextReplacementEnabled -bool false
 ## ----------------------------------------
 ##  Finder
 ## ----------------------------------------
+echo "Set finder..."
+
 # Expand save panel by default
 defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true
 defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode2 -bool true
@@ -684,6 +701,7 @@ defaults write com.apple.finder FXDefaultSearchScope -string "SCcf"
 ## ----------------------------------------
 ##  ScreenShot
 ## ----------------------------------------
+echo "Set screenshot..."
 
 # Set Screenshot saved directory
 # - Default
@@ -720,7 +738,7 @@ defaults write com.apple.screencapture include-date -bool false
 ## ----------------------------------------
 ##  Cache Clear
 ## ----------------------------------------
-echo "Resetting macos..."
+echo "Resetting macos and clear cache..."
 for app in \
   "cfprefsd" \
   "Activity Monitor" "Address Book" "Calendar" \

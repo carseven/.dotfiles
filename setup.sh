@@ -17,10 +17,9 @@ xcode-select --install
 
 echo "Copying dotfiles from Github..."
 cd ~
-git clone git@github.com:bradp/dotfiles.git .dotfiles
-cd ~/.dotfiles
+# git clone git@github.com:bradp/dotfiles.git .dotfiles
 
-source ~/.dotfiles/brew.sh
+# source ~/.dotfiles/brew.sh
 source ~/.dotfiles/vscode-extensions.sh
 source ~/.dotfiles/zsh-setup.sh
 source ~/.dotfiles/stow-symlinks.sh
@@ -29,4 +28,4 @@ source ~/.dotfiles/macos.sh
 echo "Creating dev folder..."
 mkdir ~/dev
 
-echo "Setup script has ended. Enjoy your fresh set up :)"
+echo "Setup script has ended."
