@@ -4,9 +4,9 @@ echo "Settings macos..."
 echo "Set computer name..."
 # Set computer name (as done via System Preferences → Sharing)
 sudo scutil --set ComputerName "m1"
-sudo scutil --set HostName "m1"
-sudo scutil --set LocalHostName "m1"
-sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string "m1"
+# sudo scutil --set HostName "m1"
+# sudo scutil --set LocalHostName "m1"
+# sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string "m1"
 
 
 ## ----------------------------------------
@@ -85,19 +85,14 @@ echo "Set safari..."
 # Enable “Do Not Track”
 defaults write com.apple.Safari SendDoNotTrackHTTPHeader -bool true
 
-# Update extensions automatically
-defaults write com.apple.Safari InstallExtensionUpdatesAutomatically -bool true
-
 # Enable continuous spellchecking
 defaults write com.apple.Safari WebContinuousSpellCheckingEnabled -bool true
+
 # Disable auto-correct
 defaults write com.apple.Safari WebAutomaticSpellingCorrectionEnabled -bool false
 
 # Warn about fraudulent websites
 defaults write com.apple.Safari WarnAboutFraudulentWebsites -bool true
-
-# Add a context menu item for showing the Web Inspector in web views
-defaults write NSGlobalDomain WebKitDeveloperExtras -bool true
 
 # Hide Safari’s sidebar in Top Sites
 defaults write com.apple.Safari ShowSidebarInTopSites -bool false
@@ -111,9 +106,6 @@ defaults write com.apple.Safari SuppressSearchSuggestions -bool true
 
 #"Hiding Safari's bookmarks bar by default"
 defaults write com.apple.Safari ShowFavoritesBar -bool false
-
-#"Hiding Safari's sidebar in Top Sites"
-defaults write com.apple.Safari ShowSidebarInTopSites -bool false
 
 #"Use `~/Downloads/Incomplete` to store incomplete downloads"
 defaults write org.m0k.transmission UseIncompleteDownloadFolder -bool true
@@ -212,12 +204,13 @@ defaults write com.apple.dock mineffect -string "genie"
 # defaults write com.apple.dock mineffect -string "scale"
 
 # Prefer tabs when opening documents
+# When Command + N
 # - Always
-# defaults write .GlobalPreferences AppleWindowTabbingMode -string "always"
+# defaults write .GlobalPreferences AppleWindowTabbingMode -string "always" # Open windows as tabs always
 # - In Full Screen Only
-# defaults write .GlobalPreferences AppleWindowTabbingMode -string "fullscreen"
+# defaults write .GlobalPreferences AppleWindowTabbingMode -string "fullscreen" # Open windows as tabs when fullscreen
 # - Manually -> In preference is call never
-defaults write .GlobalPreferences AppleWindowTabbingMode -string "manual"
+defaults write .GlobalPreferences AppleWindowTabbingMode -string "manual" # Open separate window
 
 # Double-click a window's title bar to
 # - Checked
@@ -648,7 +641,7 @@ defaults write com.apple.finder OpenWindowForNewRemovableDisk -bool true
 defaults write com.apple.finder ShowPathbar -bool true
 
 # Display full POSIX path as Finder window title
-defaults write com.apple.finder _FXShowPosixPathInTitle -bool true
+defaults write com.apple.finder _FXShowPosixPathInTitle -bool false
 
 # Show Tab Bar 
 defaults write com.apple.finder ShowTabView -bool true

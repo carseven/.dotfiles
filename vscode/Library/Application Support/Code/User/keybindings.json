@@ -117,6 +117,7 @@
             "openToSide": true
         }
     },
+    // Crear un venv
     {
         "key": "ctrl+shift+alt+cmd+v",
         "command": "workbench.action.terminal.sendSequence",
