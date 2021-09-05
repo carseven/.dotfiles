@@ -22,15 +22,6 @@
         "command": "jupyter.execSelectionInteractive"
     },
     /*-------------------------------*
-    *  Code navegation and utils
-    * -------------------------------*/
-    // Sort imports or clean
-    // Got to definition
-    // Go to declaration
-    // Call history
-    // Refactor
-    // Format selected line
-    /*-------------------------------*
     *  Terminal
     * -------------------------------*/
     {
@@ -49,26 +40,23 @@
         "command": "workbench.action.terminal.killInstance",
         "when": "terminalIsOpen && terminalTabsFocus || terminalProcessSupported && terminalTabsFocus"
     },
-    // Terminal resize
-    {
-        "key": "ctrl+shift+alt+cmd+down",
-        "command": "workbench.action.terminal.resizePaneDown",
-        "when": "terminalFocus && terminalProcessSupported"
+    // Panel position
+    { // Toggle maximize terminal
+        "key": "ctrl+shift+alt+cmd+m",
+        "command": "workbench.action.toggleMaximizedPanel",
     },
-    {
-        "key": "ctrl+shift+alt+cmd+left",
-        "command": "workbench.action.terminal.resizePaneLeft",
-        "when": "terminalFocus && terminalProcessSupported"
+    { // Panel to the right
+        "key": "ctrl+shift+alt+cmd+r",
+        "command": "workbench.action.positionPanelRight"
     },
-    {
-        "key": "ctrl+shift+alt+cmd+right",
-        "command": "workbench.action.terminal.resizePaneRight",
-        "when": "terminalFocus && terminalProcessSupported "
+    { // Panel to the bottom
+        "key": "ctrl+shift+alt+cmd+b",
+        "command": "workbench.action.positionPanelBottom"
     },
-    {
-        "key": "ctrl+shift+alt+cmd+up",
-        "command": "workbench.action.terminal.resizePaneUp",
-        "when": "terminalFocus && terminalProcessSupported"
+    { // Create new terminal in editor tab
+        "key": "ctrl+shift+alt+cmd+t",
+        "command": "workbench.action.terminal.new",
+        "when": "terminalProcessSupported"
     },
     /*-------------------------------*
     *  Editor Groups
@@ -121,6 +109,7 @@
         "key": "ctrl+shift+alt+cmd+o",
         "command": "workbench.action.evenEditorWidths"
     },
+    // Setting window to the right tab group
     {
         "key": "cmd+,",
         "command": "workbench.action.openSettings",
@@ -128,12 +117,4 @@
             "openToSide": true
         }
     },
-    {
-        "key": "ctrl+shift+alt+cmd+r",
-        "command": "workbench.action.positionPanelRight"
-    },
-    {
-        "key": "ctrl+shift+alt+cmd+b",
-        "command": "workbench.action.positionPanelBottom"
-    }
 ]
