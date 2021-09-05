@@ -8,8 +8,10 @@
     "terminal.integrated.fontFamily": "Jetbrains Mono",
     "terminal.integrated.fontWeight": "400",
     "terminal.integrated.cursorStyle": "line",
+    // Open terminal as a tab
     "terminal.integrated.defaultLocation": "editor",
     "terminal.integrated.defaultProfile.osx": "zsh",
+    "terminal.integrated.automationShell.osx": "/opt/homebrew/bin/zsh", // TODO: Delete if error when opening terminal keeps
     "terminal.external.osxExec": "iTerm 2.app",
     "editor.minimap.enabled": false,
     "editor.bracketPairColorization.enabled": true,

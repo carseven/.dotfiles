@@ -13,7 +13,7 @@
 // }
 {
 	"Ipython Console": {
-		"prefix": "ipython",
+		"prefix": "ipyconsole",
 		"body": "__import__(\"IPython\").embed()  # FIXME ",
 		"description": "Abre en la consola Ipython del script"
 	},
