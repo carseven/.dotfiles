@@ -1,5 +1,7 @@
-// Place your key bindings in this file to override the defaultsauto[]
 [
+    /*-------------------------------*
+    *  Python development
+    * -------------------------------*/
     {
         "key": "cmd+[IntlBackslash]",
         "command": "python.execInTerminal",
@@ -19,18 +21,58 @@
         "key": "ctrl+cmd+-",
         "command": "jupyter.execSelectionInteractive"
     },
+    /*-------------------------------*
+    *  Code navegation and utils
+    * -------------------------------*/
+    // Sort imports or clean
+    // Got to definition
+    // Go to declaration
+    // Call history
+    // Refactor
+    // Format selected line
+    /*-------------------------------*
+    *  Terminal
+    * -------------------------------*/
     {
         "key": "cmd+d",
         "command": "workbench.action.terminal.split",
         "when": "terminalFocus && terminalProcessSupported"
     },
+    // Son necesario dos, para matar el terminal completo y para matar solo la instancia si existe varias instancias del mismo terminal
     {
-        "key": "cmd+,",
-        "command": "workbench.action.openSettings",
-        "args": {
-            "openToSide": true
-        }
+        "key": "cmd+w",
+        "command": "workbench.action.terminal.kill",
+        "when": "terminalFocus && terminalProcessSupported"
     },
+    {
+        "key": "cmd+w",
+        "command": "workbench.action.terminal.killInstance",
+        "when": "terminalIsOpen && terminalTabsFocus || terminalProcessSupported && terminalTabsFocus"
+    },
+    // Terminal resize
+    {
+        "key": "ctrl+shift+alt+cmd+down",
+        "command": "workbench.action.terminal.resizePaneDown",
+        "when": "terminalFocus && terminalProcessSupported"
+    },
+    {
+        "key": "ctrl+shift+alt+cmd+left",
+        "command": "workbench.action.terminal.resizePaneLeft",
+        "when": "terminalFocus && terminalProcessSupported"
+    },
+    {
+        "key": "ctrl+shift+alt+cmd+right",
+        "command": "workbench.action.terminal.resizePaneRight",
+        "when": "terminalFocus && terminalProcessSupported "
+    },
+    {
+        "key": "ctrl+shift+alt+cmd+up",
+        "command": "workbench.action.terminal.resizePaneUp",
+        "when": "terminalFocus && terminalProcessSupported"
+    },
+    /*-------------------------------*
+    *  Editor Groups
+    * -------------------------------*/
     {
         // Move tab to next group (to right)
         // Hyper + ->
@@ -54,5 +96,44 @@
         // Hyper + down arroy key
         "key": "ctrl+shift+alt+cmd+down",
         "command": "workbench.action.moveEditorToBelowGroup"
+    },
+    {
+        // Join all groups
+        // Hyper + Enter
+        "key": "ctrl+shift+alt+cmd+enter",
+        "command": "workbench.action.joinAllGroups"
+    },
+    {
+        // Increase tab size
+        // Hyper + i
+        "key": "ctrl+shift+alt+cmd+i",
+        "command": "workbench.action.increaseViewSize"
+    },
+    {
+        // Decrease tab size
+        // Hyper + d
+        "key": "ctrl+shift+alt+cmd+u",
+        "command": "workbench.action.decreaseViewSize"
+    },
+    {
+        // Reset tab size
+        // Hyper + o
+        "key": "ctrl+shift+alt+cmd+o",
+        "command": "workbench.action.evenEditorWidths"
+    },
+    {
+        "key": "cmd+,",
+        "command": "workbench.action.openSettings",
+        "args": {
+            "openToSide": true
+        }
+    },
+    {
+        "key": "ctrl+shift+alt+cmd+r",
+        "command": "workbench.action.positionPanelRight"
+    },
+    {
+        "key": "ctrl+shift+alt+cmd+b",
+        "command": "workbench.action.positionPanelBottom"
     }
 ]
