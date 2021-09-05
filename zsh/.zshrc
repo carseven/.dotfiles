@@ -81,8 +81,9 @@ function gpr() {
         github_url=$(git remote -v | awk '/fetch/{print $2}' | sed -Ee 's#(git@|git:://)#http://#' -e 's@com:@com/@' -e 's%\.git$%%');
         branch_name=`$(git symbolic-ref HEAD 2>/dev/null)`;
         clean_remote_branch=${branch_name#refs/heads/*}
+        echo $clean_remote_branch
         pr_url=$($github_url"/comapare/master..."$branch_name);
-        echo '${pr_url}'
+        echo ${pr_url}
         open $pr_url
     else
         echo 'Failed to open a pull request.'
