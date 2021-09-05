@@ -62,6 +62,7 @@ alias ga="git add ."
 alias gp="git push"
 alias gpull="git pull"
 
+# Github PR request
 function gpr() {
     if [ $? -eq 0]; then
         # origin  https://github.com/carseven/.dotfiles.git (fetch) -> https://github.com/carseven/.dotfiles.git
