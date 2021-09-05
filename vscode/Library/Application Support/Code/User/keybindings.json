@@ -117,4 +117,11 @@
             "openToSide": true
         }
     },
+    {
+        "key": "ctrl+shift+alt+cmd+v",
+        "command": "workbench.action.terminal.sendSequence",
+        "args": {
+            "text": "python3 -m venv .venv\u000D"
+        }
+    }
 ]

@@ -41,10 +41,11 @@ alias cam="conda activate master"
 alias cdm="conda deactivate"
 
 # VENV
-# Desactivar el venv por si activado, lo siguiente es por si falla 
-# deactivate para no mostrar mensaje.
-alias ae="deactivate &> /dev/null; source ./.venv/bin/activate"
-
+alias venv="python3 -m venv .venv"
+alias avenv="deactivate &> /dev/null; source ./.venv/bin/activate"
+alias dvenv="deactivate &> /dev/null"
+alias fvenv="pip3 freeze"
+alias rvenv="pip3 freeze > requirement.txt"
 
 # UTILIDADES SISTEMA
 alias myip="curl http://ipecho.net/plain; echo"
