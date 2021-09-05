@@ -47,7 +47,8 @@
         "**/__pycache__": true
     },
     "breadcrumbs.enabled": false,
-    "editor.suggestSelection": "first", // intelicode default settings when installed extension
+    // intelicode default settings when installed extension
+    "editor.suggestSelection": "first",
     "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
     "workbench.iconTheme": "vscode-icons",
 }
