@@ -75,10 +75,12 @@ alias gbranchdel="git branch | fzf | xargs -I_ git branch -d _"
 
 # Github PR request
 function gpr() {
+    # origin  https://github.com/carseven/.dotfiles.git (fetch) -> https://github.com/carseven/.dotfiles.git
     github_url=$(git remote -v | awk '/fetch/{print $2}' | sed -Ee 's#(git@|git:://)#http://#' -e 's@com:@com/@' -e 's%\.git$%%');
     branch_name=$(git symbolic-ref HEAD 2>/dev/null);
+    # orgin/branch_name -> branch_name
     clean_remote_branch=${branch_name#refs/heads/*};
-    pr_url="${github_url}/compare/${clean_remote_branch}...main";
+    pr_url="${github_url}/compare/main...${clean_remote_branch}";
     echo "Genarate PR: ${clean_remote_branch} -> main";
     echo "URL: ${pr_url}";
     open "${pr_url}";
