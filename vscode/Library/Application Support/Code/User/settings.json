@@ -49,5 +49,5 @@
     "breadcrumbs.enabled": false,
     "editor.suggestSelection": "first", // intelicode default settings when installed extension
     "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
-    "workbench.iconTheme": "vscode-icons", // intelicode default settings when installed extension
+    "workbench.iconTheme": "vscode-icons",
 }
