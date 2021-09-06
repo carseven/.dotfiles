@@ -60,9 +60,12 @@ alias gc="git commit -m"
 alias gs="git status"
 alias gd="git diff"
 alias ga="git add ."
+alias gf="git fetch"
+alias gfa="git fetch --all"
 alias gpush="git push"
 alias gpushup="git branch | fzf | xargs -I_ git push --set-upstream origin _"
 alias gpull="git pull"
+alias greset="git reset HEAD~" # reset last commit
 function gbranch { git branch $1}
 function gcreate { git checkout -b $1}
 alias gcheckout="git branch | fzf | xargs -I_ git checkout _"
