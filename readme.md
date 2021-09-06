@@ -9,4 +9,4 @@
     * Dock add permanent programs: iTerm 2, Visual studio code, Notion, Safari, Mail, Calendar
 * Safari and brave extensions:
     * Download Notion web clipper -> Brave and Safari
-    * Download Adguar for Safari -> From the appstore
+    * Download Adguard for Safari -> From the appstore
