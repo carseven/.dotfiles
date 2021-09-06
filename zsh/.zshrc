@@ -46,6 +46,7 @@ alias avenv="deactivate &> /dev/null; source ./.venv/bin/activate"
 alias dvenv="deactivate &> /dev/null"
 alias fvenv="pip3 freeze"
 alias rvenv="pip3 freeze > requirement.txt"
+alias ivenv="pip install -r requirements.txt"
 
 # UTILIDADES SISTEMA
 alias myip="curl http://ipecho.net/plain; echo"

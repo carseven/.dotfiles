@@ -21,6 +21,14 @@
         "key": "ctrl+cmd+-",
         "command": "jupyter.execSelectionInteractive"
     },
+    // Crear un venv
+    {
+        "key": "ctrl+shift+alt+cmd+v",
+        "command": "workbench.action.terminal.sendSequence",
+        "args": {
+            "text": "python3 -m venv .venv\u000D"
+        }
+    },
     /*-------------------------------*
     *  Terminal
     * -------------------------------*/
@@ -117,12 +125,9 @@
             "openToSide": true
         }
     },
-    // Crear un venv
+    // Open gitlens repository view
     {
-        "key": "ctrl+shift+alt+cmd+v",
-        "command": "workbench.action.terminal.sendSequence",
-        "args": {
-            "text": "python3 -m venv .venv\u000D"
-        }
+        "key": "ctrl+shift+alt+cmd+g",
+        "command": "gitlens.views.repositories.focus"
     }
 ]
