@@ -690,6 +690,16 @@ defaults write com.apple.screencapture include-date -bool false
 # defaults write com.apple.screencapture include-date -bool true
 
 ## ----------------------------------------
+##  Rectangle
+## ----------------------------------------
+# Con la configuración de rectangle es necesario esto?
+#By default, "Make Smaller" will decrease the window until it reaches 25% of the screen (width & height).
+# defaults write com.knollsoft.Rectangle minimumWindowWidth -float 0.1 # 10 %
+# defaults write com.knollsoft.Rectangle minimumWindowHeight -float 0.1 # 10 %
+
+
+
+## ----------------------------------------
 ##  Cache Clear
 ## ----------------------------------------
 echo "Resetting macos and clear cache..."
