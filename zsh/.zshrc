@@ -4,6 +4,23 @@ source ~/.bash_profile
 # Homebrew
 export PATH="/opt/homebrew/bin:$PATH"
 
+# Use homebrew installed git and zsh
+# /opt/homebrew/pot/git
+source $(brew --prefix git)
+source $(brew --prefix zsh)
+
+# pyenv and pyenv-virtualenv
+if command -v pyenv &>/dev/null; then
+    eval "$(pyenv init -)"
+fi
+if command -v pyenv-virtualenv &>/dev/null; then
+    eval "$(pyenv virtualenv-init -)"
+fi
+
+# poetry
+export PATH="$HOME/.poetry/bin:$PATH"
+
+# Oh my zsh
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
@@ -24,74 +41,5 @@ plugins=(
 
 source $ZSH/oh-my-zsh.sh
 
-# ALIAS
-
-# ZSHRC CONFIG
-alias update="source ~/.zshrc"
-alias czsh="code ~/.dotfiles/zsh/.zshrc"
-
-# NAVEGACION
-alias ...="cd ../.."
-
-# CODE
-alias c="code ."
-
-# CONDA
-alias cam="conda activate master"
-alias cdm="conda deactivate"
-
-# VENV
-alias venv="python3 -m venv .venv"
-alias avenv="deactivate &> /dev/null; source ./.venv/bin/activate"
-alias dvenv="deactivate &> /dev/null"
-alias fvenv="pip3 freeze"
-alias rvenv="pip3 freeze > requirement.txt"
-alias ivenv="pip install -r requirements.txt"
-
-# UTILIDADES SISTEMA
-alias myip="curl http://ipecho.net/plain; echo"
-alias usage="du -h -d1"
-alias runport="lsof -i"
-alias dirs="dirs -v | head -10"
-alias delds="sudo find / -name .DS_Store -delete; killall Finder"
-
-# GIT
-alias gc="git commit -m"
-alias gs="git status"
-alias gd="git diff"
-alias ga="git add ."
-alias gf="git fetch"
-alias gfa="git fetch --all"
-alias gpush="git push"
-alias gpushup="git branch | fzf | xargs -I_ git push --set-upstream origin _"
-alias gpull="git pull"
-alias greset="git reset HEAD~" # reset last commit
-function gbranch { git branch $1}
-function gcreate { git checkout -b $1}
-alias gcheckout="git branch | fzf | xargs -I_ git checkout _"
-alias gbranchdel="git branch | fzf | xargs -I_ git branch -d _"
-# alias gremotedel="git branch -r | fzf | xargs -I_ git push origin --delete _"
-# function gremotedel() {
-#     remote_branch=${git branch -r | fzf};
-#     clean_remote_branch=${remote_branch#*/}; # origin/feature/branch -> feature/branch
-#     git push origin --delete $clean_remote_branch;
-# }
-
-# Github PR request
-function gpr() {
-    # origin  https://github.com/carseven/.dotfiles.git (fetch) -> https://github.com/carseven/.dotfiles.git
-    github_url=$(git remote -v | awk '/fetch/{print $2}' | sed -Ee 's#(git@|git:://)#http://#' -e 's@com:@com/@' -e 's%\.git$%%');
-    branch_name=$(git symbolic-ref HEAD 2>/dev/null);
-    # orgin/branch_name -> branch_name
-    clean_remote_branch=${branch_name#refs/heads/*};
-    pr_url="${github_url}/compare/main...${clean_remote_branch}";
-    echo "Genarate PR: ${clean_remote_branch} -> main";
-    echo "URL: ${pr_url}";
-    open "${pr_url}";
-}
-
-# FZF
-alias dev="ls ~/dev | fzf | xargs -I_ code ~/dev/_"
-
-source $(brew --prefix git)
-source $(brew --prefix zsh)
+# Aliases
+source ~/.aliases

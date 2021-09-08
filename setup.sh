@@ -23,6 +23,7 @@ source ~/.dotfiles/brew.sh
 source ~/.dotfiles/vscode-extensions.sh
 source ~/.dotfiles/zsh-setup.sh
 source ~/.dotfiles/stow-symlinks.sh
+soruce ~/.dotfiles/python.sh
 source ~/.dotfiles/macos.sh
 
 echo "Creating dev folder..."
