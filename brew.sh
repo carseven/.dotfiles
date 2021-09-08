@@ -46,7 +46,6 @@ brew install git
 brew install python@3.9
 
 # Shell and comandline utils
-brew install neovim
 brew install zsh
 brew install stow
 brew install fzf

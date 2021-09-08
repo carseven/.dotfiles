@@ -51,4 +51,5 @@
     "editor.suggestSelection": "first",
     "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
     "workbench.iconTheme": "vscode-icons",
+    "workbench.colorTheme": "One Dark Pro",
 }
