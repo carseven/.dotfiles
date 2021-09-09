@@ -11,7 +11,7 @@
     // Open terminal as a tab
     "terminal.integrated.defaultLocation": "editor",
     "terminal.integrated.defaultProfile.osx": "zsh",
-    "terminal.integrated.automationShell.osx": "/opt/homebrew/bin/zsh", // TODO: Delete if error when opening terminal keeps
+    "terminal.integrated.automationShell.osx": "/opt/homebrew/bin/zsh",
     "terminal.external.osxExec": "iTerm 2.app",
     "editor.minimap.enabled": false,
     "editor.bracketPairColorization.enabled": true,
@@ -26,6 +26,7 @@
         "editor.rulers": [
             80
         ],
+        "editor.tabSize": 4
     },
     "python.analysis.typeCheckingMode": "basic", // Default pylance
     "python.formatting.provider": "autopep8",
@@ -47,8 +48,7 @@
         "**/__pycache__": true
     },
     "breadcrumbs.enabled": false,
-    // intelicode default settings when installed extension
-    "editor.suggestSelection": "first",
+    "editor.suggestSelection": "first", // Automatically added by intelicode extension when installed.
     "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
     "workbench.iconTheme": "vscode-icons",
     "workbench.colorTheme": "One Dark Pro",
