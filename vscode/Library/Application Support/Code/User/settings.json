@@ -8,10 +8,8 @@
     "terminal.integrated.fontFamily": "Jetbrains Mono",
     "terminal.integrated.fontWeight": "400",
     "terminal.integrated.cursorStyle": "line",
-    // Open terminal as a tab
-    "terminal.integrated.defaultLocation": "editor",
+    "terminal.integrated.defaultLocation": "editor", // Open terminal as tab
     "terminal.integrated.defaultProfile.osx": "zsh",
-    "terminal.integrated.automationShell.osx": "/opt/homebrew/bin/zsh",
     "terminal.external.osxExec": "iTerm 2.app",
     "editor.minimap.enabled": false,
     "editor.bracketPairColorization.enabled": true,
@@ -28,7 +26,7 @@
         ],
         "editor.tabSize": 4
     },
-    "python.analysis.typeCheckingMode": "basic", // Default pylance
+    "python.analysis.typeCheckingMode": "basic", // Default by pylance is basic
     "python.formatting.provider": "autopep8",
     "python.formatting.autopep8Path": "~/miniforge3/envs/master/bin/autopep8",
     "python.linting.pylintEnabled": false,
