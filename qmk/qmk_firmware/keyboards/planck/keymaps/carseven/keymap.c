@@ -18,7 +18,7 @@ enum planck_keycodes {
 #define TABNUM LT(_NUM, KC_TAB) // Hold to move to layer NUM. Un tap es el tab.
 #define RAISE LT(_RAISE, KC_ENT) // Hold to move to layer Raise. Un tap es el enter.
 #define LOWER LT(_LOWER, KC_BSPC) // Hold to move to layer lower. Un tap es el backspace.
-#define ESC_CNTRL LCTL_T(KC_ESC) // Hold=Control and Tap=ESC
+#define HYP_ESC HYPR_T(KC_ESC)// Hold=Hyper and Tap=ESC
  
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
@@ -35,7 +35,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  */
 [_QWERTY] = LAYOUT_planck_grid(
   TABNUM,    KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,    KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_BSPC,
-  ESC_CNTRL, KC_A,    KC_S,    KC_D,    KC_F,    KC_G,    KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_QUOT,
+  HYP_ESC,   KC_A,    KC_S,    KC_D,    KC_F,    KC_G,    KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_QUOT,
   KC_LSFT,   KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, KC_ENT ,
   KC_HYPR,   KC_LCTL, KC_LALT, KC_LGUI, LOWER,   SPCMOV,  SPCMOV,  RAISE,   KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT
 ),
