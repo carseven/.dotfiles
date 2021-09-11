@@ -37,6 +37,7 @@ brew install --cask mos
 brew install --cask clipy
 brew install --cask dbeaver-community
 brew install --cask karabiner-elements
+brew install --cask tomighty
 # brew install --cask divvy # window managers
 # brew install --cask kap # screen recorder
 
