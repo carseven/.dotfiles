@@ -108,7 +108,7 @@
     {
         // Decrease tab size
         // Hyper + d
-        "key": "ctrl+shift+alt+cmd+u",
+        "key": "ctrl+shift+alt+cmd+d",
         "command": "workbench.action.decreaseViewSize"
     },
     {
@@ -116,6 +116,23 @@
         // Hyper + o
         "key": "ctrl+shift+alt+cmd+o",
         "command": "workbench.action.evenEditorWidths"
+    },
+    // Navigate beetween editors. (Focus)
+    {
+        "key": "ctrl+shift+alt+cmd+h",
+        "command": "workbench.action.navigateLeft"
+    },
+    {
+        "key": "ctrl+shift+alt+cmd+l",
+        "command": "workbench.action.navigateRight"
+    },
+    {
+        "key": "ctrl+shift+alt+cmd+k",
+        "command": "workbench.action.navigateUp"
+    },
+    {
+        "key": "ctrl+shift+alt+cmd+j",
+        "command": "workbench.action.navigateDown"
     },
     // Setting window to the right tab group
     {
