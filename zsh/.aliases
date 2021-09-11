@@ -71,13 +71,3 @@ function gpr() {
 
 # FZF
 alias dev="ls ~/dev | fzf | xargs -I_ code ~/dev/_"
-
-# VIM
-alias v=openVim
-function openNvim {
-  if [ $# -eq 0 ]; then
-    vim ./
-  else
-    vim $1
-  fi
-}
