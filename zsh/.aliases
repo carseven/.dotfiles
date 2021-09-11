@@ -3,6 +3,7 @@
 # ZSHRC CONFIG
 alias update="source ~/.zshrc"
 alias czsh="code ~/.dotfiles/zsh/.zshrc"
+alias cdot="code ~/.dotfiles"
 
 # NAVEGACION
 alias ...="cd ../.."

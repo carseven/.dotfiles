@@ -108,7 +108,7 @@
     {
         // Decrease tab size
         // Hyper + d
-        "key": "ctrl+shift+alt+cmd+d",
+        "key": "ctrl+shift+alt+cmd+u",
         "command": "workbench.action.decreaseViewSize"
     },
     {
