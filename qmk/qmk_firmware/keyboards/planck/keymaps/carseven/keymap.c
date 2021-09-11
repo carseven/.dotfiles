@@ -14,19 +14,18 @@ enum planck_keycodes {
 };
 
 // Mod keys
-#define SPCMOV LT(_MOV, KC_SPC) // Mantener para ir a la capa MOV. Un tap es el espacio.
-#define TABNUM LT(_NUM, KC_TAB) // Mantener para ir a la capa NUM. Un tap es el tabulador.
-#define RAISE LT(_RAISE, KC_ENT) // Mantener para ir a la capa Raise. Un tap es el enter.
-#define LOWER LT(_LOWER, KC_BSPC) // Mantener para ir a la capa lower. Un tap es el backspace.
-#define HYPER_ESC LT(KC_HYPR, KC_ESC) // Mantener para pulsar hyper. Un tap para pulsar el ESC.
-
+#define SPCMOV LT(_MOV, KC_SPC) // Hold to move to layer MOV. Un tap es el space.
+#define TABNUM LT(_NUM, KC_TAB) // Hold to move to layer NUM. Un tap es el tab.
+#define RAISE LT(_RAISE, KC_ENT) // Hold to move to layer Raise. Un tap es el enter.
+#define LOWER LT(_LOWER, KC_BSPC) // Hold to move to layer lower. Un tap es el backspace.
+ 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 /* Qwerty
  * ,-----------------------------------------------------------------------------------.
  * | Tab  |   Q  |   W  |   E  |   R  |   T  |   Y  |   U  |   I  |   O  |   P  | Bksp |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * | HYEsc|   A  |   S  |   D  |   F  |   G  |   H  |   J  |   K  |   L  |   ;  |  "   |
+ * | Esc  |   A  |   S  |   D  |   F  |   G  |   H  |   J  |   K  |   L  |   ;  |  "   |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
  * | Shift|   Z  |   X  |   C  |   V  |   B  |   N  |   M  |   ,  |   .  |   /  |Enter |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
@@ -35,9 +34,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  */
 [_QWERTY] = LAYOUT_planck_grid(
   TABNUM,    KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,    KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_BSPC,
-  HYPER_ESC, KC_A,    KC_S,    KC_D,    KC_F,    KC_G,    KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_QUOT,
+  KC_ESC,    KC_A,    KC_S,    KC_D,    KC_F,    KC_G,    KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_QUOT,
   KC_LSFT,   KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, KC_ENT ,
-  KC_DEL,    KC_LCTL, KC_LALT, KC_LGUI, LOWER,   SPCMOV,  SPCMOV,  RAISE,   KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT
+  KC_HYPR,   KC_LCTL, KC_LALT, KC_LGUI, LOWER,   SPCMOV,  SPCMOV,  RAISE,   KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT
 ),
 
 /* Lower
@@ -150,4 +149,3 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   }
   return true;
 }
-
