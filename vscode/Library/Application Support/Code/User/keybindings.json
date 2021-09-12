@@ -117,23 +117,17 @@
         "key": "ctrl+shift+alt+cmd+o",
         "command": "workbench.action.evenEditorWidths"
     },
-    // Navigate beetween editors. (Focus)
+    // Moverse entre tabs (de todos los grupos)
+    // Cuando se tiene foco en el terminal, es para moverse entre instancias del mismo.
     {
-        "key": "ctrl+shift+alt+cmd+h",
-        "command": "workbench.action.navigateLeft"
+        "key": "alt+cmd+left",
+        "command": "workbench.action.previousEditor",
+        "when": "editorFocus"
     },
     {
-        "key": "ctrl+shift+alt+cmd+l",
-        "command": "workbench.action.navigateRight"
-    },
-    {
-        "key": "ctrl+shift+alt+cmd+k",
-        "command": "workbench.action.navigateUp"
-    },
-    {
-        "key": "ctrl+shift+alt+cmd+j",
-        "command": "workbench.action.navigateDown"
-    },
+        "key": "alt+cmd+right",
+        "command": "workbench.action.nextEditor",
+    }
     // Setting window to the right tab group
     {
         "key": "cmd+,",
