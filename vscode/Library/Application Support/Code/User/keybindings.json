@@ -127,7 +127,7 @@
     {
         "key": "alt+cmd+right",
         "command": "workbench.action.nextEditor",
-    }
+    },
     // Setting window to the right tab group
     {
         "key": "cmd+,",
