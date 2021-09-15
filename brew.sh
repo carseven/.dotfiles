@@ -22,24 +22,25 @@ brew tap homebrew/cask
 brew tap homebrew/cask-fonts
 
 # Cask
-brew install --cask alfred
-brew install --cask google-backup-and-sync
-brew install --cask iterm2
-brew install --cask spotify
-brew install --cask brave-browser # Add notion web clipper, vimium and adguard
-brew install --cask visual-studio-code
-brew install --cask notion
-brew install --cask rectangle
-brew install --cask alt-tab
-brew install --cask the-unarchiver
-brew install --cask dozer
-brew install --cask mos
-brew install --cask clipy
-brew install --cask dbeaver-community
-brew install --cask karabiner-elements
-brew install --cask tomighty
-# brew install --cask divvy # window managers
-# brew install --cask kap # screen recorder
+brew install alfred
+brew install raycast
+brew install google-backup-and-sync
+brew install iterm2
+brew install spotify
+brew install brave-browser # Add notion web clipper, vimium and adguard
+brew install visual-studio-code
+brew install notion
+brew install rectangle
+brew install alt-tab
+brew install the-unarchiver
+brew install dozer
+brew install mos
+brew install clipy
+brew install dbeaver-community
+brew install karabiner-elements
+brew install tomighty
+# brew install divvy # window managers
+# brew install kap # screen recorder
 
 
 # dev
