@@ -4,6 +4,7 @@ codezombiech.gitignore
 cstrap.python-snippets
 eamodio.gitlens
 Gruntfuggly.activitusbar
+inu1255.easy-snippet
 KevinRose.vsc-python-indent
 ms-python.gather
 ms-python.python
@@ -12,6 +13,8 @@ ms-toolsai.jupyter
 ms-toolsai.jupyter-keymap
 njpwerner.autodocstring
 njqdev.vscode-python-typehint
+ritwickdey.LiveServer
+streetsidesoftware.code-spell-checker
 VisualStudioExptTeam.vscodeintellicode
 vscode-icons-team.vscode-icons
 wesbos.theme-cobalt2

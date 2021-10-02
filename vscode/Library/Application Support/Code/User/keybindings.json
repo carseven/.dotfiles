@@ -140,5 +140,10 @@
     {
         "key": "ctrl+shift+alt+cmd+g",
         "command": "gitlens.views.repositories.focus"
+    },
+    // Show/hide activity bar
+    {
+        "key": "ctrl+shift+alt+cmd+a",
+        "command": "workbench.action.toggleActivityBarVisibility"
     }
 ]
