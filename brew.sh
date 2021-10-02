@@ -38,7 +38,7 @@ brew install mos
 brew install clipy
 brew install dbeaver-community
 brew install karabiner-elements
-brew install tomighty
+brew install tomighty # Pomodoro
 # brew install divvy # window managers
 # brew install kap # screen recorder
 
