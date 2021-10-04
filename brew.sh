@@ -34,6 +34,7 @@ brew install rectangle
 brew install alt-tab
 brew install the-unarchiver
 brew install dozer
+# brew install vanilla # Hide status bar icons
 brew install mos
 brew install clipy
 brew install dbeaver-community
