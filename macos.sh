@@ -638,7 +638,7 @@ defaults write com.apple.frameworks.diskimages auto-open-rw-root -bool true
 defaults write com.apple.finder OpenWindowForNewRemovableDisk -bool true
 
 # Show Path Bar 
-defaults write com.apple.finder ShowPathbar -bool true
+defaults write com.apple.finder ShowPathbar -bool false
 
 # Display full POSIX path as Finder window title
 defaults write com.apple.finder _FXShowPosixPathInTitle -bool false
@@ -647,7 +647,7 @@ defaults write com.apple.finder _FXShowPosixPathInTitle -bool false
 defaults write com.apple.finder ShowTabView -bool true
 
 # Show Status Bar
-defaults write com.apple.finder ShowStatusBar -bool true
+defaults write com.apple.finder ShowStatusBar -bool false
 
 # When performing a search, search the current folder by default
 defaults write com.apple.finder FXDefaultSearchScope -string "SCcf"
@@ -697,6 +697,11 @@ defaults write com.apple.screencapture include-date -bool false
 # defaults write com.knollsoft.Rectangle minimumWindowWidth -float 0.1 # 10 %
 # defaults write com.knollsoft.Rectangle minimumWindowHeight -float 0.1 # 10 %
 
+## ----------------------------------------
+##  iTerm2
+## ----------------------------------------
+# Don’t display the annoying prompt when quitting iTerm
+defaults write com.googlecode.iterm2 PromptOnQuit -bool false
 
 
 ## ----------------------------------------

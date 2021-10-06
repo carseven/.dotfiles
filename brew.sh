@@ -22,7 +22,7 @@ brew tap homebrew/cask
 brew tap homebrew/cask-fonts
 
 # Cask
-brew install alfred
+# brew install alfred
 brew install raycast
 brew install google-backup-and-sync
 brew install iterm2
@@ -30,12 +30,12 @@ brew install spotify
 brew install brave-browser # Add notion web clipper, vimium and adguard
 brew install visual-studio-code
 brew install notion
-brew install rectangle
+# brew install rectangle # Window manager
 brew install alt-tab
 brew install the-unarchiver
 brew install dozer
-brew install mos
-brew install clipy
+brew install mos # Inverse scrolling
+# brew install clipy
 brew install dbeaver-community
 brew install karabiner-elements
 brew install tomighty # Pomodoro

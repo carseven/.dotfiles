@@ -6,6 +6,7 @@
     <!-- Preferences > Keyboard > Shortcuts -->
     * Change spotlight keyboard shorcut -> None
     * Change input sources keyboard shorcut -> None
+    * Import raycast settigs
     * Dock add permanent programs: iTerm 2, Visual studio code, Notion, Safari, Mail, Calendar
 * Safari and brave extensions:
     * Download Notion web clipper -> Brave and Safari

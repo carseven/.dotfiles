@@ -11,10 +11,6 @@ alias ...="cd ../.."
 # CODE
 alias c="code ."
 
-# CONDA
-alias cam="conda activate master"
-alias cdm="conda deactivate"
-
 # VENV
 alias venv="python3 -m venv .venv"
 alias avenv="deactivate &> /dev/null; source ./.venv/bin/activate"
@@ -72,3 +68,6 @@ function gpr() {
 
 # FZF
 alias dev="ls ~/dev | fzf | xargs -I_ code ~/dev/_"
+
+# Mac
+alias delds="find . -type f -name '.DS_Store' -ls -delete"
