@@ -3,22 +3,24 @@
     *  Python development
     * -------------------------------*/
     {
-        "key": "cmd+[IntlBackslash]",
+        // Hyper + b
+        // Ejecutar archivo de python
+        "key": "ctrl+shift+alt+cmd+b",
         "command": "python.execInTerminal",
         "args": {
             "openToSide": true
         }
     },
     {
-        // ctrl+cmd+ñ
+        // Hyper + j
         // Ejecutar el archivo entero en ipykernel
-        "key": "ctrl+cmd+[Semicolon]",
+        "key": "ctrl+shift+alt+cmd+j",
         "command": "jupyter.runFileInteractive"
     },
     {
-        // ctrl+cmd+-
+        // Hyper + k
         // Ejecutar el código seleccionado en ipykernel
-        "key": "ctrl+cmd+-",
+        "key": "ctrl+shift+alt+cmd+k",
         "command": "jupyter.execSelectionInteractive"
     },
     // Crear un venv
@@ -41,12 +43,18 @@
     {
         "key": "cmd+w",
         "command": "workbench.action.terminal.kill",
-        "when": "terminalFocus && terminalProcessSupported"
+        "when": "terminalFocus && terminalProcessSupported && !terminalEditorFocus"
     },
     {
         "key": "cmd+w",
         "command": "workbench.action.terminal.killInstance",
         "when": "terminalIsOpen && terminalTabsFocus || terminalProcessSupported && terminalTabsFocus"
+    },
+    // Borrar el terminal que esta en el editor
+    {
+        "key": "ctrl+w",
+        "command": "workbench.action.terminal.kill",
+        "when": "terminalEditorFocus"
     },
     // Panel position
     { // Toggle maximize terminal
@@ -58,7 +66,7 @@
         "command": "workbench.action.positionPanelRight"
     },
     { // Panel to the bottom
-        "key": "ctrl+shift+alt+cmd+b",
+        "key": "ctrl+shift+alt+cmd+e",
         "command": "workbench.action.positionPanelBottom"
     },
     { // Create new terminal in editor tab
@@ -107,7 +115,7 @@
     },
     {
         // Decrease tab size
-        // Hyper + d
+        // Hyper + u
         "key": "ctrl+shift+alt+cmd+u",
         "command": "workbench.action.decreaseViewSize"
     },
