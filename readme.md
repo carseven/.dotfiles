@@ -8,6 +8,7 @@
     * Change input sources keyboard shorcut -> None
     * Import raycast settings
     * Activate night shift
+    * Add Spanish - ISO and U.S. input source
     * Dock add permanent programs: iTerm 2, Visual studio code, Notion, Safari, Mail, Calendar
 * Safari and brave extensions:
     * Download Notion web clipper -> Brave and Safari
