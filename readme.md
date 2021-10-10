@@ -2,6 +2,13 @@
 * Open terminal
 * Execute 
     ```curl https://raw.githubusercontent.com/carseven/.dotfiles/main/setup.sh | sh```
+* Execute the following commands in order:
+    1. ```source ~/.dotfiles/brew.sh``` 
+    2. ```source ~/.dotfiles/vscode-extensions.sh```
+    3. ```source ~/.dotfiles/zsh-setup.sh```
+    4. ```source ~/.dotfiles/stow-symlinks.sh```
+    5. ```source ~/.dotfiles/python.sh```
+    6. ```source ~/.dotfiles/macos.sh```
 * Manual settings:
     <!-- Preferences > Keyboard > Shortcuts -->
     * Change spotlight keyboard shorcut -> None
