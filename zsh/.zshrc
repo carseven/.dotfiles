@@ -1,6 +1,3 @@
-# Conda enviroment
-source ~/.bash_profile
-
 # Homebrew
 export PATH="/opt/homebrew/bin:$PATH"
 
