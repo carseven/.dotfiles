@@ -28,6 +28,6 @@ read
 for dir in */ ; do
     if [ -d ${dir} ]; then
         echo "Stowing $dir..."
-        stow -nvSt ~ $dir
+        stow -vSt ~ $dir
     fi    
 done
