@@ -5,8 +5,11 @@ echo "Installing vscode extensions..."
 echo "CD ~/.dotfiles ..."
 cd ~/.dotfiles
 
-file=".vscode-extensions"
-lines=`cat $file`
-for plugin in ${lines}; do
-  code --install-extension ${plugin}
-done
+filename=".vscode-extensions"
+n=1
+while read line; do
+# reading each line
+echo "Installing. $n : $line"
+code --install-extension $line > /dev/null 2>&1
+n=$((n+1))
+done < $filename
