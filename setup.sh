@@ -22,16 +22,4 @@ git clone https://github.com/carseven/.dotfiles.git .dotfiles
 echo "Creating dev folder..."
 mkdir ~/dev
 
-source ~/.dotfiles/brew.sh
-wait
-source ~/.dotfiles/vscode-extensions.sh
-wait
-source ~/.dotfiles/zsh-setup.sh
-wait
-source ~/.dotfiles/stow-symlinks.sh
-wait
-soruce ~/.dotfiles/python.sh
-wait
-source ~/.dotfiles/macos.sh
-
 echo "Setup script has ended."
