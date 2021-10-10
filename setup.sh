@@ -17,7 +17,7 @@ xcode-select --install
 
 echo "Copying dotfiles from Github..."
 cd ~
-git clone git@github.com:bradp/dotfiles.git .dotfiles
+git clone https://github.com/carseven/.dotfiles.git .dotfiles
 
 source ~/.dotfiles/brew.sh
 source ~/.dotfiles/vscode-extensions.sh
