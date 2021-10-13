@@ -27,7 +27,7 @@ brew tap homebrew/cask-fonts
 # Cask
 # brew install alfred
 brew install raycast
-brew install google-backup-and-sync
+brew install google-drive
 brew install iterm2
 brew install spotify
 brew install brave-browser # Add notion web clipper, vimium and adguard
