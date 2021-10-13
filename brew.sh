@@ -7,6 +7,9 @@ if test ! $(which brew); then
   echo "Homebrew already installed"
 fi
 
+# Add brew command to path if brew command not found
+# export PATH="/opt/homebrew/bin:$PATH"
+
 # Update homebrew recipes
 echo "Updating homebrew..."
 brew update
