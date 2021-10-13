@@ -23,6 +23,7 @@ for d in */ ; do
     stow -nvSt ~ $d
 done
 echo "Verify symlinks"
+echo "If conflict because plain text manually set stow --adopt -vSt ~ dir"
 echo "Press [Enter] key after this..."
 read
 for dir in */ ; do
