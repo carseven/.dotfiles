@@ -20,3 +20,6 @@
 * Safari and brave extensions:
     * Download Notion web clipper -> Brave and Safari
     * Download Adguard for Safari -> From the appstore
+
+* Optional:
+    * Disable initial log when open terminal ```touch .hushlogin``` 
