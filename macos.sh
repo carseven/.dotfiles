@@ -382,6 +382,7 @@ defaults write com.apple.controlcenter "NSStatusItem Visible Sound" -bool false
 defaults write ~/Library/Preferences/ByHost/com.apple.controlcenter.plist Sound -int 24
 
 # Disable the sound effects on boot
+# If not working check this https://github.com/matteoacrossi/nobootsound/blob/master/install.sh
 sudo nvram SystemAudioVolume=" "
 
 # Play user interface sound effects: false
