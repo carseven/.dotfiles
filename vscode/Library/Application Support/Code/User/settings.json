@@ -4,7 +4,7 @@
     "workbench.startupEditor": "none",
     "workbench.sideBar.location": "right",
     "terminal.integrated.fontSize": 14,
-    "terminal.integrated.fontFamily": "Jetbrains Mono",
+    "terminal.integrated.fontFamily": "Hack Nerd Font Mono",
     "terminal.integrated.fontWeight": "400",
     "terminal.integrated.cursorStyle": "line",
     "terminal.integrated.defaultLocation": "editor", // Open terminal as tab
@@ -27,10 +27,8 @@
     },
     "python.analysis.typeCheckingMode": "basic", // Default by pylance is basic
     "python.formatting.provider": "autopep8",
-    "python.formatting.autopep8Path": "~/miniforge3/envs/master/bin/autopep8",
     "python.linting.pylintEnabled": false,
     "python.linting.flake8Enabled": true,
-    "python.linting.flake8Path": "~/miniforge3/envs/master/bin/flake8",
     "python.linting.enabled": true,
     "python.languageServer": "Pylance", // default vscode language server
     "files.exclude": {
@@ -49,5 +47,13 @@
     "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
     "workbench.iconTheme": "vscode-icons",
     "workbench.colorTheme": "One Dark Pro",
+    "terminal.integrated.inheritEnv": false,
     "workbench.activityBar.visible": false,
+    "editor.inlineSuggest.enabled": true,
+    "github.copilot.enable": {
+        "*": false,
+        "yaml": false,
+        "plaintext": false,
+        "markdown": false
+    },
 }

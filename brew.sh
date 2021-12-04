@@ -25,7 +25,6 @@ brew tap homebrew/cask
 brew tap homebrew/cask-fonts
 
 # Cask
-# brew install alfred
 brew install raycast
 brew install google-drive
 brew install iterm2
@@ -39,7 +38,7 @@ brew install the-unarchiver
 brew install dozer
 # brew install vanilla # Hide status bar icons
 brew install mos # Inverse scrolling
-# brew install clipy
+# brew install clipy # Clipboard manager
 brew install dbeaver-community
 brew install karabiner-elements
 brew install tomighty # Pomodoro
@@ -54,17 +53,20 @@ brew install git
 brew install zsh
 brew install stow
 brew install fzf
-brew install tree
+# brew install tree # Con lsd --tree tenemos esta funcionalidad ya
 brew install wget
 brew install htop
 brew install neofecth
 brew install trash
+brew install lsd # Para visualizar los iconos, es necesario configurar una Nerd Font
+brew install bat
 
 # Fonts
 brew install font-cascadia-code
 brew install font-jetbrains-mono
 brew install font-fira-code
 brew install font-victor-mono
+brew install font-hack-nerd-font # Fuente del terminal, necesaria para configurar lsd
 
 # qmk
 # qmk compile -kb planck/rev6 -km carseven
