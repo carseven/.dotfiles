@@ -7,6 +7,15 @@ alias cdot="code ~/.dotfiles"
 
 # NAVEGACION
 alias ...="cd ../.."
+alias ls="lsd --group-dirs=first"
+alias ll="lsd -lh --group-dirs=first"
+alias lsa="lsd -a --group-dirs=first"
+alias lla="lsd -lha --group-dirs=first"
+alias tree="lsd -a --tree"
+
+# CAT/BAT
+alias cat="bat"
+alias catnl="bat --paging=never"
 
 # CODE
 alias c="code ."
@@ -28,7 +37,6 @@ alias pyinstall="pyenv install --list | fzf | xargs -I py-version pyenv install 
 alias myip="curl http://ipecho.net/plain; echo"
 alias usage="du -h -d1"
 alias runport="lsof -i"
-alias dirs="dirs -v | head -10"
 alias delds="sudo find / -name .DS_Store -delete; killall Finder"
 
 # GIT
@@ -46,13 +54,6 @@ function gbranch { git branch $1}
 function gcreate { git checkout -b $1}
 alias gcheckout="git branch | fzf | xargs -I_ git checkout _"
 alias gbranchdel="git branch | fzf | xargs -I_ git branch -d _"
-# alias gremotedel="git branch -r | fzf | xargs -I_ git push origin --delete _"
-# function gremotedel() {
-#     remote_branch=${git branch -r | fzf};
-#     clean_remote_branch=${remote_branch#*/}; # origin/feature/branch -> feature/branch
-#     git push origin --delete $clean_remote_branch;
-# }
-
 # Github PR request
 function gpr() {
     # origin  https://github.com/carseven/.dotfiles.git (fetch) -> https://github.com/carseven/.dotfiles.git
@@ -67,7 +68,41 @@ function gpr() {
 }
 
 # FZF
+# Open in vscode dev repositories
 alias dev="ls ~/dev | fzf | xargs -I_ code ~/dev/_"
 
-# Mac
-alias delds="find . -type f -name '.DS_Store' -ls -delete"
+# Preview files with bat
+function fzf-lovely(){
+ 
+        if [ "$1" = "h" ]; then
+                fzf -m --reverse --preview-window down:20 --preview '[[ $(file --mime {}) =~ binary ]] &&
+                        echo {} is a binary file ||
+                         (bat --style=numbers --color=always {} ||
+                          highlight -O ansi -l {} ||
+                          coderay {} ||
+                          rougify {} ||
+                          cat {}) 2> /dev/null | head -500'
+ 
+        else
+                fzf -m --preview '[[ $(file --mime {}) =~ binary ]] &&
+                                 echo {} is a binary file ||
+                                 (bat --style=numbers --color=always {} ||
+                                  highlight -O ansi -l {} ||
+                                  coderay {} ||
+                                  rougify {} ||
+                                  cat {}) 2> /dev/null | head -500'
+        fi
+}
+
+# Set man colors
+function man() {
+    env \
+    LESS_TERMCAP_mb=$'\e[01;31m' \
+    LESS_TERMCAP_md=$'\e[01;31m' \
+    LESS_TERMCAP_me=$'\e[0m' \
+    LESS_TERMCAP_se=$'\e[0m' \
+    LESS_TERMCAP_so=$'\e[01;44;33m' \
+    LESS_TERMCAP_ue=$'\e[0m' \
+    LESS_TERMCAP_us=$'\e[01;32m' \
+    man "$@"
+}

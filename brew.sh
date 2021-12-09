@@ -32,18 +32,19 @@ brew install spotify
 brew install brave-browser # Add notion web clipper, vimium and adguard
 brew install visual-studio-code
 brew install notion
-# brew install rectangle # Window manager
 brew install alt-tab
 brew install the-unarchiver
 brew install dozer
-# brew install vanilla # Hide status bar icons
 brew install mos # Inverse scrolling
-# brew install clipy # Clipboard manager
 brew install dbeaver-community
 brew install karabiner-elements
 brew install tomighty # Pomodoro
+# brew install vanilla # Hide status bar icons
+# brew install clipy # Clipboard manager
+# brew install rectangle # Window manager
 # brew install divvy # window managers
 # brew install kap # screen recorder
+# brew install amethyst # tiling window manager, another similar yabai
 
 
 # dev
@@ -53,13 +54,15 @@ brew install git
 brew install zsh
 brew install stow
 brew install fzf
-# brew install tree # Con lsd --tree tenemos esta funcionalidad ya
+$(brew --prefix)/opt/fzf/install # Fzf key bindings and fuzzy completion installation
 brew install wget
 brew install htop
 brew install neofecth
 brew install trash
 brew install lsd # Para visualizar los iconos, es necesario configurar una Nerd Font
 brew install bat
+brew install ranger
+# brew install tree # Con lsd --tree tenemos esta funcionalidad ya
 
 # Fonts
 brew install font-cascadia-code

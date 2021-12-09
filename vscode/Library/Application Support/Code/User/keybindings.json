@@ -78,6 +78,14 @@
     *  Editor Groups
     * -------------------------------*/
     {
+        "key": "ctrl+tab",
+        "command": "workbench.action.nextEditor"
+    },
+    {
+        "key": "ctrl+shift+tab",
+        "command": "workbench.action.previousEditor"
+    },
+    {
         // Move tab to next group (to right)
         // Hyper + ->
         "key": "ctrl+shift+alt+cmd+left",
