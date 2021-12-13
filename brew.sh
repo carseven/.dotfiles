@@ -62,6 +62,7 @@ brew install trash
 brew install lsd # Para visualizar los iconos, es necesario configurar una Nerd Font
 brew install bat
 brew install ranger
+brew install p7zip
 # brew install tree # Con lsd --tree tenemos esta funcionalidad ya
 
 # Fonts
