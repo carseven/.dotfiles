@@ -26,6 +26,7 @@ brew tap homebrew/cask-fonts
 
 # Cask
 brew install raycast
+brew install fig
 brew install google-drive
 brew install iterm2
 brew install spotify
