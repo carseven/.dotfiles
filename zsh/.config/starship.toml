@@ -1,0 +1,32 @@
+# Inserts a blank line between shell prompts
+add_newline = false
+
+[git_metrics]
+disabled=true
+
+[git_status]
+conflicted = "⚔️"
+ahead = "⬆️ ${count}"
+behind = "⬇️ ${count}"
+untracked = "‍🤷${count}"
+stashed = "📦"
+modified = "📝${count}"
+staged = '⭐️${count}'
+renamed = "👅"
+deleted = "🗑 ${count}"
+
+[time]
+time_format = "%T"
+format = "🕙 $time($style) "
+style = "bright-white"
+disabled = false
+
+[character]
+error_symbol = "[✖](bold red) "
+
+[git_state]
+format = '[\($state( $progress_current of $progress_total)\)]($style) '
+
+[hostname]
+ssh_only = true
+format =  "on [$hostname](bold red) "
