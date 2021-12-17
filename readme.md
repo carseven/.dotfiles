@@ -1,3 +1,19 @@
+    
+<h2 style="
+    text-align: center;
+    font-weight:200;
+    font-size: 28px;
+    text-transform: uppercase;
+">The perfect dev setup</h2>
+<p align="center">
+    <img src="terminal.png"/>
+</p>
+
+
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![LinkedIn](https://img.shields.io/badge/Follow-linkedin-0077b5.svg?style=flat-square)](https://www.linkedin.com/in/carles-serra-vendrell/)
+
 # Installation guide
 * Open terminal
 * Execute 
