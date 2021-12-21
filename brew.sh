@@ -43,10 +43,11 @@ brew install tomighty # Pomodoro
 # brew install vanilla # Hide status bar icons
 # brew install clipy # Clipboard manager
 # brew install rectangle # Window manager
-# brew install divvy # window managers
 # brew install kap # screen recorder
 # brew install amethyst # tiling window manager, another similar yabai
 
+# App store command line interface
+brew install mas
 
 # dev
 brew install git
@@ -65,7 +66,6 @@ brew install ranger
 brew install p7zip
 brew install fzf
 $(brew --prefix)/opt/fzf/install # Fzf key bindings and fuzzy completion installation
-# brew install tree # Con lsd --tree tenemos esta funcionalidad ya
 
 # Fonts
 brew install font-cascadia-code

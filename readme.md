@@ -25,6 +25,7 @@
     4. ```source ~/.dotfiles/stow-symlinks.sh```
     5. ```source ~/.dotfiles/python.sh```
     6. ```source ~/.dotfiles/macos.sh```
+    7. ```source ~/.dotfiles/mas.sh```
 * Manual settings:
     <!-- Preferences > Keyboard > Shortcuts -->
     * Change spotlight keyboard shorcut -> None
@@ -33,9 +34,6 @@
     * Activate night shift
     * Add Spanish - ISO and U.S. input source
     * Dock add permanent programs: iTerm 2, Visual studio code, Notion, Safari, Mail, Calendar
-* Safari and brave extensions:
-    * Download Notion web clipper -> Brave and Safari
-    * Download Adguard for Safari -> From the appstore
 
 * Optional:
     * Disable initial log when open terminal ```touch .hushlogin``` 
