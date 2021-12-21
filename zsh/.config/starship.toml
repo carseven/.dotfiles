@@ -1,5 +1,24 @@
+# Starship documentation
+# https://starship.rs/config/
+
 # Inserts a blank line between shell prompts
 add_newline = false
+
+[battery]
+full_symbol = "🔋"
+charging_symbol = "🔌"
+discharging_symbol = "⚡"
+
+[[battery.display]]
+threshold = 20
+style = "bold red"
+
+[package]
+disabled=true
+
+[cmd_duration]
+min_time = 5_000  # Show command duration over 5,000 milliseconds (=5 sec)
+format = " took [$duration]($style)"
 
 [git_metrics]
 disabled=true
