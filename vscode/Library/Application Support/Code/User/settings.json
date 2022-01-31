@@ -46,7 +46,6 @@
     "editor.suggestSelection": "first", // Automatically added by intelicode extension when installed.
     "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
     "workbench.iconTheme": "vscode-icons",
-    "workbench.colorTheme": "One Dark Pro Darker",
     "terminal.integrated.inheritEnv": false,
     "workbench.activityBar.visible": false,
     "editor.inlineSuggest.enabled": true,
@@ -56,4 +55,11 @@
         "plaintext": false,
         "markdown": false
     },
+    "terminal.integrated.enablePersistentSessions": false,
+    "editor.accessibilitySupport": "off",
+    "terminal.integrated.env.osx": {
+        "FIG_NEW_SESSION": "1"
+    },
+    "workbench.tree.renderIndentGuides": "always",
+    "workbench.colorTheme": "One Dark Pro",
 }
