@@ -4,14 +4,14 @@
 # Inserts a blank line between shell prompts
 add_newline = false
 
-[battery]
-full_symbol = "🔋"
-charging_symbol = "🔌"
-discharging_symbol = "⚡"
+# [battery]
+# full_symbol = "🔋"
+# charging_symbol = "🔌"
+# discharging_symbol = "⚡"
 
-[[battery.display]]
-threshold = 20
-style = "bold red"
+# [[battery.display]]
+# threshold = 20
+# style = "bold red"
 
 [package]
 disabled=true

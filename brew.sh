@@ -30,7 +30,7 @@ brew install fig # Terminal intellisense and auto-completion
 brew install google-drive
 brew install iterm2
 brew install spotify
-brew install brave-browser # Add notion web clipper, vimium and adguard
+brew install brave-browser # Launch mas script or add notion web clipper, vimium and adguard
 brew install visual-studio-code
 brew install notion
 brew install alt-tab
