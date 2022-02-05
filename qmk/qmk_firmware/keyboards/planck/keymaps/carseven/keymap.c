@@ -16,6 +16,7 @@ enum planck_keycodes {
 // Mod keys
 #define SPCMOV LT(_MOV, KC_SPC) // Hold to move to layer MOV. Un tap es el space.
 #define TABMEH MEH_T(KC_TAB) // Hold=MEH and Tap=TAB
+#define DEL_MEH MEH_T(KC_DEL) // Hold=MEH and tap=Del
 #define RAISE LT(_RAISE, KC_END) // Hold to move to layer Raise. Un tap es el end.
 #define LOWER LT(_LOWER, KC_HOME) // Hold to move to layer lower. Un tap es el home.
 #define HYP_ESC HYPR_T(KC_ESC) // Hold=Hyper and Tap=ESC
@@ -49,7 +50,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   TABMEH,    KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,    KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_BSPC,
   HYP_ESC,   KC_A,    KC_S,    KC_D,    KC_F,    KC_G,    KC_H,    KC_J,    KC_K,    KC_L,    ES_SCLN, ES_QUOT,
   SHIFT_CAPS,KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_N,    KC_M,    ES_COMM, ES_DOT,  ES_SLSH, KC_ENT ,
-  KC_DEL,    KC_LCTL, KC_LALT, KC_LGUI, LOWER,   SPCMOV,  SPCMOV,  RAISE,   KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT
+  DEL_MEH,    KC_LCTL, KC_LALT, KC_LGUI, LOWER,   SPCMOV,  SPCMOV,  RAISE,   KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT
 ),
 
 /* Lower layer: number row replacement & F keys
