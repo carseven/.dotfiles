@@ -567,9 +567,9 @@ defaults write .GlobalPreferences NSAutomaticQuoteSubstitutionEnabled -bool fals
 
 # Show Input menu in menu bar
 # - Checked
-defaults write com.apple.TextInputMenu visible -bool true
+# defaults write com.apple.TextInputMenu visible -bool true
 # - Unchecked
-# defaults write com.apple.TextInputMenu visible -bool false
+defaults write com.apple.TextInputMenu visible -bool false
 
 # Disable macOS text expansion
 defaults write -g WebAutomaticTextReplacementEnabled -bool false
