@@ -5,7 +5,7 @@
     {
         // Hyper + b
         // Ejecutar archivo de python
-        "key": "ctrl+shift+alt+cmd+b",
+        "key": "ctrl+shift+alt+b",
         "command": "python.execInTerminal",
         "args": {
             "openToSide": true
@@ -14,18 +14,18 @@
     {
         // Hyper + j
         // Ejecutar el archivo entero en ipykernel
-        "key": "ctrl+shift+alt+cmd+j",
+        "key": "ctrl+shift+alt+j",
         "command": "jupyter.runFileInteractive"
     },
     {
         // Hyper + k
         // Ejecutar el código seleccionado en ipykernel
-        "key": "ctrl+shift+alt+cmd+k",
+        "key": "ctrl+shift+alt+k",
         "command": "jupyter.execSelectionInteractive"
     },
     // Crear un venv
     {
-        "key": "ctrl+shift+alt+cmd+v",
+        "key": "ctrl+shift+alt+v",
         "command": "workbench.action.terminal.sendSequence",
         "args": {
             "text": "python3 -m venv .venv\u000D"
@@ -58,19 +58,19 @@
     },
     // Panel position
     { // Toggle maximize terminal
-        "key": "ctrl+shift+alt+cmd+m",
+        "key": "ctrl+shift+alt+m",
         "command": "workbench.action.toggleMaximizedPanel",
     },
     { // Panel to the right
-        "key": "ctrl+shift+alt+cmd+r",
+        "key": "ctrl+shift+alt+r",
         "command": "workbench.action.positionPanelRight"
     },
     { // Panel to the bottom
-        "key": "ctrl+shift+alt+cmd+e",
+        "key": "ctrl+shift+alt+e",
         "command": "workbench.action.positionPanelBottom"
     },
     { // Create new terminal in editor tab
-        "key": "ctrl+shift+alt+cmd+t",
+        "key": "ctrl+shift+alt+t",
         "command": "workbench.action.terminal.new",
         "when": "terminalProcessSupported"
     },
@@ -88,49 +88,49 @@
     {
         // Move tab to next group (to right)
         // Hyper + ->
-        "key": "ctrl+shift+alt+cmd+left",
+        "key": "ctrl+shift+alt+left",
         "command": "workbench.action.moveEditorToPreviousGroup"
     },
     {
         // Move tab to previous group (to right)
         // Hyper + <-
-        "key": "ctrl+shift+alt+cmd+right",
+        "key": "ctrl+shift+alt+right",
         "command": "workbench.action.moveEditorToNextGroup"
     },
     {
         // Move tab to above group (up)
         // Hyper + up arroy key
-        "key": "ctrl+shift+alt+cmd+up",
+        "key": "ctrl+shift+alt+up",
         "command": "workbench.action.moveEditorToAboveGroup"
     },
     {
         // Move tab to below group (down)
         // Hyper + down arroy key
-        "key": "ctrl+shift+alt+cmd+down",
+        "key": "ctrl+shift+alt+down",
         "command": "workbench.action.moveEditorToBelowGroup"
     },
     {
         // Join all groups
         // Hyper + Enter
-        "key": "ctrl+shift+alt+cmd+enter",
+        "key": "ctrl+shift+alt+enter",
         "command": "workbench.action.joinAllGroups"
     },
     {
         // Increase tab size
         // Hyper + i
-        "key": "ctrl+shift+alt+cmd+i",
+        "key": "ctrl+shift+alt+i",
         "command": "workbench.action.increaseViewSize"
     },
     {
         // Decrease tab size
         // Hyper + u
-        "key": "ctrl+shift+alt+cmd+u",
+        "key": "ctrl+shift+alt+u",
         "command": "workbench.action.decreaseViewSize"
     },
     {
         // Reset tab size
         // Hyper + o
-        "key": "ctrl+shift+alt+cmd+o",
+        "key": "ctrl+shift+alt+o",
         "command": "workbench.action.evenEditorWidths"
     },
     // Moverse entre tabs (de todos los grupos)
@@ -154,12 +154,12 @@
     },
     // Open gitlens repository view
     {
-        "key": "ctrl+shift+alt+cmd+g",
+        "key": "ctrl+shift+alt+g",
         "command": "gitlens.views.repositories.focus"
     },
     // Show/hide activity bar
     {
-        "key": "ctrl+shift+alt+cmd+a",
+        "key": "ctrl+shift+alt+a",
         "command": "workbench.action.toggleActivityBarVisibility"
     }
 ]
