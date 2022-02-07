@@ -7,6 +7,7 @@ enum planck_layers {
   _RAISE,
   _MOV,
   _ADJUST,
+  _MAC
 };
 
 enum planck_keycodes {
@@ -16,17 +17,20 @@ enum planck_keycodes {
 // Mod keys
 #define SPCMOV LT(_MOV, KC_SPC) // Hold to move to layer MOV. Un tap es el space.
 #define TABMEH MEH_T(KC_TAB) // Hold=MEH and Tap=TAB
-#define DEL_MEH MEH_T(KC_DEL) // Hold=MEH and tap=Del
+#define DEL_MAC LT(_MAC, KC_DEL) // Hold=MEH and tap=Del
 #define RAISE LT(_RAISE, KC_END) // Hold to move to layer Raise. Un tap es el end.
 #define LOWER LT(_LOWER, KC_HOME) // Hold to move to layer lower. Un tap es el home.
 #define HYP_ESC HYPR_T(KC_ESC) // Hold=Hyper and Tap=ESC
 #define SHIFT_CAPS LSFT_T(KC_CAPSLOCK) // Hold=Shift and tap=Toggle CAPLOCKS
+#define SHIFT_ENTER SFT_T(KC_ENT) // Hold=Shift and tap Enter
+
+// macos
 
 // Navegador
-#define KC_BACK LGUI(KC_LEFT) // Browser Back
+#define KC_BACK LGUI(KC_LEFT) // Browser Backward
 #define KC_FORW LGUI(KC_RIGHT) // Browser Forward
-#define KC_PTAB LCTL(LSFT(KC_TAB)) // Browser Forward
-#define KC_NTAB RCTL(KC_TAB) // Browser Forward
+#define KC_PTAB LCTL(LSFT(KC_TAB)) // Browser tab backward
+#define KC_NTAB RCTL(KC_TAB) // Browser tab Forward
 
 // Capturas de pantalla
 #define KC_CAPW LGUI(LSFT(KC_2)) // Capture whole screen
@@ -49,8 +53,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [_QWERTY] = LAYOUT_planck_grid(
   TABMEH,    KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,    KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_BSPC,
   HYP_ESC,   KC_A,    KC_S,    KC_D,    KC_F,    KC_G,    KC_H,    KC_J,    KC_K,    KC_L,    ES_SCLN, ES_QUOT,
-  SHIFT_CAPS,KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_N,    KC_M,    ES_COMM, ES_DOT,  ES_SLSH, KC_ENT ,
-  DEL_MEH,    KC_LCTL, KC_LALT, KC_LGUI, LOWER,   SPCMOV,  SPCMOV,  RAISE,   KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT
+  SHIFT_CAPS,KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_N,    KC_M,    ES_COMM, ES_DOT,  ES_SLSH, SHIFT_ENTER,
+  DEL_MAC,   KC_LCTL, KC_LALT, KC_LGUI, LOWER,   SPCMOV,  SPCMOV,  RAISE,   KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT
 ),
 
 /* Lower layer: number row replacement & F keys
@@ -89,6 +93,24 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_DEL ,  _______,  _______,  _______,  _______,  _______,   _______,  _______,  _______,  _______,  _______,  _______
 ),
 
+/* Mac
+ * ,-----------------------------------------------------------------------------------------------------------------------.
+ * |         |         |         |         |         |         |         |         |         |         |         |         |
+ * |---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------|
+ * |         |         |         |         |         |         |         |         |         |         |         |         |
+ * |---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------|
+ * |         |         |         |         |         |         |         |         |         |         |         |         |
+ * |---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------|
+ * |   ***   |         |         |         |         |         |         |         |         |         |         |         |
+ * `-----------------------------------------------------------------------------------------------------------------------'
+ */
+[_MAC] = LAYOUT_planck_grid(
+    _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,
+    _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,
+    _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  KC_GRV,   KC_TILD,  _______,  _______,
+    _______ , KC_NUHS,  KC_HASH,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______
+),
+
 /* MOV
 * ,-----------------------------------------------------------------------------------.
 * |      |  M1  | MOUSU|  M2  |sc UP |      |      | Home | PgDW | PgUp |  End | Bksp |
@@ -110,9 +132,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 /* Adjust (Lower + Raise)
 * ,-----------------------------------------------------------------------------------.
-* | Reset|      |      |      |      |      |      | Vol- | Mute | Vol+ |Screen|      |
+* | Reset|      |      |      |      |      |      | Vol- | Mute | Vol+ |Screen|togAUD|
 * |------+------+------+------+------+-------------+------+------+------+------+------|
-* |      |      |      | Wake | Sleep|      |      | <<   | Play |  >>  |Screen|      |
+* |      |      |      | Wake | Sleep|      |      | <<   | Play |  >>  |Screen|togRGB|
 * |------+------+------+------+------+------|------+------+------+------+------+------|
 * |      |      |      |      |      |      |      | Bri- |      | Bri+ |Screen|      |
 * |------+------+------+------+------+------+------+------+------+------+------+------|
@@ -120,8 +142,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 * `-----------------------------------------------------------------------------------'
 */
 [_ADJUST] = LAYOUT_planck_grid(
-  RESET   , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX, XXXXXXX , KC_VOLD, KC_MUTE, KC_VOLU, KC_CAPP, XXXXXXX,
-  XXXXXXX , XXXXXXX , XXXXXXX , KC_WAKE , KC_SLEP , XXXXXXX, XXXXXXX , KC_MRWD, KC_MPLY, KC_MFFD, KC_CAPA, XXXXXXX,
+  RESET   , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX, XXXXXXX , KC_VOLD, KC_MUTE, KC_VOLU, KC_CAPP, AU_TOG,
+  XXXXXXX , XXXXXXX , XXXXXXX , KC_WAKE , KC_SLEP , XXXXXXX, XXXXXXX , KC_MRWD, KC_MPLY, KC_MFFD, KC_CAPA, RGB_TOG,
   XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX, XXXXXXX , KC_BRID, XXXXXXX, KC_BRIU, KC_CAPW, XXXXXXX,
   KC_PWR  , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX, XXXXXXX , XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX
 )

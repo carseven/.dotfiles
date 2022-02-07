@@ -1,11 +1,17 @@
 #pragma once
-#ifdef AUDIO_ENABLE
-    #define STARTUP_SONG SONG(PLANCK_SOUND)
-    // #define STARTUP_SONG SONG(NO_SOUND)
+#include "audio_songs.h"
 
-    #define DEFAULT_LAYER_SONGS { SONG(QWERTY_SOUND) }
+// Config initial and final sound
+#ifdef AUDIO_ENABLE
+    #define STARTUP_SONG SONG(STILL_DRE_CUSTOM)
+    #define GOODBYE_SONG SONG(STILL_DRE_CUSTOM) // Reset key
+    #define MUSIC_OFF_SONG SONG(NO_SOUND)
+    #define MUSIC_ON_SONG SONG(ZELDA_PUZZLE_CUSTOM)
 #endif
 
 // Configurar modo constante de mouse keys
-// #define MK_3_SPEED
-// #define MK_MOMENTARY_ACCEL
+#define MOUSEKEY_INTERVAL 16
+#define MOUSEKEY_DELAY 0
+#define MOUSEKEY_TIME_TO_MAX 60
+#define MOUSEKEY_MAX_SPEED 7
+#define MOUSEKEY_WHEEL_DELAY 0
