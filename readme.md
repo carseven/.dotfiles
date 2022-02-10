@@ -32,8 +32,12 @@
     * Change input sources keyboard shorcut -> None
     * Import raycast settings
     * Activate night shift
-    * Add Spanish - ISO and U.S. input source
     * Dock add permanent programs: iTerm 2, Visual studio code, Notion, Safari, Mail, Calendar
 
 * Optional:
     * Disable initial log when open terminal ```touch .hushlogin``` 
+
+* TODO:
+    * Organize better the repository, stow.sh ignore directories.
+    * Brewfile
+    * Setup.sh: Launch all commands with just one execution and without human intervention.
