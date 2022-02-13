@@ -36,7 +36,7 @@ enum planck_keycodes {
 #define KC_CAPW LGUI(LSFT(KC_2)) // Capture whole screen
 #define KC_CAPA LGUI(LSFT(KC_3)) // Capture active window
 #define KC_CAPP LGUI(LSFT(KC_4)) // Capture portion of screen
- 
+
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 /* Qwerty
@@ -71,7 +71,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [_LOWER] = LAYOUT_planck_grid(
     _______,  KC_F1,     KC_F2,     KC_F3,    KC_F4,    KC_F5,    KC_F6,    KC_F7,   KC_F8,    KC_F9,    KC_F10, KC_BSPC,
     _______,  KC_1,       KC_2,      KC_3,     KC_4,     KC_5,     KC_6,     KC_7,     KC_8,     KC_9,     KC_0,  _______,
-    _______,  ES_MINS,  ES_PLUS,  ES_ASTR,   ES_EQL,  XXXXXXX,  ES_NTIL,  XXXXXXX,  ES_ACUT,  ES_IEXL,  ES_IQUE,  _______,
+    _______,  ES_MINS,  ES_PLUS,  ES_ASTR,   ES_EQL,  XXXXXXX,  ES_NTIL,  XXXXXXX,  ES_ACUT,  _______,  ES_IQUE,  _______,
     _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  KC_PTAB,  KC_BACK,  KC_FORW,  KC_NTAB
 ),
 
@@ -108,7 +108,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,
     _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,
     _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  KC_GRV,   KC_TILD,  _______,  _______,
-    _______ , KC_NUHS,  KC_HASH,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______
+    _______ , _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______
 ),
 
 /* MOV
