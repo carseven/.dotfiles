@@ -26,12 +26,7 @@ alias avenv="deactivate &> /dev/null; source ./.venv/bin/activate"
 alias dvenv="deactivate &> /dev/null"
 alias fvenv="pip3 freeze"
 alias rvenv="pip3 freeze > requirement.txt"
-alias ivenv="pip install -r requirements.txt"
-
-# PYENV
-alias pyv="python --version && which python"
-alias pyglobal="pyenv versions | grep --invert-match '\*' | fzf | xargs -I py-version pyenv global py-version; exec $SHELL;"
-alias pyinstall="pyenv install --list | fzf | xargs -I py-version pyenv install py-version;"
+alias ivenv="pip3 install -r requirements.txt"
 
 # UTILIDADES SISTEMA
 alias myip="curl http://ipecho.net/plain; echo"
@@ -54,18 +49,6 @@ function gbranch { git branch $1}
 function gcreate { git checkout -b $1}
 alias gcheckout="git branch | fzf | xargs -I_ git checkout _"
 alias gbranchdel="git branch | fzf | xargs -I_ git branch -d _"
-# Github PR request
-function gpr() {
-    # origin  https://github.com/carseven/.dotfiles.git (fetch) -> https://github.com/carseven/.dotfiles.git
-    github_url=$(git remote -v | awk '/fetch/{print $2}' | sed -Ee 's#(git@|git:://)#http://#' -e 's@com:@com/@' -e 's%\.git$%%');
-    branch_name=$(git symbolic-ref HEAD 2>/dev/null);
-    # orgin/branch_name -> branch_name
-    clean_remote_branch=${branch_name#refs/heads/*};
-    pr_url="${github_url}/compare/main...${clean_remote_branch}";
-    echo "Genarate PR: ${clean_remote_branch} -> main";
-    echo "URL: ${pr_url}";
-    open "${pr_url}";
-}
 
 # FZF
 # Open in vscode dev repositories

@@ -11,16 +11,8 @@ export PATH="/opt/homebrew/bin:$PATH"
 source $(brew --prefix git)
 source $(brew --prefix zsh)
 
-# pyenv and pyenv-virtualenv
-if command -v pyenv &>/dev/null; then
-    eval "$(pyenv init -)"
-fi
-if command -v pyenv-virtualenv &>/dev/null; then
-    eval "$(pyenv virtualenv-init -)"
-fi
-
-# poetry
-export PATH="$HOME/.poetry/bin:$PATH"
+# Nvm
+source $(brew --prefix nvm)/nvm.sh
 
 # Oh my zsh
 # Path to your oh-my-zsh installation.
@@ -54,18 +46,3 @@ source ~/.aliases
 # Please make sure this block is at the end of this file.
 [ -s ~/.fig/fig.sh ] && source ~/.fig/fig.sh
 #### END FIG ENV VARIABLES ####
-
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/opt/homebrew/Caskroom/miniforge/base/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/opt/homebrew/Caskroom/miniforge/base/etc/profile.d/conda.sh" ]; then
-        . "/opt/homebrew/Caskroom/miniforge/base/etc/profile.d/conda.sh"
-    else
-        export PATH="/opt/homebrew/Caskroom/miniforge/base/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
