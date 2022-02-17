@@ -1,65 +1,27 @@
 {
-    "window.title": "${dirty}${activeEditorMedium}${separator}${rootName}",
-    "workbench.editor.tabSizing": "shrink",
-    "workbench.startupEditor": "none",
-    "workbench.sideBar.location": "right",
-    "terminal.integrated.fontSize": 14,
-    "terminal.integrated.fontFamily": "Hack Nerd Font Mono",
-    "terminal.integrated.fontWeight": "400",
-    "terminal.integrated.cursorStyle": "line",
-    "terminal.integrated.defaultLocation": "editor", // Open terminal as tab
-    "terminal.integrated.defaultProfile.osx": "zsh",
-    "terminal.external.osxExec": "iTerm 2.app",
-    "editor.minimap.enabled": false,
-    "editor.bracketPairColorization.enabled": true,
-    "editor.scrollbar.vertical": "auto",
-    "editor.formatOnSaveMode": "file",
-    "editor.formatOnSave": true,
-    "editor.formatOnPaste": true,
-    "editor.fontFamily": "Cascadia Code",
-    "editor.fontSize": 14,
-    "editor.fontLigatures": true,
-    "[python]": {
-        "editor.rulers": [
-            80
-        ],
-        "editor.tabSize": 4
-    },
-    "python.analysis.typeCheckingMode": "basic", // Default by pylance is basic
-    "python.formatting.provider": "autopep8",
-    "python.linting.pylintEnabled": false,
-    "python.linting.flake8Enabled": true,
-    "python.linting.enabled": true,
-    "python.languageServer": "Pylance", // default vscode language server
-    "files.exclude": {
-        "**/.git": true,
-        "**/.svn": true,
-        "**/.hg": true,
-        "**/CVS": true,
-        "**/.DS_Store": true,
-        "**/*.pyc": {
-            "when": "$(basename).py"
-        },
-        "**/__pycache__": true
-    },
-    "breadcrumbs.enabled": false,
-    "editor.suggestSelection": "first", // Automatically added by intelicode extension when installed.
-    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
-    "workbench.iconTheme": "vscode-icons",
-    "terminal.integrated.inheritEnv": false,
-    "workbench.activityBar.visible": false,
-    "editor.inlineSuggest.enabled": true,
-    "github.copilot.enable": {
-        "*": false,
-        "yaml": false,
-        "plaintext": false,
-        "markdown": false
-    },
-    "terminal.integrated.enablePersistentSessions": false,
-    "editor.accessibilitySupport": "off",
-    "terminal.integrated.env.osx": {
-        "FIG_NEW_SESSION": "1"
-    },
-    "workbench.tree.renderIndentGuides": "always",
-    "workbench.colorTheme": "One Dark Pro",
+  "window.title": "${dirty}${activeEditorMedium}${separator}${rootName}",
+  "workbench.colorTheme": "One Dark Pro",
+  "oneDarkPro.italic": true,
+  "workbench.activityBar.visible": false,
+  "workbench.editor.tabSizing": "shrink",
+  "workbench.startupEditor": "newUntitledFile",
+  "workbench.sideBar.location": "right",
+  "terminal.integrated.fontSize": 14,
+  "terminal.integrated.fontFamily": "Hack Nerd Font Mono",
+  "terminal.integrated.fontWeight": "400",
+  "terminal.integrated.cursorStyle": "line",
+  "terminal.integrated.defaultLocation": "editor", // Open terminal as tab
+  "terminal.integrated.defaultProfile.osx": "zsh",
+  "terminal.external.osxExec": "iTerm 2.app",
+  "editor.inlineSuggest.enabled": true,
+  "editor.accessibilitySupport": "off",
+  "editor.minimap.enabled": false,
+  "editor.bracketPairColorization.enabled": true,
+  "editor.formatOnSaveMode": "file",
+  "editor.formatOnSave": true,
+  "editor.formatOnPaste": true,
+  "editor.fontFamily": "Cascadia Code",
+  "editor.fontSize": 14,
+  "editor.fontLigatures": true,
+  "breadcrumbs.enabled": false  
 }
