@@ -23,5 +23,9 @@
   "editor.fontFamily": "Cascadia Code",
   "editor.fontSize": 14,
   "editor.fontLigatures": true,
-  "breadcrumbs.enabled": false  
+  "editor.linkedEditing": true,
+  "breadcrumbs.enabled": false,
+  "terminal.integrated.env.osx": {
+    "FIG_NEW_SESSION": "1"
+  },
 }
