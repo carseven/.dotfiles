@@ -37,13 +37,12 @@ brew install alt-tab
 brew install the-unarchiver
 brew install dozer
 brew install mos # Inverse scrolling
-brew install dbeaver-community
 brew install karabiner-elements
-brew install tomighty # Pomodoro
+
+# Alternatives casks
 # brew install vanilla # Hide status bar icons
 # brew install clipy # Clipboard manager
 # brew install rectangle # Window manager
-# brew install kap # screen recorder
 # brew install amethyst # tiling window manager, another similar yabai
 
 # App store command line interface
@@ -51,6 +50,7 @@ brew install mas
 
 # dev
 brew install git
+brew install nvm
 
 # Shell and comandline utils
 brew install zsh
@@ -68,15 +68,13 @@ brew install fzf
 $(brew --prefix)/opt/fzf/install # Fzf key bindings and fuzzy completion installation
 
 # Fonts
-brew install font-cascadia-code
+brew install font-cascadia-code # My preferred font for coding
 brew install font-jetbrains-mono
 brew install font-fira-code
 brew install font-victor-mono
 brew install font-hack-nerd-font # Fuente del terminal, necesaria para configurar lsd
 
 # qmk
-# qmk compile -kb planck/rev6 -km carseven
-# qmk flash -kb planck/rev6 -km carseven
 brew install qmk/qmk/qmk
 
 echo "Cleaning up brew..."
