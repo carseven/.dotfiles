@@ -38,6 +38,7 @@ brew install the-unarchiver
 brew install dozer
 brew install mos # Inverse scrolling
 brew install karabiner-elements
+brew install devtoys
 
 # Alternatives casks
 # brew install vanilla # Hide status bar icons
