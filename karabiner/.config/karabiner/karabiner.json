@@ -18,7 +18,7 @@
                     {
                         "manipulators": [
                             {
-                                "description": "Change caps_lock to command+control+option+shift.",
+                                "description": "Change caps_lock to command+control+option+shift (HYPER)",
                                 "from": {
                                     "key_code": "caps_lock",
                                     "modifiers": {
@@ -44,16 +44,24 @@
                     {
                         "manipulators": [
                             {
-                                "description": "Change right_option to control+option+shift.",
+                                "description": "Tab if alone or MEH if held down",
                                 "from": {
-                                    "key_code": "right_option",
+                                    "key_code": "tab",
                                     "modifiers": {
                                         "optional": [
                                             "any"
                                         ]
                                     }
                                 },
-                                "to": [
+                                "parameters": {
+                                    "basic.to_if_held_down_threshold_milliseconds": 50
+                                },
+                                "to_if_alone": [
+                                    {
+                                        "key_code": "tab"
+                                    }
+                                ],
+                                "to_if_held_down": [
                                     {
                                         "key_code": "left_shift",
                                         "modifiers": [
