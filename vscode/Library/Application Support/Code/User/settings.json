@@ -13,6 +13,10 @@
   "terminal.integrated.defaultLocation": "editor", // Open terminal as tab
   "terminal.integrated.defaultProfile.osx": "zsh",
   "terminal.external.osxExec": "iTerm 2.app",
+  "terminal.integrated.env.osx": {
+    "FIG_NEW_SESSION": "1"
+  },
+  "terminal.integrated.persistentSessionReviveProcess": "never",
   "editor.inlineSuggest.enabled": true,
   "editor.accessibilitySupport": "off",
   "editor.minimap.enabled": false,
@@ -24,8 +28,6 @@
   "editor.fontSize": 14,
   "editor.fontLigatures": true,
   "editor.linkedEditing": true,
-  "breadcrumbs.enabled": false,
-  "terminal.integrated.env.osx": {
-    "FIG_NEW_SESSION": "1"
-  },
+  "editor.wordWrap": "on",
+  "breadcrumbs.enabled": false
 }
