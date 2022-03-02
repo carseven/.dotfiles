@@ -1,164 +1,129 @@
 [
-    /*-------------------------------*
-    *  Python development
-    * -------------------------------*/
-    {
-        // Hyper + b
-        // Ejecutar archivo de python
-        "key": "ctrl+shift+alt+b",
-        "command": "python.execInTerminal",
-        "args": {
-            "openToSide": true
-        }
-    },
-    {
-        // Hyper + j
-        // Ejecutar el archivo entero en ipykernel
-        "key": "ctrl+shift+alt+j",
-        "command": "jupyter.runFileInteractive"
-    },
-    {
-        // Hyper + k
-        // Ejecutar el código seleccionado en ipykernel
-        "key": "ctrl+shift+alt+k",
-        "command": "jupyter.execSelectionInteractive"
-    },
-    // Crear un venv
-    {
-        "key": "ctrl+shift+alt+v",
-        "command": "workbench.action.terminal.sendSequence",
-        "args": {
-            "text": "python3 -m venv .venv\u000D"
-        }
-    },
-    /*-------------------------------*
-    *  Terminal
-    * -------------------------------*/
     {
         "key": "cmd+d",
         "command": "workbench.action.terminal.split",
         "when": "terminalFocus && terminalProcessSupported"
     },
-    // Son necesario dos, para matar el terminal completo y para matar solo la instancia si existe varias instancias del mismo terminal
     {
+        "comment": "Son necesario dos, para matar el terminal completo y para matar solo la instancia si existe varias instancias del mismo terminal",
         "key": "cmd+w",
         "command": "workbench.action.terminal.kill",
         "when": "terminalFocus && terminalProcessSupported && !terminalEditorFocus"
     },
     {
+        "comment": "Son necesario dos, para matar el terminal completo y para matar solo la instancia si existe varias instancias del mismo terminal",
         "key": "cmd+w",
         "command": "workbench.action.terminal.killInstance",
         "when": "terminalIsOpen && terminalTabsFocus || terminalProcessSupported && terminalTabsFocus"
     },
-    // Borrar el terminal que esta en el editor
     {
+        "commnet": "Borrar el terminal que esta en el editor",
         "key": "ctrl+w",
         "command": "workbench.action.terminal.kill",
         "when": "terminalEditorFocus"
     },
-    // Panel position
-    { // Toggle maximize terminal
+    { 
+        "comment": "Toggle maximize terminal",
         "key": "ctrl+shift+alt+m",
-        "command": "workbench.action.toggleMaximizedPanel",
+        "command": "workbench.action.toggleMaximizedPanel"
     },
-    { // Panel to the right
+    {
+        "comment": "Move terminal to the next terminal",
         "key": "ctrl+shift+alt+r",
-        "command": "workbench.action.positionPanelRight"
+        "command": "workbench.action.terminal.focusNext",
+        "when": "terminalFocus"
     },
-    { // Panel to the bottom
+    {
+        "comment": "Move to the previous terminal",
         "key": "ctrl+shift+alt+e",
-        "command": "workbench.action.positionPanelBottom"
+        "command": "workbench.action.terminal.focusPrevious",
+        "when": "terminalFocus"
     },
-    { // Create new terminal in editor tab
+    {
+        "commnet": "Create new terminal in editor tab",
         "key": "ctrl+shift+alt+t",
         "command": "workbench.action.terminal.new",
         "when": "terminalProcessSupported"
     },
-    /*-------------------------------*
-    *  Editor Groups
-    * -------------------------------*/
     {
+        "comment": "Focus from editor to terminal",
+        "key": "ctrl+shift+alt+j",
+        "command": "workbench.action.terminal.focus"
+    },
+    {
+        "comment": "Focus from termianal to editor",
+        "key": "ctrl+shift+alt+j",
+        "command": "workbench.action.focusActiveEditorGroup",
+        "when": "terminalFocus"
+    },
+    {
+        "comment": "Move to the next editor group",
         "key": "ctrl+tab",
         "command": "workbench.action.nextEditor"
     },
     {
+        "comment": "Move to the previous editor group",
         "key": "ctrl+shift+tab",
         "command": "workbench.action.previousEditor"
     },
     {
-        // Move tab to next group (to right)
-        // Hyper + ->
+        "comment": "Move tab to next group (MEH right)",
         "key": "ctrl+shift+alt+left",
         "command": "workbench.action.moveEditorToPreviousGroup"
     },
     {
-        // Move tab to previous group (to right)
-        // Hyper + <-
+        "comment": "Move tab to previous group (MEH left)",
         "key": "ctrl+shift+alt+right",
         "command": "workbench.action.moveEditorToNextGroup"
     },
     {
-        // Move tab to above group (up)
-        // Hyper + up arroy key
+        "comment": "Move tab to above group (MEH up)",
         "key": "ctrl+shift+alt+up",
         "command": "workbench.action.moveEditorToAboveGroup"
     },
     {
-        // Move tab to below group (down)
-        // Hyper + down arroy key
+        "comment": "Move tab to below group (MEH down)",
         "key": "ctrl+shift+alt+down",
         "command": "workbench.action.moveEditorToBelowGroup"
     },
     {
-        // Join all groups
-        // Hyper + Enter
+        "comment": "Join all groups (MEH + Enter)",
         "key": "ctrl+shift+alt+enter",
         "command": "workbench.action.joinAllGroups"
     },
     {
-        // Increase tab size
-        // Hyper + i
+        "comment": "Increase tab size (MEH + i)",
         "key": "ctrl+shift+alt+i",
         "command": "workbench.action.increaseViewSize"
     },
     {
-        // Decrease tab size
-        // Hyper + u
+        "comment": "Decrease tab size (MEH + u)",
         "key": "ctrl+shift+alt+u",
         "command": "workbench.action.decreaseViewSize"
     },
     {
-        // Reset tab size
-        // Hyper + o
+        "comment": "Reset tab size (MEH + o)",
         "key": "ctrl+shift+alt+o",
         "command": "workbench.action.evenEditorWidths"
     },
-    // Moverse entre tabs (de todos los grupos)
-    // Cuando se tiene foco en el terminal, es para moverse entre instancias del mismo.
     {
+        "comment": "Move between tabs (all groups). Cuando se tiene foco en el terminal, es para moverse entre instancias del mismo",
         "key": "alt+cmd+left",
         "command": "workbench.action.previousEditor",
         "when": "editorFocus"
     },
     {
+        "comment": "Move between tabs (all groups). Cuando se tiene foco en el terminal, es para moverse entre instancias del mismo",
         "key": "alt+cmd+right",
-        "command": "workbench.action.nextEditor",
+        "command": "workbench.action.nextEditor"
     },
-    // Setting window to the right tab group
     {
-        "key": "cmd+,",
-        "command": "workbench.action.openSettings",
-        "args": {
-            "openToSide": true
-        }
-    },
-    // Open gitlens repository view
-    {
+        "comment": "Open gitlens repository view",
         "key": "ctrl+shift+alt+g",
         "command": "gitlens.views.repositories.focus"
     },
-    // Show/hide activity bar
     {
+        "comment": "Show/hide activity bar",
         "key": "ctrl+shift+alt+a",
         "command": "workbench.action.toggleActivityBarVisibility"
     }
