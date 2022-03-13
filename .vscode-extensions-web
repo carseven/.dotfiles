@@ -7,10 +7,11 @@ esbenp.prettier-vscode
 formulahendry.auto-close-tag
 formulahendry.auto-rename-tag
 GitHub.copilot
-ms-vscode.vscode-typescript-tslint-plugin
+meganrogge.template-string-converter
 pflannery.vscode-versionlens
 rangav.vscode-thunder-client
 ritwickdey.LiveServer
+stylelint.vscode-stylelint
 usernamehw.errorlens
 vscode-icons-team.vscode-icons
 withfig.fig
