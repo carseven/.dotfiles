@@ -37,6 +37,7 @@ alias delds="sudo find / -name .DS_Store -delete; killall Finder"
 # GIT
 alias gc="git commit -m"
 alias gs="git status"
+alias gss='git status --short'
 alias gd="git diff"
 alias ga="git add ."
 alias gf="git fetch"
@@ -49,6 +50,10 @@ function gbranch { git branch $1}
 function gcreate { git checkout -b $1}
 alias gcheckout="git branch | fzf | xargs -I_ git checkout _"
 alias gbranchdel="git branch | fzf | xargs -I_ git branch -d _"
+alias glg='git log --graph --oneline --decorate --all'
+alias gld="git log --pretty=format:"%h %ad %s" --date=short --all"
+function gbat() { git diff --name-only --diff-filter=d | xargs bat --diff }
+alias gdiff="git diff"
 
 # FZF
 # Open in vscode dev repositories
@@ -88,8 +93,4 @@ function man() {
     LESS_TERMCAP_ue=$'\e[0m' \
     LESS_TERMCAP_us=$'\e[01;32m' \
     man "$@"
-}
-
-batdiff() {
-    git diff --name-only --diff-filter=d | xargs bat --diff
 }
