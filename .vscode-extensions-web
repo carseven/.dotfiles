@@ -1,5 +1,5 @@
-akamud.vscode-theme-onelight
 Angular.ng-template
+antfu.smart-clicks
 christian-kohler.path-intellisense
 dbaeumer.vscode-eslint
 eamodio.gitlens
@@ -11,6 +11,8 @@ meganrogge.template-string-converter
 pflannery.vscode-versionlens
 rangav.vscode-thunder-client
 ritwickdey.LiveServer
+streetsidesoftware.code-spell-checker
+streetsidesoftware.code-spell-checker-spanish
 stylelint.vscode-stylelint
 usernamehw.errorlens
 vscode-icons-team.vscode-icons
