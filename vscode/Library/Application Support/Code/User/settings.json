@@ -43,5 +43,4 @@
   "[typescript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "cSpell.language": "en,es-ES",
 }
