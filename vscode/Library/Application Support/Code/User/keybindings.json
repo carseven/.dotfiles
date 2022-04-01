@@ -126,5 +126,10 @@
         "comment": "Show/hide activity bar",
         "key": "ctrl+shift+alt+a",
         "command": "workbench.action.toggleActivityBarVisibility"
+    },
+    {
+        "comment": "Show/hide side panel",
+        "key": "ctrl+shift+alt+b",
+        "command": "workbench.action.toggleAuxiliaryBar"
     }
 ]
