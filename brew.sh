@@ -52,6 +52,7 @@ brew install mas
 # dev
 brew install git
 brew install nvm
+brew install fnm
 brew install runjs
 
 # Shell and comandline utils
