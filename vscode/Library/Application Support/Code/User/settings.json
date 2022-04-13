@@ -43,4 +43,6 @@
   "[typescript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
+  "gitlens.codeLens.enabled": false,
+  "gitlens.statusBar.enabled": false
 }
