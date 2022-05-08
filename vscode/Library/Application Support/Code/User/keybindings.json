@@ -131,5 +131,17 @@
         "comment": "Show/hide side panel",
         "key": "ctrl+shift+alt+b",
         "command": "workbench.action.toggleAuxiliaryBar"
+    },
+    {
+        "comment": "Remove keybindings from live server, colision with expandLineSelection (select line)",
+        "key": "cmd+l cmd+o",
+        "command": "-extension.liveServer.goOnline",
+        "when": "editorTextFocus"
+    },
+    {
+        "comment": "Remove keybindings from live server, colision with expandLineSelection (select line)",
+        "key": "cmd+l cmd+c",
+        "command": "-extension.liveServer.goOffline",
+        "when": "editorTextFocus"
     }
 ]
