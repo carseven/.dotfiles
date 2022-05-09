@@ -39,28 +39,31 @@ alias gc="git commit -m"
 alias gs="git status"
 alias gss='git status --short'
 alias gd="git diff"
+alias gdiff="git diff"
 alias ga="git add ."
 alias gf="git fetch"
 alias gfa="git fetch --all"
 alias gpush="git push"
+alias gpull="git pull"
 alias gpushup="git branch | fzf | xargs -I_ git push --set-upstream origin _"
 alias gpull="git pull"
 alias greset="git reset HEAD~" # reset last commit
-function gbranch { git branch $1}
-function gcreate { git checkout -b $1}
-alias gcheckout="git branch | fzf | xargs -I_ git checkout _"
+alias gw="git switch"
+alias gwc="git switch -c"
+alias gswitch="git branch | fzf | xargs -I_ git switch _"
 alias gbranchdel="git branch | fzf | xargs -I_ git branch -d _"
-alias glg='git log --graph --oneline --decorate --all'
-alias gld="git log --pretty=format:"%h %ad %s" --date=short --all"
+alias glog='git log --graph --oneline --decorate --all'
 function gbat() { git diff --name-only --diff-filter=d | xargs bat --diff }
-alias gdiff="git diff"
+
 
 # FZF
 # Open in vscode dev repositories
 alias dev="ls ~/dev | fzf | xargs -I_ code ~/dev/_"
+alias hfind="history | fzf"
+alias afind="alias | fzf"
 
 # Preview files with bat
-function fzf-lovely(){
+function preview(){
  
         if [ "$1" = "h" ]; then
                 fzf -m --reverse --preview-window down:20 --preview '[[ $(file --mime {}) =~ binary ]] &&
