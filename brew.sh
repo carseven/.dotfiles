@@ -39,6 +39,8 @@ brew install dozer
 brew install mos # Inverse scrolling
 brew install karabiner-elements
 brew install devtoys
+brew install bitwarden
+brew install authy
 
 # Alternatives casks
 # brew install vanilla # Hide status bar icons
