@@ -97,3 +97,8 @@ function man() {
     LESS_TERMCAP_us=$'\e[01;32m' \
     man "$@"
 }
+
+
+# QMK
+alias cplanck="qmk compile -kb planck/rev6 -km carseven"
+alias fplanck="qmk flash -kb planck/rev6 -km carseven"
