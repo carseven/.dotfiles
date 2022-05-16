@@ -53,6 +53,7 @@ alias gwc="git switch -c"
 alias gswitch="git branch | fzf | xargs -I_ git switch _"
 alias gbranchdel="git branch | fzf | xargs -I_ git branch -d _"
 alias glog='git log --graph --oneline --decorate --all'
+alias gui='gitui'
 function gbat() { git diff --name-only --diff-filter=d | xargs bat --diff }
 
 

@@ -53,6 +53,7 @@ brew install mas
 
 # dev
 brew install git
+brew install gitui
 brew install nvm
 brew install fnm
 brew install runjs
