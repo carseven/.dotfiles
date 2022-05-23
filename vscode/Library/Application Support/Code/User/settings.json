@@ -1,6 +1,5 @@
 {
   "window.title": "${dirty}${activeEditorMedium}${separator}${rootName}",
-  "workbench.colorTheme": "One Dark Pro",
   "oneDarkPro.italic": true,
   "workbench.activityBar.visible": false,
   "workbench.editor.tabSizing": "shrink",
@@ -44,5 +43,6 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "gitlens.codeLens.enabled": false,
-  "gitlens.statusBar.enabled": false
+  "gitlens.statusBar.enabled": false,
+  "workbench.colorTheme": "One Dark Pro Darker"
 }
