@@ -2,8 +2,9 @@
   "window.title": "${dirty}${activeEditorMedium}${separator}${rootName}",
   "oneDarkPro.italic": true,
   "workbench.activityBar.visible": false,
+  "workbench.colorTheme": "One Dark Pro Darker",
   "workbench.editor.tabSizing": "shrink",
-  "workbench.startupEditor": "newUntitledFile",
+  "workbench.startupEditor": "none",
   "workbench.sideBar.location": "right",
   "terminal.integrated.fontSize": 16,
   "terminal.integrated.fontFamily": "Hack Nerd Font Mono",
@@ -16,6 +17,9 @@
     "FIG_NEW_SESSION": "1"
   },
   "terminal.integrated.persistentSessionReviveProcess": "never",
+  "editor.tabSize": 2,
+  "editor.insertSpaces": true,
+  "editor.detectIndentation": false,
   "editor.inlineSuggest.enabled": true,
   "editor.accessibilitySupport": "off",
   "editor.minimap.enabled": false,
@@ -44,5 +48,4 @@
   },
   "gitlens.codeLens.enabled": false,
   "gitlens.statusBar.enabled": false,
-  "workbench.colorTheme": "One Dark Pro Darker"
 }
