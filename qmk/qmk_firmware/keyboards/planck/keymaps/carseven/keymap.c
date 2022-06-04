@@ -18,8 +18,8 @@ enum planck_keycodes {
 #define SPCMOV LT(_MOV, KC_SPC) // Hold to move to layer MOV. Un tap es el space.
 #define TABMEH MEH_T(KC_TAB) // Hold=MEH and Tap=TAB
 #define DEL_MAC LT(_MAC, KC_DEL) // Hold=MEH and tap=Del
-#define RAISE LT(_RAISE, KC_END) // Hold to move to layer Raise. Un tap es el end.
-#define LOWER LT(_LOWER, KC_HOME) // Hold to move to layer lower. Un tap es el home.
+#define LOWER MO(_LOWER)
+#define RAISE MO(_RAISE)
 #define HYP_ESC HYPR_T(KC_ESC) // Hold=Hyper and Tap=ESC
 #define SHIFT_CAPS LSFT_T(KC_CAPSLOCK) // Hold=Shift and tap=Toggle CAPLOCKS
 #define SHIFT_ENTER SFT_T(KC_ENT) // Hold=Shift and tap Enter
