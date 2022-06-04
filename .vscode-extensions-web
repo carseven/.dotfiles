@@ -1,15 +1,12 @@
 Angular.ng-template
-antfu.smart-clicks
+astro-build.astro-vscode
 christian-kohler.path-intellisense
 dbaeumer.vscode-eslint
 eamodio.gitlens
 esbenp.prettier-vscode
-formulahendry.auto-close-tag
-formulahendry.auto-rename-tag
 GitHub.copilot
 meganrogge.template-string-converter
 pflannery.vscode-versionlens
-pranaygp.vscode-css-peek
 rangav.vscode-thunder-client
 ritwickdey.LiveServer
 stylelint.vscode-stylelint
