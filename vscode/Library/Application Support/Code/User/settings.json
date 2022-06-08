@@ -26,6 +26,10 @@
   "editor.bracketPairColorization.enabled": true,
   "editor.formatOnSaveMode": "file",
   "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.organizeImports": true,
+    "source.sortMembers": true
+  },
   "editor.formatOnPaste": true,
   "editor.fontFamily": "Cascadia Code",
   "editor.fontSize": 16,
