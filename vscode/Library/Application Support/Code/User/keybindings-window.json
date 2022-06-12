@@ -126,5 +126,16 @@
         "comment": "Show/hide activity bar",
         "key": "ctrl+shift+alt+a",
         "command": "workbench.action.toggleActivityBarVisibility"
+    },
+    {
+      "comment": "When explorer focused, add a new file under the selected working directory",
+      "key": "ctrl+n",
+      "command": "explorer.newFile",
+      "when": "explorerViewletFocus"
+    },
+    {
+      "comment": "Add a new file under the selected working directory",
+      "key": "ctrl+shift+alt+n",
+      "command": "explorer.newFile"
     }
 ]

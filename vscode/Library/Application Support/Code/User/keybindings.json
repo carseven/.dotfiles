@@ -143,5 +143,16 @@
         "key": "cmd+l cmd+c",
         "command": "-extension.liveServer.goOffline",
         "when": "editorTextFocus"
+    },
+    {
+      "comment": "When explorer focused, add a new file under the selected working directory",
+      "key": "cmd+n",
+      "command": "explorer.newFile",
+      "when": "explorerViewletFocus"
+    },
+    {
+      "comment": "Add a new file under the selected working directory",
+      "key": "ctrl+shift+alt+n",
+      "command": "explorer.newFile"
     }
 ]
