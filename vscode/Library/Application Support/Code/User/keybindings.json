@@ -154,5 +154,20 @@
       "comment": "Add a new file under the selected working directory",
       "key": "ctrl+shift+alt+n",
       "command": "explorer.newFile"
+    },
+    {
+      "comment": "Disabled to used with saveAll commnad instead",
+      "key": "cmd+k s",
+      "command": "-workbench.action.files.saveWithoutFormatting"
+    },
+    {
+      "comment": "New keybing for saveAll files commnad",
+      "key": "cmd+k s",
+      "command": "saveAll"
+    },
+    {
+      "comment": "Disabled default keybing for saveAll files commnad",
+      "key": "alt+cmd+s",
+      "command": "-saveAll"
     }
 ]
