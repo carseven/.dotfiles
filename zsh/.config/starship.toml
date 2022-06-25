@@ -4,14 +4,15 @@
 # Inserts a blank line between shell prompts
 add_newline = false
 
-# [battery]
-# full_symbol = "🔋"
-# charging_symbol = "🔌"
-# discharging_symbol = "⚡"
+[battery]
+disabled = true
+full_symbol = "🔋"
+charging_symbol = "🔌"
+discharging_symbol = "⚡"
 
-# [[battery.display]]
-# threshold = 20
-# style = "bold red"
+[[battery.display]]
+threshold = 20
+style = "bold red"
 
 [package]
 disabled=true
@@ -38,7 +39,7 @@ deleted = "🗑 ${count}"
 time_format = "%T"
 format = "🕙 $time($style) "
 style = "bright-white"
-disabled = false
+disabled = true
 
 [character]
 error_symbol = "[✖](bold red) "
