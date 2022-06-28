@@ -1,5 +1,5 @@
 {
-  "window.title": "${dirty}${rootName}${separator}${activeEditorMedium}",
+  "window.title": "${dirty}${activeEditorShort}${separator}${rootName}",
   "window.zoomLevel": 1,
   "oneDarkPro.italic": true,
   "workbench.activityBar.visible": false,
