@@ -1,11 +1,10 @@
 {
-  "window.title": "${dirty}${activeEditorMedium}${separator}${rootName}",
+  "window.title": "${dirty}${rootName}${separator}${activeEditorMedium}",
   "window.zoomLevel": 1,
   "oneDarkPro.italic": true,
   "workbench.activityBar.visible": false,
-  "workbench.colorTheme": "One Dark Pro Darker",
+  "workbench.colorTheme": "One Dark Pro",
   "workbench.editor.tabSizing": "shrink",
-  "workbench.startupEditor": "none",
   "workbench.sideBar.location": "right",
   "terminal.integrated.fontSize": 16,
   "terminal.integrated.fontFamily": "Hack Nerd Font Mono",
@@ -37,7 +36,7 @@
   "editor.fontLigatures": true,
   "editor.linkedEditing": true,
   "editor.wordWrap": "on",
-  "editor.renderWhitespace": "selection",
+  "editor.renderWhitespace": "boundary",
   "breadcrumbs.enabled": false,
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
@@ -54,4 +53,5 @@
   "gitlens.codeLens.enabled": false,
   "gitlens.statusBar.enabled": false,
   "liveServer.settings.donotShowInfoMsg": true,
+  "explorer.compactFolders": false
 }
