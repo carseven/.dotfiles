@@ -4,6 +4,7 @@
   "oneDarkPro.italic": true,
   "workbench.activityBar.visible": false,
   "workbench.colorTheme": "One Dark Pro",
+  "workbench.iconTheme": "ayu",
   "workbench.editor.tabSizing": "shrink",
   "workbench.sideBar.location": "right",
   "terminal.integrated.fontSize": 16,
