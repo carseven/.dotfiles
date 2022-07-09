@@ -1,15 +1,14 @@
 Angular.ng-template
 astro-build.astro-vscode
 christian-kohler.path-intellisense
+cyrilletuzi.angular-schematics
 dbaeumer.vscode-eslint
 eamodio.gitlens
 esbenp.prettier-vscode
-GitHub.copilot
 meganrogge.template-string-converter
 pflannery.vscode-versionlens
 quicktype.quicktype
 rangav.vscode-thunder-client
-ritwickdey.LiveServer
 stylelint.vscode-stylelint
 usernamehw.errorlens
 withfig.fig
