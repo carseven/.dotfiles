@@ -52,6 +52,5 @@
   },
   "gitlens.codeLens.enabled": false,
   "gitlens.statusBar.enabled": false,
-  "liveServer.settings.donotShowInfoMsg": true,
-  "explorer.compactFolders": false
+  "explorer.compactFolders": false,
 }
