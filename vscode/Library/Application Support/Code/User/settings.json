@@ -2,7 +2,6 @@
   "window.title": "${dirty}${activeEditorShort}${separator}${rootName}",
   "window.zoomLevel": 1,
   "oneDarkPro.italic": true,
-  "workbench.activityBar.visible": false,
   "workbench.colorTheme": "One Dark Pro",
   "workbench.iconTheme": "ayu",
   "workbench.editor.tabSizing": "fit",
@@ -55,4 +54,6 @@
   "gitlens.codeLens.enabled": false,
   "gitlens.statusBar.enabled": false,
   "explorer.compactFolders": false,
+  "workbench.activityBar.visible": false,
+  "diffEditor.renderSideBySide": false,
 }
