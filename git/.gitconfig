@@ -17,3 +17,5 @@
 	keepBackup = false
 [mergetool "vscode"]
 	cmd = code --wait $MERGED
+[init]
+	defaultBranch = main
