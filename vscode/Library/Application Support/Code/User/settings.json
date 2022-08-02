@@ -5,7 +5,7 @@
   "workbench.colorTheme": "One Dark Pro",
   "workbench.iconTheme": "ayu",
   "workbench.editor.tabSizing": "fit",
-  "workbench.editor.wrapTabs": true,
+  // "workbench.editor.wrapTabs": true,
   "workbench.sideBar.location": "right",
   "terminal.integrated.fontSize": 16,
   "terminal.integrated.fontFamily": "Hack Nerd Font Mono",
