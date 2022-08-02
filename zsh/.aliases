@@ -32,6 +32,7 @@ alias ivenv="pip3 install -r requirements.txt"
 alias nv="nvm use --lts"
 alias ns="npm start"
 alias ni="npm install"
+alias ncomplex="npx code-complexity . --filter '**/*.ts' --limit 10 --sort score"
 
 # UTILIDADES SISTEMA
 alias myip="curl http://ipecho.net/plain; echo"
