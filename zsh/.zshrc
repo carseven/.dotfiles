@@ -10,6 +10,7 @@ source $(brew --prefix zsh)
 
 # Nvm
 source $(brew --prefix nvm)/nvm.sh
+nvm use --lts > /dev/null
 
 # Oh my zsh
 # Path to your oh-my-zsh installation.
