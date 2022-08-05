@@ -29,7 +29,7 @@ alias rvenv="pip3 freeze > requirement.txt"
 alias ivenv="pip3 install -r requirements.txt"
 
 # NPM
-alias nv="nvm use --lts"
+alias nv="nvm use --lts" # Especificar una version por defecto. nvm alias default 16.16.0
 alias ns="npm start"
 alias ni="npm install"
 alias ncomplex="npx code-complexity . --filter '**/*.ts' --limit 10 --sort score"
