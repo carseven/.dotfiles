@@ -71,6 +71,7 @@ brew install lsd # Para visualizar los iconos, es necesario configurar una Nerd 
 brew install bat
 brew install ranger
 brew install p7zip
+brew install tldr
 brew install fzf
 $(brew --prefix)/opt/fzf/install # Fzf key bindings and fuzzy completion installation
 
