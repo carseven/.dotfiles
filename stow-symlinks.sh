@@ -18,7 +18,7 @@ cd ~/.dotfiles
 
 
 if [[ -z $STOW_FOLDERS ]]; then
-    STOW_FOLDERS="git,iterm,karabiner,qmk,raycast,vscode,zsh"
+    STOW_FOLDERS="git,iterm,karabiner,qmk,raycast,nvim,vscode,zsh"
 fi
 
 echo "Generate dotfiles symlinks with stow"
