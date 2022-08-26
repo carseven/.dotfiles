@@ -47,7 +47,7 @@ brew install authy
 # brew install vanilla # Hide status bar icons
 # brew install clipy # Clipboard manager
 # brew install rectangle # Window manager
-# brew install amethyst # tiling window manager, another similar yabai
+brew install amethyst # tiling window manager, another similar yabai
 
 # App store command line interface
 brew install mas
@@ -74,6 +74,7 @@ brew install p7zip
 brew install tldr
 brew install fzf
 $(brew --prefix)/opt/fzf/install # Fzf key bindings and fuzzy completion installation
+brew install tmux
 
 # Fonts
 brew install font-cascadia-code # My preferred font for coding
