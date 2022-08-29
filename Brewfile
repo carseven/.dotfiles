@@ -1,0 +1,63 @@
+tap "cmacrae/formulae"
+tap "homebrew/bundle"
+tap "homebrew/cask"
+tap "homebrew/cask-fonts"
+tap "homebrew/core"
+tap "homebrew/services"
+tap "koekeishiya/formulae"
+tap "osx-cross/arm"
+tap "osx-cross/avr"
+tap "qmk/qmk"
+
+brew "bat"
+brew "fzf"
+brew "git"
+brew "gitui"
+brew "htop"
+brew "lsd"
+brew "mas"
+brew "neofetch"
+brew "nvm"
+# brew "fnm" # Nvm but fast
+brew "p7zip"
+brew "ranger"
+brew "starship"
+brew "stow"
+brew "tldr"
+brew "tmux"
+brew "trash"
+brew "wget"
+brew "zsh"
+brew "qmk/qmk/qmk"
+
+cask "alt-tab"
+cask "amethyst"
+cask "authy"
+cask "bitwarden"
+cask "brave-browser"
+cask "devtoys"
+cask "discord"
+cask "dozer"
+cask "fig"
+cask "google-drive"
+cask "iterm2"
+cask "karabiner-elements"
+cask "mos"
+cask "notion"
+cask "raycast"
+cask "runjs"
+cask "spotify"
+cask "the-unarchiver"
+cask "visual-studio-code"
+cask "warp"
+
+cask "font-cascadia-code" # Vscode font
+cask "font-fira-code"
+cask "font-hack-nerd-font" # iTerm font
+cask "font-jetbrains-mono"
+cask "font-victor-mono"
+
+mas "AdGuard for Safari", id: 1440147259
+mas "Bitwarden", id: 1352778147
+mas "Notion Web Clipper", id: 1559269364
+mas "Tomito", id: 1526042938
