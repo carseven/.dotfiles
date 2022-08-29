@@ -10,7 +10,7 @@
   "terminal.integrated.fontFamily": "Hack Nerd Font Mono",
   "terminal.integrated.fontWeight": "400",
   "terminal.integrated.cursorStyle": "line",
-  "terminal.integrated.defaultLocation": "editor", // Open terminal as tab
+  "terminal.integrated.defaultLocation": "editor",
   "terminal.integrated.defaultProfile.osx": "zsh",
   "terminal.external.osxExec": "iTerm 2.app",
   "terminal.integrated.env.osx": {
