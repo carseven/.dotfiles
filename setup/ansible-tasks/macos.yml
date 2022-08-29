@@ -1,0 +1,5 @@
+- name: Launch macos settings config
+  shell: bash ~/.dotfiles/setup/scripts/macos.sh
+  ignore_errors: yes
+  tags:
+    - macos

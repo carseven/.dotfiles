@@ -1,0 +1,12 @@
+---
+- name: Macos installation setup
+  hosts: localhost
+
+  tasks:
+    - ansible.builtin.include_tasks: ./ansible-tasks/macos.yml
+    - ansible.builtin.include_tasks: ./ansible-tasks/dev-folder.yml
+    - ansible.builtin.include_tasks: ./ansible-tasks/brew.yml
+    - ansible.builtin.include_tasks: ./ansible-tasks/zsh.yml
+    - ansible.builtin.include_tasks: ./ansible-tasks/stow.yml
+    - ansible.builtin.include_tasks: ./ansible-tasks/node.yml
+    - ansible.builtin.include_tasks: ./ansible-tasks/vscode-extensions.yml

@@ -1,0 +1,5 @@
+- name: Create dev folder
+  ansible.builtin.file:
+    path: ~/dev
+    state: directory
+    mode: "0755"

@@ -1,0 +1,5 @@
+- name: Sync .dotfiles with stow
+  shell: cd $HOME/.dotfiles && stow -vSt ~ git iterm karabiner qmk raycast vscode zsh
+  tags:
+    - stow
+    - zsh

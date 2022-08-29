@@ -1,0 +1,38 @@
+- name: Set ZSH as default shell
+  shell: zsh $HOME/.dotfiles/setup/scripts/zsh-setup.sh
+  tags:
+    - zsh
+
+- name: Check if ZSH installed
+  stat:
+    path: $HOME/.oh-my-zsh
+  register: oh_my_stats
+  tags:
+    - zsh
+
+- name: Install Oh My ZSH
+  shell: curl -L http://install.ohmyz.sh | sh
+  when: oh_my_stats.stat.exists == False
+  tags:
+    - zsh
+
+- name: Install ZSH syntax highlighting
+  ansible.builtin.git:
+    repo: "https://github.com/zsh-users/zsh-syntax-highlighting.git"
+    dest: ~/.oh-my-zsh/custom/plugins
+    clone: no
+  tags:
+    - zsh
+
+- name: Install ZSH autosuggestions
+  ansible.builtin.git:
+    repo: "https://github.com/zsh-users/zsh-autosuggestions"
+    dest: ~/.oh-my-zsh/custom/plugins
+    clone: no
+  tags:
+    - zsh
+
+- name: Install FZF key bindings
+  shell: $(brew --prefix)/opt/fzf/install
+  tags:
+    - zsh
