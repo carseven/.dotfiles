@@ -1,2 +1,4 @@
 - name: Install lts node
-  shell: nvm install --lts
+  shell: source $NVM_DIR/nvm.sh && nvm install --lts
+  tags:
+    - node

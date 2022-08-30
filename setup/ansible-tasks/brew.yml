@@ -15,7 +15,7 @@
     - brew
 
 - name: Brew bundle
-  ansible.builtin.shell: brew bundle --file="~/.dotfiles/Brewfile"
+  ansible.builtin.shell: brew bundle --file="~/.dotfiles/Brewfile" --no-lock
   register: brew
   ignore_errors: yes
   become: no

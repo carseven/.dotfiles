@@ -19,7 +19,6 @@
 
 - Manual settings:
     <!-- Preferences > Keyboard > Shortcuts -->
-
   - Change spotlight keyboard shorcut -> None
   - Change input sources keyboard shorcut -> None
   - Import raycast settings
@@ -27,3 +26,11 @@
   - Dock add permanent programs: iTerm 2, Visual studio code, Notion, Safari, Mail, Calendar
   - Install brave extensions: Notion Web CLipper and Vimium
   - Import raycast settings file
+
+# TODO
+
+- Fix none 0 stand out macos.sh
+- Test ansible playbook on a brand new macos installation.
+- Add ssh config and encrypted files workflow (Personal Github)
+- Create ansible-playbooks to automate common repetive task.
+  - Create angular basic app (eslint, prettier, stylelint, basic CI/CD, etc)

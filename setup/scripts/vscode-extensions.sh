@@ -1,10 +1,7 @@
-echo "Installing vscode extensions..."
 # Generate file with id of vscode installed extensions
 # code --list-extensions > ~/.dotfiles/.vscode-extensions 
 
-echo "CD ~/.dotfiles ..."
 cd ~/.dotfiles
-
 filename=".vscode-extensions"
 n=1
 while read line; do

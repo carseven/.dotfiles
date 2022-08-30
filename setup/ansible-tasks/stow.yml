@@ -1,3 +1,11 @@
+- name: Remove iterm config file default
+  ansible.builtin.file:
+    path: ~/Library/Preferences/com.googlecode.iterm2.plist
+    state: absent
+  tags: 
+    - stow
+    - iterm
+
 - name: Sync .dotfiles with stow
   shell: cd $HOME/.dotfiles && stow -vSt ~ git iterm karabiner qmk raycast vscode zsh
   tags:
