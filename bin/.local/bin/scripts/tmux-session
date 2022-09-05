@@ -1,0 +1,48 @@
+#! /usr/bin/env bash
+
+# Ejecutamos el comando y la salida de stout se asigna a la variable
+session=$(find ~ ~/dev -mindepth 1 -maxdepth 1 -type d | fzf)
+
+
+
+
+session_name=$(basename "$session" | tr . _)
+
+if ! tmux has-session -t "$session_name" 2> /dev/null; then
+  tmux new-session -s "$session_name" -c "$session" -d
+fi
+
+tmux switch-client -t "$session_name"
+
+#!/usr/bin/env bash
+
+if [[ $# -eq 1 ]]; then
+    selected=$1
+else
+    selected=$(find ~/dev ~/ -mindepth 1 -maxdepth 1 -type d | fzf)
+fi
+
+if [[ -z $selected ]]; then
+    exit 0
+fi
+
+# Además, como tmux no acepta cierto caracteres como nombres, vamos a usar tr para limpiar
+# tr tiene dos argumentos, el primero el que buscamos y el segundo por el que lo cambia
+# Ejemplo: echo "foo" | tr o 1 -> f11 se cambia la o por 1
+# Ejemplo avanzado: echo "foo" | tr of 12 -> 211
+selected_name=$(basename "$selected" | tr . _)
+tmux_running=$(pgrep tmux)
+
+# Comprobar que estamos en tmux
+if [[ -z $TMUX ]] && [[ -z $tmux_running ]]; then
+    tmux new-session -s $selected_name -c $selected
+    exit 0
+fi
+
+# Como el comando nos devuelve 0 o error en el stdout, podemos usarlo en el if not
+# en caso de error hacemos pipe a dev/null para que no salga por consola
+if ! tmux has-session -t=$selected_name 2> /dev/null; then
+    tmux new-session -ds $selected_name -c $selected
+fi
+
+tmux switch-client -t $selected_name

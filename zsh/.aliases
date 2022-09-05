@@ -67,6 +67,8 @@ function gbat() { git diff --name-only --diff-filter=d | xargs bat --diff }
 # FZF
 # Open in vscode dev repositories
 alias dev="ls ~/dev | fzf | xargs -I_ code ~/dev/_"
+alias cf="find ~ ~/dev -mindepth 1 -maxdepth 1 -type d | fzf | xargs -I_ code _"
+bindkey -s ^f "$HOME/.local/bin/scripts/tmux-session\n" # Bindea cntrl + f a lanzar el string
 alias hfind="history | fzf"
 alias afind="alias | fzf"
 
