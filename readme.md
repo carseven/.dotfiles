@@ -18,19 +18,21 @@
   `curl https://raw.githubusercontent.com/carseven/.dotfiles/main/setup/setup.sh | sh`
 
 - Manual settings:
-    <!-- Preferences > Keyboard > Shortcuts -->
-  - Change spotlight keyboard shorcut -> None
+  - Change spotlight keyboard shorcut (Preferences > Keyboard > Shortcuts) -> None
   - Change input sources keyboard shorcut -> None
   - Import raycast settings
   - Activate night shift
   - Dock add permanent programs: iTerm 2, Visual studio code, Notion, Safari, Mail, Calendar
   - Install brave extensions: Notion Web CLipper and Vimium
   - Import raycast settings file
+  - Install nvim plugins :PlugInstall
+  - Install tmux plugins Prefix + I (Capital I)
 
 # TODO
 
 - Fix none 0 stand out macos.sh
 - Test ansible playbook on a brand new macos installation.
 - Add ssh config and encrypted files workflow (Personal Github)
+- Create ansible nvim install and basic config https://medium.com/@jeantimex/how-to-configure-iterm2-and-vim-like-a-pro-on-macos-e303d25d5b5c
 - Create ansible-playbooks to automate common repetive task.
   - Create angular basic app (eslint, prettier, stylelint, basic CI/CD, etc)
