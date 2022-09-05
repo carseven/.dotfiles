@@ -33,6 +33,5 @@
 - Fix none 0 stand out macos.sh
 - Test ansible playbook on a brand new macos installation.
 - Add ssh config and encrypted files workflow (Personal Github)
-- Create ansible nvim install and basic config https://medium.com/@jeantimex/how-to-configure-iterm2-and-vim-like-a-pro-on-macos-e303d25d5b5c
 - Create ansible-playbooks to automate common repetive task.
-  - Create angular basic app (eslint, prettier, stylelint, basic CI/CD, etc)
+- Create angular basic app (eslint, prettier, stylelint, basic CI/CD, etc)
