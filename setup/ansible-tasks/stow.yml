@@ -6,8 +6,16 @@
     - stow
     - iterm
 
+- name: Remove gitui theme.ron
+  ansible.builtin.file:
+    path: ~/.config/gitui/theme.ron
+    state: absent
+  tags: 
+    - stow
+    - iterm
+
 - name: Sync .dotfiles with stow
-  shell: cd $HOME/.dotfiles && stow -vSt ~ git iterm karabiner qmk raycast vscode zsh bin tmux
+  shell: cd $HOME/.dotfiles && stow -vSt ~ git iterm karabiner qmk raycast vscode zsh bin tmux gitui
   tags:
     - stow
     - zsh
