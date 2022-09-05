@@ -5,7 +5,7 @@
 export PATH="/opt/homebrew/bin:$PATH"
 
 # TMUX start by default
-ZSH_TMUX_AUTOSTART='true'
+# ZSH_TMUX_AUTOSTART='true'
 
 # Use homebrew installed git and zsh
 # /opt/homebrew/pot/git
@@ -30,7 +30,7 @@ plugins=(
     zsh-syntax-highlighting
     history
     extract
-    tmux
+    # tmux
 )
 
 source $ZSH/oh-my-zsh.sh
