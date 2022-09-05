@@ -1,7 +1,11 @@
 # Fig pre block. Keep at the top of this file.
 [[ -f "$HOME/.fig/shell/zshrc.pre.zsh" ]] && . "$HOME/.fig/shell/zshrc.pre.zsh"
+
 # Homebrew
 export PATH="/opt/homebrew/bin:$PATH"
+
+# TMUX start by default
+ZSH_TMUX_AUTOSTART='true'
 
 # Use homebrew installed git and zsh
 # /opt/homebrew/pot/git
@@ -26,6 +30,7 @@ plugins=(
     zsh-syntax-highlighting
     history
     extract
+    tmux
 )
 
 source $ZSH/oh-my-zsh.sh

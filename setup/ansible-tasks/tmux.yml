@@ -1,0 +1,7 @@
+- name: Install TPM (Tmux plugin manager)
+  ansible.builtin.git:
+    repo: "https://github.com/tmux-plugins/tpm"
+    dest: ~/.tmux/plugins/tpm
+    clone: no
+  tags:
+    - tmux

@@ -7,7 +7,7 @@
     - iterm
 
 - name: Sync .dotfiles with stow
-  shell: cd $HOME/.dotfiles && stow -vSt ~ git iterm karabiner qmk raycast vscode zsh bin
+  shell: cd $HOME/.dotfiles && stow -vSt ~ git iterm karabiner qmk raycast vscode zsh bin tmux
   tags:
     - stow
     - zsh
