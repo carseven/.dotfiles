@@ -25,7 +25,7 @@
   - Dock add permanent programs: iTerm 2, Visual studio code, Notion, Safari, Mail, Calendar
   - Install brave extensions: Notion Web CLipper and Vimium
   - Import raycast settings file
-  - Install nvim plugins :PlugInstall
+  - Install vim plugins :PlugInstall
   - Install tmux plugins Prefix + I (Capital I)
 
 # TODO
