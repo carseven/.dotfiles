@@ -33,5 +33,7 @@
 - Fix none 0 stand out macos.sh
 - Test ansible playbook on a brand new macos installation.
 - Add ssh config and encrypted files workflow (Personal Github)
-- Create ansible-playbooks to automate common repetive task.
-- Create angular basic app (eslint, prettier, stylelint, basic CI/CD, etc)
+- Create small scripts to increase development productivity.
+  - Personal sscript to add eslint and prettier config
+  - Learn more of script kit and create dotfiles
+  - Create angular basic app (eslint, prettier, stylelint, basic CI/CD, etc)
