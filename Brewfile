@@ -49,7 +49,6 @@ cask "runjs"
 cask "spotify"
 cask "the-unarchiver"
 cask "visual-studio-code"
-cask "warp"
 
 cask "font-cascadia-code" # Vscode font
 cask "font-fira-code"
