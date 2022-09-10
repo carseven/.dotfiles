@@ -55,4 +55,5 @@
   "explorer.compactFolders": false,
   "workbench.activityBar.visible": false,
   "diffEditor.renderSideBySide": false,
+  "rapidapi.terminalLink.enabled": false,
 }
