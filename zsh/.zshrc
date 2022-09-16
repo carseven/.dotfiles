@@ -25,7 +25,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # ZSH_THEME="sorin"
 
 plugins=(
-    # zsh-autosuggestions TODO: Se ha deactivado para evitar con las sugerencias de fig. Volver a habilitar cuando este el bug correguido
+    zsh-autosuggestions
     zsh-syntax-highlighting
     history
     extract
