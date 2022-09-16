@@ -40,3 +40,6 @@ format = '[\($state( $progress_current of $progress_total)\)]($style) '
 [hostname]
 ssh_only = true
 format =  "on [$hostname](bold red) "
+
+[battery]
+disabled = true
