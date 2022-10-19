@@ -8,6 +8,7 @@ esbenp.prettier-vscode
 kisstkondoros.vscode-gutter-preview
 me-dutour-mathieu.vscode-github-actions
 meganrogge.template-string-converter
+mikestead.dotenv
 pflannery.vscode-versionlens
 quicktype.quicktype
 RapidAPI.vscode-rapidapi-client
@@ -15,6 +16,7 @@ redhat.vscode-yaml
 stylelint.vscode-stylelint
 teabyii.ayu
 usernamehw.errorlens
+vinliao.fast-arrow
 withfig.fig
 wix.vscode-import-cost
 zhuangtongfa.material-theme
