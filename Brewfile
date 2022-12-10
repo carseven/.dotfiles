@@ -27,6 +27,7 @@ brew "tldr"
 brew "tmux"
 brew "trash"
 brew "wget"
+brew "neovim"
 brew "zsh"
 brew "qmk/qmk/qmk"
 
