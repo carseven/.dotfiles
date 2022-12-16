@@ -1,6 +1,6 @@
 {
   "window.title": "${dirty}${activeEditorShort}${separator}${rootName}",
-  "window.zoomLevel": 1,
+  "window.zoomLevel": 0,
   "window.commandCenter": false,
   "oneDarkPro.italic": true,
   "workbench.colorTheme": "One Dark Pro",
