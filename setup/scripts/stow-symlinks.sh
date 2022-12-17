@@ -39,7 +39,7 @@
 
 cd ~/.dotfiles
 if [[ -z $STOW_FOLDERS ]]; then
-    STOW_FOLDERS="git,iterm,karabiner,qmk,raycast,vscode,zsh"
+    STOW_FOLDERS="git,iterm,karabiner,qmk,raycast,vscode,zsh,nvim"
 fi
 
 for dir in $(echo $STOW_FOLDERS | sed "s/,/ /g") ; do
