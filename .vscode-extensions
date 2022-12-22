@@ -1,8 +1,8 @@
 Angular.ng-template
-astro-build.astro-vscode
 christian-kohler.path-intellisense
 cyrilletuzi.angular-schematics
 dbaeumer.vscode-eslint
+dracula-theme.theme-dracula
 eamodio.gitlens
 esbenp.prettier-vscode
 kisstkondoros.vscode-gutter-preview
@@ -14,6 +14,7 @@ pflannery.vscode-versionlens
 quicktype.quicktype
 RapidAPI.vscode-rapidapi-client
 redhat.vscode-yaml
+ritwickdey.LiveServer
 ryanluker.vscode-coverage-gutters
 stylelint.vscode-stylelint
 teabyii.ayu

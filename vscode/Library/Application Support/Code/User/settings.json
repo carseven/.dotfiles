@@ -3,7 +3,7 @@
   "window.zoomLevel": 0,
   "window.commandCenter": false,
   "oneDarkPro.italic": true,
-  "workbench.colorTheme": "One Dark Pro",
+  "workbench.colorTheme": "Dracula",
   "workbench.iconTheme": "ayu",
   "workbench.editor.tabSizing": "fit",
   "workbench.sideBar.location": "right",
