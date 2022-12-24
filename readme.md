@@ -33,4 +33,4 @@
 - Fix none 0 stand out macos.sh
 - Test ansible playbook on a brand new macos installation.
 - Install spacebar and yabai setup
-- Install dracular theme for tmux
+- Install dracular theme for tmux and nvim
