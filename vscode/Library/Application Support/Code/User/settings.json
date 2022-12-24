@@ -4,7 +4,7 @@
   "window.commandCenter": false,
   "oneDarkPro.italic": true,
   "workbench.colorTheme": "Dracula",
-  "workbench.iconTheme": "ayu",
+  "workbench.iconTheme": "symbols",
   "workbench.editor.tabSizing": "fit",
   "workbench.sideBar.location": "right",
   "terminal.integrated.fontSize": 16,
@@ -54,7 +54,8 @@
   "gitlens.codeLens.enabled": false,
   "gitlens.statusBar.enabled": false,
   "explorer.compactFolders": false,
-  "workbench.activityBar.visible": false,
   "diffEditor.renderSideBySide": false,
   "rapidapi.terminalLink.enabled": false,
+  "workbench.productIconTheme": "fluent-icons",
+  "workbench.activityBar.visible": false,
 }
