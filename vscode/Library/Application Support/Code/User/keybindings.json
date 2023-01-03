@@ -169,5 +169,11 @@
       "comment": "Disabled default keybing for saveAll files commnad",
       "key": "alt+cmd+s",
       "command": "-saveAll"
+    },
+        {
+      "comment": "Search editor .ts and .html files",
+      "key": "ctrl+shift+alt+f",
+      "command": "search.action.openNewEditor",
+      "args": { "triggerSearch": true, "focusResults": false, "filesToInclude": "{**/*.ts,**/*.html}" }
     }
 ]

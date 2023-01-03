@@ -137,5 +137,11 @@
       "comment": "Add a new file under the selected working directory",
       "key": "ctrl+shift+alt+n",
       "command": "explorer.newFile"
+    },
+    {
+      "comment": "Search editor .ts and .html files",
+      "key": "ctrl+shift+alt+f",
+      "command": "search.action.openNewEditor",
+      "args": { "triggerSearch": true, "focusResults": false, "filesToInclude": "{**/*.ts,**/*.html}" }
     }
 ]
