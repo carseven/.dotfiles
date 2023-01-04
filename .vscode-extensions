@@ -1,4 +1,5 @@
 Angular.ng-template
+astro-build.astro-vscode
 christian-kohler.path-intellisense
 cyrilletuzi.angular-schematics
 dbaeumer.vscode-eslint
@@ -8,6 +9,8 @@ esbenp.prettier-vscode
 kisstkondoros.vscode-gutter-preview
 me-dutour-mathieu.vscode-github-actions
 meganrogge.template-string-converter
+miguelsolorio.fluent-icons
+miguelsolorio.symbols
 mikestead.dotenv
 ms-vscode.live-server
 pflannery.vscode-versionlens
@@ -17,11 +20,11 @@ redhat.vscode-yaml
 ritwickdey.LiveServer
 ryanluker.vscode-coverage-gutters
 stylelint.vscode-stylelint
-teabyii.ayu
 usernamehw.errorlens
 vinliao.fast-arrow
 vivaxy.vscode-conventional-commits
 vscodevim.vim
+WallabyJs.console-ninja
 withfig.fig
 wix.vscode-import-cost
 zhuangtongfa.material-theme
