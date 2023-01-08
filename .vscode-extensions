@@ -11,7 +11,6 @@ me-dutour-mathieu.vscode-github-actions
 meganrogge.template-string-converter
 miguelsolorio.fluent-icons
 miguelsolorio.symbols
-mikestead.dotenv
 ms-vscode.live-server
 pflannery.vscode-versionlens
 quicktype.quicktype
@@ -19,6 +18,7 @@ RapidAPI.vscode-rapidapi-client
 redhat.vscode-yaml
 ritwickdey.LiveServer
 ryanluker.vscode-coverage-gutters
+streetsidesoftware.code-spell-checker
 stylelint.vscode-stylelint
 usernamehw.errorlens
 vinliao.fast-arrow
