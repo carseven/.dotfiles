@@ -1,6 +1,7 @@
 # Dracula Theme (for zsh-syntax-highlighting)
 
-ZSH_HIGHLIGHT_HIGHLIGHTERS=(main cursor)
+ZSH_HIGHLIGHT_HIGHLIGHTERS=(main)
+
 typeset -gA ZSH_HIGHLIGHT_STYLES
 
 # Default groupings per, https://spec.draculatheme.com, try to logically separate
