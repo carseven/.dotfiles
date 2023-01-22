@@ -37,14 +37,16 @@
 # Sto
 # stow --adopt -vSt ~ example
 
-cd ~/.dotfiles
-if [[ -z $STOW_FOLDERS ]]; then
-    STOW_FOLDERS="git,iterm,karabiner,qmk,raycast,vscode,zsh,nvim"
-fi
+# DEPRECATED
 
-for dir in $(echo $STOW_FOLDERS | sed "s/,/ /g") ; do
-    if [ -d ${dir} ]; then
-        echo "Stowing $dir..."
-        stow -vSt ~ $dir
-    fi    
-done
+# cd ~/.dotfiles
+# if [[ -z $STOW_FOLDERS ]]; then
+#     STOW_FOLDERS="git,iterm,karabiner,qmk,raycast,vscode,zsh,nvim"
+# fi
+
+# for dir in $(echo $STOW_FOLDERS | sed "s/,/ /g") ; do
+#     if [ -d ${dir} ]; then
+#         echo "Stowing $dir..."
+#         stow -vSt ~ $dir
+#     fi    
+# done
