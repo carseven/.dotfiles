@@ -58,4 +58,5 @@
   "rapidapi.terminalLink.enabled": false,
   "workbench.productIconTheme": "fluent-icons",
   "workbench.activityBar.visible": false,
+  "workbench.startupEditor": "none",
 }
