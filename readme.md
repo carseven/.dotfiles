@@ -22,7 +22,6 @@
   - Change input sources keyboard shorcut -> None
   - Import raycast settings
   - Activate night shift
-  - Dock add permanent programs: iTerm 2, Visual studio code, Notion, Safari, Mail, Calendar
   - Install brave extensions: Notion Web CLipper and Vimium
   - Import raycast settings file
   - Install vim plugins :PlugInstall
@@ -32,5 +31,8 @@
 
 - Fix none 0 stand out macos.sh
 - Test ansible playbook on a brand new macos installation.
-- Install spacebar and yabai setup
-- Install dracular theme for tmux and nvim
+- Install yabai setup
+  - Fix yabai Ventura scripts problems
+  - Add macos reduce motion and move between spaces with control + # (Number)
+- Nvim and tmux setup https://www.joshmedeski.com/posts/clutter-free-macos/
+- Remove .dotfiles complexity
