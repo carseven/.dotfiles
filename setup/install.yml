@@ -11,3 +11,4 @@
     - ansible.builtin.include_tasks: ./ansible-tasks/node.yml
     - ansible.builtin.include_tasks: ./ansible-tasks/vscode-extensions.yml
     - ansible.builtin.include_tasks: ./ansible-tasks/fig.yml
+    - ansible.builtin.include_tasks: ./ansible-tasks/yabai.yml

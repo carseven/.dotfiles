@@ -30,9 +30,10 @@ brew "wget"
 brew "neovim"
 brew "zsh"
 brew "qmk/qmk/qmk"
+brew "yabai"
+brew "skhd"
 
-cask "alt-tab"
-cask "amethyst"
+cask "spacelauncher"
 cask "authy"
 cask "bitwarden"
 cask "brave-browser"
@@ -42,6 +43,7 @@ cask "dozer"
 cask "fig"
 cask "google-drive"
 cask "iterm2"
+cask "alacritty"
 cask "karabiner-elements"
 cask "mos"
 cask "notion"
@@ -52,10 +54,7 @@ cask "the-unarchiver"
 cask "visual-studio-code"
 
 cask "font-cascadia-code" # Vscode font
-cask "font-fira-code"
-cask "font-hack-nerd-font" # iTerm font
-cask "font-jetbrains-mono"
-cask "font-victor-mono"
+cask "font-hack-nerd-font" # iTerm and Alacritty font
 
 mas "AdGuard for Safari", id: 1440147259
 mas "Bitwarden", id: 1352778147
