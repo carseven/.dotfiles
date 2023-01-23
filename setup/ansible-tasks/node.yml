@@ -2,3 +2,9 @@
   shell: source $NVM_DIR/nvm.sh && nvm install --lts
   tags:
     - node
+- name: Install pnpm
+  shell: npm install -g pnpm
+  ignore_errors: yes
+  tags:
+  - node
+  - pnpm

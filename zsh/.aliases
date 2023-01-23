@@ -35,6 +35,9 @@ alias ni="npm install"
 alias ncomplex="npx code-complexity . --filter '**/*.ts' --limit 10 --sort score"
 alias rmnode="find . -name 'node_modules' -type d -prune -print -exec rm -rf '{}' \;"
 
+# PNPM
+alias pn="pnpm"
+
 # UTILIDADES SISTEMA
 alias myip="curl http://ipecho.net/plain; echo"
 alias usage="du -h -d1"
