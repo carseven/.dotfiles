@@ -5,15 +5,6 @@
   tags:
     - brew
 
-- name: Upgrading Homebrew Packages
-  homebrew:
-    upgrade_all: true
-  register: result
-  until: result is successful
-  become: no
-  tags:
-    - brew
-
 - name: Brew bundle
   ansible.builtin.shell: brew bundle --file="~/.dotfiles/Brewfile" --no-lock
   register: brew
