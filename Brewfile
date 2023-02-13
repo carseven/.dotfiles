@@ -34,7 +34,6 @@ brew "qmk/qmk/qmk"
 brew "yabai"
 brew "skhd"
 
-cask "spacelauncher"
 # cask "alt-tab"
 cask "authy"
 cask "bitwarden"
