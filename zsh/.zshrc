@@ -3,9 +3,6 @@
 # Homebrew
 export PATH="/opt/homebrew/bin:$PATH"
 
-# TMUX start by default
-# ZSH_TMUX_AUTOSTART='true'
-
 # Use homebrew installed git and zsh
 # /opt/homebrew/pot/git
 source $(brew --prefix git)

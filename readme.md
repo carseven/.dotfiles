@@ -31,8 +31,12 @@
 
 - Fix none 0 stand out macos.sh
 - Test ansible playbook on a brand new macos installation.
+- Move dotfiles to deno or node js scripting?
 - Install yabai setup
   - Fix yabai Ventura scripts problems
-  - Add macos reduce motion and move between spaces with control + # (Number)
+  - Add macos reduce motion
 - Nvim and tmux setup https://www.joshmedeski.com/posts/clutter-free-macos/
+  - Add tmux session path name instead of windows?
+  - This will allow work per projects and every window will use per utility
+  - Improve how to change sessions and search for sessions
 - Remove .dotfiles complexity

@@ -67,8 +67,6 @@ alias glog='git log --graph --oneline --decorate --all'
 alias gui='gitui'
 alias gsearch="git log --decorate --all --oneline -S"
 function gbat() { git diff --name-only --diff-filter=d | xargs bat --diff }
-# git branch | grep "<pattern>" | xargs git branch -D # TODO: Create a function that accepts pattern and executes alias
-
 
 # FZF
 # Open in vscode dev repositories

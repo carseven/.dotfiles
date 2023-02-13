@@ -9,37 +9,51 @@ min_time = 5_000  # Show command duration over 5,000 milliseconds (=5 sec)
 format = " took [$duration]($style)"
 
 [git_metrics]
-disabled=true
-added_style = "bold yellow"
+disabled = true
 format = '[+$added]($added_style)/[-$deleted]($deleted_style) '
-only_nonzero_diffs=false
+only_nonzero_diffs=true
 
 [git_status]
-conflicted = "🗡"
-ahead = "⬆️ ${count}"
-behind = "⬇️ ${count}"
-untracked = "‍🤷${count}"
-stashed = "📦"
-modified = "📝${count}"
-staged = "⭐️${count}"
-renamed = "👅"
-deleted = "🗑 ${count}"
+disabled = true
+# Check icons from Nerd Fonts https://www.nerdfonts.com/cheat-sheet
+format = "$ahead$behind$staged$conflict$modified$untracked$stashed "
+conflicted = "[󰞇](red)"
+ahead = "[ ${count}](blue) "
+behind = "[ ${count}](blue) "
+untracked = "[ ${count}](gray) "
+stashed = "[ ${count}](gray) "
+modified = "[ ${count}](yellow) "
+staged = "[都 ${count}](green) "
+renamed = "󰑕$ {count} "
+deleted = "[✘$ {count}](red) "
+
+[git_state]
+disabled = true
+format = '[\($state( $progress_current of $progress_total)\)]($style) '
 
 [time]
+disabled = true
 time_format = "%T"
 format = "🕙 $time($style) "
 style = "bright-white"
-disabled = true
 
 [character]
 error_symbol = "[✖](bold red) "
 
-[git_state]
-format = '[\($state( $progress_current of $progress_total)\)]($style) '
+[git_branch]
+disabled = true
+
+[git_commit]
+disabled = true
 
 [hostname]
-ssh_only = true
-format =  "on [$hostname](bold red) "
+disabled = true
 
 [battery]
+disabled = true
+
+[package]
+disabled = true
+
+[username]
 disabled = true
