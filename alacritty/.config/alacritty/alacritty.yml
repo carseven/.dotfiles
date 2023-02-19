@@ -1,3 +1,6 @@
+# Alacritty default configuration
+# https://github.com/alacritty/alacritty/blob/master/alacritty.yml
+
 live_config_reload: true
 
 window:
@@ -13,6 +16,8 @@ font:
     family: "Hack Nerd Font Mono"
     style: Regular
   size: 18.0
+
+option_as_alt: Both
 
 key_bindings:
   # Rename the current tmux window
@@ -35,9 +40,9 @@ key_bindings:
   # Change to the previous tmux window
   - { key: LBracket, mods: Command|Shift, chars: "\x02p" }
   # Split the current pane into two, left and right
-  - { key: N, mods: Command|Shift, chars: "\x02%" }
+  - { key: D, mods: Command, chars: "\x02%" }
   # Split the current pane into two, top and bottom.
-  - { key: N, mods: Command, chars: "\x02\"" }
+  - { key: D, mods: Command|Shift, chars: "\x02\"" }
   # Detach the current tmux client
   - { key: Q, mods: Command, chars: "\x02d" }
   # Change to the next tmux window
