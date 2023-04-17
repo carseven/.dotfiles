@@ -53,6 +53,7 @@ cask "runjs"
 cask "spotify"
 cask "the-unarchiver"
 cask "visual-studio-code"
+cask "dbeaver-community"
 
 cask "font-cascadia-code" # Vscode font
 cask "font-hack-nerd-font" # iTerm and Alacritty font
