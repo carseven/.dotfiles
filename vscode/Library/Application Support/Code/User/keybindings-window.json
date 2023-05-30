@@ -102,6 +102,18 @@
     "command": "workbench.action.nextEditor"
   },
   {
+    "comment": "Remove editors on preview mode",
+    "key": "alt+ctrl+right",
+    "command": "workbench.action.closeActiveEditor",
+    "when": "!activeEditorIsNotPreview"
+  },
+  {
+    "comment": "Remove editors on preview mode",
+    "key": "alt+ctrl+left",
+    "command": "workbench.action.closeActiveEditor",
+    "when": "!activeEditorIsNotPreview"
+  },
+  {
     "comment": "Open gitlens graph log",
     "key": "ctrl+shift+alt+g g",
     "command": "gitlens.showGraph"
@@ -152,10 +164,15 @@
     "command": "git.pull"
   },
   {
-    "comment": "Git pull",
+    "comment": "Git push",
     "key": "ctrl+shift+alt+g up",
     "command": "git.push"
-  },
+  }, 
+  {
+    "comment": "Git push",
+    "key": "ctrl+shift+alt+g t",
+    "command": "timeline.focus"
+  }, 
   {
     "comment": "When explorer focused, add a new file under the selected working directory",
     "key": "ctrl+n",
@@ -163,9 +180,10 @@
     "when": "explorerViewletFocus"
   },
   {
-    "comment": "Add a new file under the selected working directory",
-    "key": "ctrl+shift+alt+n",
-    "command": "explorer.newFile"
+    "comment": "When explorer focused, add a new file under the selected working directory",
+    "key": "ctrl+d",
+    "command": "explorer.newFolder",
+    "when": "explorerViewletFocus"    
   },
   {
     "key": "ctrl+shift+alt+b",
@@ -180,4 +198,4 @@
     "key": "ctrl+e",
     "command": "workbench.action.showAllEditorsByMostRecentlyUsed"
   }
-] 
+]
