@@ -7,16 +7,16 @@ export class Logger {
   }
 
   public info(message: string): void {
-    $.logStep(`[INFO] ${message}`);
+    $.logStep(`${message}`);
   }
 
   public error(message: string): void {
-    $.logStep(`[ERROR] ${message}`);
+    $.logError(`[ERROR] ${message}`);
   }
 
-  public debug(message: string): void {
+  public warn(message: string): void {
     if (this.isDebugMode) {
-      $.logStep(`[DEBUG] ${message}`);
+      $.logWarn(`[WARN] ${message}`);
     }
   }
 }
