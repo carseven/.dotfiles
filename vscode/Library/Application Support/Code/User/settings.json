@@ -1,7 +1,6 @@
 {
   "window.title": "${dirty}${activeEditorShort}${separator}${rootName}",
   "window.commandCenter": false,
-  "oneDarkPro.italic": true,
   "workbench.colorTheme": "Dracula",
   "workbench.iconTheme": "symbols",
   "workbench.editor.tabSizing": "fit",
