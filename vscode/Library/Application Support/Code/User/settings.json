@@ -35,7 +35,9 @@
   "editor.fontLigatures": true,
   "editor.linkedEditing": true,
   "editor.wordWrap": "on",
-  "editor.renderWhitespace": "boundary",
+  "editor.renderWhitespace": "selection",
+  "editor.cursorBlinking": "smooth",
+  "editor.cursorSmoothCaretAnimation": "on",
   "breadcrumbs.enabled": false,
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
