@@ -21,7 +21,7 @@ selected_name_t=${selected_name:0:8} # Makes the name in the range of 0 to 8 car
                                      # Done it only because if you pass a certain threshold the final ']' doesn't be displaied
 
 # This is works in all the situations.
-# If you are in a tmux session, and the selected session does exist, switch to it; if not create a new one and then swith to it.
+# If you are in a tmux session, and the selected session does exist, switch to it; if not create a new one and then switch to it.
 if [[ -n $TMUX ]]; then
   tmux switch-client -t "$selected_name_t" \
   || tmux new-session -ds "$selected_name_t" -c "$selected" \

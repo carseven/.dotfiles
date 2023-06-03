@@ -64,8 +64,9 @@ alias gwc="git switch -c"
 alias gswitch="git branch | fzf | xargs -I_ git switch _"
 alias gbranchdel="git branch | fzf | xargs -I_ git branch -d _"
 alias glog='git log --graph --oneline --decorate --all'
-alias gui='gitui'
+alias gg='lazygit'
 alias gsearch="git log --decorate --all --oneline -S"
+alias gpipe="  git commit --allow-empty -m 'Trigger CI/CD'"
 function gbat() { git diff --name-only --diff-filter=d | xargs bat --diff }
 
 # FZF
