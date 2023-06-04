@@ -172,7 +172,7 @@
   {
     "comment": "Open gitlens graph log",
     "key": "ctrl+shift+alt+g g",
-    "command": "gitlens.showGraph"
+    "command": "git-graph.view"
   },
   {
     "comment": "Close all diff editor",
