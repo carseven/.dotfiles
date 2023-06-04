@@ -34,8 +34,6 @@ export const BREW_PACKAGES: string[] = [
   "neovim",
   "zsh",
   "qmk/qmk/qmk",
-  "yabai",
-  "skhd",
 ];
 
 export const BREW_CASK_PACKAGES = [
