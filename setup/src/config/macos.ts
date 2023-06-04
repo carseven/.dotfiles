@@ -40,7 +40,6 @@ export const BREW_CASK_PACKAGES = [
   "authy",
   "bitwarden",
   "brave-browser",
-  "devtoys",
   "discord",
   "dozer",
   "fig",
