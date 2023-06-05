@@ -96,6 +96,11 @@
     "when": "terminalFocus"
   },
   {
+    "comment": "New terminal",
+    "key": "ctrl+shift+alt+t",
+    "command": "workbench.action.terminal.new"
+  },
+  {
     "comment": "Focus from editor to terminal",
     "key": "ctrl+shift+alt+j",
     "command": "workbench.action.terminal.focus"
