@@ -56,6 +56,11 @@
     "when": "editorHasDefinitionProvider && editorTextFocus && !isInEmbeddedEditor"
   },
   {
+    "key": "ctrl+shift+b",
+    "command": "editor.action.goToReferences",
+    "when": "editorHasDefinitionProvider && editorTextFocus && !isInEmbeddedEditor"
+  },
+  {
     "key": "ctrl+d",
     "command": "workbench.action.terminal.split",
     "when": "terminalFocus && terminalProcessSupported"
