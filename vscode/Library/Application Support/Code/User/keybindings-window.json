@@ -1,5 +1,10 @@
 [
   {
+    "key": "ctrl+shift+alt+h",
+    "command": "editor.action.showDefinitionPreviewHover",
+    "when": "editorTextFocus"
+  },
+  {
     "key": "alt+left",
     "command": "workbench.action.navigateBack",
     "when": "canNavigateBack"
