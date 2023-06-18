@@ -14,22 +14,22 @@
 # Installation guide
 
 - Open terminal
-- Execute
-  `curl https://raw.githubusercontent.com/carseven/.dotfiles/main/setup/setup.sh | sh`
+  - Execute `curl https://raw.githubusercontent.com/carseven/.dotfiles/main/setup/setup.sh | sh`
 
 - Manual settings:
   - Change spotlight keyboard shorcut (Preferences > Keyboard > Shortcuts) -> None
-  - Change input sources keyboard shorcut -> None
+  - Change input sources keyboard shortcut -> None
   - Import raycast settings
   - Activate night shift
-  - Install brave extensions: Notion Web CLipper and Vimium
+  - Install brave extensions: Notion Web CLipper and Bitwarden
   - Import raycast settings file
-  - Install vim plugins :PlugInstall
-  - Install tmux plugins Prefix + I (Capital I)
 
 # TODO
 
-- Move setup script to another repository?
-- Fix none 0 stand out macos.sh
-- Document scripts
-- Remove .dotfiles complexity
+- [] Finish deno setup install
+- [] Move deno setup install to other git repository?
+- [] Fix none 0 stand out macos.sh -> Make dax script intead of .sh
+- [] Add CI/CD with github actions and save binary package to github packages.
+- [] Write a blog post explaining my setup and update readme documentation :)
+- [] Create Linux and Windows minimal setup script?
+
