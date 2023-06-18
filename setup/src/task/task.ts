@@ -2,11 +2,17 @@ import { Logger } from "../utils/logger.ts";
 
 export type TaskStatus = "OK" | "ERROR" | "WARN";
 
-// TODO: Refactor type safe, only error should have errorMessage
-export interface TaskResult {
-  status: TaskStatus;
-  errorMessage?: string;
-}
+export type TaskResult =
+  | {
+      status: "OK";
+    }
+  | {
+      status: "WARN";
+    }
+  | {
+      status: "ERROR";
+      errorMessage: string;
+    };
 
 export const taskOk: TaskResult = { status: "OK" };
 export const taskError: (errorMessage: string) => TaskResult = (
@@ -37,7 +43,7 @@ export class TaskRunner {
       // TODO: Add progress
       const result = await task.action();
 
-      if (result?.status === "ERROR" && result.errorMessage) {
+      if (result?.status === "ERROR") {
         this.logger.error(result.errorMessage);
       }
     }

@@ -3,7 +3,6 @@ import {
   BREW_CASK_PACKAGES,
   BREW_PACKAGES as BREW_MACOS_PACKAGES,
 } from "./src/config/macos.ts";
-import { BREW_PACKAGES as BREW_LINUX_PACKAGES } from "./src/config/linux.ts";
 import { installBrewPackages } from "./src/package-managers/brew.ts";
 import { createDirectory } from "./src/utils/directory-utils.ts";
 import { CliArguments } from "./src/utils/cli-args.ts";
@@ -18,48 +17,9 @@ const logger = new Logger(cliArguments.isDebugMode);
 const os = await $`uname -s`.text();
 
 let tasks: Task[] = [];
-if (os === "Linux") {
-  logger.info("Running script on Linux...");
-  const packages = BREW_LINUX_PACKAGES;
-
-  tasks = [
-    {
-      name: "Create dev directory",
-      action: () => createDirectory("dev"),
-    },
-    {
-      name: "Install brew packages",
-      action: () => installBrewPackages(packages, os),
-    },
-    {
-      name: "Config zsh shell",
-      action: () => configSystemShell("zsh"),
-    },
-    {
-      name: "Clone .dotfiles respository",
-      action: () =>
-        cloneRepository(
-          "https://github.com/carseven/.dotfiles.git",
-          Deno.env.get("HOME") || ".",
-          ".dotfiles"
-        ),
-    },
-    {
-      name: "Stow dotfiles",
-      action: () => Promise.resolve(),
-    },
-    {
-      name: "Install node LTS and PNPM",
-      action: () => Promise.resolve(),
-    },
-    {
-      name: "Install tmux TPM (Tmux plugin manager)",
-      action: () => Promise.resolve(),
-    },
-  ];
-} else if (os === "Macos") {
-  // Manually launch macos.sh
-  // Maybe detect if updated to last version? And launch
+if (os === "Macos") {
+  // Add flag for updating macos if not last version
+  // Add flag to launch macos config script
 
   logger.info("Running script on MacOS...");
   const packages = BREW_MACOS_PACKAGES;
@@ -113,13 +73,13 @@ if (os === "Linux") {
       action: () => Promise.resolve(),
     },
     {
+      // Probably remove because not using it at the moment
       name: "Config yabai",
       action: () => Promise.resolve(),
     },
   ];
-} else if (os === "Windows") {
-  // TODO: Implement script from notion manual scripts
-  // Window add autohotkey
+} else {
+  logger.warn(`TODO: ${os} still not implemented`);
 }
 
 const taskRunner = new TaskRunner(tasks, logger);
