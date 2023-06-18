@@ -223,24 +223,49 @@
     "comment": "Move between tabs (all groups). Cuando se tiene foco en el terminal, es para moverse entre instancias del mismo",
     "key": "alt+ctrl+left",
     "command": "workbench.action.previousEditor",
-    "when": "editorFocus"
+    "when": "!isMac && editorFocus"
+  },
+  {
+    "comment": "Move between tabs (all groups). Cuando se tiene foco en el terminal, es para moverse entre instancias del mismo",
+    "key": "alt+cmd+left",
+    "command": "workbench.action.previousEditor",
+    "when": "isMac && editorFocus"
   },
   {
     "comment": "Move between tabs (all groups). Cuando se tiene foco en el terminal, es para moverse entre instancias del mismo",
     "key": "alt+ctrl+right",
-    "command": "workbench.action.nextEditor"
+    "command": "workbench.action.nextEditor",
+    "when": "!isMac"
+  },
+  {
+    "comment": "Move between tabs (all groups). Cuando se tiene foco en el terminal, es para moverse entre instancias del mismo",
+    "key": "alt+cmd+right",
+    "command": "workbench.action.nextEditor",
+    "when": "isMac"
   },
   {
     "comment": "Remove editors on preview mode",
     "key": "alt+ctrl+right",
     "command": "workbench.action.closeActiveEditor",
-    "when": "!activeEditorIsNotPreview"
+    "when": "!isMac && !activeEditorIsNotPreview"
+  },
+  {
+    "comment": "Remove editors on preview mode",
+    "key": "alt+cmd+right",
+    "command": "workbench.action.closeActiveEditor",
+    "when": "isMac && !activeEditorIsNotPreview"
   },
   {
     "comment": "Remove editors on preview mode",
     "key": "alt+ctrl+left",
     "command": "workbench.action.closeActiveEditor",
-    "when": "!activeEditorIsNotPreview"
+    "when": "!isMac && !activeEditorIsNotPreview"
+  },
+  {
+    "comment": "Remove editors on preview mode",
+    "key": "alt+cmd+left",
+    "command": "workbench.action.closeActiveEditor",
+    "when": "isMac && !activeEditorIsNotPreview"
   },
   {
     "comment": "Open gitlens graph log",
@@ -307,6 +332,11 @@
     "key": "ctrl+n",
     "command": "explorer.newFile",
     "when": "!isMac && explorerViewletFocus"
+  },
+  {
+    "key": "cmd+enter",
+    "command": "explorer.openAndPassFocus",
+    "when": "isMac && explorerViewletFocus"
   },
   {
     "comment": "When explorer focused, add a new file under the selected working directory",
