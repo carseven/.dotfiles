@@ -103,7 +103,7 @@
   {
     "key": "ctrl+d",
     "command": "workbench.action.terminal.split",
-    "when": ""
+    "when": "!isMac && (terminalFocus && terminalProcessSupported)"
   },
   {
     "key": "cmd+d",
