@@ -80,6 +80,7 @@ alias cf="find ~ ~/dev -mindepth 1 -maxdepth 1 -type d | fzf | xargs -I_ code _"
 bindkey -s ^f "$HOME/.local/bin/scripts/tmux-session\n" # Bindea cntrl + f a lanzar el string
 alias hfind="history | fzf"
 alias afind="alias | fzf"
+alias most_used="history  | awk '{print $2}' | sort | uniq -c | sort"
 
 # Preview files with bat
 function preview(){
