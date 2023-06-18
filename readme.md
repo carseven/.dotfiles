@@ -29,13 +29,7 @@
 
 # TODO
 
+- Move setup script to another repository?
 - Fix none 0 stand out macos.sh
 - Document scripts
-- Install yabai setup
-  - Fix yabai Ventura scripts problems
-  - Add macos reduce motion
-- Nvim and tmux setup https://www.joshmedeski.com/posts/clutter-free-macos/
-  - Add tmux session path name instead of windows?
-  - This will allow work per projects and every window will use per utility
-  - Improve how to change sessions and search for sessions
 - Remove .dotfiles complexity

@@ -1,4 +1,4 @@
-import $ from "https://deno.land/x/dax@0.31.1/mod.ts";
+import $ from "dax";
 
 export async function createDirectory(
   path: string,

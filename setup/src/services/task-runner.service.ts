@@ -1,4 +1,4 @@
-import { Logger } from "../utils/logger.ts";
+import { Logger } from "./logger.service.ts";
 
 export type TaskStatus = "OK" | "ERROR" | "WARN";
 

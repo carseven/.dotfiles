@@ -1,15 +1,18 @@
 import { $ } from "dax";
 import {
   BREW_CASK_PACKAGES,
+  BREW_FONTS,
   BREW_PACKAGES as BREW_MACOS_PACKAGES,
-} from "./src/config/macos.ts";
-import { installBrewPackages } from "./src/package-managers/brew.ts";
-import { createDirectory } from "./src/utils/directory-utils.ts";
-import { CliArguments } from "./src/utils/cli-args.ts";
-import { Logger } from "./src/utils/logger.ts";
-import { configSystemShell } from "./src/utils/shells.ts";
-import { cloneRepository } from "./src/utils/git.ts";
-import { Task, TaskRunner } from "./src/task/task.ts";
+} from "./src/config/brew.config.ts";
+import { installBrewPackages } from "./src/tasks/brew.ts";
+import { createDirectory } from "./src/utils/directory.utils.ts";
+import { CliArguments } from "./src/services/cli-args.service.ts";
+import { Logger } from "./src/services/logger.service.ts";
+import { configSystemShell } from "./src/utils/shells.utils.ts";
+import { cloneRepository } from "./src/utils/git.utils.ts";
+import { Task, TaskRunner } from "./src/services/task-runner.service.ts";
+import { vscodeInstallExtensions } from "./src/tasks/vscode.ts";
+import { VSCODE_EXTENSIONS } from "./src/config/vscode.config.ts";
 
 const cliArguments = new CliArguments();
 const logger = new Logger(cliArguments.isDebugMode);
@@ -32,7 +35,8 @@ if (os === "Macos") {
     },
     {
       name: "Install brew packages",
-      action: () => installBrewPackages([...packages, ...caskPackages], os),
+      action: () =>
+        installBrewPackages([...packages, ...caskPackages, ...BREW_FONTS], os),
     },
     {
       name: "Config zsh shell",
@@ -60,20 +64,16 @@ if (os === "Macos") {
       action: () => Promise.resolve(),
     },
     {
+      // TODO: No currently on my workflow
       name: "Install tmux TPM (Tmux plugin manager)",
       action: () => Promise.resolve(),
     },
     {
       name: "Install vscode extensions",
-      action: () => Promise.resolve(),
+      action: () => vscodeInstallExtensions(VSCODE_EXTENSIONS),
     },
     {
-      // Probably remove, because really need it?
-      name: "Config Fig color theme",
-      action: () => Promise.resolve(),
-    },
-    {
-      // Probably remove because not using it at the moment
+      // TODO: No currently on my workflow
       name: "Config yabai",
       action: () => Promise.resolve(),
     },

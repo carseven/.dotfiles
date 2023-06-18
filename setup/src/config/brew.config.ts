@@ -37,6 +37,7 @@ export const BREW_PACKAGES: string[] = [
 ];
 
 export const BREW_CASK_PACKAGES = [
+  "alt-tab",
   "authy",
   "bitwarden",
   "brave-browser",
@@ -57,4 +58,9 @@ export const BREW_CASK_PACKAGES = [
   "postman",
   "spacelauncher",
   "flameshot",
+];
+
+export const BREW_FONTS = [
+  "font-cascadia-code", // Vscode font
+  "font-hack-nerd-font", // Terminal font
 ];
