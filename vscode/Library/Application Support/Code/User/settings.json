@@ -6,7 +6,6 @@
   "workbench.editor.tabSizing": "shrink",
   "workbench.sideBar.location": "right",
   "workbench.productIconTheme": "fluent-icons",
-  "workbench.activityBar.visible": false,
   "workbench.startupEditor": "none",
   "terminal.integrated.fontSize": 16,
   "terminal.integrated.fontFamily": "Hack Nerd Font Mono",
@@ -14,9 +13,9 @@
   "terminal.integrated.cursorStyle": "line",
   "terminal.integrated.env.osx": {
     "FIG_NEW_SESSION": "1"
-  },
+},
   "terminal.integrated.persistentSessionReviveProcess": "never",
-  "editor.tabSize": 2,
+  "editor.tabSize": 4,
   "editor.insertSpaces": true,
   "editor.detectIndentation": false,
   "editor.inlineSuggest.enabled": true, // Show suggestions while writing (cntrl+space action)
@@ -64,13 +63,40 @@
   "git.suggestSmartCommit": false,
   "git.autofetch": true,
   "git.autofetchPeriod": 180,
-  
+
   // Extensions
   "gitlens.codeLens.enabled": false,
   "gitlens.statusBar.enabled": false,
-  "errorLens.enabledDiagnosticLevels": [
-    "error",
-    "warning"
-  ],
-
+  "errorLens.enabledDiagnosticLevels": ["error", "warning"],
+  "symbols.hidesExplorerArrows": false,
+  "yaml.customTags": [
+    "!And",
+    "!And sequence",
+    "!If",
+    "!If sequence",
+    "!Not",
+    "!Not sequence",
+    "!Equals",
+    "!Equals sequence",
+    "!Or",
+    "!Or sequence",
+    "!FindInMap",
+    "!FindInMap sequence",
+    "!Base64",
+    "!Join",
+    "!Join sequence",
+    "!Cidr",
+    "!Ref",
+    "!Sub",
+    "!Sub sequence",
+    "!GetAtt",
+    "!GetAZs",
+    "!ImportValue",
+    "!ImportValue sequence",
+    "!Select",
+    "!Select sequence",
+    "!Split",
+    "!Split sequence"
+],
+"workbench.activityBar.visible": false
 }
