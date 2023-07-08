@@ -7,12 +7,12 @@ import {
 
 export async function stowDirectories(
   directories: string[],
-  cwd: string
+  cwd?: string
 ): Promise<TaskResult> {
   try {
     // TODO: Check error with existing files (Just remove it)
-    // TODO: Test launch script from .dotfiles cloned directory and thar works properly
-    await $`stow ${directories.join("")}`.cwd(cwd || Deno.cwd()).quiet();
+    // TODO: Test launch script from .dotfiles cloned directory and works properly
+    await $`stow ${directories.join(" ")}`.cwd(cwd || Deno.cwd()).quiet();
 
     return taskOk;
   } catch (error: unknown) {

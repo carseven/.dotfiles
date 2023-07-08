@@ -13,6 +13,8 @@ import { cloneRepository } from "./src/utils/git.utils.ts";
 import { Task, TaskRunner } from "./src/services/task-runner.service.ts";
 import { vscodeInstallExtensions } from "./src/tasks/vscode.ts";
 import { VSCODE_EXTENSIONS } from "./src/config/vscode.config.ts";
+import { stowDirectories } from "./src/tasks/stow.ts";
+import { STOW_DIRECTORIES } from "./src/config/stow.config.ts";
 
 const cliArguments = new CliArguments();
 const logger = new Logger(cliArguments.isDebugMode);
@@ -57,25 +59,22 @@ if (os === "Macos") {
     },
     {
       name: "Stow dotfiles",
-      action: () => Promise.resolve(),
-    },
-    {
-      name: "Install node LTS and PNPM",
-      action: () => Promise.resolve(),
+      action: async () => {
+        logger.warn("TODO: Test properly");
+        await stowDirectories(STOW_DIRECTORIES);
+      },
     },
     {
       // TODO: No currently on my workflow
       name: "Install tmux TPM (Tmux plugin manager)",
-      action: () => Promise.resolve(),
+      action: () => {
+        logger.warn("TODO: Implement TMUX configuration");
+        return Promise.resolve();
+      },
     },
     {
       name: "Install vscode extensions",
       action: () => vscodeInstallExtensions(VSCODE_EXTENSIONS),
-    },
-    {
-      // TODO: No currently on my workflow
-      name: "Config yabai",
-      action: () => Promise.resolve(),
     },
   ];
 } else {
