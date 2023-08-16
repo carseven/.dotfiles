@@ -1,13 +1,13 @@
 import $ from "dax";
 import {
-  TaskResult,
   taskError,
   taskOk,
+  TaskResult,
 } from "../services/task-runner.service.ts";
 
 export async function stowDirectories(
   directories: string[],
-  cwd?: string
+  cwd?: string,
 ): Promise<TaskResult> {
   try {
     // TODO: Check error with existing files (Just remove it)

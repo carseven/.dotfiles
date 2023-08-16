@@ -85,7 +85,7 @@
     "command": "editor.action.revealDefinition",
     "when": "!isMac && (editorHasDefinitionProvider && editorTextFocus && !isInEmbeddedEditor)"
   },
-    {
+  {
     "key": "cmd+b",
     "command": "editor.action.revealDefinition",
     "when": "isMac && (editorHasDefinitionProvider && editorTextFocus && !isInEmbeddedEditor)"
@@ -321,12 +321,12 @@
     "comment": "Git push",
     "key": "ctrl+shift+alt+g up",
     "command": "git.push"
-  }, 
+  },
   {
     "comment": "Git push",
     "key": "ctrl+shift+alt+g t",
     "command": "timeline.focus"
-  }, 
+  },
   {
     "comment": "When explorer focused, add a new file under the selected working directory",
     "key": "ctrl+n",
@@ -348,13 +348,13 @@
     "comment": "When explorer focused, add a new file under the selected working directory",
     "key": "ctrl+d",
     "command": "explorer.newFolder",
-    "when": "!isMac && explorerViewletFocus"    
+    "when": "!isMac && explorerViewletFocus"
   },
   {
     "comment": "When explorer focused, add a new file under the selected working directory",
     "key": "cmd+d",
     "command": "explorer.newFolder",
-    "when": "isMac && explorerViewletFocus"    
+    "when": "isMac && explorerViewletFocus"
   },
   {
     "key": "ctrl+shift+alt+b",
@@ -363,7 +363,11 @@
   {
     "key": "ctrl+shift+alt+f",
     "command": "search.action.openNewEditor",
-    "args": { "triggerSearch": true, "focusResults": false, "filesToInclude": "{**/*.*,**/*.*}" }
+    "args": {
+      "triggerSearch": true,
+      "focusResults": false,
+      "filesToInclude": "{**/*.*,**/*.*}"
+    }
   },
   {
     "key": "ctrl+e",

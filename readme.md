@@ -14,10 +14,12 @@
 # Installation guide
 
 - Open terminal
-  - Execute `curl https://raw.githubusercontent.com/carseven/.dotfiles/main/setup/setup.sh | sh`
+  - Execute
+    `curl https://raw.githubusercontent.com/carseven/.dotfiles/main/setup/setup.sh | sh`
 
 - Manual settings:
-  - Change spotlight keyboard shorcut (Preferences > Keyboard > Shortcuts) -> None
+  - Change spotlight keyboard shorcut (Preferences > Keyboard > Shortcuts) ->
+    None
   - Change input sources keyboard shortcut -> None
   - Import raycast settings
   - Activate night shift
@@ -32,4 +34,3 @@
 - [] Add CI/CD with github actions and save binary package to github packages.
 - [] Write a blog post explaining my setup and update readme documentation :)
 - [] Create Linux and Windows minimal setup script?
-

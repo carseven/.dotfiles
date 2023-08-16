@@ -2,7 +2,7 @@ import $ from "dax";
 
 export async function createDirectory(
   path: string,
-  cwd: string = Deno.env.get("HOME") || ""
+  cwd: string = Deno.env.get("HOME") || "",
 ): Promise<void> {
   try {
     await $`mkdir ${path}`.cwd(cwd).quiet("both");

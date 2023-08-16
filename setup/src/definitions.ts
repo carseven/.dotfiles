@@ -1,1 +1,1 @@
-export type OS = "Linux" | "Macos";
+export type OS = "Linux" | "Darwin";

@@ -1,9 +1,11 @@
 import $ from "https://deno.land/x/dax@0.31.1/mod.ts";
 import { OS } from "../definitions.ts";
+import { Logger } from "../services/logger.service.ts";
 
 export async function installBrewPackages(
   packages: string[],
-  os: OS
+  os: OS,
+  logger: Logger,
 ): Promise<void> {
   await installBrewPackageManager(os);
 
@@ -11,12 +13,12 @@ export async function installBrewPackages(
   const packagesToInstall = packages.filter(
     (packageToInstall) =>
       !installedPackages.some(
-        (installedPackage) => installedPackage === packageToInstall
-      )
+        (installedPackage) => installedPackage === packageToInstall,
+      ),
   );
 
   if (packagesToInstall.length === 0) {
-    $.logStep("[INFO] No brew packages to install");
+    logger.info("[INFO] No brew packages to install");
     return;
   }
 
@@ -28,13 +30,14 @@ export async function installBrewPackages(
   try {
     await pb.with(async () => {
       for (const packageToInstall of packagesToInstall) {
+        logger.debug(`Installing ${packageToInstall} package`);
         await $`brew install ${packageToInstall}`.quiet();
         pb.increment();
       }
     });
   } catch (error) {
-    $.logError("[ERROR] Some error installing brew packages");
-    $.logError(error);
+    logger.error("Some error installing brew packages");
+    logger.error(error);
   }
 }
 
@@ -50,7 +53,7 @@ export async function installBrewPackageManager(os: OS): Promise<void> {
     }
 
     const scriptPath = await $.request(
-      "https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh"
+      "https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh",
     )
       .showProgress()
       .pipeToPath();

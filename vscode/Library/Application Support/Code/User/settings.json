@@ -13,7 +13,7 @@
   "terminal.integrated.cursorStyle": "line",
   "terminal.integrated.env.osx": {
     "FIG_NEW_SESSION": "1"
-},
+  },
   "terminal.integrated.persistentSessionReviveProcess": "never",
   "editor.tabSize": 4,
   "editor.insertSpaces": true,
@@ -97,6 +97,7 @@
     "!Select sequence",
     "!Split",
     "!Split sequence"
-],
-"workbench.activityBar.visible": false
+  ],
+  "workbench.activityBar.visible": false,
+  "rapidapi.terminalLink.enabled": false
 }

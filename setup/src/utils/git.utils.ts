@@ -1,14 +1,14 @@
 import $ from "dax";
 import {
-  TaskResult,
   taskError,
   taskOk,
+  TaskResult,
 } from "../services/task-runner.service.ts";
 
 export async function cloneRepository(
   url: string,
   cwd: string,
-  destinationFolder = ""
+  destinationFolder = "",
 ): Promise<TaskResult> {
   try {
     await $`git clone ${url} ${destinationFolder}`
