@@ -15,7 +15,10 @@
 
 - Open terminal
   - Execute
-    `curl https://raw.githubusercontent.com/carseven/.dotfiles/main/setup/setup.sh | sh`
+    1. Update and setup macos config
+    `curl https://raw.githubusercontent.com/carseven/.dotfiles/main/setup/scripts/macos.sh | sh`
+    2. Install all application and packages
+    `curl -L https://github.com/carseven/.dotfiles/releases/download/v0.0.2/dotfiles-install -O && chmod +x dotfiles-install && ./dotfiles-install`
 
 - Manual settings:
   - Change spotlight keyboard shorcut (Preferences > Keyboard > Shortcuts) ->
@@ -24,12 +27,10 @@
   - Import raycast settings
   - Activate night shift
   - Install brave extensions: Notion Web CLipper and Bitwarden
-  - Import raycast settings file
 
 # TODO
 
 - [] Finish deno setup install
-- [] Move deno setup install to other git repository?
 - [] Fix none 0 stand out macos.sh -> Make dax script intead of .sh
 - [] Add CI/CD with github actions and save binary package to github packages.
 - [] Write a blog post explaining my setup and update readme documentation :)
