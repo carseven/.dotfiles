@@ -56,7 +56,6 @@ export const BREW_CASK_PACKAGES = [
   "visual-studio-code",
   "dbeaver-community",
   "postman",
-  "spacelauncher",
   "flameshot",
 ];
 

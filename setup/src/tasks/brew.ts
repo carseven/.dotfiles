@@ -5,7 +5,7 @@ import { Logger } from "../services/logger.service.ts";
 export async function installBrewPackages(
   packages: string[],
   os: OS,
-  logger: Logger,
+  logger: Logger
 ): Promise<void> {
   await installBrewPackageManager(os);
 
@@ -13,14 +13,16 @@ export async function installBrewPackages(
   const packagesToInstall = packages.filter(
     (packageToInstall) =>
       !installedPackages.some(
-        (installedPackage) => installedPackage === packageToInstall,
-      ),
+        (installedPackage) => installedPackage === packageToInstall
+      )
   );
 
   if (packagesToInstall.length === 0) {
     logger.info("[INFO] No brew packages to install");
     return;
   }
+
+  logger.info(`[INFO] Pakcages to install ${packagesToInstall}`);
 
   const pb = $.progress("Brew installing packages...", {
     length: packagesToInstall.length,
@@ -30,7 +32,6 @@ export async function installBrewPackages(
   try {
     await pb.with(async () => {
       for (const packageToInstall of packagesToInstall) {
-        logger.debug(`Installing ${packageToInstall} package`);
         await $`brew install ${packageToInstall}`.quiet();
         pb.increment();
       }
@@ -53,7 +54,7 @@ export async function installBrewPackageManager(os: OS): Promise<void> {
     }
 
     const scriptPath = await $.request(
-      "https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh",
+      "https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh"
     )
       .showProgress()
       .pipeToPath();
