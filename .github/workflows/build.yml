@@ -17,4 +17,4 @@ jobs:
 
       - run: deno task lint && deno task format
       - run: deno task compile
-      - run: ./dotfiles-install -d
+    #   - run: ./dotfiles-install -d # TODO: Config to test install in the pipeline
