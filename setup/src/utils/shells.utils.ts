@@ -1,17 +1,21 @@
 import $ from "dax";
+import { Logger } from "../services/logger.service.ts";
 
-export async function configSystemShell(shell: string): Promise<void> {
+export async function configSystemShell(
+  shell: string,
+  logger: Logger
+): Promise<void> {
   const isShellOnSystem = await isSystemShell(shell);
   if (!isShellOnSystem) {
     await addToSystemShells(shell);
   } else {
-    $.logStep(`[DEBUG] Shell ${shell} is already on /etc/shells`);
+    logger.debug(`Shell ${shell} is already on /etc/shells`);
   }
   const isCurrentShell = await isCurrentSystemShell(shell);
   if (!isCurrentShell) {
     await setCurrentSystemShell(shell);
   } else {
-    $.logStep(`[DEBUG] Shell ${shell} is already current shell`);
+    logger.debug(`Shell ${shell} is already current shell`);
   }
 }
 

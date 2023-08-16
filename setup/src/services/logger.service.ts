@@ -16,7 +16,7 @@ export class Logger {
 
   public debug(message: string): void {
     if (this.isDebugMode) {
-      $.logWarn(`[WARN] ${message}`);
+      $.logWarn(`[DEBUG] ${message}`);
     }
   }
 }

@@ -1,4 +1,4 @@
-import $ from "https://deno.land/x/dax@0.31.1/mod.ts";
+import { $ } from "dax";
 import { OS } from "../definitions.ts";
 import { Logger } from "../services/logger.service.ts";
 
@@ -7,7 +7,7 @@ export async function installBrewPackages(
   os: OS,
   logger: Logger
 ): Promise<void> {
-  await installBrewPackageManager(os);
+  await installBrewPackageManager(os, logger);
 
   const installedPackages = await $`brew list`.printCommand(false).lines();
   const packagesToInstall = packages.filter(
@@ -22,7 +22,7 @@ export async function installBrewPackages(
     return;
   }
 
-  logger.info(`[INFO] Pakcages to install ${packagesToInstall}`);
+  logger.debug(`[INFO] Pakcages to install ${packagesToInstall}`);
 
   const pb = $.progress("Brew installing packages...", {
     length: packagesToInstall.length,
@@ -46,10 +46,13 @@ export async function isBrewInstalled(): Promise<boolean> {
   return (await $`which brew`.quiet().noThrow()).code === 0;
 }
 
-export async function installBrewPackageManager(os: OS): Promise<void> {
+export async function installBrewPackageManager(
+  os: OS,
+  logger: Logger
+): Promise<void> {
   try {
     if (await isBrewInstalled()) {
-      $.logWarn("[DEBUG] Brew package manager already installed.");
+      logger.debug("Brew package manager already installed.");
       return;
     }
 
