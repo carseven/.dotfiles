@@ -118,6 +118,13 @@ function man() {
     man "$@"
 }
 
+function addToPath() {
+    if [[ "$PATH" != *"$1"*]]
+    then 
+        export PATH=$PATH:$1
+    fi
+}
+
 
 # QMK
 alias cplanck="qmk compile -kb planck/rev6 -km carseven"
