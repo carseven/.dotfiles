@@ -61,5 +61,5 @@ export const BREW_CASK_PACKAGES = [
 
 export const BREW_FONTS = [
   "font-cascadia-code", // Vscode font
-  "font-hack-nerd-font", // Terminal font
+  "font-caskaydia-cove-nerd-font", // Cascadia code nerd font patched
 ];

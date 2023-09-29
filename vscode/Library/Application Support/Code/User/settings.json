@@ -7,13 +7,13 @@
   "workbench.sideBar.location": "right",
   "workbench.productIconTheme": "fluent-icons",
   "workbench.startupEditor": "none",
-  "terminal.integrated.fontSize": 16,
-  "terminal.integrated.fontFamily": "Hack Nerd Font Mono",
+  "terminal.integrated.fontSize": 18,
+  "terminal.integrated.fontFamily": "CaskaydiaCove Nerd Font Mono",
   "workbench.colorTheme": "Catppuccin Frappé",
   "terminal.integrated.cursorStyle": "line",
   "terminal.integrated.env.osx": {
     "FIG_NEW_SESSION": "1"
-  },
+},
   "terminal.integrated.persistentSessionReviveProcess": "never",
   "editor.tabSize": 4,
   "editor.insertSpaces": true,
@@ -29,8 +29,8 @@
     "source.sortMembers": true,
     "source.fixAll.eslint": true
   },
-  "editor.fontFamily": "Cascadia Code",
-  "editor.fontSize": 18,
+  "editor.fontFamily": "CaskaydiaCove Nerd Font Mono",
+  "editor.fontSize": 20,
   "editor.lineHeight": 1.8,
   "editor.fontLigatures": true,
   "editor.linkedEditing": true, // HTML linked editing tags

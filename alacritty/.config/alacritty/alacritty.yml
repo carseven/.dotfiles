@@ -13,7 +13,7 @@ window:
 
 font:
   normal:
-    family: "Hack Nerd Font Mono"
+    family: "CaskaydiaCove Nerd Font Mono" 
     style: Regular
   size: 18.0
 
