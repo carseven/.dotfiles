@@ -9,7 +9,7 @@
   "workbench.startupEditor": "none",
   "terminal.integrated.fontSize": 18,
   "terminal.integrated.fontFamily": "CaskaydiaCove Nerd Font Mono",
-  "workbench.colorTheme": "Catppuccin Frappé",
+  "workbench.colorTheme": "Catppuccin Macchiato",
   "terminal.integrated.cursorStyle": "line",
   "terminal.integrated.env.osx": {
     "FIG_NEW_SESSION": "1"
@@ -30,7 +30,7 @@
     "source.fixAll.eslint": true
   },
   "editor.fontFamily": "CaskaydiaCove Nerd Font Mono",
-  "editor.fontSize": 20,
+  "editor.fontSize": 18,
   "editor.lineHeight": 1.8,
   "editor.fontLigatures": true,
   "editor.linkedEditing": true, // HTML linked editing tags
@@ -99,5 +99,6 @@
     "!Split sequence"
   ],
   "workbench.activityBar.visible": false,
-  "rapidapi.terminalLink.enabled": false
+"rapidapi.terminalLink.enabled": false,
+"workbench.editor.empty.hint": "hidden"
 }
