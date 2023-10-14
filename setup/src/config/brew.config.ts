@@ -45,7 +45,7 @@ export const BREW_CASK_PACKAGES = [
   "dozer",
   "fig",
   "google-drive",
-  "alacritty",
+  "wezterm",
   "karabiner-elements",
   "mos",
   "notion",

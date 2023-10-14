@@ -1,5 +1,5 @@
 export const STOW_DIRECTORIES = [
-  "alacritty",
+  "wezterm",
   "bat",
   "git",
   "karabiner",
