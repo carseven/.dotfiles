@@ -4,7 +4,6 @@ export const STOW_DIRECTORIES = [
   "git",
   "karabiner",
   "qmk",
-  "scripts",
   "vscode",
   "zsh",
   "tmux",
