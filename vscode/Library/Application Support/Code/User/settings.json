@@ -1,14 +1,14 @@
 {
   "window.title": "${dirty}${activeEditorShort}${separator}${rootName}",
   "window.commandCenter": false,
-  "window.menuBarVisibility": "compact", // Show top settings on activity bar
-  "workbench.editor.untitled.hint": "hidden", // Don't show hint. Vscode will writing will predict language or you could select the language from bottom
+  "window.menuBarVisibility": "compact", // Don't show hint. Vscode will writing will predict language or you could select the language from bottom
   "workbench.editor.tabSizing": "shrink",
   "workbench.sideBar.location": "right",
   "workbench.productIconTheme": "fluent-icons",
-"workbench.startupEditor": "none",
+  "workbench.startupEditor": "none",
   "workbench.editor.empty.hint": "hidden",
   "workbench.layoutControl.enabled": false,
+  "workbench.activityBar.location": "hidden",
   "terminal.integrated.fontSize": 18,
   "terminal.integrated.fontFamily": "CaskaydiaCove Nerd Font Mono",
   "workbench.colorTheme": "Catppuccin Macchiato",
@@ -69,6 +69,5 @@
   "gitlens.statusBar.enabled": false,
   "errorLens.enabledDiagnosticLevels": ["error", "warning"],
   "symbols.hidesExplorerArrows": false,
-"workbench.activityBar.visible": false,
   // TODO: Find setting to hide open editor from explorer
 }
