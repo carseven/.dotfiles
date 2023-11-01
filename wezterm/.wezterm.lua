@@ -50,6 +50,39 @@ wezterm.on("gui-startup", function()
 end)
 config.window_close_confirmation = 'NeverPrompt'
 
+-- Keys
+config.keys = {
+  -- This will create a new split and run your default program inside it
+  {
+    key = 'd',
+    mods = 'CTRL',
+    action = wezterm.action.SplitHorizontal { domain = 'CurrentPaneDomain' },
+  },
+  {
+    key = 'd',
+    mods = 'CTRL|SHIFT',
+    action = wezterm.action.SplitVertical { domain = 'CurrentPaneDomain' },
+  },
+  -- This will create a new split and run your default program inside it
+  {
+    key = 'm',
+    mods = 'CTRL',
+    action = wezterm.action.TogglePaneZoomState,
+  },
+  {
+    key = 'w',
+    mods = 'CMD',
+    action = wezterm.action.CloseCurrentTab { confirm = false },
+  },
+  {
+    key = 'w',
+    mods = 'CTRL',
+    action = wezterm.action.CloseCurrentPane { confirm = false },
+  },
+  -- Select pane mode
+  { key = 'p', mods = 'CTRL', action = wezterm.action.PaneSelect },
+}
+
 
 -- and finally, return the configuration to wezterm
 return config
