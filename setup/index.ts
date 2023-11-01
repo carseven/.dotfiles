@@ -12,6 +12,7 @@ import { Logger } from "./src/services/logger.service.ts";
 import { Task, TaskRunner } from "./src/services/task-runner.service.ts";
 import { installBrewPackages } from "./src/tasks/brew.ts";
 import { installMasPackages } from "./src/tasks/mas.ts";
+import { launchSkhdService } from "./src/tasks/shkd.ts";
 import { stowDirectories } from "./src/tasks/stow.ts";
 import { vscodeInstallExtensions } from "./src/tasks/vscode.ts";
 import { createDirectory } from "./src/utils/directory.utils.ts";
@@ -64,22 +65,15 @@ if (os === "Darwin") {
     },
     {
       name: "Stow dotfiles",
-      action: async () => {
-        logger.debug("TODO: Test properly");
-        await stowDirectories(STOW_DIRECTORIES);
-      },
-    },
-    {
-      // TODO: No currently on my workflow
-      name: "Install tmux TPM (Tmux plugin manager)",
-      action: () => {
-        logger.debug("TODO: Implement TMUX configuration");
-        return Promise.resolve();
-      },
+      action: async () => await stowDirectories(STOW_DIRECTORIES),
     },
     {
       name: "Install vscode extensions",
       action: () => vscodeInstallExtensions(VSCODE_EXTENSIONS),
+    },
+    {
+      name: "Start skhd service",
+      action: launchSkhdService,
     },
   ];
 } else {

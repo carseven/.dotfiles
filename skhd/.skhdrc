@@ -1,0 +1,4 @@
+alt - t : open -a WezTerm.app
+alt - c : open -a Notion.app
+alt - s : open -a WezTerm.app
+alt - p : open -a Tomito.app
