@@ -15,12 +15,12 @@
     "when": "canNavigateForward"
   },
   {
-    "key": "shift+alt+down",
+    "key": "alt+down",
     "command": "editor.action.moveLinesDownAction",
     "when": "editorTextFocus && !editorReadonly"
   },
   {
-    "key": "shift+alt+up",
+    "key": "alt+up",
     "command": "editor.action.moveLinesUpAction",
     "when": "editorTextFocus && !editorReadonly"
   },
@@ -49,16 +49,6 @@
       "kind": "refactor.extract.function"
     },
     "when": "isMac"
-  },
-  {
-    "key": "alt+up",
-    "command": "editor.action.smartSelect.expand",
-    "when": "editorTextFocus"
-  },
-  {
-    "key": "alt+down",
-    "command": "editor.action.smartSelect.shrink",
-    "when": "editorTextFocus"
   },
   {
     "key": "ctrl+shift+e",
