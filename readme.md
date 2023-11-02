@@ -27,6 +27,10 @@
   - Import raycast settings
   - Activate night shift
   - Install brave extensions: Notion Web CLipper and Bitwarden
+- Vscode layout
+  - Move git to the left bar
+  - Add problems to the right bar
+  - Remove not need options from terminal bar, left bar and right bar :)
 
 # TODO
 
