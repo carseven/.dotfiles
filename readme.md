@@ -30,12 +30,5 @@
 - Vscode layout
   - Move git to the left bar
   - Add problems to the right bar
+  - Remove editor open tabs from right bar
   - Remove not need options from terminal bar, left bar and right bar :)
-
-# TODO
-
-- [] Finish deno setup install
-- [] Fix none 0 stand out macos.sh -> Make dax script intead of .sh
-- [] Add CI/CD with github actions and save binary package to github packages.
-- [] Write a blog post explaining my setup and update readme documentation :)
-- [] Create Linux and Windows minimal setup script?
