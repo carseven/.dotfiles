@@ -14,29 +14,21 @@
 # Installation guide
 
 - Open terminal
-- Execute
-  `curl https://raw.githubusercontent.com/carseven/.dotfiles/main/setup/setup.sh | sh`
+  - Execute
+    1. Update and setup macos config
+    `curl https://raw.githubusercontent.com/carseven/.dotfiles/main/setup/scripts/macos.sh | sh`
+    2. Install all application and packages
+    `curl -L https://github.com/carseven/.dotfiles/releases/download/v0.0.2/dotfiles-install -O && chmod +x dotfiles-install && ./dotfiles-install`
 
 - Manual settings:
-  - Change spotlight keyboard shorcut (Preferences > Keyboard > Shortcuts) -> None
-  - Change input sources keyboard shorcut -> None
+  - Change spotlight keyboard shorcut (Preferences > Keyboard > Shortcuts) ->
+    None
+  - Change input sources keyboard shortcut -> None
   - Import raycast settings
   - Activate night shift
-  - Install brave extensions: Notion Web CLipper and Vimium
-  - Import raycast settings file
-  - Install vim plugins :PlugInstall
-  - Install tmux plugins Prefix + I (Capital I)
-
-# TODO
-
-- Fix none 0 stand out macos.sh
-- Test ansible playbook on a brand new macos installation.
-- Move dotfiles to deno or node js scripting?
-- Install yabai setup
-  - Fix yabai Ventura scripts problems
-  - Add macos reduce motion
-- Nvim and tmux setup https://www.joshmedeski.com/posts/clutter-free-macos/
-  - Add tmux session path name instead of windows?
-  - This will allow work per projects and every window will use per utility
-  - Improve how to change sessions and search for sessions
-- Remove .dotfiles complexity
+  - Install brave extensions: Notion Web CLipper and Bitwarden
+- Vscode layout
+  - Move git to the left bar
+  - Add problems to the right bar
+  - Remove editor open tabs from right bar
+  - Remove not need options from terminal bar, left bar and right bar :)

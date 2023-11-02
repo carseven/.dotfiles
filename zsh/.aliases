@@ -34,9 +34,29 @@ alias ns="npm start"
 alias ni="npm install"
 alias ncomplex="npx code-complexity . --filter '**/*.ts' --limit 10 --sort score"
 alias rmnode="find . -name 'node_modules' -type d -prune -print -exec rm -rf '{}' \;"
+alias npkill="npx npkill"
+
 
 # PNPM
 alias pn="pnpm"
+
+# All packages
+function p() {
+  if [[ -f bun.lockb ]]; then
+    command bun "$@"
+  elif [[ -f yarn.lock ]]; then
+    command yarn $@
+  elif [[ -f package-lock.json ]]; then
+    command npm $@
+  elif [[ -f pnpm-lock.yaml ]]; then
+    command pnpm $@
+  else
+    command npm $@
+  fi
+}
+
+# Alacritty
+alias atheme="npx alacritty-themes"
 
 # UTILIDADES SISTEMA
 alias myip="curl http://ipecho.net/plain; echo"
@@ -64,8 +84,9 @@ alias gwc="git switch -c"
 alias gswitch="git branch | fzf | xargs -I_ git switch _"
 alias gbranchdel="git branch | fzf | xargs -I_ git branch -d _"
 alias glog='git log --graph --oneline --decorate --all'
-alias gui='gitui'
+alias gg='lazygit'
 alias gsearch="git log --decorate --all --oneline -S"
+alias gpipe="  git commit --allow-empty -m 'Trigger CI/CD'"
 function gbat() { git diff --name-only --diff-filter=d | xargs bat --diff }
 
 # FZF
@@ -75,6 +96,7 @@ alias cf="find ~ ~/dev -mindepth 1 -maxdepth 1 -type d | fzf | xargs -I_ code _"
 bindkey -s ^f "$HOME/.local/bin/scripts/tmux-session\n" # Bindea cntrl + f a lanzar el string
 alias hfind="history | fzf"
 alias afind="alias | fzf"
+alias most_used="history  | awk '{print $2}' | sort | uniq -c | sort"
 
 # Preview files with bat
 function preview(){
@@ -110,6 +132,13 @@ function man() {
     LESS_TERMCAP_ue=$'\e[0m' \
     LESS_TERMCAP_us=$'\e[01;32m' \
     man "$@"
+}
+
+function addToPath() {
+    if [[ "$PATH" != *"$1"* ]]
+    then 
+        export PATH=$PATH:$1
+    fi
 }
 
 

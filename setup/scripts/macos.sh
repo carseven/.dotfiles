@@ -1,4 +1,21 @@
 #! /bin/bash
+# Close any open System Preferences panes, to prevent them from overriding
+# settings we’re about to change
+osascript -e 'tell application "System Preferences" to quit'
+
+# Ask for the administrator password upfront
+sudo -v
+
+# Keep-alive: update existing `sudo` time stamp until `.setup` has finished
+while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
+
+# Install all recommended available updates and restart if needed (macos)
+sudo softwareupdate --install --all --restart --recommended
+
+# Installing or update xcode development dependencies
+xcode-select --install
+
+
 # Macos settings
 echo "Settings macos..."
 echo "Set computer name..."
@@ -697,20 +714,6 @@ defaults write com.apple.screencapture name -string "ss"
 defaults write com.apple.screencapture include-date -bool false
 # - Default
 # defaults write com.apple.screencapture include-date -bool true
-
-## ----------------------------------------
-##  Rectangle
-## ----------------------------------------
-# Con la configuración de rectangle es necesario esto?
-#By default, "Make Smaller" will decrease the window until it reaches 25% of the screen (width & height).
-# defaults write com.knollsoft.Rectangle minimumWindowWidth -float 0.1 # 10 %
-# defaults write com.knollsoft.Rectangle minimumWindowHeight -float 0.1 # 10 %
-
-## ----------------------------------------
-##  iTerm2
-## ----------------------------------------
-# Don’t display the annoying prompt when quitting iTerm
-defaults write com.googlecode.iterm2 PromptOnQuit -bool false
 
 
 ## ----------------------------------------

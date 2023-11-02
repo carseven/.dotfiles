@@ -1,5 +1,0 @@
-- name: Set fig theme to Dracula
-  shell: fig theme dracula
-  ignore_errors: yes
-  tags:
-    - fig

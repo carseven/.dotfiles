@@ -1,42 +1,50 @@
 {
   "window.title": "${dirty}${activeEditorShort}${separator}${rootName}",
   "window.commandCenter": false,
-  "workbench.colorTheme": "Dracula",
-  "workbench.iconTheme": "symbols",
-  "workbench.editor.tabSizing": "fit",
+  "window.menuBarVisibility": "compact", // Don't show hint. Vscode will writing will predict language or you could select the language from bottom
+  "workbench.editor.tabSizing": "shrink",
   "workbench.sideBar.location": "right",
+  "workbench.productIconTheme": "fluent-icons",
+  "workbench.startupEditor": "none",
+  "workbench.editor.empty.hint": "hidden",
+  "workbench.layoutControl.enabled": false,
+  "workbench.activityBar.location": "hidden",
   "terminal.integrated.fontSize": 18,
-  "terminal.integrated.fontFamily": "Hack Nerd Font Mono",
-  "terminal.integrated.fontWeight": "400",
+  "terminal.integrated.fontFamily": "CaskaydiaCove Nerd Font Mono",
+  "workbench.colorTheme": "Catppuccin Macchiato",
   "terminal.integrated.cursorStyle": "line",
-  "terminal.integrated.defaultLocation": "editor",
-  "terminal.integrated.defaultProfile.osx": "zsh",
-  "terminal.external.osxExec": "iTerm 2.app",
   "terminal.integrated.env.osx": {
     "FIG_NEW_SESSION": "1"
   },
   "terminal.integrated.persistentSessionReviveProcess": "never",
-  "editor.tabSize": 2,
+  "editor.tabSize": 4,
   "editor.insertSpaces": true,
   "editor.detectIndentation": false,
-  "editor.inlineSuggest.enabled": true,
-  "editor.accessibilitySupport": "off",
+  "editor.inlineSuggest.enabled": true, // Show suggestions while writing (cntrl+space action)
+  "editor.accessibilitySupport": "off", // Vscode thinks fig is a screen reader
   "editor.minimap.enabled": false,
-  "editor.bracketPairColorization.enabled": true,
   "editor.formatOnSaveMode": "file",
   "editor.formatOnSave": true,
+  "editor.formatOnPaste": true,
   "editor.codeActionsOnSave": {
     "source.organizeImports": true,
-    "source.sortMembers": true
+    "source.sortMembers": true,
+    "source.fixAll.eslint": true
   },
-  "editor.formatOnPaste": true,
-  "editor.fontFamily": "Cascadia Code",
+  "editor.fontFamily": "CaskaydiaCove Nerd Font Mono",
   "editor.fontSize": 18,
+  "editor.lineHeight": 1.8,
   "editor.fontLigatures": true,
-  "editor.linkedEditing": true,
+  "editor.linkedEditing": true, // HTML linked editing tags
   "editor.wordWrap": "on",
-  "editor.renderWhitespace": "boundary",
+  "editor.renderWhitespace": "none",
+  "editor.rulers": [120], // Reduce code complexity and improve working on small screens. Show max char line
+  "editor.cursorBlinking": "smooth",
+  "editor.cursorSmoothCaretAnimation": "on",
   "breadcrumbs.enabled": false,
+  "explorer.confirmDelete": false,
+  "explorer.confirmDragAndDrop": false,
+  "explorer.compactFolders": false,
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
@@ -49,12 +57,17 @@
   "[typescript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
+  "files.autoSave": "onFocusChange",
+  "files.eol": "\n",
+  // Git
+  "diffEditor.renderSideBySide": false,
+  "git.suggestSmartCommit": false,
+  "git.autofetch": true,
+  "git.autofetchPeriod": 180,
+  // Extensions
   "gitlens.codeLens.enabled": false,
   "gitlens.statusBar.enabled": false,
-  "explorer.compactFolders": false,
-  "diffEditor.renderSideBySide": false,
-  "rapidapi.terminalLink.enabled": false,
-  "workbench.productIconTheme": "fluent-icons",
-  "workbench.activityBar.visible": false,
-  "workbench.startupEditor": "none",
+  "errorLens.enabledDiagnosticLevels": ["error", "warning"],
+  "symbols.hidesExplorerArrows": false,
+  // TODO: Find setting to hide open editor from explorer
 }
