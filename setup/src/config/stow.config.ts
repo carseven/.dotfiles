@@ -7,4 +7,5 @@ export const STOW_DIRECTORIES = [
   "vscode",
   "zsh",
   "tmux",
+  "nvim",
 ];
