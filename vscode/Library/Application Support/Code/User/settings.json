@@ -17,7 +17,6 @@
     "FIG_NEW_SESSION": "1"
   },
   "terminal.integrated.persistentSessionReviveProcess": "never",
-  "editor.tabSize": 4,
   "editor.insertSpaces": true,
   "editor.detectIndentation": false,
   "editor.inlineSuggest.enabled": true, // Show suggestions while writing (cntrl+space action)
@@ -46,7 +45,8 @@
   "explorer.confirmDragAndDrop": false,
   "explorer.compactFolders": false,
   "[javascript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.tabSize": 4
   },
   "[html]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
@@ -55,7 +55,8 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[typescript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.tabSize": 4
   },
   "files.autoSave": "onFocusChange",
   "files.eol": "\n",
@@ -64,6 +65,8 @@
   "git.suggestSmartCommit": false,
   "git.autofetch": true,
   "git.autofetchPeriod": 180,
+  "git.enableSmartCommit": true,
+  "git.confirmSync": false,
   // Extensions
   "gitlens.codeLens.enabled": false,
   "gitlens.statusBar.enabled": false,
