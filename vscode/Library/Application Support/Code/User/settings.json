@@ -8,14 +8,14 @@
   "workbench.startupEditor": "none",
   "workbench.editor.empty.hint": "hidden",
   "workbench.layoutControl.enabled": false,
-  "workbench.activityBar.location": "hidden",
+  "workbench.activityBar.location": "top",
   "terminal.integrated.fontSize": 18,
   "terminal.integrated.fontFamily": "CaskaydiaCove Nerd Font Mono",
   "workbench.colorTheme": "Catppuccin Macchiato",
   "terminal.integrated.cursorStyle": "line",
   "terminal.integrated.env.osx": {
     "FIG_NEW_SESSION": "1"
-  },
+},
   "terminal.integrated.persistentSessionReviveProcess": "never",
   "editor.insertSpaces": true,
   "editor.detectIndentation": false,
@@ -72,5 +72,4 @@
   "gitlens.statusBar.enabled": false,
   "errorLens.enabledDiagnosticLevels": ["error", "warning"],
   "symbols.hidesExplorerArrows": false,
-  // TODO: Find setting to hide open editor from explorer
 }
