@@ -20,4 +20,5 @@ export const VSCODE_EXTENSIONS = [
   "yoavbls.pretty-ts-errors",
   "Orta.vscode-twoslash-queries",
   "mhutchie.git-graph",
+  "vscodevim.vim",
 ];
