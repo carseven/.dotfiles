@@ -43,16 +43,6 @@ WinActivate ahk_exe Notion.exe
 WinWaitActive ahk_exe Notion.exe
 return
 
-!t::
-IfWinExist ahk_exe wt.exe
-	winactivate ahk_exe wt.exe
-else
-	run wt.exe
-WinWait ahk_exe wt.exe
-WinActivate ahk_exe wt.exe
-WinWaitActive ahk_exe wt.exe
-return
-
 !m::
 IfWinExist ahk_exe Teams.exe
 	winactivate ahk_exe Teams.exe
