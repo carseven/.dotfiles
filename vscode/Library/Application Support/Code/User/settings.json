@@ -69,6 +69,7 @@
   "git.autofetchPeriod": 180,
   "git.enableSmartCommit": true,
   "git.confirmSync": false,
+  "search.useIgnoreFiles": false,
   // Extensions
   "gitlens.codeLens.enabled": false,
   "gitlens.statusBar.enabled": false,
