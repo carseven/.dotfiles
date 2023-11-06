@@ -275,6 +275,6 @@ New-Alias -Name rmrf -Value Remove-File-Recursive
 ## AutoHotKey
 Add the AutoHotKey scripts to the windows startup folder:
 
-- 1. Win + R
-- 2. Type ```shell:startup```
-- 3. Copy the scripts to the folder 
+1. Win + R
+2. Type ```shell:startup```
+3. Copy the scripts to the folder 
