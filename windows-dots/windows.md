@@ -3,6 +3,7 @@
 ## Install apps with chocolatey
 
 - Brave browser
+- powet toys
 - Google chrome
 - notion
 - dbbeaver
@@ -16,6 +17,9 @@
 - docker desktop (download the free version)
 - flameshot (Screenshoots)
 - autohotkey
+- microsoft-windows-terminal
+- cascadiacode
+- choco install cascadia-code-nerd-font
 
 ### Install terminal utilities with Scoop
 
@@ -38,9 +42,7 @@ From this repository install and use the settings:
 - lazygit
 
 ## Powershell terminal 
-Download window terminal emulator from app store.
 Add the following settings:
-
 ```json
 {
     "$help": "https://aka.ms/terminal-documentation",
