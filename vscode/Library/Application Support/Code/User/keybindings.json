@@ -72,12 +72,12 @@
   },
   {
     "key": "ctrl+b",
-    "command": "editor.action.revealDefinition",
+    "command": "editor.action.goToImplementation",
     "when": "!isMac && (editorHasDefinitionProvider && editorTextFocus && !isInEmbeddedEditor)"
   },
   {
     "key": "cmd+b",
-    "command": "editor.action.revealDefinition",
+    "command": "editor.action.goToImplementation",
     "when": "isMac && (editorHasDefinitionProvider && editorTextFocus && !isInEmbeddedEditor)"
   },
   {
