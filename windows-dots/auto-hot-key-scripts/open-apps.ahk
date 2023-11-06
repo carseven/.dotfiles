@@ -37,7 +37,7 @@ return
 IfWinExist ahk_exe Notion.exe
 	winactivate ahk_exe Notion.exe
 else
-	run, C:\Users\serrac\AppData\Local\Programs\Notion\Notion.exe
+	run, "C:\Users\serrac\AppData\Local\Programs\Notion\Notion.exe"
 WinWait ahk_exe Notion.exe
 WinActivate ahk_exe Notion.exe
 WinWaitActive ahk_exe Notion.exe
