@@ -103,7 +103,6 @@ function p() {
 alias myip="curl http://ipecho.net/plain; echo"
 alias usage="du -h -d1"
 alias runport="lsof -i"
-alias delds="sudo find / -name .DS_Store -delete; killall Finder"
 
 # GIT
 alias gc="git commit -m"
