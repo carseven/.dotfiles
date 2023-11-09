@@ -53,13 +53,19 @@ function go_update_last() {
 
   # Remove old version
   if [[ -d "/usr/local/go" ]]; then
-    echo "Removing old version of Go"
-    sudo rm -rf /usr/local/go
+    echo "Moving old version of Go to /usr/local/old-go"
+    sudo mv /usr/local/go /usr/local/old-go
   fi
 
   # Install new version
   echo "Installing Go version $go_lastest_version"
   sudo tar -C /usr/local -xzf /tmp/go.tar.gz
+
+  # Remove old version
+  if [[ -d "/usr/local/old-go" ]]; then
+    echo "Removing old version of Go"
+    sudo rm -rf /usr/local/old-go
+  fi
 
   # Remove downloaded file
   echo "Removing downloaded tar file"
