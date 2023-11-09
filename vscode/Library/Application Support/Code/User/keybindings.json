@@ -36,6 +36,16 @@
   },
   {
     "key": "ctrl+y",
+    "command": "workbench.action.switchWindow",
+    "when": "!isMac"
+  },
+  {
+    "key": "cmd+y",
+    "command": "workbench.action.switchWindow",
+    "when": "!isMac"
+  },
+  {
+    "key": "ctrl+r",
     "command": "editor.action.codeAction",
     "args": {
       "kind": "refactor.extract.function"
@@ -43,7 +53,7 @@
     "when": "!isMac"
   },
   {
-    "key": "cmd+y",
+    "key": "cmd+r",
     "command": "editor.action.codeAction",
     "args": {
       "kind": "refactor.extract.function"
