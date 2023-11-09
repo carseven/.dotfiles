@@ -4,3 +4,9 @@
 
 # Fig post block. Keep at the bottom of this file.
 [[ -f "$HOME/.fig/shell/zprofile.post.zsh" ]] && builtin source "$HOME/.fig/shell/zprofile.post.zsh"
+
+if [[ -d "/usr/local/go/bin" ]]; then
+    export PATH=$PATH:/usr/local/go/bin
+  else 
+    echo "Go is not installed!"
+fi
