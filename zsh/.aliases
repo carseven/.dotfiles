@@ -33,7 +33,8 @@ function go_update_last() {
   # Get last version
   go_lastest_version=$(curl -s https://go.dev/VERSION\?m\=text | head -n 1)
 
-  # Check if go is installed if not install it
+  # Check if go is installed.
+  # If it is installed, check if it is the latest version.
   if ! command -v go &> /dev/null; then
     echo "Go is not installed"
   else
