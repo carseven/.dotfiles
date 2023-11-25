@@ -19,6 +19,7 @@ export const BREW_PACKAGES: string[] = [
   "zsh",
   "qmk/qmk/qmk",
   "koekeishiya/formulae/skhd",
+  "pkgxdev/made/pkgx",
 ];
 
 export const BREW_CASK_PACKAGES = [
