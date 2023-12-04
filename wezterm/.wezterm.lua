@@ -39,7 +39,7 @@ config.font =
       { family = 'CaskaydiaCove Nerd Font Mono' },
       { family = 'Cascadia Code' },
   })
-config.font_size = 20
+config.font_size = 18
 
 -- Window 
 config.window_decorations = "RESIZE" -- disable the title bar but enable the resizable border
@@ -81,6 +81,14 @@ config.keys = {
   },
   -- Select pane mode
   { key = 'p', mods = 'CTRL', action = wezterm.action.PaneSelect },
+  {
+    key = 'g',
+    mods = 'CTRL',
+    action = wezterm.action.SpawnCommandInNewTab {
+      domain = 'CurrentPaneDomain',
+      args = { 'lazygit' },
+    },
+  },
 }
 
 
