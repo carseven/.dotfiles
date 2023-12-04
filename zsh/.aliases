@@ -21,12 +21,11 @@ alias catnl="bat --paging=never"
 alias c="code ."
 
 # PYTHON VENV
-alias venv="python3 -m venv .venv"
-alias avenv="deactivate &> /dev/null; source ./.venv/bin/activate"
+alias create_venv="virtualenv .venv" # pip3 install virtualenv to install global dependency
+alias venv="source source .venv/bin/activate"
 alias dvenv="deactivate &> /dev/null"
-alias fvenv="pip3 freeze"
-alias rvenv="pip3 freeze > requirement.txt"
-alias ivenv="pip3 install -r requirements.txt"
+alias pip_freeze="pip3 freeze > requirement.txt"
+alias pip_freeze_install="pip3 install -r requirements.txt"
 
 # GO
 function go_update_last() {
