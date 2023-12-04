@@ -50,6 +50,13 @@ wezterm.on("gui-startup", function()
 end)
 config.window_close_confirmation = 'NeverPrompt'
 
+-- TODO: Implment custom config keybingding for windows :)
+-- if wezterm.target_triple == 'x86_64-pc-windows-msvc' then
+
+-- else
+
+-- end
+
 -- Keys
 config.keys = {
   -- This will create a new split and run your default program inside it
