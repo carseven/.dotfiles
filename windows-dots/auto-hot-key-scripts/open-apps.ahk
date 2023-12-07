@@ -64,11 +64,11 @@ WinWaitActive ahk_exe Postman.exe
 return
 
 !t::
-IfWinExist ahk_exe wt.exe
-	winactivate ahk_exe wt.exe
+IfWinExist ahk_exe wezterm-gui.exe
+	winactivate ahk_exe wezterm-gui.exe
 else
-	run, "C:\Users\serrac\AppData\Local\Microsoft\WindowsApps\wt.exe"
-WinWait ahk_exe wt.exe
-WinActivate ahk_exe wt.exe
-WinWaitActive ahk_exe wt.exe
+	run, "C:\Program Files\WezTerm\wezterm-gui.exe"
+WinWait ahk_exe wezterm-gui.exe
+WinActivate ahk_exe wezterm-gui.exe
+WinWaitActive ahk_exe wezterm-gui.exe
 return
