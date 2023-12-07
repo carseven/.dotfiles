@@ -20,6 +20,7 @@ export const BREW_PACKAGES: string[] = [
   "qmk/qmk/qmk",
   "koekeishiya/formulae/skhd",
   "pkgxdev/made/pkgx",
+  "jq",
 ];
 
 export const BREW_CASK_PACKAGES = [
@@ -30,7 +31,6 @@ export const BREW_CASK_PACKAGES = [
   "discord",
   "dozer",
   "fig",
-  "google-drive",
   "wezterm",
   "karabiner-elements",
   "mos",
