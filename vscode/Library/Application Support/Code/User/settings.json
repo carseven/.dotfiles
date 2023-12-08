@@ -26,10 +26,10 @@
   "editor.formatOnSave": true,
   "editor.formatOnPaste": true,
   "editor.codeActionsOnSave": {
-    "source.organizeImports": true,
-    "source.sortMembers": true,
-    "source.fixAll.eslint": true
-  },
+    "source.organizeImports": "always",
+    "source.sortMembers": "always",
+    "source.fixAll.eslint": "always"
+},
   "editor.fontFamily": "CaskaydiaCove Nerd Font Mono",
   "editor.fontSize": 18,
   "editor.lineHeight": 1.8,

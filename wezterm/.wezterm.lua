@@ -40,6 +40,8 @@ config.font =
       { family = 'Cascadia Code' },
   })
 config.font_size = 18
+config.warn_about_missing_glyphs = false
+
 
 -- Window 
 config.window_decorations = "RESIZE" -- disable the title bar but enable the resizable border
@@ -50,14 +52,20 @@ wezterm.on("gui-startup", function()
 end)
 config.window_close_confirmation = 'NeverPrompt'
 
--- TODO: Implment custom config keybingding for windows :)
--- if wezterm.target_triple == 'x86_64-pc-windows-msvc' then
+-- Tabs
+config.hide_tab_bar_if_only_one_tab = true
 
+
+-- Keys
+-- local os_specific_keys
+-- if wezterm.target_triple == 'x86_64-pc-windows-msvc' then
+--     os_specific_keys = {
+
+--     }
 -- else
 
 -- end
 
--- Keys
 config.keys = {
   -- This will create a new split and run your default program inside it
   {
@@ -65,20 +73,25 @@ config.keys = {
     mods = 'CTRL',
     action = wezterm.action.SplitHorizontal { domain = 'CurrentPaneDomain' },
   },
+  -- This will create a new split and run your default program inside it
   {
     key = 'd',
     mods = 'CTRL|SHIFT',
     action = wezterm.action.SplitVertical { domain = 'CurrentPaneDomain' },
   },
-  -- This will create a new split and run your default program inside it
   {
     key = 'm',
     mods = 'CTRL',
     action = wezterm.action.TogglePaneZoomState,
   },
   {
+    key = 't',
+    mods = 'CTRL',
+    action = wezterm.action.SpawnTab 'CurrentPaneDomain',  
+  },
+  {
     key = 'w',
-    mods = 'CMD',
+    mods = 'CTRL',
     action = wezterm.action.CloseCurrentTab { confirm = false },
   },
   {
@@ -88,6 +101,7 @@ config.keys = {
   },
   -- Select pane mode
   { key = 'p', mods = 'CTRL', action = wezterm.action.PaneSelect },
+  -- Launch lazygit tab
   {
     key = 'g',
     mods = 'CTRL',
@@ -97,6 +111,16 @@ config.keys = {
     },
   },
 }
+
+-- TODO: Fix not working first tab :(
+for i = 1, 8 do
+  -- CTRL + number to move to that position
+  table.insert(config.keys, {
+    key = tostring(i),
+    mods = 'CTRL',
+    action = wezterm.action.MoveTab(i - 1),
+  })
+end
 
 
 -- and finally, return the configuration to wezterm
