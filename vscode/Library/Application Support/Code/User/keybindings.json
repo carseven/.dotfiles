@@ -392,7 +392,14 @@
     "command": "workbench.action.toggleZenMode"
   },
   {
-  "key": "ctrl+shift+alt+g a",
-  "command": "git.commitAll",
+    "command": "runCommands",
+    "key": "ctrl+shift+alt+g a",
+    "args": {
+      "commands": [
+        "git.pull",
+        "git.commitAll",
+        "git.push"
+      ]
+    }
   }
 ]
