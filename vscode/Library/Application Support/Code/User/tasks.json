@@ -1,0 +1,27 @@
+  {
+    "version": "2.0.0",
+    "tasks": [
+      {
+        "label": "lazygit",
+        "type": "shell",
+        "command": "lazygit",
+        "presentation": {
+          "echo": true,
+          "reveal": "always",
+          "focus": true,
+          "panel": "dedicated",
+          "clear": false,
+          "close": true
+        },
+        "dependsOn": "maximize_terminal"
+      },
+      {
+        "label": "close_lazygit",
+        "command": "${command:workbench.action.killTerminalInstance}",
+        "dependsOn": "lazygit",
+        "problemMatcher": [
+          "$go"
+        ]
+      }
+    ]
+  }

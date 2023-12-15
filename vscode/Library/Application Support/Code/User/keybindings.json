@@ -401,5 +401,10 @@
         "git.push"
       ]
     }
-  }
+  },
+  {
+    "command": "workbench.action.tasks.runTask",
+    "key": "ctrl+shift+alt+g l",
+    "args": "lazygit"
+  },
 ]
