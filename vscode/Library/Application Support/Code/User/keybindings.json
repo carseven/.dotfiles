@@ -277,13 +277,18 @@
     "command": "git-graph.view"
   },
   {
+    "comment": "Open multi diff",
+    "key": "ctrl+shift+alt+g d",
+    "command": "git.viewChanges"
+  },
+  {
     "comment": "Close all diff editor",
     "key": "ctrl+shift+alt+g w",
     "command": "git.closeAllDiffEditors"
   },
   {
     "comment": "Git delete branch",
-    "key": "ctrl+shift+alt+g d",
+    "key": "ctrl+shift+alt+g r",
     "command": "git.deleteBranch"
   },
   {
@@ -305,11 +310,6 @@
     "comment": "Git stash current work",
     "key": "ctrl+shift+alt+g s",
     "command": "git.stash"
-  },
-  {
-    "comment": "Git push current work",
-    "key": "ctrl+shift+alt+g s",
-    "command": "gitlens.graph.push"
   },
   {
     "comment": "Git stash pop",
@@ -382,5 +382,18 @@
     "key": "cmd+e",
     "command": "workbench.action.showAllEditorsByMostRecentlyUsed",
     "when": "isMac"
+  },
+  {
+    "key": "ctrl+o",
+    "command": "workbench.action.openRecent"
+  },
+  {
+    "key": "ctrl+r",
+    "command": "-workbench.action.openRecent"
+  },
+  {
+    "key": "ctrl+enter",
+    "command": "-github.copilot.generate",
+    "when": "editorTextFocus && github.copilot.activated && !inInteractiveInput && !interactiveEditorFocused"
   }
 ]
