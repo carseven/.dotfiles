@@ -365,15 +365,6 @@
     "command": "workbench.action.toggleAuxiliaryBar"
   },
   {
-    "key": "ctrl+shift+alt+f",
-    "command": "search.action.openNewEditor",
-    "args": {
-      "triggerSearch": true,
-      "focusResults": false,
-      "filesToInclude": "{**/*.*,**/*.*}"
-    }
-  },
-  {
     "key": "ctrl+e",
     "command": "workbench.action.showAllEditorsByMostRecentlyUsed",
     "when": "!isMac"
@@ -395,5 +386,13 @@
     "key": "ctrl+enter",
     "command": "-github.copilot.generate",
     "when": "editorTextFocus && github.copilot.activated && !inInteractiveInput && !interactiveEditorFocused"
+  },
+  {
+    "key": "ctrl+shift+alt+z",
+    "command": "workbench.action.toggleZenMode"
+  },
+  {
+  "key": "ctrl+shift+alt+g a",
+  "command": "git.commitAll",
   }
 ]

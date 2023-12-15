@@ -8,7 +8,7 @@
   "workbench.startupEditor": "none",
   "workbench.editor.empty.hint": "hidden",
   "workbench.layoutControl.enabled": false,
-  "workbench.activityBar.location": "top",
+  "workbench.activityBar.location": "hidden",
   "terminal.integrated.fontSize": 18,
   "terminal.integrated.fontFamily": "CaskaydiaCove Nerd Font Mono",
   "workbench.colorTheme": "Catppuccin Macchiato",
@@ -69,6 +69,7 @@
   "git.autofetchPeriod": 180,
   "git.enableSmartCommit": true,
   "git.confirmSync": false,
+  "git.rebaseWhenSync": true,
   "search.useIgnoreFiles": false,
   // Extensions
   "gitlens.codeLens.enabled": false,
