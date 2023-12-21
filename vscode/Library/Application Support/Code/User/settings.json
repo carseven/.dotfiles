@@ -15,7 +15,7 @@
   "workbench.tree.renderIndentGuides": "none",
   "terminal.integrated.fontSize": 18,
   "terminal.integrated.fontFamily": "CaskaydiaCove Nerd Font Mono",
-  "terminal.integrated.cursorStyle": "line",
+  "terminal.integrated.cursorStyle": "block",
   "terminal.integrated.persistentSessionReviveProcess": "never",
   "editor.insertSpaces": true,
   "editor.detectIndentation": false,
