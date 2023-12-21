@@ -12,7 +12,11 @@
   "workbench.layoutControl.enabled": false,
   "workbench.activityBar.location": "hidden",
   "workbench.colorTheme": "Catppuccin Macchiato",
+  // File explorer tree
   "workbench.tree.renderIndentGuides": "none",
+  "workbench.tree.indent": 24,
+  "workbench.tree.enableStickyScroll": true,
+  // Terminal
   "terminal.integrated.fontSize": 18,
   "terminal.integrated.fontFamily": "CaskaydiaCove Nerd Font Mono",
   "terminal.integrated.cursorStyle": "block",
