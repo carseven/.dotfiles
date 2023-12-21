@@ -1,16 +1,17 @@
 {
   "window.title": "${dirty}${activeEditorShort}${separator}${rootName}",
   "window.commandCenter": false,
-  "workbench.editor.tabSizing": "shrink",
   "workbench.sideBar.location": "right",
   "workbench.productIconTheme": "fluent-icons",
   "workbench.startupEditor": "none",
   "workbench.editor.empty.hint": "hidden",
   // Editor Tabs
+  "workbench.editor.tabSizing": "shrink",
   "workbench.editor.showIcons": false,
   "workbench.editor.tabActionCloseVisibility": false,
   "workbench.layoutControl.enabled": false,
   "workbench.activityBar.location": "hidden",
+  "workbench.statusBar.visible": false,
   "workbench.colorTheme": "Catppuccin Macchiato",
   // File explorer tree
   "workbench.tree.renderIndentGuides": "none",
@@ -22,8 +23,7 @@
   "terminal.integrated.cursorStyle": "block",
   "terminal.integrated.persistentSessionReviveProcess": "never",
   "editor.insertSpaces": true,
-  "editor.detectIndentation": false,
-  "editor.renderIndentGuides": false,
+  "editor.detectIndentation": true,
   "editor.inlineSuggest.enabled": true, // Show suggestions while writing (cntrl+space action)
   "editor.accessibilitySupport": "off", // Vscode thinks fig is a screen reader
   "editor.minimap.enabled": false,
@@ -45,8 +45,8 @@
   "editor.rulers": [
     120
   ], // Reduce code complexity and improve working on small screens. Show max char line
-  "editor.cursorBlinking": "smooth",
-  "editor.cursorSmoothCaretAnimation": "on",
+  "editor.guides.indentation": false,
+  "editor.cursorBlinking": "solid",
   // Line number reduce width
   "editor.lineDecorationsWidth": 10,
   "editor.glyphMargin": false,
@@ -77,6 +77,8 @@
     "editor.defaultFormatter": "vscode.json-language-features"
   },
   // Git
+  "scm.alwaysShowRepositories": true,
+  "scm.diffDecorations": "gutter",
   "diffEditor.renderSideBySide": false,
   "git.suggestSmartCommit": false,
   "git.autofetch": true,
@@ -303,4 +305,7 @@
       ]
     }
   ],
+  "terminal.integrated.env.osx": {
+    "FIG_NEW_SESSION": "1"
+  },
 }

@@ -392,7 +392,7 @@
     "command": "workbench.action.toggleZenMode"
   },
   {
-    "command": "Git pull, Commit All and Push",
+    "command": "runCommands",
     "key": "ctrl+shift+alt+g a",
     "args": {
       "commands": [
@@ -408,10 +408,6 @@
     "args": "lazygit"
   },
   // TODO: If used add windows shortcuts
-  {
-    "key": "cmd+0",
-    "command": "workbench.action.openLastEditorInGroup"
-  },
   {
     "key": "cmd+1",
     "command": "workbench.action.openEditorAtIndex1"
