@@ -5,7 +5,7 @@
     text-transform: uppercase;
 ">The perfect dev setup</h2>
 <p align="center">
-    <img src="terminal.png"/>
+    <img src="terminal.jpeg"/>
 </p>
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
