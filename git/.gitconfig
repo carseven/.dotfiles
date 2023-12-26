@@ -19,3 +19,7 @@
 	cmd = code --wait $MERGED
 [init]
 	defaultBranch = main
+[pull]
+	rebase = true
+[credentials]
+	helper = osxkeychain
