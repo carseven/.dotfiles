@@ -13,6 +13,8 @@
 
 # Installation guide
 
+Follow the https://github.com/carseven/deno-dotfiles-script/ script
+
 - Manual settings:
   - Change spotlight keyboard shorcut (Preferences > Keyboard > Shortcuts) ->
     None
