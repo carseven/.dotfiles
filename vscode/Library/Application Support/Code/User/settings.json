@@ -48,9 +48,9 @@
   "editor.guides.indentation": false,
   "editor.cursorBlinking": "solid",
   // Line number reduce width
-  "editor.lineDecorationsWidth": 10,
   "editor.glyphMargin": false,
   "editor.folding": false,
+  "editor.lineNumbers": "off",
   "breadcrumbs.enabled": false,
   "explorer.confirmDelete": false,
   "explorer.confirmDragAndDrop": false,
@@ -87,9 +87,6 @@
   "git.confirmSync": false,
   "git.rebaseWhenSync": true,
   "search.useIgnoreFiles": false,
-  // Zen Mode
-  "zenMode.showTabs": "single",
-  "zenMode.hideLineNumbers": false,
   // Extensions
   "gitlens.codeLens.enabled": false,
   "gitlens.statusBar.enabled": false,

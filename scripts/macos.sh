@@ -1,24 +1,3 @@
-#! /bin/bash
-# Close any open System Preferences panes, to prevent them from overriding
-# settings we’re about to change
-osascript -e 'tell application "System Preferences" to quit'
-
-# Ask for the administrator password upfront
-sudo -v
-
-# Keep-alive: update existing `sudo` time stamp until `.setup` has finished
-while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
-
-# Install all recommended available updates and restart if needed (macos)
-sudo softwareupdate --install --all --restart --recommended
-
-# Installing or update xcode development dependencies
-xcode-select --install
-
-
-# Macos settings
-echo "Settings macos..."
-echo "Set computer name..."
 # Set computer name (as done via System Preferences → Sharing)
 sudo scutil --set ComputerName "m1"
 # sudo scutil --set HostName "m1"
