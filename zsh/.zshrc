@@ -1,5 +1,9 @@
 # Fig pre block. Keep at the top of this file.
 [[ -f "$HOME/.fig/shell/zshrc.pre.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.pre.zsh"
+
+# Add go install binaries to PATH
+export PATH="$HOME/go/bin:$PATH"
+
 # Homebrew
 export PATH="/opt/homebrew/bin:$PATH"
 
