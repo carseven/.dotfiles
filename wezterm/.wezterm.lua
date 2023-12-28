@@ -112,7 +112,6 @@ config.keys = {
   },
 }
 
--- TODO: Fix not working first tab :(
 for i = 1, 8 do
   -- CTRL + number to move to that position
   table.insert(config.keys, {
