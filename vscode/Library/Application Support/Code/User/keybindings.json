@@ -25,14 +25,14 @@
     "when": "editorTextFocus && !editorReadonly"
   },
   {
-    "key": "ctrl+t",
-    "command": "editor.action.refactor",
+    "key": "ctrl+r",
+    "command": "editor.action.rename",
     "when": "!isMac && (editorHasCodeActionsProvider && textInputFocus && !editorReadonly)"
   },
   {
-    "key": "cmd+t",
-    "command": "editor.action.refactor",
-    "when": "isMac && editorHasCodeActionsProvider && textInputFocus && !editorReadonly)"
+    "key": "cmd+r",
+    "command": "editor.action.rename",
+    "when": "isMac && (editorHasCodeActionsProvider && textInputFocus && !editorReadonly)"
   },
   {
     "key": "ctrl+y",
@@ -45,58 +45,32 @@
     "when": "!isMac"
   },
   {
-    "key": "ctrl+r",
-    "command": "editor.action.codeAction",
-    "args": {
-      "kind": "refactor.extract.function"
-    },
-    "when": "!isMac"
-  },
-  {
-    "key": "cmd+r",
-    "command": "editor.action.codeAction",
-    "args": {
-      "kind": "refactor.extract.function"
-    },
-    "when": "isMac"
-  },
-  {
     "key": "ctrl+shift+e",
-    "command": "workbench.action.toggleSidebarVisibility",
-    "when": "!isMac && sideBarFocus"
+    "command": "workbench.explorer.fileView.focus",
+    "when": "!isMac"
   },
   {
     "key": "cmd+shift+e",
-    "command": "workbench.action.toggleSidebarVisibility",
-    "when": "isMac && sideBarFocus"
-  },
-  {
-    "key": "ctrl+b",
-    "command": "-workbench.action.toggleSidebarVisibility",
-    "when": "!isMac"
-  },
-  {
-    "key": "cmd+b",
-    "command": "-workbench.action.toggleSidebarVisibility",
+    "command": "workbench.explorer.fileView.focus",
     "when": "isMac"
   },
   {
     "key": "ctrl+b",
-    "command": "editor.action.goToImplementation",
-    "when": "!isMac && (editorHasDefinitionProvider && editorTextFocus && !isInEmbeddedEditor)"
+    "command": "workbench.action.toggleSidebarVisibility",
+    "when": "!isMac"
   },
   {
     "key": "cmd+b",
-    "command": "editor.action.goToImplementation",
-    "when": "isMac && (editorHasDefinitionProvider && editorTextFocus && !isInEmbeddedEditor)"
+    "command": "workbench.action.toggleSidebarVisibility",
+    "when": "isMac"
   },
   {
-    "key": "ctrl+shift+b",
+    "key": "ctrl+i",
     "command": "editor.action.goToReferences",
     "when": "!isMac && (editorHasDefinitionProvider && editorTextFocus && !isInEmbeddedEditor)"
   },
   {
-    "key": "cmd+shift+b",
+    "key": "cmd+i",
     "command": "editor.action.goToReferences",
     "when": "isMac && (editorHasDefinitionProvider && editorTextFocus && !isInEmbeddedEditor)"
   },
@@ -174,7 +148,7 @@
     "command": "workbench.action.terminal.focus"
   },
   {
-    "comment": "Focus from termianal to editor",
+    "comment": "Focus from terminal to editor",
     "key": "ctrl+shift+alt+j",
     "command": "workbench.action.focusActiveEditorGroup",
     "when": "terminalFocus"
@@ -220,56 +194,14 @@
     "command": "workbench.action.evenEditorWidths"
   },
   {
-    "comment": "Move between tabs (all groups). Cuando se tiene foco en el terminal, es para moverse entre instancias del mismo",
-    "key": "alt+ctrl+left",
-    "command": "workbench.action.previousEditor",
-    "when": "!isMac && editorFocus"
-  },
-  {
-    "comment": "Move between tabs (all groups). Cuando se tiene foco en el terminal, es para moverse entre instancias del mismo",
-    "key": "alt+cmd+left",
-    "command": "workbench.action.previousEditor",
-    "when": "isMac && editorFocus"
-  },
-  {
-    "comment": "Move between tabs (all groups). Cuando se tiene foco en el terminal, es para moverse entre instancias del mismo",
-    "key": "alt+ctrl+right",
-    "command": "workbench.action.nextEditor",
-    "when": "!isMac"
-  },
-  {
-    "comment": "Move between tabs (all groups). Cuando se tiene foco en el terminal, es para moverse entre instancias del mismo",
-    "key": "alt+cmd+right",
-    "command": "workbench.action.nextEditor",
+    "key": "cmd+shift+g",
+    "command": "workbench.view.scm",
     "when": "isMac"
   },
   {
-    "comment": "Remove editors on preview mode",
-    "key": "alt+ctrl+right",
-    "command": "workbench.action.closeActiveEditor",
-    "when": "!isMac && !activeEditorIsNotPreview"
-  },
-  {
-    "comment": "Remove editors on preview mode",
-    "key": "alt+cmd+right",
-    "command": "workbench.action.closeActiveEditor",
-    "when": "isMac && !activeEditorIsNotPreview"
-  },
-  {
-    "comment": "Remove editors on preview mode",
-    "key": "alt+ctrl+left",
-    "command": "workbench.action.closeActiveEditor",
-    "when": "!isMac && !activeEditorIsNotPreview"
-  },
-  {
-    "comment": "Remove editors on preview mode",
-    "key": "alt+cmd+left",
-    "command": "workbench.action.closeActiveEditor",
-    "when": "isMac && !activeEditorIsNotPreview"
-  },
-  {
-    "key": "cmd+shift+g",
-    "command": "workbench.view.scm"
+    "key": "ctrl+shift+g",
+    "command": "workbench.view.scm",
+    "when": "!isMac"
   },
   {
     "comment": "Open gitlens graph log",
@@ -287,52 +219,30 @@
     "command": "git.closeAllDiffEditors"
   },
   {
-    "comment": "Git delete branch",
-    "key": "ctrl+shift+alt+g r",
-    "command": "git.deleteBranch"
-  },
-  {
-    "comment": "Git checkout",
     "key": "ctrl+shift+alt+g c",
     "command": "git.checkout"
   },
   {
-    "comment": "Git fetch all",
     "key": "ctrl+shift+alt+g f",
     "command": "git.fetchAll"
   },
   {
-    "comment": "Git merge branch",
     "key": "ctrl+shift+alt+g m",
     "command": "git.merge"
   },
   {
-    "comment": "Git stash current work",
-    "key": "ctrl+shift+alt+g s",
-    "command": "git.stash"
-  },
-  {
-    "comment": "Git stash pop",
-    "key": "ctrl+shift+alt+g p",
-    "command": "git.stashPop"
-  },
-  {
-    "comment": "Git pull",
     "key": "ctrl+shift+alt+g down",
     "command": "git.pull"
   },
   {
-    "comment": "Git push",
     "key": "ctrl+shift+alt+g up",
     "command": "git.push"
   },
   {
-    "comment": "Git push",
     "key": "ctrl+shift+alt+g t",
     "command": "timeline.focus"
   },
   {
-    "comment": "When explorer focused, add a new file under the selected working directory",
     "key": "ctrl+n",
     "command": "explorer.newFile",
     "when": "!isMac && explorerViewletFocus"
@@ -343,26 +253,19 @@
     "when": "isMac && explorerViewletFocus"
   },
   {
-    "comment": "When explorer focused, add a new file under the selected working directory",
     "key": "cmd+n",
     "command": "explorer.newFile",
     "when": "isMac && explorerViewletFocus"
   },
   {
-    "comment": "When explorer focused, add a new file under the selected working directory",
     "key": "ctrl+d",
     "command": "explorer.newFolder",
     "when": "!isMac && explorerViewletFocus"
   },
   {
-    "comment": "When explorer focused, add a new file under the selected working directory",
     "key": "cmd+d",
     "command": "explorer.newFolder",
     "when": "isMac && explorerViewletFocus"
-  },
-  {
-    "key": "ctrl+shift+alt+b",
-    "command": "workbench.action.toggleAuxiliaryBar"
   },
   {
     "key": "ctrl+e",
@@ -407,53 +310,32 @@
     "key": "ctrl+shift+alt+g l",
     "args": "lazygit"
   },
-  // TODO: If used add windows shortcuts
   {
-    "key": "cmd+1",
-    "command": "workbench.action.openEditorAtIndex1"
+    "key": "ctrl+tab",
+    "command": "workbench.action.nextEditor",
   },
   {
-    "key": "cmd+2",
-    "command": "workbench.action.openEditorAtIndex2"
+    "key": "ctrl+shift+tab",
+    "command": "workbench.action.previousEditor",
   },
   {
-    "key": "cmd+3",
-    "command": "workbench.action.openEditorAtIndex3"
+    "key": "ctrl+alt+right",
+    "command": "workbench.action.focusNextGroup",
+    "when": "!isMac"
   },
   {
-    "key": "cmd+4",
-    "command": "workbench.action.openEditorAtIndex4"
+    "key": "ctrl+alt+left",
+    "command": "workbench.action.focusPreviousGroup",
+    "when": "!isMac"
   },
   {
-    "key": "cmd+5",
-    "command": "workbench.action.openEditorAtIndex5"
+    "key": "ctrl+u",
+    "command": "workbench.action.focusActiveEditorGroup",
+    "when": "!isMac"
   },
   {
-    "key": "cmd+6",
-    "command": "workbench.action.openEditorAtIndex6"
-  },
-  {
-    "key": "cmd+7",
-    "command": "workbench.action.openEditorAtIndex7"
-  },
-  {
-    "key": "cmd+8",
-    "command": "workbench.action.openEditorAtIndex8"
-  },
-  {
-    "key": "cmd+9",
-    "command": "workbench.action.openEditorAtIndex9"
-  },
-  {
-    "key": "ctrl+1",
-    "command": "workbench.action.focusFirstEditorGroup"
-  },
-  {
-    "key": "ctrl+2",
-    "command": "workbench.action.focusSecondEditorGroup"
-  },
-  {
-    "key": "ctrl+3",
-    "command": "workbench.action.focusThirdEditorGroup"
+    "key": "cmd+u",
+    "command": "workbench.action.focusActiveEditorGroup",
+    "when": "isMac"
   }
 ]
