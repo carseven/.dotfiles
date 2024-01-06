@@ -7,12 +7,23 @@
   {
     "key": "alt+left",
     "command": "workbench.action.navigateBack",
-    "when": "canNavigateBack"
+    "when": "!isMac"
   },
   {
     "key": "alt+right",
     "command": "workbench.action.navigateForward",
-    "when": "canNavigateForward"
+    "when": "!isMac"
+  },
+  // TODO: Fix go back and forward with macos. Choose another keybinding
+  {
+    "key": "ctrl+left",
+    "command": "workbench.action.navigateBack",
+    "when": "isMac"
+  },
+  {
+    "key": "ctrl+right",
+    "command": "workbench.action.navigateForward",
+    "when": "isMac"
   },
   {
     "key": "alt+down",
