@@ -51,7 +51,7 @@
   // Line number reduce width
   "editor.glyphMargin": false,
   "editor.folding": false,
-  "editor.lineNumbers": "off",
+  "editor.lineNumbers": "on",
   "breadcrumbs.enabled": false,
   "explorer.confirmDelete": false,
   "explorer.confirmDragAndDrop": false,
