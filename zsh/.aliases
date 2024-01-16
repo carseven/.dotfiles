@@ -2,15 +2,15 @@
 
 # ZSHRC CONFIG
 alias update="source ~/.zshrc"
-alias czsh="code ~/.dotfiles/zsh/.zshrc"
 alias cdot="code ~/.dotfiles"
+alias time_zsh="time zsh -i -c exit"
 
 # NAVEGACION
 alias ...="cd ../.."
 alias ls="lsd --group-dirs=first"
-alias ll="lsd -lh --group-dirs=first"
+alias ll="lsd -lh --group-dirs=first --sort=size"
 alias lsa="lsd -a --group-dirs=first"
-alias lla="lsd -lha --group-dirs=first"
+alias lla="lsd -lha --group-dirs=first --sort=size"
 alias tree="lsd -a --tree"
 
 # CAT/BAT

@@ -31,12 +31,6 @@ deleted = "[✘$ {count}](red) "
 disabled = true
 format = '[\($state( $progress_current of $progress_total)\)]($style) '
 
-[time]
-disabled = true
-time_format = "%T"
-format = "🕙 $time($style) "
-style = "bright-white"
-
 [character]
 error_symbol = "[✖](bold red) "
 
