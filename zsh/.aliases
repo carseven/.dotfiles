@@ -105,6 +105,7 @@ alias usage="du -h -d1"
 alias runport="lsof -i"
 
 # GIT
+alias gconfig="git config -l" 
 alias gc="git commit -m"
 alias gs="git status"
 alias gss='git status --short'
