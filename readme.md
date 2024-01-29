@@ -3,7 +3,7 @@
     font-weight:200;
     font-size: 28px;
     text-transform: uppercase;
-">The perfect dev setup</h2>
+">Dotfiles</h2>
 <p align="center">
     <img src="terminal.jpeg"/>
 </p>
