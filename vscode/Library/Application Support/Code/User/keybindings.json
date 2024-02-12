@@ -81,6 +81,11 @@
     "when": "!isMac && (editorHasDefinitionProvider && editorTextFocus && !isInEmbeddedEditor)"
   },
   {
+    "key": "cmd+i",
+    "command": "editor.action.goToImplementation",
+    "when": "isMac && (editorHasDefinitionProvider && editorTextFocus && !isInEmbeddedEditor)"
+  },
+  {
     "key": "cmd+shift+i",
     "command": "editor.action.goToReferences",
     "when": "isMac && (editorHasDefinitionProvider && editorTextFocus && !isInEmbeddedEditor)"
