@@ -1,6 +1,15 @@
 {
+  // Telemetry
+  "telemetry.telemetryLevel": "off",
+  // Zen Mode
+  "zenMode.fullScreen": false,
+  "zenMode.centerLayout": false,
+  "zenMode.showTabs": "single",
+  // Window and layout appearance
   "window.title": "${dirty}${activeEditorShort}${separator}${rootName}",
   "window.commandCenter": false,
+  "window.autoDetectColorScheme": true,
+  "window.zoomLevel": 1,
   "workbench.sideBar.location": "right",
   "workbench.productIconTheme": "fluent-icons",
   "workbench.startupEditor": "none",
@@ -13,12 +22,15 @@
   "workbench.activityBar.location": "hidden",
   "workbench.statusBar.visible": false,
   "workbench.colorTheme": "Catppuccin Macchiato",
+  "workbench.preferredLightColorTheme": "Catppuccin Latte",
+  "workbench.preferredDarkColorTheme": "Catppuccin Macchiato",
   // File explorer tree
   "workbench.tree.renderIndentGuides": "none",
   "workbench.tree.indent": 24,
   "workbench.tree.enableStickyScroll": true,
   // Terminal
-  "terminal.integrated.fontSize": 18,
+  "terminal.integrated.fontSize": 12,
+  "terminal.integrated.lineHeight": 1,
   "terminal.integrated.fontFamily": "CaskaydiaCove Nerd Font Mono",
   "terminal.integrated.cursorStyle": "block",
   "terminal.integrated.persistentSessionReviveProcess": "never",
@@ -37,7 +49,7 @@
     "source.fixAll": "always"
   },
   "editor.fontFamily": "CaskaydiaCove Nerd Font Mono",
-  "editor.fontSize": 18,
+  "editor.fontSize": 15,
   "editor.lineHeight": 1.8,
   "editor.fontLigatures": true,
   "editor.linkedEditing": true, // HTML linked editing tags
@@ -51,7 +63,7 @@
   // Line number reduce width
   "editor.glyphMargin": false,
   "editor.folding": false,
-  "editor.lineNumbers": "on",
+  "editor.lineNumbers": "off",
   "breadcrumbs.enabled": false,
   "explorer.confirmDelete": false,
   "explorer.confirmDragAndDrop": false,
@@ -98,4 +110,24 @@
   "terminal.integrated.env.osx": {
     "FIG_NEW_SESSION": "1"
   },
+  // Experimental (TODO: Delete if not working properly)
+  "workbench.editor.pinnedTabSizing": "compact",
+  "workbench.welcomePage.walkthroughs.openOnInstall": false,
+  "editor.lightbulb.enabled": "off",
+  "editor.overviewRulerBorder": false,
+  "editor.renderLineHighlight": "none",
+  "editor.renderControlCharacters": false,
+  "editor.gotoLocation.multipleReferences": "goto",
+  "editor.gotoLocation.multipleDefinitions": "goto",
+  "editor.gotoLocation.multipleDeclarations": "goto",
+  "workbench.editor.enablePreviewFromQuickOpen": false,
+  "editor.gotoLocation.multipleImplementations": "goto",
+  "editor.gotoLocation.multipleTypeDefinitions": "goto",
+  "editor.copyWithSyntaxHighlighting": false,
+  "editor.snippetSuggestions": "bottom",
+  "window.nativeFullScreen": true,
+  "window.newWindowDimensions": "inherit",
+  "workbench.editor.enablePreview": false,
+  "workbench.editor.highlightModifiedTabs": true,
+  "workbench.editor.tabCloseButton": "off",
 }
