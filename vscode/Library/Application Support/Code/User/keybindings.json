@@ -232,7 +232,7 @@
   {
     "comment": "Open multi diff",
     "key": "ctrl+shift+alt+g d",
-    "command": "git.viewChanges"
+    "command": "git.viewAllChanges"
   },
   {
     "comment": "Close all diff editor",
