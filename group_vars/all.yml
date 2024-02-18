@@ -1,0 +1,12 @@
+default_roles:
+  - bat
+  - git
+  - karabiner
+  - nvim
+  - raycast
+  - skhd
+  - starship
+  - tmux
+  - vscode
+  - wezterm
+  - zsh

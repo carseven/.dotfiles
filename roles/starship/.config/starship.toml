@@ -41,7 +41,7 @@ disabled = false
 disabled = false
 
 [hostname]
-disabled = true
+disabled = false
 
 [battery]
 disabled = true
@@ -50,4 +50,4 @@ disabled = true
 disabled = true
 
 [username]
-disabled = true
+disabled = false

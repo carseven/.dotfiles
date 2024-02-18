@@ -17,12 +17,12 @@
   "workbench.startupEditor": "none",
   "workbench.editor.empty.hint": "hidden",
   // Editor Tabs
+  "workbench.colorTheme": "Catppuccin Macchiato",
   "workbench.editor.tabSizing": "shrink",
   "workbench.editor.showIcons": false,
   "workbench.editor.tabActionCloseVisibility": false,
   "workbench.layoutControl.enabled": false,
   "workbench.activityBar.location": "hidden",
-  "workbench.colorTheme": "Catppuccin Macchiato",
   "workbench.editor.enablePreview": false,
   "workbench.editor.enablePreviewFromQuickOpen": false,
   "workbench.editor.highlightModifiedTabs": true, // Instead of showing dot icon show top highlight when file has changes to be save

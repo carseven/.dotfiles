@@ -20,6 +20,6 @@
 [init]
 	defaultBranch = main
 [pull]
-	rebase = true
+	rebase = true	
 [credentials]
 	helper = osxkeychain
