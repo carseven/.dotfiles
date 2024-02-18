@@ -22,10 +22,7 @@
   "workbench.editor.tabActionCloseVisibility": false,
   "workbench.layoutControl.enabled": false,
   "workbench.activityBar.location": "hidden",
-  "workbench.statusBar.visible": false,
   "workbench.colorTheme": "Catppuccin Macchiato",
-  "workbench.preferredLightColorTheme": "Catppuccin Latte",
-  "workbench.preferredDarkColorTheme": "Catppuccin Macchiato",
   "workbench.editor.enablePreview": false,
   "workbench.editor.enablePreviewFromQuickOpen": false,
   "workbench.editor.highlightModifiedTabs": true, // Instead of showing dot icon show top highlight when file has changes to be save
@@ -117,8 +114,5 @@
   "errorLens.enabledDiagnosticLevels": [
     "error",
     "warning"
-  ],
-  "terminal.integrated.env.osx": {
-    "FIG_NEW_SESSION": "1"
-  },
+  ]
 }
