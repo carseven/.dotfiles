@@ -13,7 +13,13 @@
 
 # Installation guide
 
-Follow the https://github.com/carseven/deno-dotfiles-script/ script
+## TODO
+
+- [] Move all roles from deno script
+- [] Start basic configuration
+
+- Configure ZSH history https://registerspill.thorstenball.com/p/which-command-did-you-run-1731-days and find a way to share between computer.
+- Optimize shell start time https://registerspill.thorstenball.com/p/how-fast-is-your-shell
 
 - Manual settings:
   - Change spotlight keyboard shorcut (Preferences > Keyboard > Shortcuts) ->

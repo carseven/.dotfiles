@@ -1,0 +1,8 @@
+---
+- name: "tmux | Install tmux"
+  community.general.homebrew:
+    name: tmux
+    state: present
+
+- name: "tmux | Configuration"
+  ansible.builtin.import_tasks: config.yml
