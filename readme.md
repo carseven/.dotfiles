@@ -13,6 +13,8 @@
 
 # Installation guide
 
+Reference/Inspiration: https://github.com/TechDufus/dotfiles/tree/main
+
 ## TODO
 
 - [] Move all roles from deno script
