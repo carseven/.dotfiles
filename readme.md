@@ -17,13 +17,12 @@ Reference/Inspiration: https://github.com/TechDufus/dotfiles/tree/main
 
 ## TODO
 
-- [] Move all roles from deno script
 - [] Start basic configuration
 
 - Configure ZSH history https://registerspill.thorstenball.com/p/which-command-did-you-run-1731-days and find a way to share between computer.
 - Optimize shell start time https://registerspill.thorstenball.com/p/how-fast-is-your-shell
 
-- Manual settings:
+- Manual settings Macos:
   - Change spotlight keyboard shorcut (Preferences > Keyboard > Shortcuts) ->
     None
   - Change input sources keyboard shortcut -> None
@@ -31,7 +30,6 @@ Reference/Inspiration: https://github.com/TechDufus/dotfiles/tree/main
   - Activate night shift
   - Install brave extensions: Notion Web CLipper and Bitwarden
 - Vscode layout
-  - Move git to the left bar
   - Add problems to the right bar
   - Remove editor open tabs from right bar
   - Remove not need options from terminal bar, left bar and right bar :)
