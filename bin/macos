@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # Set computer name (as done via System Preferences → Sharing)
 sudo scutil --set ComputerName "m1"
 # sudo scutil --set HostName "m1"
