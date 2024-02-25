@@ -3,3 +3,5 @@
     name: jq
     state: present
 - name: TODO copy git config
+  ansible.builtin.debug:
+    msg: TODO copy git config in windows
