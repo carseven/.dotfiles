@@ -1,12 +1,54 @@
 default_roles:
+  - alt-tab
+  - authy
   - bat
+  - bitwarden
+  - brave-browser
+  - dbeaver
+  - dozer
+  - flameshot
+  - fonts
+  - fzf
   - git
+  - htop
+  - httpie
+  - jq
   - karabiner
+  - lazygit
+  - lsd
+  - mas
+  - mos
+  - mysql-client
+  - notion
   - nvim
+  - nvm
+  - obsidian
+  - postman
   - raycast
   - skhd
   - starship
   - tmux
   - vscode
   - wezterm
+  - wget
   - zsh
+
+vscode_extensions: 
+  - christian-kohler.path-intellisense
+  - dbaeumer.vscode-eslint
+  - eamodio.gitlens
+  - esbenp.prettier-vscode
+  - kisstkondoros.vscode-gutter-preview
+  - meganrogge.template-string-converter
+  - miguelsolorio.fluent-icons
+  - miguelsolorio.symbols
+  - quicktype.quicktype
+  - pflannery.vscode-versionlens
+  - ryanluker.vscode-coverage-gutters
+  - streetsidesoftware.code-spell-checker
+  - usernamehw.errorlens
+  - vinliao.fast-arrow
+  - wix.vscode-import-cost
+  - yoavbls.pretty-ts-errors
+  - mhutchie.git-graph
+  - vscodevim.vim
