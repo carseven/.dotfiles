@@ -18,9 +18,14 @@ Reference/Inspiration: https://github.com/TechDufus/dotfiles/tree/main
 ## TODO
 
 - [] Start basic configuration
+- [] Prioritize
+  - [] Work install window apps with Choco, WSL and config Ubuntu WSL properly (Docker and systemmd)
+  - [] Macos personal dotfiles
+- [] CI to test the ansible script
 
 - Configure ZSH history https://registerspill.thorstenball.com/p/which-command-did-you-run-1731-days and find a way to share between computer.
 - Optimize shell start time https://registerspill.thorstenball.com/p/how-fast-is-your-shell
+- [] Move alias and functions to bin when makes sense
 
 - Manual settings Macos:
   - Change spotlight keyboard shorcut (Preferences > Keyboard > Shortcuts) ->
