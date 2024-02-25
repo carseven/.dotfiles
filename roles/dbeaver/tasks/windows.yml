@@ -1,0 +1,4 @@
+- name: Install dbeaver-community
+  win_chocolatey:
+    name: dbeaver
+    state: present

@@ -1,0 +1,5 @@
+---
+- name: Install dozer
+  community.general.homebrew:
+    name: dozer
+    state: present

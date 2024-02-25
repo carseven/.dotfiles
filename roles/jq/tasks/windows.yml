@@ -1,0 +1,5 @@
+- name: Install jq
+  win_chocolatey:
+    name: jq
+    state: present
+- name: TODO copy git config

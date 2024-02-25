@@ -1,0 +1,5 @@
+---
+- name: Install bitwarden
+  community.general.homebrew:
+    name: bitwarden
+    state: present

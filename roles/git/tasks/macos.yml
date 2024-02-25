@@ -1,0 +1,11 @@
+---
+- name: Install git
+  community.general.homebrew:
+    name: git
+    state: present
+- name: Copying git config
+  copy:
+    src: config/ # Only copy the files of the folder and not the folder
+    dest: "{{ ansible_user_dir }}"
+    mode: 0644
+    force: true
