@@ -51,7 +51,7 @@
     "when": "!isMac"
   },
   {
-    "key": "cmd+y",
+    "key": "  ctrl+y",
     "command": "workbench.action.switchWindow",
     "when": "isMac"
   },
