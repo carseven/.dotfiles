@@ -6,7 +6,7 @@
   "zenMode.centerLayout": false,
   "zenMode.showTabs": "single",
   // Window and layout appearance
-  "window.title": "${activeRepositoryBranchName}",
+  "window.title": "${activeRepositoryBranchName}${separator}${rootName}",
   "window.commandCenter": false,
   "window.autoDetectColorScheme": true,
   "window.zoomLevel": 1,
