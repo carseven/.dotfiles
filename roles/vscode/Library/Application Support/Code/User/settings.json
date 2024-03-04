@@ -38,6 +38,7 @@
   "terminal.integrated.cursorStyle": "block",
   "terminal.integrated.persistentSessionReviveProcess": "never",
   "terminal.integrated.tabs.enabled": false,
+  "editor.stickyScroll.enabled": false,
   "editor.insertSpaces": true,
   "editor.detectIndentation": true,
   "editor.inlineSuggest.enabled": true, // Show suggestions while writing (cntrl+space action)
