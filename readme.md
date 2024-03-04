@@ -20,7 +20,7 @@ Reference/Inspiration: https://github.com/TechDufus/dotfiles/tree/main
 - [] Start basic configuration
 - [] Prioritize
   - [] Work install window apps with Choco, WSL and config Ubuntu WSL properly (Docker and systemmd)
-  - [] Follow window dotfiles repo steps with ansible instead of manually install everything https://github.com/carseven/windows-dotfiles/tree/main
+  - [] Try to launch windows and Ubuntu install from WSL (Ansible can only work with windows as host) https://docs.ansible.com/ansible/latest/os_guide/windows_faq.html
   - [] Macos personal dotfiles
 - [] CI to test the ansible script
 

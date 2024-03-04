@@ -1,0 +1,9 @@
+---
+- name: Install autohotkey
+  win_chocolatey:
+    name: autohotkey
+    state: present
+- name: Copy autohotkey script to launch on comuter start up
+  win_copy:
+    src: /scripts/
+    dest: "C:\Users\{{ windows_user }}\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup"
