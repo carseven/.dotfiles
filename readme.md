@@ -23,6 +23,7 @@ Reference/Inspiration: https://github.com/TechDufus/dotfiles/tree/main
   - [] Try to launch windows and Ubuntu install from WSL (Ansible can only work with windows as host) https://docs.ansible.com/ansible/latest/os_guide/windows_faq.html
   - [] Macos personal dotfiles
 - [] CI to test the ansible script
+- [] Macos add mas and install apps
 
 - Configure ZSH history https://registerspill.thorstenball.com/p/which-command-did-you-run-1731-days and find a way to share between computer.
 - Optimize shell start time https://registerspill.thorstenball.com/p/how-fast-is-your-shell
