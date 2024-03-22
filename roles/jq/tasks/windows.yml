@@ -1,0 +1,4 @@
+- name: Install jq
+  win_chocolatey:
+    name: jq
+    state: present

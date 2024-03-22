@@ -1,0 +1,4 @@
+- name: Install fzf
+  win_chocolatey:
+    name: fzf
+    state: present

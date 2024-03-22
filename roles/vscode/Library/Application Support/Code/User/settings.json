@@ -1,0 +1,119 @@
+{
+  // Telemetry
+  "telemetry.telemetryLevel": "off",
+  // Zen Mode
+  "zenMode.fullScreen": false,
+  "zenMode.centerLayout": false,
+  "zenMode.showTabs": "single",
+  // Window and layout appearance
+  "window.title": "${rootName}",
+  "window.commandCenter": false,
+  "window.autoDetectColorScheme": true,
+  "window.zoomLevel": 1,
+  "window.nativeFullScreen": true,
+  "window.newWindowDimensions": "inherit",
+  "workbench.sideBar.location": "right",
+  "workbench.productIconTheme": "fluent-icons",
+  "workbench.startupEditor": "none",
+  "workbench.editor.empty.hint": "hidden",
+  // Editor Tabs
+  "workbench.colorTheme": "Catppuccin Macchiato",
+  "workbench.editor.tabSizing": "shrink",
+  "workbench.editor.showIcons": false,
+  "workbench.editor.tabActionCloseVisibility": false,
+  "workbench.layoutControl.enabled": false,
+  "workbench.activityBar.location": "hidden",
+  "workbench.editor.enablePreview": false,
+  "workbench.editor.enablePreviewFromQuickOpen": false,
+  "workbench.editor.highlightModifiedTabs": true, // Instead of showing dot icon show top highlight when file has changes to be save
+  "workbench.editor.tabCloseButton": "off",
+  // File explorer tree
+  "workbench.tree.renderIndentGuides": "none",
+  "workbench.tree.indent": 24,
+  "workbench.tree.enableStickyScroll": true,
+  // Terminal
+  "terminal.integrated.fontSize": 12,
+  "terminal.integrated.lineHeight": 1,
+  "terminal.integrated.fontFamily": "CaskaydiaCove Nerd Font Mono",
+  "terminal.integrated.cursorStyle": "block",
+  "terminal.integrated.persistentSessionReviveProcess": "never",
+  "terminal.integrated.tabs.enabled": false,
+  "editor.stickyScroll.enabled": false,
+  "editor.insertSpaces": true,
+  "editor.detectIndentation": true,
+  "editor.inlineSuggest.enabled": true, // Show suggestions while writing (cntrl+space action)
+  "editor.accessibilitySupport": "off", // Vscode thinks fig is a screen reader
+  "editor.minimap.enabled": false,
+  "editor.formatOnSaveMode": "file",
+  "editor.formatOnSave": true,
+  "editor.formatOnPaste": true,
+  "editor.codeActionsOnSave": {
+    "source.organizeImports": "always",
+    "source.sortMembers": "always",
+    "source.fixAll": "always"
+  },
+  "editor.fontFamily": "CaskaydiaCove Nerd Font Mono",
+  "editor.fontSize": 15,
+  "editor.lineHeight": 1.8,
+  "editor.fontLigatures": true,
+  "editor.linkedEditing": true, // HTML linked editing tags
+  "editor.wordWrap": "on",
+  "editor.renderWhitespace": "none",
+  "editor.rulers": [
+    120
+  ], // Reduce code complexity and improve working on small screens. Show max char line
+  "editor.guides.indentation": false,
+  "editor.cursorBlinking": "solid",
+  // Line number reduce width
+  "editor.glyphMargin": false,
+  "editor.folding": false,
+  "editor.lineNumbers": "off",
+  "editor.lightbulb.enabled": "off",
+  "editor.overviewRulerBorder": false,
+  "editor.renderLineHighlight": "none",
+  "editor.copyWithSyntaxHighlighting": false,
+  "editor.wordSeparators": "`~!@#%^&*()=+[{]}\\|;:'\",.<>/?", // Select snake case words
+  "breadcrumbs.enabled": false,
+  "explorer.confirmDelete": false,
+  "explorer.confirmDragAndDrop": false,
+  "explorer.compactFolders": false,
+  "symbols.hidesExplorerArrows": false,
+  "files.autoSave": "onFocusChange",
+  "files.eol": "\n",
+  // Programming languages specific config
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.tabSize": 4
+  },
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.tabSize": 4
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  // Git
+  "scm.alwaysShowRepositories": true,
+  "scm.diffDecorations": "gutter",
+  "diffEditor.renderSideBySide": false,
+  "git.suggestSmartCommit": false,
+  "git.autofetch": true,
+  "git.autofetchPeriod": 180,
+  "git.enableSmartCommit": true,
+  "git.confirmSync": false,
+  "git.rebaseWhenSync": true,
+  "search.useIgnoreFiles": false,
+  // Extensions
+  "gitlens.codeLens.enabled": false,
+  "gitlens.statusBar.enabled": false,
+  "errorLens.enabledDiagnosticLevels": [
+    "error",
+    "warning"
+  ]
+}

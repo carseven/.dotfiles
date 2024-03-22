@@ -1,0 +1,9 @@
+---
+- name: "tmux | Install tmux"
+  ansible.builtin.apt:
+    name: tmux
+    state: present
+  become: true
+
+- name: "tmux | Configuration"
+  ansible.builtin.import_tasks: config.yml

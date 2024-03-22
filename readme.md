@@ -13,9 +13,23 @@
 
 # Installation guide
 
-Follow the https://github.com/carseven/deno-dotfiles-script/ script
+Reference/Inspiration: https://github.com/TechDufus/dotfiles/tree/main
 
-- Manual settings:
+## TODO
+
+- [] Start basic configuration
+- [] Prioritize
+  - [] Work install window apps with Choco, WSL and config Ubuntu WSL properly (Docker and systemmd)
+  - [] Try to launch windows and Ubuntu install from WSL (Ansible can only work with windows as host) https://docs.ansible.com/ansible/latest/os_guide/windows_faq.html
+  - [] Macos personal dotfiles
+- [] CI to test the ansible script
+- [] Macos add mas and install apps
+
+- Configure ZSH history https://registerspill.thorstenball.com/p/which-command-did-you-run-1731-days and find a way to share between computer.
+- Optimize shell start time https://registerspill.thorstenball.com/p/how-fast-is-your-shell
+- [] Move alias and functions to bin when makes sense
+
+- Manual settings Macos:
   - Change spotlight keyboard shorcut (Preferences > Keyboard > Shortcuts) ->
     None
   - Change input sources keyboard shortcut -> None
@@ -23,7 +37,6 @@ Follow the https://github.com/carseven/deno-dotfiles-script/ script
   - Activate night shift
   - Install brave extensions: Notion Web CLipper and Bitwarden
 - Vscode layout
-  - Move git to the left bar
   - Add problems to the right bar
   - Remove editor open tabs from right bar
   - Remove not need options from terminal bar, left bar and right bar :)

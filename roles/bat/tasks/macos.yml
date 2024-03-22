@@ -1,0 +1,13 @@
+---
+- name: Install bat
+  community.general.homebrew:
+    name: bat
+    state: present
+
+- name: Copying config files
+  copy:
+    src: config/
+    dest: "{{ ansible_user_dir }}/.config/bat"
+    mode: 0644
+    directory_mode: 0755
+    force: true

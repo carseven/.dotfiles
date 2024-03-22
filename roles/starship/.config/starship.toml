@@ -1,0 +1,53 @@
+# Starship documentation
+# https://starship.rs/config/
+
+# Inserts a blank line between shell prompts
+add_newline = false
+
+[cmd_duration]
+min_time = 5_000  # Show command duration over 5,000 milliseconds (=5 sec)
+format = " took [$duration]($style)"
+
+[git_metrics]
+disabled = true
+format = '[+$added]($added_style)/[-$deleted]($deleted_style) '
+only_nonzero_diffs=true
+
+[git_status]
+disabled = false
+# Check icons from Nerd Fonts https://www.nerdfonts.com/cheat-sheet
+format = "$ahead$behind$staged$conflict$modified$untracked$stashed "
+conflicted = "[󰞇](red)"
+ahead = "[ ${count}](blue) "
+behind = "[ ${count}](blue) "
+untracked = "[ ${count}](gray) "
+stashed = "[ ${count}](gray) "
+modified = "[ ${count}](yellow) "
+staged = "[󰾖 ${count}](green) "
+renamed = "󰑕 {count} "
+deleted = "[✘$ {count}](red) "
+
+[git_state]
+disabled = true
+format = '[\($state( $progress_current of $progress_total)\)]($style) '
+
+[character]
+error_symbol = "[✖](bold red) "
+
+[git_branch]
+disabled = false
+
+[git_commit]
+disabled = false
+
+[hostname]
+disabled = false
+
+[battery]
+disabled = true
+
+[package]
+disabled = true
+
+[username]
+disabled = false
