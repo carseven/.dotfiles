@@ -34,7 +34,9 @@ cd ~/.dotfiles
 ansible-galaxy install -r requirements.yml
 ansible-playbook main.yml
 
-
+Fix:
+TASK [fonts : Install cascadia code font] ********************************************************
+fatal: [localhost]: FAILED! => {"changed": false, "msg": "Error: No available formula or cask with the name \"homebrew/cask-fonts/font-cascadia-code\".\nPlease tap it and then try again: brew tap homebrew/cask-fonts"}
 
 - [] Prioritize
   - [] Work install window apps with Choco, WSL and config Ubuntu WSL properly (Docker and systemmd)
