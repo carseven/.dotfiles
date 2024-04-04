@@ -18,6 +18,24 @@ Reference/Inspiration: https://github.com/TechDufus/dotfiles/tree/main
 ## TODO
 
 - [] Start basic configuration
+Install brew -> https://brew.sh or /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+Export path of brew to be able to use brew binary
+export PATH="/opt/homebrew/bin:$PATH"
+
+Install ansible with brew
+brew install ansible
+
+Clone this repo
+git clone this_repo_url ~/.dotfiles
+
+cd ~/.dotfiles
+
+ansible-galaxy install -r requirements.yml
+ansible-playbook main.yml
+
+
+
 - [] Prioritize
   - [] Work install window apps with Choco, WSL and config Ubuntu WSL properly (Docker and systemmd)
   - [] Try to launch windows and Ubuntu install from WSL (Ansible can only work with windows as host) https://docs.ansible.com/ansible/latest/os_guide/windows_faq.html
