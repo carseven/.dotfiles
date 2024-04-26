@@ -21,7 +21,6 @@ default_roles:
   - notion
   - nvim
   - nvm
-  - obsidian
   - postman
   - raycast
   - skhd
