@@ -1,18 +1,13 @@
-vscode_extensions: 
+vscode_extensions:
   - christian-kohler.path-intellisense
   - dbaeumer.vscode-eslint
   - eamodio.gitlens
   - esbenp.prettier-vscode
-  - kisstkondoros.vscode-gutter-preview
   - meganrogge.template-string-converter
   - miguelsolorio.fluent-icons
   - miguelsolorio.symbols
-  - quicktype.quicktype
-  - pflannery.vscode-versionlens
-  - ryanluker.vscode-coverage-gutters
   - streetsidesoftware.code-spell-checker
   - usernamehw.errorlens
-  - vinliao.fast-arrow
   - wix.vscode-import-cost
   - yoavbls.pretty-ts-errors
   - mhutchie.git-graph
