@@ -4,25 +4,26 @@
   // Zen Mode
   "zenMode.fullScreen": false,
   "zenMode.centerLayout": false,
-  "zenMode.showTabs": "single",
+  "zenMode.showTabs": "none",
   // Window and layout appearance
-  "window.title": "${rootName}",
+  "window.title": "${dirty}${activeEditorShort}${separator}${rootName}",
   "window.commandCenter": false,
   "window.autoDetectColorScheme": true,
   "window.zoomLevel": 1,
-  "window.nativeFullScreen": true,
   "window.newWindowDimensions": "inherit",
   "workbench.sideBar.location": "right",
   "workbench.productIconTheme": "fluent-icons",
   "workbench.startupEditor": "none",
   "workbench.editor.empty.hint": "hidden",
   // Editor Tabs
-  "workbench.colorTheme": "Catppuccin Macchiato",
   "workbench.editor.tabSizing": "shrink",
+  "workbench.editor.showTabs": "none",
   "workbench.editor.showIcons": false,
   "workbench.editor.tabActionCloseVisibility": false,
   "workbench.layoutControl.enabled": false,
-  "workbench.activityBar.location": "hidden",
+  "workbench.colorTheme": "Catppuccin Macchiato",
+  "workbench.preferredLightColorTheme": "Catppuccin Macchiato",
+  "workbench.preferredDarkColorTheme": "Catppuccin Macchiato",
   "workbench.editor.enablePreview": false,
   "workbench.editor.enablePreviewFromQuickOpen": false,
   "workbench.editor.highlightModifiedTabs": true, // Instead of showing dot icon show top highlight when file has changes to be save
@@ -38,17 +39,14 @@
   "terminal.integrated.cursorStyle": "block",
   "terminal.integrated.persistentSessionReviveProcess": "never",
   "terminal.integrated.tabs.enabled": false,
-  "editor.stickyScroll.enabled": false,
   "editor.insertSpaces": true,
   "editor.detectIndentation": true,
   "editor.inlineSuggest.enabled": true, // Show suggestions while writing (cntrl+space action)
-  "editor.accessibilitySupport": "off", // Vscode thinks fig is a screen reader
   "editor.minimap.enabled": false,
   "editor.formatOnSaveMode": "file",
   "editor.formatOnSave": true,
   "editor.formatOnPaste": true,
   "editor.codeActionsOnSave": {
-    "source.organizeImports": "always",
     "source.sortMembers": "always",
     "source.fixAll": "always"
   },
@@ -62,17 +60,17 @@
   "editor.rulers": [
     120
   ], // Reduce code complexity and improve working on small screens. Show max char line
+  "editor.stickyScroll.enabled": false,
   "editor.guides.indentation": false,
   "editor.cursorBlinking": "solid",
   // Line number reduce width
   "editor.glyphMargin": false,
-  "editor.folding": false,
-  "editor.lineNumbers": "off",
+  "editor.folding": true,
+  "editor.lineNumbers": "on",
   "editor.lightbulb.enabled": "off",
   "editor.overviewRulerBorder": false,
   "editor.renderLineHighlight": "none",
   "editor.copyWithSyntaxHighlighting": false,
-  "editor.wordSeparators": "`~!@#%^&*()=+[{]}\\|;:'\",.<>/?", // Select snake case words
   "breadcrumbs.enabled": false,
   "explorer.confirmDelete": false,
   "explorer.confirmDragAndDrop": false,
