@@ -1,4 +1,0 @@
-- name: Install bitwarden
-  win_chocolatey:
-    name: bitwarden
-    state: present

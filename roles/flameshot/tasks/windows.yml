@@ -1,5 +1,0 @@
----
-- name: Install flameshot
-  win_chocolatey:
-    name: flameshot
-    state: present

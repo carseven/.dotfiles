@@ -1,8 +1,0 @@
-- name: Install cascadia code font
-  win_chocolatey:
-    name: cascadiacode
-    state: present
-- name: Install cascadia code Nerd font
-  win_chocolatey:
-    name: nerd-fonts-cascadiacode
-    state: present

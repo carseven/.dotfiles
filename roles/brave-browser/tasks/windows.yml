@@ -1,4 +1,0 @@
-- name: Install brave-browser
-  win_chocolatey:
-    name: brave-browser
-    state: present

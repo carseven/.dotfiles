@@ -1,5 +1,0 @@
----
-- name: Install authy
-  win_chocolatey:
-    name: authy-desktop
-    state: present
