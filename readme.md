@@ -39,8 +39,7 @@ TASK [fonts : Install cascadia code font] **************************************
 fatal: [localhost]: FAILED! => {"changed": false, "msg": "Error: No available formula or cask with the name \"homebrew/cask-fonts/font-cascadia-code\".\nPlease tap it and then try again: brew tap homebrew/cask-fonts"}
 
 - [] Prioritize
-  - [] Work install window apps with Choco, WSL and config Ubuntu WSL properly (Docker and systemmd)
-  - [] Try to launch windows and Ubuntu install from WSL (Ansible can only work with windows as host) https://docs.ansible.com/ansible/latest/os_guide/windows_faq.html
+  - [] Linux setup for ubuntu for start working with VM
   - [] Macos personal dotfiles
 - [] CI to test the ansible script
 - [] Macos add mas and install apps
