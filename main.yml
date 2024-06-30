@@ -10,13 +10,28 @@
         - always
 
   tasks:
-    - name: Set roles
-      ansible.builtin.set_fact:
-        run_roles: "{{ ansible_run_tags != ['all'] and ansible_run_tags or default_roles | difference(exclude_roles | default([])) }}"
+    # List all the directories from the roles directory
+    - name: Find roles
+      ansible.builtin.shell: ls $HOME/.dotfiles/roles
+      register: roles_dir
+      ignore_errors: true
       tags:
         - always
 
-    - name: Display roles
+    - name: Display roles directories
+      ansible.builtin.debug:
+        var: roles_dir.stdout_lines
+      tags:
+        - debug
+
+    # By default or all tag, use map roles from the roles directories. If tags are define, just use defined tags.
+    - name: Set roles
+      ansible.builtin.set_fact:
+        run_roles: "{{ ansible_run_tags != ['all'] and ansible_run_tags or roles_dir.stdout_lines }}"
+      tags:
+        - always
+
+    - name: Roles to be launch
       ansible.builtin.debug:
         var: run_roles
       tags:

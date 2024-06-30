@@ -4,6 +4,11 @@
     name: bat
     state: present
 
+- name: Create bat configuration folder
+  file: 
+    path: "{{ ansible_user_dir }}/.config/bat"
+    state: directory
+
 - name: Copying config files
   copy:
     src: config/
@@ -11,5 +16,6 @@
     mode: 0644
     directory_mode: 0755
     force: true
+
 - name: Build bat cache to load themes
   ansible.builtin.shell: bat cache --build

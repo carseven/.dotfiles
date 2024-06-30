@@ -1,0 +1,9 @@
+#!/bin/bash 
+
+if ! grep -q $(which zsh) "/etc/shells"; then
+  echo 0
+  sudo sh -c "echo $(which zsh) >> /etc/shells"
+fi
+
+# Change shell to use zsh
+sudo chsh -s $(which zsh)

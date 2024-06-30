@@ -6,7 +6,24 @@
 
 - name: Copying visual studio config
   copy:
-    src: "config/Application Support"
-    dest: "{{ ansible_user_dir }}/.config/karabiner/karabiner.json"
+    src: "config/"
+    dest: "{{ ansible_user_dir }}/Library/Application\ Support/Code/User"
     mode: 0644
     force: true
+
+- name: Install vscode extensions
+  ansible.builtin.shell: code --install-extension {{ item }}
+  loop:
+    - Catppuccin.catppuccin-vsc
+    - christian-kohler.path-intellisense
+    - dbaeumer.vscode-eslint
+    - eamodio.gitlens
+    - esbenp.prettier-vscode
+    - miguelsolorio.fluent-icons
+    - miguelsolorio.symbols
+    - streetsidesoftware.code-spell-checker
+    - usernamehw.errorlens
+    - yoavbls.pretty-ts-errors
+    - mhutchie.git-graph
+    - vscodevim.vim
+    - tobias-z.vscode-harpoon
