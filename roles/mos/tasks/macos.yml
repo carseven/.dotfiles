@@ -1,5 +1,5 @@
 ---
-- name: Install alt-tab
+- name: Install mos cask
   community.general.homebrew:
-    name: alt-tab
+    name: mos
     state: present

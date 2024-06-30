@@ -1,5 +1,5 @@
 ---
-- name: Install alt-tab
+- name: Install postman
   community.general.homebrew:
-    name: alt-tab
+    name: postman
     state: present

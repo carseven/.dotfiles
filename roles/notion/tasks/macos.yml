@@ -1,5 +1,5 @@
 ---
-- name: Install alt-tab
+- name: Install notion
   community.general.homebrew:
-    name: alt-tab
+    name: notion
     state: present

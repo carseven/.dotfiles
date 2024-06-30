@@ -1,5 +1,5 @@
 ---
-- name: Install alt-tab
+- name: Install wget
   community.general.homebrew:
-    name: alt-tab
+    name: wget
     state: present

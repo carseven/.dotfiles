@@ -1,5 +1,5 @@
 ---
-- name: Install alt-tab
+- name: Install lazy docker
   community.general.homebrew:
-    name: alt-tab
+    name: lazydocker
     state: present

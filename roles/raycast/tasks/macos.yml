@@ -1,5 +1,5 @@
 ---
-- name: Install alt-tab
+- name: Install raycast
   community.general.homebrew:
-    name: alt-tab
+    name: raycast
     state: present

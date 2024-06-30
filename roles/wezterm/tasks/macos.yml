@@ -1,0 +1,11 @@
+---
+- name: Install wezterm
+  community.general.homebrew:
+    name: wezterm
+    state: present
+- name: Copy wezterm configuration file
+  copy:
+    src: config/.wezterm.lua
+    dest: "{{ ansible_user_dir }}/.wezterm.lua"
+    mode: 0644
+    force: true

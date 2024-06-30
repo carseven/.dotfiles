@@ -1,0 +1,12 @@
+---
+- name: Install visual-studio-code
+  community.general.homebrew:
+    name: visual-studio-code
+    state: present
+
+- name: Copying visual studio config
+  copy:
+    src: "config/Application Support"
+    dest: "{{ ansible_user_dir }}/.config/karabiner/karabiner.json"
+    mode: 0644
+    force: true

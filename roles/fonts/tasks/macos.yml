@@ -1,9 +1,9 @@
 ---
 - name: Install cascadia code font
   community.general.homebrew:
-    name: homebrew/cask-fonts/font-cascadia-code
+    name: homebrew/cask/font-cascadia-code
     state: present
 - name: Install cascadia code Nerd font
   community.general.homebrew:
-    name: homebrew/cask-fonts/font-caskaydia-mono-nerd-font
+    name: homebrew/cask/font-caskaydia-mono-nerd-font
     state: present

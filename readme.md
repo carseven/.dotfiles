@@ -17,8 +17,10 @@ Reference/Inspiration: https://github.com/TechDufus/dotfiles/tree/main
 
 ## TODO
 
+Start script Macos
+
 - [] Start basic configuration
-Install brew -> https://brew.sh or /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+  Install brew -> https://brew.sh or /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 Export path of brew to be able to use brew binary
 export PATH="/opt/homebrew/bin:$PATH"
@@ -33,29 +35,23 @@ cd ~/.dotfiles
 
 ansible-galaxy install -r requirements.yml
 ansible-playbook main.yml
+ansible-playbook main.yml --tags "vscode"
 
-Fix:
-TASK [fonts : Install cascadia code font] ********************************************************
-fatal: [localhost]: FAILED! => {"changed": false, "msg": "Error: No available formula or cask with the name \"homebrew/cask-fonts/font-cascadia-code\".\nPlease tap it and then try again: brew tap homebrew/cask-fonts"}
-
-- [] Prioritize
-  - [] Linux setup for ubuntu for start working with VM
-  - [] Macos personal dotfiles
+- [] Create start script for macos and linux (Maybe git clone and make style)
 - [] CI to test the ansible script
-- [] Macos add mas and install apps
+- [] Finish ubuntu setup for linux VM setup
 
 - Configure ZSH history https://registerspill.thorstenball.com/p/which-command-did-you-run-1731-days and find a way to share between computer.
 - Optimize shell start time https://registerspill.thorstenball.com/p/how-fast-is-your-shell
 - [] Move alias and functions to bin when makes sense
 
 - Manual settings Macos:
+
   - Change spotlight keyboard shorcut (Preferences > Keyboard > Shortcuts) ->
     None
-  - Change input sources keyboard shortcut -> None
-  - Import raycast settings
-  - Activate night shift
-  - Install brave extensions: Notion Web CLipper and Bitwarden
+
 - Vscode layout
-  - Add problems to the right bar
-  - Remove editor open tabs from right bar
-  - Remove not need options from terminal bar, left bar and right bar :)
+  - Manually remove visual clutter
+    - Explorer and other menus, disable options
+    - Terminal remove tabs
+    - Status bar disable all options and just keep git branch and sync state

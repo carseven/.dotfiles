@@ -1,1 +1,17 @@
 ---
+- name: Install bat
+  ansible.builtin.apt:
+    name: bat
+    state: present
+  become: true
+
+- name: Copying bat config
+  copy:
+    src: config/
+    dest: "{{ ansible_user_dir }}/.config/bat"
+    mode: 0644
+    directory_mode: 0755
+    force: true
+
+- name: Build bat cache to load themes
+  ansible.builtin.shell: bat cache --build
