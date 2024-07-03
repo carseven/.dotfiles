@@ -1,13 +1,12 @@
 ---
-# TODO: refactor instead of use script, use ansible build in utility
+# TODO: Solve with the install
 - name: Install zsh
-  community.general.homebrew:
+  ansible.builtin.apt:
     name: zsh
     state: present
 
 - name: Set zsh default shell
   shell: zsh $HOME/.dotfiles/bin/add-zsh-shell
-  become: true
 
 - name: Check if Oh My Zsh is installed
   stat:
