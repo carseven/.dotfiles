@@ -33,6 +33,20 @@ git clone this_repo_url ~/.dotfiles
 
 cd ~/.dotfiles
 
+Follow this repository as example: https://github.com/TechDufus/dotfiles/tree/main
+
+ansible-galaxy install -r requirements.yml
+ansible-playbook main.yml
+ansible-playbook main.yml --tags "vscode"
+
+## Ubuntu start script
+
+Install ansible using apt
+$ sudo apt update
+$ sudo apt install software-properties-common
+$ sudo add-apt-repository --yes --update ppa:ansible/ansible
+$ sudo apt install ansible
+
 ansible-galaxy install -r requirements.yml
 ansible-playbook main.yml
 ansible-playbook main.yml --tags "vscode"
