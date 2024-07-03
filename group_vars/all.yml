@@ -1,0 +1,4 @@
+# Define terragrunt version to install
+# Possible values: https://api.github.com/repos/gruntwork-io/terragrunt/releases
+# Default: latest
+terragrunt_version: latest
