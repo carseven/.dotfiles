@@ -12,9 +12,10 @@
   tasks:
     # List all the directories from the roles directory
     - name: Find roles
-      ansible.builtin.shell: ls $HOME/.dotfiles/roles
+      ansible.builtin.shell: ls ./roles # ls $HOME/.dotfiles/roles
       register: roles_dir
       ignore_errors: true
+      changed_when: false
       tags:
         - always
 
