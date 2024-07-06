@@ -33,8 +33,10 @@
   when: is_aws_installed.rc != 0 and aws_cli_download_bundle.failed == false
   tags: debug
 
-# May fail if python3 and python-env
+# Install aws-cli dependencies
 # apt install python3.8-venv python3.8
+# - name: Install awscli dependencies
+
 - name: Install awscli package.
   shell: sudo /tmp/awscli-bundle/install
   when: is_aws_installed.rc != 0 and aws_cli_unarchive_installer.failed == false
