@@ -1,6 +1,6 @@
 ---
 - name: Check AWS CLI is installed
-  ansible.builtin.raw: which awss
+  ansible.builtin.raw: which aws
   check_mode: false
   changed_when: false
   failed_when: is_aws_installed.rc > 1 # control when the task fails
