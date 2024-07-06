@@ -1,0 +1,23 @@
+---
+# TODO: Test this script
+- name: Check ddosify is installed
+  ansible.builtin.raw: which ddosify
+  check_mode: false
+  changed_when: false
+  failed_when: is_ddosify_installed.rc > 1 # control when the task fails
+  register: is_ddosify_installed
+
+- name: Is ddosify installed?
+  ansible.builtin.debug:
+    var: is_ddosify_installed
+  tags: debug
+
+- name: Download the ddosify bundle.
+  get_url: url=https://github.com/ddosify/ddosify/releases/download/v1.0.6/ddosify_amd64.deb dest=/tmp/ddosify.deb # TODO: Change architecture dynamically
+  register: ddosify_download
+  when: is_ddosify_installed.rc != 0
+
+
+- name: Install ddosify package.
+  shell: dpkg -i /tmp/ddosify.deb
+  when: is_ddosify_installed.rc != 0 and ddosify_download != 0

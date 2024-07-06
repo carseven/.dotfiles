@@ -1,0 +1,5 @@
+---
+- name: Install ddosify
+  community.general.homebrew:
+    name: ddosify/tap/ddosify
+    state: present
