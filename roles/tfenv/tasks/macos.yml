@@ -1,0 +1,5 @@
+---
+- name: Install tfenv
+  community.general.homebrew:
+    name: tfenv
+    state: present

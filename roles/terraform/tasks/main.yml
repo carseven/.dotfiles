@@ -1,7 +1,10 @@
 ---
+# Use tfenv instead of direct install. If for some reason tfenv is not working and you need
+# to install terraform remove the False from the condition
+# ansible-playbook main.yml --tags "terraform"
 - name: Run Ubuntu Tasks
   ansible.builtin.import_tasks: ubuntu.yml
-  when: ansible_os_family == 'Debian'
+  when: ansible_os_family == 'Debian' and False
 - name: Run macOS Tasks
   ansible.builtin.import_tasks: macos.yml
-  when: ansible_os_family == 'Darwin'
+  when: ansible_os_family == 'Darwin' and False
