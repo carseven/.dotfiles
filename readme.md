@@ -51,6 +51,8 @@ ansible-galaxy install -r requirements.yml
 ansible-playbook main.yml
 ansible-playbook main.yml --tags "vscode"
 
+- [] Add essential packages install at the beginning of each role. This could be as simple as to point to the main task of the role...Example, some roles may need python or golang to be able to be install.
+- [] Investigate more about ZSH keybindings
 - [] Create start script for macos and linux (Maybe git clone and make style)
 - [] CI to test the ansible script
 - [] Finish ubuntu setup for linux VM setup
