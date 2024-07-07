@@ -1,32 +1,29 @@
-# ALIAS
-
-# ZSHRC CONFIG
-alias update="source ~/.zshrc"
-alias cdot="code ~/.dotfiles"
+# zsh
+alias update="exec zsh"
 alias time_zsh="time zsh -i -c exit"
 
-# NAVEGACION
+# Navigation
 alias ...="cd ../.."
 alias ..="cd ../"
-alias ls="lsd --group-dirs=first"
-alias ll="lsd -lh --group-dirs=first --sort=size"
-alias lsa="lsd -a --group-dirs=first"
-alias lla="lsd -lha --group-dirs=first --sort=size"
-alias tree="lsd -a --tree"
+if type lsd &> /dev/null; then
+  alias ls="lsd --group-dirs=first"
+fi
+alias ll="ls -lh"
+alias lsa="ls -a"
+alias lla="ls -lha"
+alias tree="ls -a --tree"
 
-# CAT/BAT
-alias cat="bat"
-alias catnl="bat --paging=never"
+# Bat
+if type bat &> /dev/null; then
+  alias cat="bat"
+  alias catnl="bat --paging=never"
+fi
 
-# CODE
+# Editors
 alias c="code ."
-
-# PYTHON VENV
-alias create_venv="virtualenv .venv" # pip3 install virtualenv to install global dependency
-alias venv="source source .venv/bin/activate"
-alias dvenv="deactivate &> /dev/null"
-alias pip_freeze="pip3 freeze > requirement.txt"
-alias pip_freeze_install="pip3 install -r requirements.txt"
+if type nvim &> /dev/null; then
+  alias vim="nvim"
+fi
 
 # GO
 function go_update_last() {
@@ -73,15 +70,10 @@ function go_remove_version() {
   sudo rm -rf /usr/local/go
 }
 
-alias ns="npm start"
-alias ni="npm install"
+# Node package manager
 alias ncomplex="npx code-complexity . --filter '**/*.ts' --limit 10 --sort score"
 alias rmnode="find . -name 'node_modules' -type d -prune -print -exec rm -rf '{}' \;"
 alias npkill="npx npkill"
-
-
-# PNPM
-alias pn="pnpm"
 
 # All packages
 function p() {
@@ -101,21 +93,17 @@ function p() {
 # System utilities
 alias myip="curl http://ipecho.net/plain; echo"
 alias usage="du -h -d1"
-alias runport="lsof -i"
 
 # GIT
-alias gconfig="git config -l" 
 alias gc="git commit -m"
 alias gs="git status"
 alias gss='git status --short'
 alias gd="git diff"
-alias gdiff="git diff"
 alias ga="git add"
 alias gaa="git add ."
-alias gf="git fetch"
-alias gfa="git fetch --all"
+alias gf="git fetch --all"
+function gdiff() { git diff --name-only --diff-filter=d | xargs bat --diff }
 alias gpush="git push"
-alias gpull="git pull"
 alias gpushup="git push --set-upstream origin HEAD"
 alias gpull="git pull"
 alias greset="git reset HEAD~" # reset last commit
@@ -127,15 +115,10 @@ alias glog='git log --graph --oneline --decorate --all'
 alias gg='lazygit'
 alias gsearch="git log --decorate --all --oneline -S"
 alias gpipe="  git commit --allow-empty -m 'Trigger CI/CD'"
-function gbat() { git diff --name-only --diff-filter=d | xargs bat --diff }
 
 # FZF
 # Open in vscode dev repositories
-alias dev="ls ~/dev | fzf | xargs -I_ code ~/dev/_"
-alias cf="find ~ ~/dev -mindepth 1 -maxdepth 1 -type d | fzf | xargs -I_ code _"
-bindkey -s ^f "$HOME/.local/bin/scripts/tmux-session\n" # Bindea cntrl + f a lanzar el string
-alias hfind="history | fzf"
-alias afind="alias | fzf"
+alias dev="lsa ~/dev | fzf | xargs -I_ code ~/dev/_"
 alias most_used="history  | awk '{print $2}' | sort | uniq -c | sort"
 
 # Preview files with bat
@@ -174,32 +157,13 @@ function man() {
 }
 
 function addToPath() {
-    if [[ "$PATH" != *"$1"* ]]
-    then 
+    if [[ "$PATH" != *"$1"* ]]; then
         export PATH=$PATH:$1
     fi
 }
 
-# Mac OS X platform
-if [[ "$(uname)" == "Darwin" ]] 
-then
-  function update-macos() {
-    # Close any open System Preferences panes, to prevent them from overriding
-    # settings we’re about to change
-    osascript -e 'tell application "System Preferences" to quit'
-
-    # Ask for the administrator password upfront
-    sudo -v
-
-    # Keep-alive: update existing `sudo` time stamp until `.setup` has finished
-    while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
-
-    # Install all recommended available updates and restart if needed (macos)
-    sudo softwareupdate --install --all --restart --recommended
-  }
-
-  function update-xcode() {
-    # Install or update xcode development dependencies
-    xcode-select --install
-  }
-fi
+function addToPathFront() {
+    if [[ "$PATH" != *"$1"* ]]; then
+        export PATH=$1:$PATH
+    fi
+}
