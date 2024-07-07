@@ -1,0 +1,13 @@
+---
+- name: Install aerospace
+  community.general.homebrew_cask:
+    name: nikitabobko/tap/aerospace
+    state: present
+
+- name: Copying aerospace config file
+  copy:
+    src: config/aerospace.toml
+    dest: "{{ ansible_user_dir }}/.aerospace.toml"
+    mode: 0644
+    directory_mode: 0755
+    force: true

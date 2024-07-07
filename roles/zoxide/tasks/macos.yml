@@ -1,0 +1,8 @@
+---
+- name: Install zoxide
+  community.general.homebrew:
+    name: zoxide
+    state: present
+
+- name: Launch init command
+  shell: zoxide init zsh

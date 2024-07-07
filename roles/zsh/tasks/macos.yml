@@ -5,30 +5,9 @@
     name: zsh
     state: present
 
-- name: Set zsh default shell
-  shell: zsh $HOME/.dotfiles/bin/add-zsh-shell
-  become: true
-
-- name: Check if Oh My Zsh is installed
-  stat:
-    path: $HOME/.oh-my-zsh
-  register: oh_my_stats
-
-- name: Install Oh My ZSH
-  shell: curl -L http://install.ohmyz.sh | sh
-  when: oh_my_stats.stat.exists == False # TODO: Detect if last version and upgrade?
-
-- name: Install ZSH syntax highlighting
-  ansible.builtin.git:
-    repo: "https://github.com/zsh-users/zsh-syntax-highlighting.git"
-    dest: ~/.oh-my-zsh/custom/plugins
-    clone: no
-
-- name: Install ZSH autosuggestions
-  ansible.builtin.git:
-    repo: "https://github.com/zsh-users/zsh-autosuggestions"
-    dest: ~/.oh-my-zsh/custom/plugins
-    clone: no
+# - name: Set zsh default shell
+#   shell: zsh $HOME/.dotfiles/bin/add-zsh-shell
+#   become: true
 
 - name: Copying zsh config files
   copy:

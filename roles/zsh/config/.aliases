@@ -7,6 +7,7 @@ alias time_zsh="time zsh -i -c exit"
 
 # NAVEGACION
 alias ...="cd ../.."
+alias ..="cd ../"
 alias ls="lsd --group-dirs=first"
 alias ll="lsd -lh --group-dirs=first --sort=size"
 alias lsa="lsd -a --group-dirs=first"

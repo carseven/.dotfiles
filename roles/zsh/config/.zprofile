@@ -4,8 +4,7 @@ if [[ -d "/usr/local/go/bin" ]]; then
     echo "Go is not installed!"
 fi
 
+# Only need for manual installation (Ubuntu)
 if [[ -d "$HOME/.tfenv/bin" ]]; then
     export PATH="$HOME/.tfenv/bin:$PATH"
-  else 
-    echo "Tfenv is not installed!"
 fi

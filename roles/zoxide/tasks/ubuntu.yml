@@ -1,0 +1,7 @@
+---
+- name: Install zoxide
+  ansible.builtin.apt:
+    name: zoxide
+    state: present
+    update_cache: true
+  become: true
