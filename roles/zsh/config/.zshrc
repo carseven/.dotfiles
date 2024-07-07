@@ -1,7 +1,3 @@
-# Path  
-export PATH="$HOME/go/bin:$PATH" # Golang
-command -v brew >/dev/null 2>&1 && export PATH="/opt/homebrew/bin:$PATH" # Homebrew, only for macos
-
 # Zinit
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 [ ! -d $ZINIT_HOME ] && mkdir -p "$(dirname $ZINIT_HOME)"
@@ -22,10 +18,12 @@ _comp_options+=(globdots) # add dotfiles to the zsh completions
 source ~/.aliases
 
 # Keybindings
+# bindkey -v # TODO: try vim mode instead of emacs
 bindkey -e # Emacs keybindings mode
 # Use relanted history search. For example, if curl is written only show history that start with curl
 bindkey '^p' history-search-backward 
 bindkey '^n' history-search-forward
+bindkey -s ^f "tmux-session\n" # Lauch script using keybindings
 
 # History
 HISTFILE=$HOME/.zsh_history
@@ -46,10 +44,15 @@ unsetopt HIST_VERIFY # Execute commands using history (e.g.: using !$) immediate
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-Z}' # Make completions case insensitive
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}" # Add colors to completions. Similar to ls --colors
 zstyle ':completion:*' menu no # Disable completion menu, we will use Aloxaf/fzf-tab plugin instead for better expirience
-zstyle ':fzf-tab:complete:cd:*' fzf-preview 'lsd -a $realpath'
-zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'lsd -a $realpath'
+zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls $realpath'
+zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls $realpath'
 
 # Shell integrations
-eval "$(starship init zsh)"
-eval "$(fzf --zsh)"
-eval "$(zoxide init zsh)"
+type starship &> /dev/null && eval "$(starship init zsh)"
+type fzf &> /dev/null && eval "$(fzf --zsh)"
+type zoxide &> /dev/null && eval "$(zoxide init zsh)"
+
+# Path
+addToPathFront $HOME/go/bin
+command -v brew >/dev/null 2>&1 && addToPathFront /opt/homebrew/bin # Homebrew, only for macos
+addToPathFront $HOME/.local/bin
