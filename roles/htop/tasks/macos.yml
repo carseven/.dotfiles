@@ -3,3 +3,8 @@
   community.general.homebrew:
     name: htop
     state: present
+
+- name: Install bpytop
+  community.general.homebrew:
+    name: bpytop
+    state: present

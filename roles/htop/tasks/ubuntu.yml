@@ -4,3 +4,9 @@
     name: htop
     state: present
   become: true
+
+- name: Install bpytop
+  ansible.builtin.apt:
+    name: bpytop
+    state: present
+  become: true
