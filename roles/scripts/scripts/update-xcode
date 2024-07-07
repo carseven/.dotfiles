@@ -1,0 +1,4 @@
+#!/bin/bash
+
+sudo -v
+xcode-select --install

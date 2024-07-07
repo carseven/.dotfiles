@@ -1,3 +1,0 @@
-#!/bin/bash
-# Create .gitkeep file inside empty directories
-find ./roles/* -prune -empty -print0 | xargs -0 -I_ touch _/.gitkeep

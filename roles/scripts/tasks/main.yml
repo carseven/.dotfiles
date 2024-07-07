@@ -1,0 +1,7 @@
+---
+- name: Copying scripts files to .local/bin
+  copy:
+    src: scripts/
+    dest: "{{ ansible_user_dir }}/.local/bin"
+    mode: 0744
+    force: true
