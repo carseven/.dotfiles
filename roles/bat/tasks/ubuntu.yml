@@ -13,19 +13,12 @@
     directory_mode: 0755
     force: true
 
-- name: Build bat cache to load themes
-  ansible.builtin.shell: code --install-extension {{ item }}
-  loop:
-    - Catppuccin.catppuccin-vsc
-    - christian-kohler.path-intellisense
-    - dbaeumer.vscode-eslint
-    - eamodio.gitlens
-    - esbenp.prettier-vscode
-    - miguelsolorio.fluent-icons
-    - miguelsolorio.symbols
-    - streetsidesoftware.code-spell-checker
-    - usernamehw.errorlens
-    - yoavbls.pretty-ts-errors
-    - mhutchie.git-graph
-    - vscodevim.vim
-    - tobias-z.vscode-harpoon
+# TODO: Check if $HOME/.local/bin/bat exists
+
+# Rename package from batcat to bat
+# https://github.com/sharkdp/bat?tab=readme-ov-file#on-ubuntu-using-apt
+- name: Create a symbolic link (batcat to cat)
+  ansible.builtin.file:
+    src: /usr/bin/batcat
+    dest: $HOME/.local/bin/bat
+    state: link
