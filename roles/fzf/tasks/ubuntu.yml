@@ -4,6 +4,3 @@
     name: fzf
     state: present
   become: true
-
-- name: Install FZF key bindings (TODO)
-  shell: echo "TODO"
