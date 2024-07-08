@@ -25,51 +25,6 @@ if type nvim &> /dev/null; then
   alias vim="nvim"
 fi
 
-# GO
-function go_update_last() {
-  # Get last version
-  go_lastest_version=$(curl -s https://go.dev/VERSION\?m\=text | head -n 1)
-
-  # Check if go is installed.
-  # If it is installed, check if it is the latest version.
-  if ! command -v go &> /dev/null; then
-    echo "Go is not installed"
-  else
-    current_go_version=$(go version | awk '{print $3}')
-    echo "Go installed version: $current_go_version"
-    if [[ "$current_go_version" == "$go_lastest_version" ]]; then
-      echo "You are already using the latest version of Go"
-      return
-    fi
-  fi
-
-
-  # Download the latest version of Go
-  go_download_url="https://dl.google.com/go/$go_lastest_version.linux-amd64.tar.gz"
-  echo "Downloading go version $go_lastest_version from $go_download_url"
-  wget $go_download_url -O /tmp/go.tar.gz
-
-  # Remove old version
-  if [[ -d "/usr/local/go" ]]; then
-    echo "Removing old version of Go"
-    sudo rm -rf /usr/local/go
-  fi
-
-  # Install new version
-  echo "Installing Go version $go_lastest_version"
-  sudo tar -C /usr/local -xzf /tmp/go.tar.gz
-
-  # Remove downloaded file
-  echo "Removing downloaded tar file"
-  rm /tmp/go.tar.gz
-
-  echo "Go version $go_lastest_version installed!"
-}
-
-function go_remove_version() {
-  sudo rm -rf /usr/local/go
-}
-
 # Node package manager
 alias ncomplex="npx code-complexity . --filter '**/*.ts' --limit 10 --sort score"
 alias rmnode="find . -name 'node_modules' -type d -prune -print -exec rm -rf '{}' \;"
@@ -118,34 +73,6 @@ alias gpipe="  git commit --allow-empty -m 'Trigger CI/CD'"
 
 # Docker
 alias dstop="docker ps | fzf --header-lines 1 | awk '{print \$1}' | xargs -I_ docker stop _"
-
-# FZF
-# Open in vscode dev repositories
-alias dev="lsa ~/dev | fzf | xargs -I_ code ~/dev/_"
-alias most_used="history  | awk '{print $2}' | sort | uniq -c | sort"
-alias killport="lsof -ti:$1 | xargs kill -9"
-
-# Preview files with bat
-function preview() {
-        if [ "$1" = "h" ]; then
-                fzf -m --reverse --preview-window down:20 --preview '[[ $(file --mime {}) =~ binary ]] &&
-                        echo {} is a binary file ||
-                         (bat --style=numbers --color=always {} ||
-                          highlight -O ansi -l {} ||
-                          coderay {} ||
-                          rougify {} ||
-                          cat {}) 2> /dev/null | head -500'
- 
-        else
-                fzf -m --preview '[[ $(file --mime {}) =~ binary ]] &&
-                                 echo {} is a binary file ||
-                                 (bat --style=numbers --color=always {} ||
-                                  highlight -O ansi -l {} ||
-                                  coderay {} ||
-                                  rougify {} ||
-                                  cat {}) 2> /dev/null | head -500'
-        fi
-}
 
 # Set man colors
 function man() {
