@@ -5,9 +5,16 @@
     name: zsh
     state: present
 
-# - name: Set zsh default shell
-#   shell: zsh $HOME/.dotfiles/bin/add-zsh-shell
-#   become: true
+- name: Set zsh default shell
+  shell: >
+    if ! grep -q $(which zsh) "/etc/shells"; then
+      echo 0
+      sudo sh -c "echo $(which zsh) >> /etc/shells"
+    fi
+
+    # Change shell to use zsh
+    sudo chsh -s $(which zsh)
+  become: true
 
 - name: Copying zsh config files
   copy:

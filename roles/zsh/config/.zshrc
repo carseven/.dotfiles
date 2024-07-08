@@ -1,4 +1,6 @@
 # Zinit
+OS_UNAME=$(uname)
+
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 [ ! -d $ZINIT_HOME ] && mkdir -p "$(dirname $ZINIT_HOME)"
 [ ! -d $ZINIT_HOME/.git ] && git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
@@ -9,12 +11,17 @@ autoload -U compinit && compinit
 _comp_options+=(globdots) # add dotfiles to the zsh completions
 
 # Zinit plugins
-zinit light zsh-users/zsh-syntax-highlighting
+# zinit light zsh-users/zsh-syntax-highlighting # TODO: Remove if fast-syntax-highlighting works well
+zinit light zdharma-continuum/fast-syntax-highlighting
 zinit light zsh-users/zsh-completions
 zinit light zsh-users/zsh-autosuggestions
-zinit light Aloxaf/fzf-tab
+
+if [[ OS_UNAME == "Darwin" ]]; then
+    zinit light Aloxaf/fzf-tab
+fi
 
 # Load completions
+# TODO: Add cache ceck only once a day
 autoload -U compinit && compinit
 _comp_options+=(globdots) # add dotfiles to the zsh completions
 
@@ -47,14 +54,26 @@ unsetopt HIST_VERIFY # Execute commands using history (e.g.: using !$) immediate
 # Completions
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-Z}' # Make completions case insensitive
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}" # Add colors to completions. Similar to ls --colors
-zstyle ':completion:*' menu no # Disable completion menu, we will use Aloxaf/fzf-tab plugin instead for better expirience
-zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls $realpath'
-zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls $realpath'
+
+if [[ OS_UNAME == "Darwin" ]]; then
+    zstyle ':completion:*' menu no # Disable completion menu, we will use Aloxaf/fzf-tab plugin instead for better expirience
+    zstyle ':fzf-tab:complete:cd:*' fzf --preview 'ls $realpath'
+    zstyle ':fzf-tab:complete:__zoxide_z:*' fzf --preview 'ls $realpath'
+fi
+
 
 # Shell integrations
 type starship &> /dev/null && eval "$(starship init zsh)"
-type fzf &> /dev/null && eval "$(fzf --zsh)"
 type zoxide &> /dev/null && eval "$(zoxide init zsh)"
+# Fzf, older versions don't have --zsh flag. Check if it's available
+# If not just launch fzf keybing and completion script directly
+# https://github.com/junegunn/fzf?tab=readme-ov-file#setting-up-shell-integration
+if [ fzf --zsh &> /dev/null -q 0 ]; then
+    type fzf &> /dev/null && eval "$(fzf --zsh)"
+else
+    source /usr/share/doc/fzf/examples/completion.zsh
+    source /usr/share/doc/fzf/examples/key-bindings.zsh
+fi
 
 # Path
 addToPathFront $HOME/go/bin
