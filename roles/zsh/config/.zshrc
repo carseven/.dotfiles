@@ -53,7 +53,19 @@ setopt HIST_SAVE_NO_DUPS # Dont write duplicate entries in the history file
 setopt SHARE_HISTORY # Share history between all sessions
 unsetopt HIST_VERIFY # Execute commands using history (e.g.: using !$) immediatel
 
+# Colors
+type vivid &> /dev/null && export LS_COLORS="$(vivid generate catppuccin-macchiato)"
+
 # Completions
+autoload -U compinit && compinit
+_comp_options+=(globdots) # add dotfiles to the zsh completions
+
+# Add completions installed through Homebrew packages
+# See: https://docs.brew.sh/Shell-Completion
+if type brew &>/dev/null; then
+  FPATH=/usr/local/share/zsh/site-functions:$FPATH
+fi
+
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-Z}' # Make completions case insensitive
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}" # Add colors to completions. Similar to ls --colors
 zstyle ':completion:*' menu no # Disable completion menu, we will use Aloxaf/fzf-tab plugin instead for better expirience
@@ -68,7 +80,7 @@ type fzf &> /dev/null && eval "$(fzf --zsh)"
 
 # Path
 addToPathFront $HOME/go/bin
-command -v brew >/dev/null 2>&1 && addToPathFront /opt/homebrew/bin # Homebrew, only for macos
+type brew &> /dev/null && addToPathFront /opt/homebrew/bin # Homebrew, only for macos
 addToPathFront $HOME/.local/bin
 
 # zprof # bottom of .zshrc

@@ -1,0 +1,5 @@
+---
+- name: Install vivid
+  community.general.homebrew:
+    name: vivid
+    state: present
