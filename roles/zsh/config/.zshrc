@@ -1,31 +1,32 @@
-# Zinit
+# zmodload zsh/zprof # top of your .zshrc file
+
 OS_UNAME=$(uname)
 
+# Zinit
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 [ ! -d $ZINIT_HOME ] && mkdir -p "$(dirname $ZINIT_HOME)"
 [ ! -d $ZINIT_HOME/.git ] && git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
 source "${ZINIT_HOME}/zinit.zsh"
 
-# Load completions
-autoload -U compinit && compinit
-_comp_options+=(globdots) # add dotfiles to the zsh completions
-
 # Zinit plugins
-# zinit light zsh-users/zsh-syntax-highlighting # TODO: Remove if fast-syntax-highlighting works well
 zinit light zdharma-continuum/fast-syntax-highlighting
 zinit light zsh-users/zsh-completions
 zinit light zsh-users/zsh-autosuggestions
-
 if [[ OS_UNAME == "Darwin" ]]; then
     zinit light Aloxaf/fzf-tab
 fi
 
 # Colors
-type vivid &> /dev/null && export LS_COLORS="$(vivid generate catppuccin-macchiato)"
+# type vivid &> /dev/null && export LS_COLORS="$(vivid generate catppuccin-macchiato)"
 
 # Load completions
 # TODO: Add cache ceck only once a day
-autoload -U compinit && compinit
+autoload -Uz compinit 
+if [[ -n ${ZDOTDIR}/.zcompdump(#qN.mh+24) ]]; then
+	compinit;
+else
+	compinit -C;
+fi;
 _comp_options+=(globdots) # add dotfiles to the zsh completion
 
 # Add completions installed through Homebrew packages
@@ -88,3 +89,5 @@ fi
 addToPathFront $HOME/go/bin
 command -v brew >/dev/null 2>&1 && addToPathFront /opt/homebrew/bin # Homebrew, only for macos
 addToPathFront $HOME/.local/bin
+
+# zprof # bottom of .zshrc
