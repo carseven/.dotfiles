@@ -20,10 +20,19 @@ if [[ OS_UNAME == "Darwin" ]]; then
     zinit light Aloxaf/fzf-tab
 fi
 
+# Colors
+type vivid &> /dev/null && export LS_COLORS="$(vivid generate catppuccin-macchiato)"
+
 # Load completions
 # TODO: Add cache ceck only once a day
 autoload -U compinit && compinit
-_comp_options+=(globdots) # add dotfiles to the zsh completions
+_comp_options+=(globdots) # add dotfiles to the zsh completion
+
+# Add completions installed through Homebrew packages
+# See: https://docs.brew.sh/Shell-Completion
+if type brew &>/dev/null; then
+  FPATH=/usr/local/share/zsh/site-functions:$FPATH
+fi
 
 # Aliases
 source ~/.aliases
