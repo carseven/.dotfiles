@@ -39,7 +39,7 @@ config.font =
       { family = 'CaskaydiaCove Nerd Font Mono' },
       { family = 'Cascadia Code' },
   })
-config.font_size = 18
+config.font_size = 14
 config.warn_about_missing_glyphs = false
 
 
