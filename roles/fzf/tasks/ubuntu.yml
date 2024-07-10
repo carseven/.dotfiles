@@ -1,6 +1,8 @@
 ---
+# Run golang role tasks
+- name: Install go
+  include_role:
+    name: golang
+
 - name: Install fzf
-  ansible.builtin.apt:
-    name: fzf
-    state: present
-  become: true
+  shell: go install github.com/junegunn/fzf@latest

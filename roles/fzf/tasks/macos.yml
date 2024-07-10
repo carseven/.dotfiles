@@ -3,5 +3,3 @@
   community.general.homebrew:
     name: fzf
     state: present
-- name: Install FZF key bindings
-  shell: $(brew --prefix)/opt/fzf/install
