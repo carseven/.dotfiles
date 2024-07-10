@@ -1,5 +1,7 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
 # Starship documentation
-# https://starship.rs/config/
+# https://starship.rs/config/
 
 # Inserts a blank line between shell prompts
 add_newline = false
