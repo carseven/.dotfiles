@@ -1,7 +1,6 @@
 ---
 - name: Install zoxide
-  ansible.builtin.apt:
-    name: zoxide
-    state: present
-    update_cache: true
-  become: true
+  shell: curl -sSfL https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | sh
+
+- name: Launch init command
+  shell: zoxide init zsh
