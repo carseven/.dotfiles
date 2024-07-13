@@ -34,7 +34,7 @@ disabled = true
 format = '[\($state( $progress_current of $progress_total)\)]($style) '
 
 [character]
-error_symbol = "[✖](bold red) "
+error_symbol = "[✖](bold red)"
 
 [git_branch]
 disabled = false
