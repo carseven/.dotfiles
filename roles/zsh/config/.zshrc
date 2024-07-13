@@ -1,31 +1,39 @@
-# zmodload zsh/zprof # top of your .zshrc file
+# zmodload zsh/zprof # Always top of your .zshrc file, uncomment to profile zsh shell
 
-# Zinit
+# Zinit # On macos takes 10ms to load
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 [ ! -d $ZINIT_HOME ] && mkdir -p "$(dirname $ZINIT_HOME)"
 [ ! -d $ZINIT_HOME/.git ] && git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
 source "${ZINIT_HOME}/zinit.zsh"
 
 # Zinit plugins
-zinit light zdharma-continuum/fast-syntax-highlighting
+zinit ice wait lucid # Lazy load the plugin and lucid meaning no prompt message when finish
+zinit light zdharma-continuum/fast-syntax-highlighting # On macos m1 takes 20ms to load
+
+zinit ice wait lucid
 zinit light zsh-users/zsh-completions
+
+# does not load properly with lazy load. But no worries, is not a slow plugin...
 zinit light zsh-users/zsh-autosuggestions
-zinit light Aloxaf/fzf-tab
 
-# Load completions
-autoload -Uz compinit 
-if [[ -n ${ZDOTDIR}/.zcompdump(#qN.mh+24) ]]; then
-	compinit;
-else
-	compinit -C;
-fi;
-_comp_options+=(globdots) # add dotfiles to the zsh completion
+zinit ice wait lucid
+zinit light Aloxaf/fzf-tab # 10ms
 
-# Add completions installed through Homebrew packages
-# See: https://docs.brew.sh/Shell-Completion
-if type brew &>/dev/null; then
-  FPATH=/usr/local/share/zsh/site-functions:$FPATH
-fi
+# type starship &> /dev/null && eval "$(starship init zsh)" # On macos m1 takes 20ms to load
+zinit ice as"command" from"gh-r" \
+          atclone"./starship init zsh > init.zsh; ./starship completions zsh > _starship" \
+          atpull"%atclone" src"init.zsh"
+zinit light starship/starship
+
+# Completions
+# zsh doc: https://zsh.sourceforge.io/Doc/Release/Completion-System.html
+# snippet original source, read the thread: https://gist.github.com/ctechols/ca1035271ad134841284 
+autoload -Uz compinit
+for dump in ~/.zcompdump(N.mh+24); do
+  compinit
+done
+compinit -C
+
 
 # Aliases
 source ~/.aliases
@@ -53,18 +61,8 @@ setopt HIST_SAVE_NO_DUPS # Dont write duplicate entries in the history file
 setopt SHARE_HISTORY # Share history between all sessions
 unsetopt HIST_VERIFY # Execute commands using history (e.g.: using !$) immediatel
 
-# Colors
-type vivid &> /dev/null && export LS_COLORS="$(vivid generate catppuccin-macchiato)"
+# Other terminal options
 
-# Completions
-autoload -U compinit && compinit
-_comp_options+=(globdots) # add dotfiles to the zsh completions
-
-# Add completions installed through Homebrew packages
-# See: https://docs.brew.sh/Shell-Completion
-if type brew &>/dev/null; then
-  FPATH=/usr/local/share/zsh/site-functions:$FPATH
-fi
 
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-Z}' # Make completions case insensitive
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}" # Add colors to completions. Similar to ls --colors
@@ -74,13 +72,12 @@ zstyle ':fzf-tab:complete:__zoxide_z:*' fzf --preview 'lsd $realpath'
 
 
 # Shell integrations
-type starship &> /dev/null && eval "$(starship init zsh)"
 type zoxide &> /dev/null && eval "$(zoxide init zsh)"
-type fzf &> /dev/null && eval "$(fzf --zsh)"
+type fzf &> /dev/null && eval "$(fzf --zsh)" # On macos m1 takes 10ms to load
 
 # Path
 addToPathFront $HOME/go/bin
 type brew &> /dev/null && addToPathFront /opt/homebrew/bin # Homebrew, only for macos
 addToPathFront $HOME/.local/bin
 
-# zprof # bottom of .zshrc
+# zprof # Always bottom of .zshrc, uncomment to profile zsh shell

@@ -1,6 +1,10 @@
 # zsh
 alias update="exec zsh"
 alias time_zsh="time zsh -i -c exit"
+function times_zsh() {
+  shell=${1-$SHELL}
+  for i in $(seq 1 4); do /usr/bin/time $shell -i -c exit; done
+}
 
 # Navigation
 alias ...="cd ../.."
