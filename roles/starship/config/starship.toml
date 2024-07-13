@@ -19,15 +19,15 @@ only_nonzero_diffs=true
 disabled = false
 # Check icons from Nerd Fonts https://www.nerdfonts.com/cheat-sheet
 format = "$ahead$behind$staged$conflict$modified$untracked$stashed "
-conflicted = "[󰞇](red)"
+conflicted = "[󰞇 ${count}](red) "
 ahead = "[ ${count}](blue) "
 behind = "[ ${count}](blue) "
 untracked = "[ ${count}](gray) "
 stashed = "[ ${count}](gray) "
 modified = "[ ${count}](yellow) "
 staged = "[󰾖 ${count}](green) "
-renamed = "󰑕 {count} "
-deleted = "[✘$ {count}](red) "
+renamed = "[󰑕 ${count}](yellow) "
+deleted = "[✘ ${count}](red) "
 
 [git_state]
 disabled = true
