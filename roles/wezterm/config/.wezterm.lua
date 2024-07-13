@@ -39,7 +39,7 @@ config.font =
       { family = 'CaskaydiaCove Nerd Font Mono' },
       { family = 'Cascadia Code' },
   })
-config.font_size = 14
+config.font_size = 16
 config.warn_about_missing_glyphs = false
 
 
@@ -65,7 +65,6 @@ config.hide_tab_bar_if_only_one_tab = true
 -- else
 
 -- end
-
 config.keys = {
   -- This will create a new split and run your default program inside it
   {
@@ -81,7 +80,7 @@ config.keys = {
   },
   {
     key = 'm',
-    mods = 'CTRL',
+    mods = 'LEADER',
     action = wezterm.action.TogglePaneZoomState,
   },
   {
@@ -100,15 +99,30 @@ config.keys = {
     action = wezterm.action.CloseCurrentPane { confirm = false },
   },
   -- Select pane mode
-  { key = 'p', mods = 'CTRL', action = wezterm.action.PaneSelect },
-  -- Launch lazygit tab
   {
-    key = 'g',
-    mods = 'CTRL',
-    action = wezterm.action.SpawnCommandInNewTab {
-      domain = 'CurrentPaneDomain',
-      args = { 'lazygit' },
-    },
+    key = "h",
+    mods = "LEADER",
+    action = act.ActivatePaneDirection("Left"),
+  }
+  {
+    key = 'LeftArrow',
+    mods = 'CTRL|SHIFT',
+    action = act.ActivatePaneDirection 'Left',
+  },
+  {
+    key = 'RightArrow',
+    mods = 'CTRL|SHIFT',
+    action = act.ActivatePaneDirection 'Right',
+  },
+  {
+    key = 'UpArrow',
+    mods = 'CTRL|SHIFT',
+    action = act.ActivatePaneDirection 'Up',
+  },
+  {
+    key = 'DownArrow',
+    mods = 'CTRL|SHIFT',
+    action = act.ActivatePaneDirection 'Down',
   },
 }
 
@@ -121,6 +135,8 @@ for i = 1, 8 do
   })
 end
 
+
+config.audible_bell = "Disabled"
 
 -- and finally, return the configuration to wezterm
 return config
