@@ -7,10 +7,11 @@ ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 source "${ZINIT_HOME}/zinit.zsh"
 
 # Zinit plugins
+# Lazy load the plugin and lucid meaning no prompt message when finish
 zinit ice wait lucid
 zinit light Aloxaf/fzf-tab # On macos m1 takes 10ms to load
 
-zinit ice wait lucid # Lazy load the plugin and lucid meaning no prompt message when finish
+zinit ice wait lucid 
 zinit light zdharma-continuum/fast-syntax-highlighting # On macos m1 takes 20ms to load
 
 zinit ice wait lucid
@@ -19,7 +20,6 @@ zinit light zsh-users/zsh-completions
 # does not load properly with lazy load. But no worries, is not a slow plugin...
 zinit light zsh-users/zsh-autosuggestions
 
-# type starship &> /dev/null && eval "$(starship init zsh)" # On macos m1 takes 20ms to load
 zinit ice as"command" from"gh-r" \
           atclone"./starship init zsh > init.zsh; ./starship completions zsh > _starship" \
           atpull"%atclone" src"init.zsh"
@@ -34,17 +34,18 @@ for dump in ~/.zcompdump(N.mh+24); do
 done
 compinit -C
 
-
 # Aliases
 source ~/.aliases
 
 # Keybindings
 # bindkey -v # TODO: try vim mode instead of emacs
 bindkey -e # Emacs keybindings mode
-# Use relanted history search. For example, if curl is written only show history that start with curl
-bindkey '^p' history-search-backward 
+bindkey '^p' history-search-backward
 bindkey '^n' history-search-forward
 bindkey -s ^f "tmux-session\n" # Lauch script using keybindings
+
+# Shell settings
+setopt autocd # If match a directory cd
 
 # History
 HISTFILE=$HOME/.zsh_history
@@ -65,8 +66,8 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-Z}' # Make completions case i
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}" # Add colors to completions. Similar to ls --colors
 zstyle ':completion:*' menu no # Disable completion menu, we will use Aloxaf/fzf-tab plugin instead for better expirience
 zstyle ':fzf-tab:*' fzf-command ftb-tmux-popup
-zstyle ':fzf-tab:complete:cd:*' fzf --preview 'lsd $realpath'
-zstyle ':fzf-tab:complete:__zoxide_z:*' fzf --preview 'lsd $realpath'
+zstyle ':fzf-tab:complete:cd:*' fzf --preview 'ls $realpath'
+zstyle ':fzf-tab:complete:__zoxide_z:*' fzf --preview 'ls $realpath'
 
 
 # Shell integrations
