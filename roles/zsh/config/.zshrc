@@ -73,6 +73,8 @@ zstyle ':fzf-tab:complete:__zoxide_z:*' fzf --preview 'ls $realpath'
 # Shell integrations
 type zoxide &> /dev/null && eval "$(zoxide init zsh)"
 type fzf &> /dev/null && eval "$(fzf --zsh)" # On macos m1 takes 10ms to load
+# TODO: Lazy load fnm
+# type fnm &> /dev/null && eval "$(fnm env)" # On macos m1 takes 30ms to load
 
 # Path
 addToPathFront $HOME/go/bin
