@@ -7,6 +7,9 @@ ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 source "${ZINIT_HOME}/zinit.zsh"
 
 # Zinit plugins
+zinit ice wait lucid
+zinit light Aloxaf/fzf-tab # On macos m1 takes 10ms to load
+
 zinit ice wait lucid # Lazy load the plugin and lucid meaning no prompt message when finish
 zinit light zdharma-continuum/fast-syntax-highlighting # On macos m1 takes 20ms to load
 
@@ -15,9 +18,6 @@ zinit light zsh-users/zsh-completions
 
 # does not load properly with lazy load. But no worries, is not a slow plugin...
 zinit light zsh-users/zsh-autosuggestions
-
-zinit ice wait lucid
-zinit light Aloxaf/fzf-tab # 10ms
 
 # type starship &> /dev/null && eval "$(starship init zsh)" # On macos m1 takes 20ms to load
 zinit ice as"command" from"gh-r" \
@@ -61,12 +61,10 @@ setopt HIST_SAVE_NO_DUPS # Dont write duplicate entries in the history file
 setopt SHARE_HISTORY # Share history between all sessions
 unsetopt HIST_VERIFY # Execute commands using history (e.g.: using !$) immediatel
 
-# Other terminal options
-
-
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-Z}' # Make completions case insensitive
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}" # Add colors to completions. Similar to ls --colors
 zstyle ':completion:*' menu no # Disable completion menu, we will use Aloxaf/fzf-tab plugin instead for better expirience
+zstyle ':fzf-tab:*' fzf-command ftb-tmux-popup
 zstyle ':fzf-tab:complete:cd:*' fzf --preview 'lsd $realpath'
 zstyle ':fzf-tab:complete:__zoxide_z:*' fzf --preview 'lsd $realpath'
 
