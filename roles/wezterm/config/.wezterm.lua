@@ -13,13 +13,14 @@ end
 -- This is where you actually apply your config choices
 
 -- Color schema
-function scheme_for_appearance(appearance)
+local function scheme_for_appearance(appearance)
   if appearance:find "Dark" then
     return "Catppuccin Macchiato"
   else
     return "Catppuccin Macchiato"
   end
 end
+
 local color_schema = scheme_for_appearance(wezterm.gui.get_appearance())
 config.color_scheme = color_schema
 local color_schema_bg = wezterm.color.get_builtin_schemes()[color_schema].background
@@ -33,21 +34,21 @@ config.window_frame = {
 }
 
 -- Font
--- If if the font is not patched Wezterm will patch the font with Nerd Font Icons 
+-- If if the font is not patched Wezterm will patch the font with Nerd Font Icons
 config.font =
-  wezterm.font_with_fallback({
+    wezterm.font_with_fallback({
       { family = 'CaskaydiaCove Nerd Font Mono' },
       { family = 'Cascadia Code' },
-  })
+    })
 config.font_size = 16
 config.warn_about_missing_glyphs = false
 
 
--- Window 
+-- Window
 config.window_decorations = "RESIZE" -- disable the title bar but enable the resizable border
 local mux = wezterm.mux
 wezterm.on("gui-startup", function()
-  local tab, pane, window = mux.spawn_window(cmd or {})
+  local _tab, _pane, window = mux.spawn_window({})
   window:gui_window():maximize()
 end)
 config.window_close_confirmation = 'NeverPrompt'
@@ -86,7 +87,7 @@ config.keys = {
   {
     key = 't',
     mods = 'CTRL',
-    action = wezterm.action.SpawnTab 'CurrentPaneDomain',  
+    action = wezterm.action.SpawnTab 'CurrentPaneDomain',
   },
   {
     key = 'w',
@@ -102,27 +103,27 @@ config.keys = {
   {
     key = "h",
     mods = "LEADER",
-    action = act.ActivatePaneDirection("Left"),
-  }
+    action = wezterm.action.ActivatePaneDirection("Left"),
+  },
   {
     key = 'LeftArrow',
     mods = 'CTRL|SHIFT',
-    action = act.ActivatePaneDirection 'Left',
+    action = wezterm.action.ActivatePaneDirection 'Left',
   },
   {
     key = 'RightArrow',
     mods = 'CTRL|SHIFT',
-    action = act.ActivatePaneDirection 'Right',
+    action = wezterm.action.ActivatePaneDirection 'Right',
   },
   {
     key = 'UpArrow',
     mods = 'CTRL|SHIFT',
-    action = act.ActivatePaneDirection 'Up',
+    action = wezterm.action.ActivatePaneDirection 'Up',
   },
   {
     key = 'DownArrow',
     mods = 'CTRL|SHIFT',
-    action = act.ActivatePaneDirection 'Down',
+    action = wezterm.action.ActivatePaneDirection 'Down',
   },
 }
 
