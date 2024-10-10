@@ -74,6 +74,7 @@ alias glog='git log --graph --oneline --decorate --all'
 alias gg='lazygit'
 alias gsearch="git log --decorate --all --oneline -S"
 alias gpipe="  git commit --allow-empty -m 'Trigger CI/CD'"
+alias gtags="git fetch --tags --force && git pull --tags"
 
 # Docker
 alias dstop="docker ps | fzf --header-lines 1 | awk '{print \$1}' | xargs -I_ docker stop _"
