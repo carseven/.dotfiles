@@ -34,9 +34,6 @@ for dump in ~/.zcompdump(N.mh+24); do
 done
 compinit -C
 
-# Aliases
-source ~/.aliases
-
 # Keybindings
 # bindkey -v # TODO: try vim mode instead of emacs
 bindkey -e # Emacs keybindings mode
@@ -69,16 +66,19 @@ zstyle ':fzf-tab:*' fzf-command ftb-tmux-popup
 zstyle ':fzf-tab:complete:cd:*' fzf --preview 'ls $realpath'
 zstyle ':fzf-tab:complete:__zoxide_z:*' fzf --preview 'ls $realpath'
 
+# Path
+source  ~/.path-functions-utils # Load addToPathFront functions
+addToPathFront $HOME/go/bin
+addToPathFront /opt/homebrew/bin # TODO: Check if macos and add
+addToPathFront $HOME/.local/bin
 
 # Shell integrations
 type zoxide &> /dev/null && eval "$(zoxide init zsh)"
 type fzf &> /dev/null && eval "$(fzf --zsh)" # On macos m1 takes 10ms to load
 # TODO: Lazy load fnm
-# type fnm &> /dev/null && eval "$(fnm env)" # On macos m1 takes 30ms to load
+type fnm &> /dev/null && eval "$(fnm env)" # On macos m1 takes 30ms to load
 
-# Path
-addToPathFront $HOME/go/bin
-type brew &> /dev/null && addToPathFront /opt/homebrew/bin # Homebrew, only for macos
-addToPathFront $HOME/.local/bin
+# Aliases
+source ~/.aliases
 
 # zprof # Always bottom of .zshrc, uncomment to profile zsh shell
