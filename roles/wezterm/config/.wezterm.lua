@@ -37,7 +37,7 @@ config.window_frame = {
 -- If if the font is not patched Wezterm will patch the font with Nerd Font Icons
 config.font =
     wezterm.font_with_fallback({
-      { family = 'CaskaydiaCove Nerd Font Mono' },
+      { family = 'CaskaydiaMono Nerd Font' },
       { family = 'Cascadia Code' },
     })
 config.font_size = 16

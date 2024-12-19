@@ -1,5 +1,0 @@
----
-- name: Install raycast
-  community.general.homebrew:
-    name: raycast
-    state: present
