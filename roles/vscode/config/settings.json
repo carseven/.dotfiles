@@ -36,9 +36,9 @@
   // Terminal
   "terminal.integrated.fontSize": 12,
   "terminal.integrated.lineHeight": 1,
-  "terminal.integrated.fontFamily": "CaskaydiaMono Nerd Font",
+  "terminal.integrated.fontFamily": "JetBrainsMono Nerd Font",
   "terminal.integrated.gpuAcceleration": "canvas",
-  "terminal.integrated.cursorStyle": "block",
+  "terminal.integrated.cursorStyle": "line",
   "terminal.integrated.persistentSessionReviveProcess": "never",
   "terminal.integrated.tabs.enabled": false,
   "editor.insertSpaces": true,
@@ -52,7 +52,7 @@
     "source.sortMembers": "always",
     "source.fixAll": "always"
   },
-  "editor.fontFamily": "CaskaydiaMono Nerd Font",
+  "editor.fontFamily": "JetBrainsMono Nerd Font",
   "editor.fontSize": 15,
   "editor.lineHeight": 1.8,
   "editor.fontLigatures": true,
