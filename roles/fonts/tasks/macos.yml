@@ -7,3 +7,11 @@
   community.general.homebrew:
     name: homebrew/cask/font-caskaydia-mono-nerd-font
     state: present
+- name: Install Jetbrains font
+  community.general.homebrew:
+    name: homebrew/cask/font-jetbrains-mono
+    state: present
+- name: Install Jetbrains nerd font
+  community.general.homebrew:
+    name: homebrew/cask/font-jetbrains-mono-nerd-font
+    state: present
