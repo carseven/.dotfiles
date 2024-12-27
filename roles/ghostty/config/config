@@ -1,3 +1,4 @@
-theme = "catppuccin-mocha"
-font-size = 18
+theme = catppuccin-mocha
+font-size = 16
 window-decoration = false
+quick-terminal-position = center
