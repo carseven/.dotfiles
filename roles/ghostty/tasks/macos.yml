@@ -3,3 +3,15 @@
   community.general.homebrew:
     name: ghostty
     state: present
+
+- name: Create ghostty configuration folder
+  file:
+    path: "{{ ansible_user_dir }}/.config/ghostty"
+    state: directory
+
+- name: Copy ghostty configuration file
+  copy:
+    src: config/config
+    dest: "{{ ansible_user_dir }}/.config/ghostty/config"
+    mode: 0644
+    force: true
