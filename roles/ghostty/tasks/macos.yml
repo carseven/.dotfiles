@@ -1,0 +1,5 @@
+---
+- name: Install ghostty
+  community.general.homebrew:
+    name: ghostty
+    state: present
