@@ -3,3 +3,41 @@
   community.general.homebrew:
     name: awscli
     state: present
+
+- name: Check AWS CLI ssm plugin is installed
+  ansible.builtin.raw: which session-manager-plugin # This will return The Session Manager plugin is installed successfully. Use the AWS CLI to start a session.
+  check_mode: false
+  changed_when: false
+  failed_when: is_aws_ssm_installed.rc > 1 # control when the task fails
+  register: is_aws_ssm_installed
+
+- name: Is AWS CLI AWS CLI ssm plugin is installed?
+  ansible.builtin.debug:
+    var: is_aws_ssm_installed
+  tags: debug
+
+- name: Download the awscli ssm plugin bundle.
+  get_url: url=https://s3.amazonaws.com/session-manager-downloads/plugin/latest/mac_arm64/sessionmanager-bundle.zip dest=/tmp/sessionmanager-bundle.zip
+  register: aws_cli_download_bundle
+  when: is_aws_ssm_installed.rc != 0
+
+- name: Result of downloading the awscli bundle.
+  ansible.builtin.debug:
+    var: aws_cli_download_bundle
+  when: is_aws_ssm_installed.rc != 0
+  tags: debug
+
+- name: Unarchive the ssm plugin installer.
+  unarchive: src=/tmp/sessionmanager-bundle.zip dest=/tmp copy=no
+  register: aws_cli_unarchive_installer
+  when: is_aws_ssm_installed.rc != 0 and aws_cli_download_bundle.failed == false
+
+- name: Result of unarchiving the ssm plugin installer.
+  ansible.builtin.debug:
+    var: aws_cli_unarchive_installer
+  when: is_aws_ssm_installed.rc != 0 and aws_cli_download_bundle.failed == false
+  tags: debug
+
+- name: Install awscli ssm plugin.
+  shell: sudo /tmp/sessionmanager-bundle/install -i /usr/local/sessionmanagerplugin -b /usr/local/bin/session-manager-plugin
+  when: is_aws_ssm_installed.rc != 0 and aws_cli_unarchive_installer.failed == false
