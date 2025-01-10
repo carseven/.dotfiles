@@ -3,3 +3,15 @@
   community.general.homebrew:
     name: go
     state: present
+
+- name: Install gomock
+  shell: >
+    go install go.uber.org/mock/mockgen@latest
+
+- name: Install air
+  shell: >
+    go install github.com/air-verse/air@latest
+
+- name: Install templ
+  shell: >
+    go install github.com/a-h/templ/cmd/templ@latest
