@@ -2,3 +2,7 @@
 # Possible values: https://api.github.com/repos/gruntwork-io/terragrunt/releases
 # Default: latest
 terragrunt_version: latest
+
+# If this values are not change, the script will ignore git user name and email configuration change.
+git_user_name: DEFAULT_IGNORE
+git_user_email: DEFAULT_IGNORE
