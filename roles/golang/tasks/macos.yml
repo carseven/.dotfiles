@@ -15,3 +15,16 @@
 - name: Install templ
   shell: >
     go install github.com/a-h/templ/cmd/templ@latest
+
+- name: Install delv (golang debugger)
+  shell: >
+    go install github.com/go-delve/delve/cmd/dlv@latest
+
+- name: Install staticcheck
+  shell: >
+    go install honnef.co/go/tools/cmd/staticcheck@latest
+
+- name: Install golangci-lint
+  community.general.homebrew:
+    name: golangci-lint
+    state: present
