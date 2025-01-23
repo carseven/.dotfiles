@@ -109,6 +109,7 @@
   "git.confirmSync": false,
   "git.rebaseWhenSync": true,
   "search.useIgnoreFiles": false,
+  "git.blame.editorDecoration.enabled": true,
   // Extensions
   "gitlens.codeLens.enabled": false,
   "gitlens.statusBar.enabled": false,
