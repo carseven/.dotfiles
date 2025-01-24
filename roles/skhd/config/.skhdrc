@@ -4,3 +4,5 @@ alt - s : open -a Safari.app
 alt - c : open -a Visual\ Studio\ Code.app
 alt - p : open -a Postman.app
 alt - b : open -a 'Brave Browser.app'
+alt - m : open -a 'Microsoft Teams.app'
+alt - e : open -a 'Microsoft Outlook.app'
