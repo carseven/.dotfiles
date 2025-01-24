@@ -1,5 +1,0 @@
----
-- name: Install fnm
-  community.general.homebrew:
-    name: fnm
-    state: present
