@@ -3,10 +3,10 @@
   raw: test -e /Applications/'Leader Key.app' && echo -n true || echo -n false
   register: is_installed
 
-- name: Is Leader Key installed?
-  ansible.builtin.debug:
-    var: is_installed.stdout == "false"
-  tags: debug
+# - name: Is Leader Key installed?
+#   ansible.builtin.debug:
+#     var: is_installed.stdout == "false"
+#   tags: debug
 
 - name: Download leader key .zip
   get_url: url=https://leader-key-updates.s3.amazonaws.com/Leader%20Key-latest.zip dest=/tmp/leader-key.zip
