@@ -1,0 +1,57 @@
+{
+    "type": "group",
+    "actions": [
+        {
+            "key": "t",
+            "type": "application",
+            "value": "/Applications/Ghostty.app"
+        },
+        {
+            "key": "o",
+            "actions": [
+                {
+                    "key": "s",
+                    "value": "/Applications/Safari.app",
+                    "type": "application"
+                },
+                {
+                    "key": "e",
+                    "value": "/Applications/Mail.app",
+                    "type": "application"
+                },
+                {
+                    "type": "application",
+                    "key": "i",
+                    "value": "/System/Applications/Music.app"
+                },
+                {
+                    "key": "m",
+                    "type": "application",
+                    "value": "/Applications/Messages.app"
+                }
+            ],
+            "type": "group"
+        },
+        {
+            "actions": [
+                {
+                    "type": "url",
+                    "value": "rectangle://execute-action?name=left-half",
+                    "key": "h"
+                },
+                {
+                    "key": "l",
+                    "type": "url",
+                    "value": "rectangle://execute-action?name=right-half"
+                },
+                {
+                    "type": "url",
+                    "value": "rectangle://execute-action?name=maximize",
+                    "key": "m"
+                }
+            ],
+            "type": "group",
+            "key": "s"
+        }
+    ]
+}

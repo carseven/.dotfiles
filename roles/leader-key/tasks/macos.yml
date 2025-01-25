@@ -1,0 +1,42 @@
+---
+- name: Check if Leader Key is installed.
+  raw: test -e /Applications/'Leader Key.app' && echo -n true || echo -n false
+  register: is_installed
+
+- name: Is Leader Key installed?
+  ansible.builtin.debug:
+    var: is_installed.stdout == "false"
+  tags: debug
+
+- name: Download leader key .zip
+  get_url: url=https://leader-key-updates.s3.amazonaws.com/Leader%20Key-latest.zip dest=/tmp/leader-key.zip
+  register: is_downloaded
+  when: is_installed.stdout == "false"
+
+# - name: Result of downloading the awscli bundle.
+#   ansible.builtin.debug:
+#     var: is_downloaded
+#   when: not is_installed.stat.exists
+#   tags: debug
+
+- name: Unarchive the leader key zip .
+  unarchive: src=/tmp/leader-key.zip dest=/tmp copy=no
+  register: is_unzip
+  when: is_installed.stdout == "false" and is_downloaded.failed == false
+
+# - name: Result of unarchiving leader key .zip.
+#   ansible.builtin.debug:
+#     var: is_unzip
+#   when: is_installed.stdout == "false" and is_downloaded.failed == false
+#   tags: debug
+
+- name: Move leader key to /Applications
+  command: mv /tmp/Leader\ Key.app /Applications
+  when: is_installed.stdout == "false" and is_downloaded.failed == false
+
+- name: Copying config.json config
+  copy:
+    src: config/ # Only copy the files of the folder and not the folder
+    dest: "{{ ansible_user_dir }}/Library/Containers/com.brnbw.Leader-Key/Data/Documents"
+    mode: 0644
+    force: true
