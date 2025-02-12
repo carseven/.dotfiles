@@ -16,13 +16,10 @@
   loop:
     - Catppuccin.catppuccin-vsc
     - christian-kohler.path-intellisense
-    - dbaeumer.vscode-eslint
-    - esbenp.prettier-vscode
     - miguelsolorio.fluent-icons
     - miguelsolorio.symbols
     - streetsidesoftware.code-spell-checker
     - usernamehw.errorlens
-    - yoavbls.pretty-ts-errors
     - mhutchie.git-graph
     - vscodevim.vim
     - tobias-z.vscode-harpoon
