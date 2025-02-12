@@ -14,14 +14,13 @@
     "command": "workbench.action.navigateForward",
     "when": "!isMac"
   },
-  // TODO: Fix go back and forward with macos. Choose another keybinding
   {
-    "key": "ctrl+left",
+    "key": "ctrl+shift+left",
     "command": "workbench.action.navigateBack",
     "when": "isMac"
   },
   {
-    "key": "ctrl+right",
+    "key": "ctrl+shift+right",
     "command": "workbench.action.navigateForward",
     "when": "isMac"
   },
@@ -175,26 +174,6 @@
     "when": "terminalFocus"
   },
   {
-    "comment": "Move tab to next group",
-    "key": "ctrl+shift+alt+left",
-    "command": "workbench.action.moveEditorToPreviousGroup"
-  },
-  {
-    "comment": "Move tab to previous group",
-    "key": "ctrl+shift+alt+right",
-    "command": "workbench.action.moveEditorToNextGroup"
-  },
-  {
-    "comment": "Move tab to above group",
-    "key": "ctrl+shift+alt+up",
-    "command": "workbench.action.moveEditorToAboveGroup"
-  },
-  {
-    "comment": "Move tab to below group",
-    "key": "ctrl+shift+alt+down",
-    "command": "workbench.action.moveEditorToBelowGroup"
-  },
-  {
     "comment": "Join all group",
     "key": "ctrl+shift+alt+enter",
     "command": "workbench.action.joinAllGroups"
@@ -230,26 +209,9 @@
     "command": "git-graph.view"
   },
   {
-    "comment": "Open multi diff",
-    "key": "ctrl+shift+alt+g d",
-    "command": "git.viewAllChanges"
-  },
-  {
     "comment": "Close all diff editor",
     "key": "ctrl+shift+alt+g w",
     "command": "git.closeAllDiffEditors"
-  },
-  {
-    "key": "ctrl+shift+alt+g c",
-    "command": "git.checkout"
-  },
-  {
-    "key": "ctrl+shift+alt+g f",
-    "command": "git.fetchAll"
-  },
-  {
-    "key": "ctrl+shift+alt+g m",
-    "command": "git.merge"
   },
   {
     "key": "ctrl+shift+alt+g down",
@@ -314,40 +276,6 @@
   {
     "key": "ctrl+shift+alt+z",
     "command": "workbench.action.toggleZenMode"
-  },
-  {
-    "command": "runCommands",
-    "key": "ctrl+shift+alt+g a",
-    "args": {
-      "commands": [
-        "git.pull",
-        "git.commitAll",
-        "git.push"
-      ]
-    }
-  },
-  {
-    "command": "workbench.action.tasks.runTask",
-    "key": "ctrl+shift+alt+g l",
-    "args": "lazygit"
-  },
-  {
-    "key": "ctrl+tab",
-    "command": "workbench.action.nextEditor",
-  },
-  {
-    "key": "ctrl+shift+tab",
-    "command": "workbench.action.previousEditor",
-  },
-  {
-    "key": "ctrl+alt+right",
-    "command": "workbench.action.focusNextGroup",
-    "when": "!isMac"
-  },
-  {
-    "key": "ctrl+alt+left",
-    "command": "workbench.action.focusPreviousGroup",
-    "when": "!isMac"
   },
   {
     "key": "ctrl+u",

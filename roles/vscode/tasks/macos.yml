@@ -23,3 +23,6 @@
     - mhutchie.git-graph
     - vscodevim.vim
     - tobias-z.vscode-harpoon
+    - golang.go
+    - esbenp.prettier-vscode
+    - dbaeumer.vscode-eslint

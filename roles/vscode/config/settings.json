@@ -8,7 +8,6 @@
   // Window and layout appearance
   "window.title": "${dirty}${activeEditorShort}${separator}${rootName}",
   "window.commandCenter": false,
-  "window.autoDetectColorScheme": true,
   "window.zoomLevel": 1,
   "window.newWindowDimensions": "inherit",
   "workbench.sideBar.location": "right",
@@ -17,22 +16,15 @@
   "workbench.startupEditor": "none",
   "workbench.editor.empty.hint": "hidden",
   // Editor Tabs
-  "workbench.editor.tabSizing": "shrink",
   "workbench.editor.showTabs": "none",
-  "workbench.editor.showIcons": false,
-  "workbench.editor.tabActionCloseVisibility": false,
   "workbench.layoutControl.enabled": false,
   "workbench.colorTheme": "Catppuccin Macchiato",
-  "workbench.preferredLightColorTheme": "Catppuccin Macchiato",
-  "workbench.preferredDarkColorTheme": "Catppuccin Macchiato",
   "workbench.editor.enablePreview": false,
   "workbench.editor.enablePreviewFromQuickOpen": false,
-  "workbench.editor.highlightModifiedTabs": true, // Instead of showing dot icon show top highlight when file has changes to be save
-  "workbench.editor.tabCloseButton": "off",
   // File explorer tree
   "workbench.tree.renderIndentGuides": "none",
   "workbench.tree.indent": 24,
-  "workbench.tree.enableStickyScroll": true,
+  "workbench.tree.enableStickyScroll": false,
   // Terminal
   "terminal.integrated.fontSize": 12,
   "terminal.integrated.lineHeight": 1,
@@ -101,7 +93,7 @@
   // Git
   "scm.alwaysShowRepositories": true,
   "scm.diffDecorations": "gutter",
-  "diffEditor.renderSideBySide": false,
+  "diffEditor.renderSideBySide": true,
   "git.suggestSmartCommit": false,
   "git.autofetch": true,
   "git.autofetchPeriod": 180,
