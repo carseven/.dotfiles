@@ -1,5 +1,0 @@
----
-- name: Install stats
-  community.general.homebrew:
-    name: stats
-    state: present
