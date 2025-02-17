@@ -1,4 +1,4 @@
-name: Ansible CI
+name: CI
 on: push
 
 jobs:
@@ -6,9 +6,23 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - name: Install ansible-lint
-        run: pip install ansible-lint
-      - name: Install Galaxy Modules
-        run: ansible-galaxy install -r requirements.yml
-      - name: Linting with ansible-lint
-        run: ansible-lint main.yml
+      - name: Install shfmt
+        run: echo "TODO"
+      - name: Check format with shfmt
+        run: echo "TODO format shfmt"
+      - name: Install shellcheck
+        run: echo "TODO install shellcheck"
+      - name: Check linting with shellcheck
+        run: echo "TODO lint shellcheck"
+  test-ubuntu:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Launch install and run scripts
+        run: ./run
+  test-macos:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Launch install and run scripts
+        run: ./run
