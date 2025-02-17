@@ -11,6 +11,16 @@
 
 ## Install
 
+### Development
+
+Install shellcheck
+
+```sh
+brew install shellcheck
+```
+
+Install prettier and prettier
+
 ### Macos setup
 
 Install brew package manager. [Brew documentation](https://brew.sh)
@@ -25,12 +35,6 @@ Export path of brew to be able to use brew binary
 export PATH="/opt/homebrew/bin:$PATH"
 ```
 
-Install ansible
-
-```shell
- brew install ansible
-```
-
 ### Ubuntu setup
 
 Install ansible
@@ -38,8 +42,6 @@ Install ansible
 ```shell
 sudo apt update
 sudo apt install software-properties-common
-sudo add-apt-repository --yes --update ppa:ansible/ansible
-sudo apt install ansible
 ```
 
 ### Setup repository

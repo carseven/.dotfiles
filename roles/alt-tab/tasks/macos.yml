@@ -1,5 +1,0 @@
----
-- name: Install alt-tab
-  community.general.homebrew:
-    name: alt-tab
-    state: present
