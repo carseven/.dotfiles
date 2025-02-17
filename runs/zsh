@@ -31,7 +31,7 @@ cp .path-functions-utils $HOME/.path-functions-utils
 cp .zprofile $HOME/.zprofile
 
 # Copy scripts to $HOME/.local/bin
-# This is a directory that is added to the PATH
-# environment variable in the .zshrc file
+# This is a directory that is added to the PATH in the .zshrc file
 # This allows the scripts to be run from the command line globally
+mkdir -p $HOME/.local/bin
 cp scripts/* $HOME/.local/bin

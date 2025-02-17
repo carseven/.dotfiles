@@ -2,7 +2,7 @@
 
 # Install jq for macos
 if [[ "$OSTYPE" == "darwin"* ]]; then
-    brew install visual-studio-codescode
+    brew install visual-studio-codes
 fi
 
 # Copy cofniguration files
