@@ -88,7 +88,7 @@ Documentation for things that are not automated.
 
 ### Roadmap
 
-- Finish linux install using docker
+- Setup docker to test clean installs (Linux and macos)
 
 - Create a install script to clone and install basic dependencies and launch run script. Idea `curl `
 
