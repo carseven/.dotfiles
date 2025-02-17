@@ -1,5 +1,0 @@
----
-- name: Install flameshot
-  community.general.homebrew:
-    name: flameshot
-    state: present

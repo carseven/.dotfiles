@@ -1,0 +1,37 @@
+#!/usr/bin/env bash
+
+# Install jq for macos
+if [[ "$OSTYPE" == "darwin"* ]]; then
+    brew install zsh
+fi
+
+# Install jq for linux
+if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+    sudo apt-get install zsh
+fi
+
+
+# Add scripts
+
+# Add zsh to /etc/shells
+if ! grep -q $(which zsh) "/etc/shells"; then
+    echo 0
+    sudo sh -c "echo $(which zsh) >> /etc/shells"
+fi
+
+# Change shell to use zsh
+sudo chsh -s $(which zsh)
+
+# Copy configuration files
+cd shell
+cp .zshrc $HOME/.zshrc
+cp .aliases $HOME/.aliases
+cp .hushlogin $HOME/.hushlogin
+cp .path-functions-utils $HOME/.path-functions-utils
+cp .zprofile $HOME/.zprofile
+
+# Copy scripts to $HOME/.local/bin
+# This is a directory that is added to the PATH
+# environment variable in the .zshrc file
+# This allows the scripts to be run from the command line globally
+cp scripts/* $HOME/.local/bin

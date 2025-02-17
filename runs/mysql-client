@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+# Install mysql-client for macos
+if [[ "$OSTYPE" == "darwin"* ]]; then
+    brew install mysql-client
+fi
+
+# Install mysql-client for linux
+if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+    sudo apt-get install mysql-client
+fi

@@ -1,5 +1,0 @@
----
-- name: Install postman
-  community.general.homebrew:
-    name: postman
-    state: present

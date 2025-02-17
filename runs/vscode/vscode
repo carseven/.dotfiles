@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+
+# Install jq for macos
+if [[ "$OSTYPE" == "darwin"* ]]; then
+    brew install visual-studio-codescode
+fi
+
+# Copy cofniguration files
+cd runs/vscode
+cp settings.json $HOME/Library/Application\ Support/Code/User/settings.json
+cp keybindings.json $HOME/Library/Application\ Support/Code/User/keybindings.json
+cp tasks.json $HOME/Library/Application\ Support/Code/User/tasks.json
+
+# Install extensions
+# TODO: Check if the extension is already installed
+# TODO: Refactor to an array of extensions and loop through them
+code --install-extension  Catppuccin.catppuccin-vsc
+code --install-extension  christian-kohler.path-intellisense
+code --install-extension  miguelsolorio.fluent-icons
+code --install-extension  miguelsolorio.symbols
+code --install-extension  streetsidesoftware.code-spell-checker
+code --install-extension  usernamehw.errorlens
+code --install-extension  mhutchie.git-graph
+code --install-extension  golang.go
+code --install-extension  esbenp.prettier-vscode

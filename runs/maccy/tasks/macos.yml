@@ -1,5 +1,0 @@
----
-- name: Install maccy (clipboard manager)
-  community.general.homebrew:
-    name: maccy
-    state: present

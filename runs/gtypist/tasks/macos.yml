@@ -1,5 +1,0 @@
----
-- name: Install gtypist
-  community.general.homebrew:
-    name: gtypist
-    state: present

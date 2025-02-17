@@ -1,0 +1,27 @@
+# Clone repository
+DOTFILES_DIR="$HOME/.dotfiles"
+if ! [[ -d "$DOTFILES_DIR" ]]; then
+        git clone --quiet https://github.com/carseven/.dotfiles.git $DOTFILES_DIR
+else
+        git -C $DOTFILES_DIR pull --quiet
+fi
+
+cd $DOTFILES_DIR
+
+# Install brew if macos
+if [[ "$OSTYPE" == "darwin"* ]]; then
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+    export PATH="/opt/homebrew/bin:$PATH"
+fi
+
+# Upgrade apt packages if linux
+if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+    sudo apt-get update
+    sudo apt-get upgrade -y
+fi
+
+# Create dev directory
+if [ ! -d $HOME/dev ]; then
+    mkdir $HOME/dev
+fi
