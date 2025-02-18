@@ -9,9 +9,7 @@
     <img src="./doc/assets/terminal-ls.png"/>
 </p>
 
-## Install
-
-### Development
+## Dev
 
 Install shellcheck
 
@@ -25,7 +23,17 @@ Install shfmt
 brew install shfmt
 ```
 
-Install prettier and prettier
+### Add new script
+
+Add a new file to the `runs` directory.
+
+Then make the file executable.
+
+```sh
+chmod u+x runs/vscode
+```
+
+## Install
 
 ### Macos setup
 
