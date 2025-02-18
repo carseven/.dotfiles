@@ -3,7 +3,6 @@
 # Install bat for macos
 if [[ "$OSTYPE" == "darwin"* ]]; then
     brew install bat
-    cd runs/bat
 fi
 
 # Install bat for linux
@@ -11,6 +10,7 @@ if [[ "$OSTYPE" == "linux-gnu"* ]]; then
     sudo apt-get install bat
 fi
 
+cd runs/bat
 mkdir -p $HOME/.config/bat
 cp config $HOME/.config/bat/config
 mkdir -p $HOME/.config/bat/themes
