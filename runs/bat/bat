@@ -11,13 +11,15 @@ if [[ "$OSTYPE" == "linux-gnu"* ]]; then
     sudo apt-get install bat
 fi
 
-
 mkdir -p $HOME/.config/bat
-cp ./config $HOME/.config/bat/config
+cp config $HOME/.config/bat/config
+mkdir -p $HOME/.config/bat/themes
+cp Catppuccin-macchiato.tmTheme $HOME/.config/bat/themes/Catppuccin-macchiato.tmTheme
 
 # Rename package from batcat to bat only for ubuntu linux
 # https://github.com/sharkdp/bat?tab=readme-ov-file#on-ubuntu-using-apt
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
     ln -s /usr/bin/batcat $HOME/.local/bin/bat
 fi
+
 bat cache --build
