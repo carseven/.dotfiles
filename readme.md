@@ -96,6 +96,12 @@ Documentation for things that are not automated.
 
 ### Roadmap
 
+- Regression test from zero
+
+- Capture control + c to exit the run script
+
+- capture exit 1 from run script
+
 - Setup docker to test clean installs (Linux and macos)
 
 - Create a install script to clone and install basic dependencies and launch run script. Idea `curl `
@@ -105,5 +111,3 @@ Documentation for things that are not automated.
 - Prettify logs and error handling (Better show when script errors, maybe finish script execution?)
 
 - Test scripts using docker or VM and CI to check that everything runs smooth. First launch the script and check everything goes well. Use ansible with a test flags to run some steps just for CI environment or for testing
-
-## References

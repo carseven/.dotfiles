@@ -33,7 +33,16 @@ execute() {
     "$@"
 }
 
-log "run: filter=$filter"
+if [[ -z "$scripts" ]]; then
+    log "No scripts found"
+    exit 1
+fi
+
+if [[ -z "$filter" ]]; then
+    log "Running all scripts"
+else
+    log "Filter provided: $filter"
+fi
 
 for script in $scripts; do
     if echo "$script" | grep -qv "$filter"; then
