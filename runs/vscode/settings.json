@@ -18,7 +18,7 @@
   // Editor Tabs
   "workbench.editor.showTabs": "none",
   "workbench.layoutControl.enabled": false,
-  "workbench.colorTheme": "Catppuccin Macchiato",
+  "workbench.colorTheme": "Catppuccin Mocha",
   "workbench.editor.enablePreview": false,
   "workbench.editor.enablePreviewFromQuickOpen": false,
   // File explorer tree
