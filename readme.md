@@ -111,3 +111,10 @@ Documentation for things that are not automated.
 - Prettify logs and error handling (Better show when script errors, maybe finish script execution?)
 
 - Test scripts using docker or VM and CI to check that everything runs smooth. First launch the script and check everything goes well. Use ansible with a test flags to run some steps just for CI environment or for testing
+
+### Resources
+
+- https://github.com/Gentleman-Programming/Gentleman.Dots
+- https://github.com/ThePrimeagen/dev
+- https://github.com/ThePrimeagen/.dotfiles
+- https://github.com/typecraft-dev/dotfiles
