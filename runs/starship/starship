@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+# Install alt-tab for macos
+if [[ "$OSTYPE" == "darwin"* ]]; then
+    brew install starship
+fi
+
+
+# Copy the starship.toml file to the home directory
+cd runs/starship
+cp -f ./starship.toml $HOME/.config/starship.toml

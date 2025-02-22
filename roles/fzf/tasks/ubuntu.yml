@@ -1,8 +1,0 @@
----
-# Run golang role tasks
-- name: Install go
-  include_role:
-    name: golang
-
-- name: Install fzf
-  shell: go install github.com/junegunn/fzf@latest

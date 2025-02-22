@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+# Install jq for macos
+if [[ "$OSTYPE" == "darwin"* ]]; then
+    brew install jq
+fi
+
+# Install jq for linux
+if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+    sudo apt-get install jq
+fi

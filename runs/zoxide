@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+# Install zoxide for macos
+if [[ "$OSTYPE" == "darwin"* ]]; then
+    brew install zoxide
+fi
+
+# Install zoxide for linux
+if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+    curl -sSfL https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | sh
+fi

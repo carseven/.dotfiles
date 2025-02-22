@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+# Install brave for macos
+if [[ "$OSTYPE" == "darwin"* ]]; then
+    brew install brave-browser
+fi
+
+# Install brave for linux
+if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+    # https://brave.com/linux/
+    curl -fsS https://dl.brave.com/install.sh | sh
+fi

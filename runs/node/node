@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+# Install node for macos
+if [[ "$OSTYPE" == "darwin"* ]]; then
+    brew install fnm
+
+    cd runs/node
+    cp .npmrc $HOME/.npmrc
+    fnm install --lts
+fi

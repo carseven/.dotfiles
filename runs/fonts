@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+# Install jetbrains font for macos
+if [[ "$OSTYPE" == "darwin"* ]]; then
+    brew install homebrew/cask/font-jetbrains-mono
+    brew install homebrew/cask/font-jetbrains-mono-nerd-font
+fi
