@@ -118,3 +118,4 @@ Documentation for things that are not automated.
 - https://github.com/ThePrimeagen/dev
 - https://github.com/ThePrimeagen/.dotfiles
 - https://github.com/typecraft-dev/dotfiles
+- https://github.com/joshmedeski/dotfiles
