@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+# Install tfenv for macos
+if [[ "$OSTYPE" == "darwin"* ]]; then
+    brew install tfenv
+fi
+
+# Install tfenv for linux
+# TODO: Check if already installed
+# TODO: Try to optimize git clone
+if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+    git clone https://github.com/tfutils/tfenv.git ~/.tfenv
+fi
+

@@ -1,6 +1,0 @@
----
-- name: Install tfenv manually cloning repository
-  ansible.builtin.git:
-    repo: "https://github.com/tfutils/tfenv.git"
-    dest: ~/.tfenv
-    clone: no

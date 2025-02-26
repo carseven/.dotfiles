@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+# Install git for macos
+if [[ "$OSTYPE" == "darwin"* ]]; then
+    brew install git
+fi
+
+# Install git for linux
+if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+    sudo apt-get install git
+fi
+
+cd runs/git
+cp ./.gitconfig $HOME/.gitconfig
+cp ./.gitignore_global $HOME/.gitignore_global

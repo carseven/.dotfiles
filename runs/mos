@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+# Install mos for macos
+if [[ "$OSTYPE" == "darwin"* ]]; then
+    brew install mos
+fi

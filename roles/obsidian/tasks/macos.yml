@@ -1,5 +1,0 @@
----
-- name: Install obsidian
-  community.general.homebrew:
-    name: obsidian
-    state: present

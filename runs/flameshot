@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+# Install flameshot for macos
+if [[ "$OSTYPE" == "darwin"* ]]; then
+    brew install flameshot
+fi
+
+# Install flameshot for linux
+if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+    sudo apt-get install flameshot
+fi

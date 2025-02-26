@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+# Install maccy for macos
+if [[ "$OSTYPE" == "darwin"* ]]; then
+    brew install maccy
+fi

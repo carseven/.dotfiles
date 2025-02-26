@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+# Install dbeaver for macos
+if [[ "$OSTYPE" == "darwin"* ]]; then
+    brew install dbeaver-community
+fi

@@ -1,0 +1,77 @@
+#!/usr/bin/env bash
+
+# Install awscli for macos
+if [[ "$OSTYPE" == "darwin"* ]]; then
+    # Install awscli
+    if ! brew install awscli; then
+        echo "Failed to install awscli using brew."
+        exit 1
+    fi
+
+    # Install the session-manager-plugin
+    if ! command -v session-manager-plugin &>/dev/null; then
+        echo "Installing ssm plugin for awscli"
+
+        # Download the session-manager-plugin
+        if ! curl -L -o /tmp/sessionmanager-bundle.zip "https://s3.amazonaws.com/session-manager-downloads/plugin/latest/mac_arm64/sessionmanager-bundle.zip"; then
+            echo "Failed to download the session-manager-plugin."
+            exit 1
+        fi
+
+        # Unzip the downloaded file
+        if ! unzip /tmp/sessionmanager-bundle.zip -d /tmp/; then
+            echo "Failed to unzip the session-manager-plugin bundle."
+            exit 1
+        fi
+
+        # Install the session-manager-plugin
+        if ! sudo /tmp/sessionmanager-bundle/install -i /usr/local/sessionmanagerplugin -b /usr/local/bin/session-manager-plugin; then
+            echo "Failed to install the session-manager-plugin."
+            exit 1
+        fi
+    else
+        echo "ssm plugin already installed"
+    fi
+fi
+
+# Install awscli for linux
+if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+    # Check if AWS CLI is installed
+    if ! which aws >/dev/null 2>&1; then
+        echo "AWS CLI is not installed. Proceeding with installation."
+
+        # Download the awscli bundle
+        curl -L -o /tmp/awscli-bundle.zip https://s3.amazonaws.com/aws-cli/awscli-bundle.zip
+        if [ $? -ne 0 ]; then
+            echo "Failed to download the AWS CLI bundle."
+            exit 1
+        fi
+
+        # Unarchive the installer
+        unzip /tmp/awscli-bundle.zip -d /tmp
+        if [ $? -ne 0 ]; then
+            echo "Failed to unarchive the AWS CLI bundle."
+            exit 1
+        fi
+
+        # Install awscli package
+        sudo /tmp/awscli-bundle/install
+        if [ $? -ne 0 ]; then
+            echo "Failed to install AWS CLI."
+            exit 1
+        fi
+        echo "AWS CLI installed successfully."
+
+        # Install ssm plugin for awscli
+        if ! command -v session-manager-plugin &>/dev/null; then
+            curl -L "https://s3.amazonaws.com/session-manager-downloads/plugin/latest/ubuntu_64bit/session-manager-plugin.deb" -o "/tmp/session-manager-plugin.deb"
+            cd /tmp
+            sudo dpkg -i session-manager-plugin.deb
+        else
+            echo "ssm plugin already installed"
+        fi
+
+    else
+        echo "AWS CLI is already installed."
+    fi
+fi

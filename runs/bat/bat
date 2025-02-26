@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+
+# Install bat for macos
+if [[ "$OSTYPE" == "darwin"* ]]; then
+    brew install bat
+fi
+
+# Install bat for linux
+if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+    sudo apt-get install bat
+fi
+
+cd runs/bat
+mkdir -p $HOME/.config/bat
+cp config $HOME/.config/bat/config
+mkdir -p $HOME/.config/bat/themes
+cp Catppuccin-macchiato.tmTheme $HOME/.config/bat/themes/Catppuccin-macchiato.tmTheme
+
+# Rename package from batcat to bat only for ubuntu linux
+# https://github.com/sharkdp/bat?tab=readme-ov-file#on-ubuntu-using-apt
+if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+    ln -s /usr/bin/batcat $HOME/.local/bin/bat
+fi
+
+bat cache --build

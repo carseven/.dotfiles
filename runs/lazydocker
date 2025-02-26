@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+# Install lazydocker for macos
+if [[ "$OSTYPE" == "darwin"* ]]; then
+    brew install lazydocker
+fi

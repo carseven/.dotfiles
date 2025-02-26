@@ -1,5 +1,0 @@
----
-- name: Install gh cli
-  community.general.homebrew:
-    name: gh
-    state: present

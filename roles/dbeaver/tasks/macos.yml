@@ -1,5 +1,0 @@
----
-- name: Install dbeaver-community
-  community.general.homebrew:
-    name: dbeaver-community
-    state: present

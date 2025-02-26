@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+# Install nvim for macos
+if [[ "$OSTYPE" == "darwin"* ]]; then
+    brew install neovim
+
+    cd runs/nvim
+    mkdir -p ~/.config/nvim
+    cp init.lua ~/.config/nvim/init.lua
+fi

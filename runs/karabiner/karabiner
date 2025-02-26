@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+# Install karabiner for macos
+if [[ "$OSTYPE" == "darwin"* ]]; then
+    brew install karabiner-elements
+
+    cd runs/karabiner
+    mkdir -p $HOME/.config/karabiner
+    cp karabiner.json $HOME/.config/karabiner/karabiner.json
+fi

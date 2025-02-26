@@ -1,6 +1,0 @@
----
-- name: Install btop
-  ansible.builtin.snap:
-    name: htop
-    state: present
-  become: true

@@ -1,0 +1,94 @@
+# zsh
+alias update="exec zsh"
+alias time_zsh="time zsh -i -c exit"
+function times_zsh() {
+  shell=${1-$SHELL}
+  for i in $(seq 1 5); do /usr/bin/time $shell -i -c exit; done
+}
+
+# Navigation
+alias ...="cd ../.."
+alias ..="cd ../"
+if type lsd &> /dev/null; then
+  alias ls="lsd --group-dirs=first"
+fi
+alias ll="ls -lh"
+alias lsa="ls -a"
+alias lla="ls -lha"
+alias tree="ls -a --tree"
+
+# Bat
+if type bat &> /dev/null; then
+  alias cat="bat"
+  alias catnl="bat --paging=never"
+fi
+
+# Editors
+alias c="code ."
+if type nvim &> /dev/null; then
+  alias vim="nvim"
+fi
+
+# Node package manager
+alias ncomplex="npx code-complexity . --filter '**/*.ts' --limit 10 --sort score"
+alias rmnode="find . -name 'node_modules' -type d -prune -print -exec rm -rf '{}' \;"
+alias npkill="npx npkill"
+
+# All packages
+function p() {
+  if [[ -f bun.lockb ]]; then
+    command bun "$@"
+  elif [[ -f yarn.lock ]]; then
+    command yarn $@
+  elif [[ -f package-lock.json ]]; then
+    command npm $@
+  elif [[ -f pnpm-lock.yaml ]]; then
+    command pnpm $@
+  else
+    command npm $@
+  fi
+}
+
+# System utilities
+alias myip="curl http://ipecho.net/plain; echo"
+alias usage="du -h -d1"
+alias logito='function _logito(){ $1 "${@:2}" 2>&1 | tee "$(date +%Y-%m-%d.%H:%M:%S)-$1.log"; }; _logito'
+
+# GIT
+alias gc="git commit -m"
+alias gs="git status"
+alias gss='git status --short'
+alias gd="git diff"
+alias ga="git add"
+alias gaa="git add ."
+alias gf="git fetch --all"
+function gdiff() { git diff --name-only --diff-filter=d | xargs bat --diff }
+alias gpush="git push"
+alias gpushup="git push --set-upstream origin HEAD"
+alias gpull="git pull"
+alias greset="git reset HEAD~" # reset last commit
+alias gw="git switch"
+alias gwc="git switch -c"
+alias gswitch="git branch | fzf | xargs -I_ git switch _"
+alias gbranchdel="git branch | fzf | xargs -I_ git branch -d _"
+alias glog='git log --graph --oneline --decorate --all'
+alias gg='lazygit'
+alias gsearch="git log --decorate --all --oneline -S"
+alias gpipe="  git commit --allow-empty -m 'Trigger CI/CD'"
+alias gtags="git fetch --tags --force && git pull --tags"
+
+# Docker
+alias dstop="docker ps | fzf --header-lines 1 | awk '{print \$1}' | xargs -I_ docker stop _"
+
+# Set man colors
+function man() {
+    env \
+    LESS_TERMCAP_mb=$'\e[01;31m' \
+    LESS_TERMCAP_md=$'\e[01;31m' \
+    LESS_TERMCAP_me=$'\e[0m' \
+    LESS_TERMCAP_se=$'\e[0m' \
+    LESS_TERMCAP_so=$'\e[01;44;33m' \
+    LESS_TERMCAP_ue=$'\e[0m' \
+    LESS_TERMCAP_us=$'\e[01;32m' \
+    man "$@"
+}
