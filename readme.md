@@ -72,20 +72,6 @@ Using the first argument you can launch only specific scripts. This is really us
 ./run vscode
 ```
 
-## Features
-
-### Zsh shell
-
-#### Shell benchmarks
-
-```shell
-for i in $(seq 1 10); do /usr/bin/time $SHELL -i -c exit; done
-```
-
-<p align="center">
-    <img src="./doc/assets/terminal-start-time.png"/>
-</p>
-
 ## Documentation
 
 Documentation for things that are not automated.
@@ -97,22 +83,13 @@ Documentation for things that are not automated.
 ### Roadmap
 
 - Regression test from zero
-
 - Capture control + c to exit the run script
-
 - capture exit 1 from run script
-
 - Setup docker to test clean installs (Linux and macos)
-
-- Create a install script to clone and install basic dependencies and launch run script. Idea `curl `
-
 - Automate sudo, ask at the beginning of the script only.
-
 - Prettify logs and error handling (Better show when script errors, maybe finish script execution?)
-
-- Test scripts using docker or VM and CI to check that everything runs smooth. First launch the script and check everything goes well. Use ansible with a test flags to run some steps just for CI environment or for testing
-
-### Resources
+- 
+### Resources
 
 - https://github.com/Gentleman-Programming/Gentleman.Dots
 - https://github.com/ThePrimeagen/dev
