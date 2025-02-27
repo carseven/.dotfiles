@@ -1,5 +1,0 @@
----
-- name: Install lazy docker
-  community.general.homebrew:
-    name: lazydocker
-    state: present

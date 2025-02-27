@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+# Install btop for macos
+if [[ "$OSTYPE" == "darwin"* ]]; then
+    brew install btop
+fi
+
+# Install btop for linux
+if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+    sudo snap install btop
+fi

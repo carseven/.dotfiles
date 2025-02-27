@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+
+# Install fzf for macos
+if [[ "$OSTYPE" == "darwin"* ]]; then
+    brew install fzf
+fi
+
+# Install fzf for linux
+# TODO: Try linux version works properly
+if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+    # Check if golang is installed
+    if ! command -v go &> /dev/null; then
+        log "golang is not installed"
+        execute() { "$@"; }
+        execute ./runs/golang
+    fi
+    go install github.com/junegunn/fzf@latest
+fi

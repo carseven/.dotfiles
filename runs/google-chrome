@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+# Install google-chrome for macos
+if [[ "$OSTYPE" == "darwin"* ]]; then
+    brew install google-chrome
+fi

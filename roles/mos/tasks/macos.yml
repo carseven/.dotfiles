@@ -1,5 +1,0 @@
----
-- name: Install mos cask
-  community.general.homebrew:
-    name: mos
-    state: present

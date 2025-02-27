@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+# Install gh for macos
+if [[ "$OSTYPE" == "darwin"* ]]; then
+    brew install gh
+    gh extension install dlvhdr/gh-dash
+fi

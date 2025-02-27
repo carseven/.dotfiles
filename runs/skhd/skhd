@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+# Install skhd for macos
+if [[ "$OSTYPE" == "darwin"* ]]; then
+    brew install koekeishiya/formulae/skhd
+
+
+    cd runs/skhd
+    mkdir -p ~/.config/skhd
+    cp .skhdrc $HOME/.config/skhd/.skhdrc
+
+    skhd --start-service
+fi
