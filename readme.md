@@ -2,7 +2,7 @@
     text-align: center;
     font-weight:200;
     font-size: 18px;
-">Beautiful, easy and quick dotfiles</h2>
+">.dotfiles</h2>
 <p align="center">
     <img src="./doc/assets/terminal-completions.png"/>
     <img src="./doc/assets/terminal-fzf-search.png"/>
