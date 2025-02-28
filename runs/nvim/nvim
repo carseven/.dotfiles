@@ -1,10 +1,57 @@
 #!/usr/bin/env bash
 
+# Check latest version https://github.com/neovim/neovim/releases/latest
+version="v0.10.4"
+
 # Install nvim for macos
 if [[ "$OSTYPE" == "darwin"* ]]; then
-    brew install neovim
+    # https://github.com/neovim/neovim/blob/master/BUILD.md
+    if [ ! -z $NVIM_VERSION ]; then
+        version="$NVIM_VERSION"
+    fi
+
+    echo "neovim version: \"$version\""
+
+    # neovim btw
+    if [ ! -d $HOME/neovim ]; then
+        git clone https://github.com/neovim/neovim.git $HOME/neovim
+    fi
+
+    # Neovim prerequisites https://github.com/neovim/neovim/blob/master/BUILD.md#build-prerequisites
+    brew install ninja cmake gettext curl
+
+    git -C $HOME/neovim fetch --all
+    git -C $HOME/neovim checkout $version
+
+    make -C $HOME/neovim clean
+    make -C $HOME/neovim CMAKE_BUILD_TYPE=RelWithDebInfo
+    sudo make -C $HOME/neovim install
 
     cd runs/nvim
     mkdir -p ~/.config/nvim
     cp init.lua ~/.config/nvim/init.lua
+fi
+
+# Install nvim for linux
+if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+    # https://github.com/neovim/neovim/blob/master/BUILD.md
+    if [ ! -z $NVIM_VERSION ]; then
+        version="$NVIM_VERSION"
+    fi
+
+    echo "neovim version: \"$version\""
+
+    # neovim btw
+    if [ ! -d $HOME/neovim ]; then
+        git clone https://github.com/neovim/neovim.git $HOME/neovim
+    fi
+
+    sudo apt -y install cmake gettext lua5.1 liblua5.1-0-dev
+
+    git -C $HOME/neovim fetch --all
+    git -C $HOME/neovim checkout $version
+
+    make -C $HOME/neovim clean
+    make -C $HOME/neovim CMAKE_BUILD_TYPE=RelWithDebInfo
+    sudo make -C $HOME/neovim install
 fi
