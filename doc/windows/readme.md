@@ -29,9 +29,9 @@ choco install <APP_NAME>
 - bitwarden
 - flameshot (Screenshoots)
 - autohotkey
-- cascadiacode
-- cascadia-code-nerd-font
+- nerd-fonts-jetbrainsmono
 - git
+- todoist
 
 ## Install WSL
 
