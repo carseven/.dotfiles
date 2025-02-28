@@ -1,5 +1,25 @@
 [
   {
+    "comment": "Move tab to next group",
+    "key": "ctrl+shift+alt+left",
+    "command": "workbench.action.moveEditorToPreviousGroup"
+  },
+  {
+    "comment": "Move tab to previous group",
+    "key": "ctrl+shift+alt+right",
+    "command": "workbench.action.moveEditorToNextGroup"
+  },
+  {
+    "comment": "Move tab to above group",
+    "key": "ctrl+shift+alt+up",
+    "command": "workbench.action.moveEditorToAboveGroup"
+  },
+  {
+    "comment": "Move tab to below group",
+    "key": "ctrl+shift+alt+down",
+    "command": "workbench.action.moveEditorToBelowGroup"
+  },
+  {
     "key": "ctrl+shift+alt+h",
     "command": "editor.action.showDefinitionPreviewHover",
     "when": "editorTextFocus"
