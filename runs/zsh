@@ -23,6 +23,7 @@ fi
 sudo chsh -s $(which zsh)
 
 # Copy configuration files
+echo "Copying zsh configuration files to $HOME"
 cd shell
 cp .zshrc $HOME/.zshrc
 cp .aliases $HOME/.aliases
@@ -33,5 +34,6 @@ cp .zprofile $HOME/.zprofile
 # Copy scripts to $HOME/.local/bin
 # This is a directory that is added to the PATH in the .zshrc file
 # This allows the scripts to be run from the command line globally
+echo "Copying scripts to $HOME/.local/bin"
 mkdir -p $HOME/.local/bin
 cp scripts/* $HOME/.local/bin
