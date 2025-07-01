@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-# Install obsidian for macos
+# Install marksman for macos
 if [[ "$OSTYPE" == "darwin"* ]]; then
-    brew install obsidian
+    brew install marksman
 fi
