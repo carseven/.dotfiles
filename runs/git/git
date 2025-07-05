@@ -13,3 +13,4 @@ fi
 cd runs/git
 cp ./.gitconfig $HOME/.gitconfig
 cp ./.gitignore_global $HOME/.gitignore_global
+cp ./delta.gitconfig $HOME/delta.gitconfig

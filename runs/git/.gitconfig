@@ -4,13 +4,16 @@
 [core]
 	excludesfile = ~/.gitignore_global
 	editor = code --wait
+    pager = delta
+[interactive]
+    diffFilter = delta --color-only
+[merge]
+	tool = vscode
+    conflictstyle = zdiff3
 [diff]
 	tool = vscode
 [difftool "vscode"]
 	cmd = code --wait --diff $LOCAL $REMOTE
-[merge]
-	tool = vscode
-	conflictStyle = diff3
 [mergetool]
 	keepBackup = false
 [mergetool "vscode"]
@@ -23,3 +26,5 @@
     autoStash = true
 [credentials]
 	helper = osxkeychain
+[include]
+	path = ~/delta.gitconfig
