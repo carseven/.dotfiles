@@ -5,6 +5,7 @@
 	excludesfile = ~/.gitignore_global
 	editor = code --wait
     pager = delta
+	ignoreCase = false
 [interactive]
     diffFilter = delta --color-only
 [merge]
