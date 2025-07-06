@@ -29,6 +29,7 @@ cp .zshrc $HOME/.zshrc
 cp .aliases $HOME/.aliases
 cp .hushlogin $HOME/.hushlogin
 cp .path-functions-utils $HOME/.path-functions-utils
+cp .zshenv $HOME/.zshenv
 cp .zprofile $HOME/.zprofile
 
 # Copy scripts to $HOME/.local/bin

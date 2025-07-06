@@ -66,12 +66,6 @@ zstyle ':fzf-tab:*' fzf-command ftb-tmux-popup
 zstyle ':fzf-tab:complete:cd:*' fzf --preview 'ls $realpath'
 zstyle ':fzf-tab:complete:__zoxide_z:*' fzf --preview 'ls $realpath'
 
-# Path
-source  ~/.path-functions-utils # Load addToPathFront functions
-addToPathFront $HOME/go/bin
-addToPathFront /opt/homebrew/bin # TODO: Check if macos and add
-addToPathFront $HOME/.local/bin
-
 # Shell integrations
 type zoxide &> /dev/null && eval "$(zoxide init zsh)"
 type fzf &> /dev/null && eval "$(fzf --zsh)" # On macos m1 takes 10ms to load
