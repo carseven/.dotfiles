@@ -29,3 +29,5 @@
 	helper = osxkeychain
 [include]
 	path = ~/delta.gitconfig
+[url "ssh://git@github.azc.ext.hp.com/"]
+	insteadOf = https://github.azc.ext.hp.com/
