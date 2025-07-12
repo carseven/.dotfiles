@@ -3,6 +3,7 @@
 # Install btop for macos
 if [[ "$OSTYPE" == "darwin"* ]]; then
     brew install btop
+    brew install htop
 fi
 
 # Install btop for linux
