@@ -1,0 +1,144 @@
+#!/bin/bash
+
+# Bash script to parse Bookmarks.bak and save it as an HTML file using jq
+# My default browser is Brave, so the path is set accordingly. For Chrome just change the path to point the Bookmarks.bak file.
+
+# Define the input and output file names
+INPUT_FILE="$HOME/Library/Application Support/BraveSoftware/Brave-Browser/Default/Bookmarks.bak"
+
+date=$(date +"%Y-%m-%d")
+echo "Processing bookmarks from $INPUT_FILE on $date"
+OUTPUT_DIRECTORY="$HOME/personal/notes/1-inbox/bookmarks"
+OUTPUT_FILE="$OUTPUT_DIRECTORY/browser-bookmarks.html"
+OUTPUT_FILE_MARKDOWN="$OUTPUT_DIRECTORY/browser-bookmarks.md"
+
+# Check if the input file exists
+if [ ! -f "$INPUT_FILE" ]; then
+    echo "Error: $INPUT_FILE not found!"
+    exit 1
+fi
+
+# Check if jq is installed
+if ! command -v jq &> /dev/null; then
+    echo "Error: jq is not installed. Please install jq to run this script."
+    exit 1
+fi
+
+# Check if html2markdown is installed
+if ! command -v html2markdown &> /dev/null; then
+    echo "Error: html2markdown is not installed. Please install html2markdown to convert HTML to Markdown."
+    exit 1
+fi
+
+# Check the $OUTPUT_DIRECTORY directory exists
+if [ ! -d "$OUTPUT_DIRECTORY" ]; then
+    echo "Error: Directory $OUTPUT_DIRECTORY does not exist. Please create it."
+    exit 1
+fi
+
+
+# Check if output html file already exists
+if [ -f "$OUTPUT_FILE" ]; then
+    echo "Warning: $OUTPUT_FILE already exists. It will be overwritten."
+    rm "$OUTPUT_FILE"
+fi
+
+# Check if output markdown file already exists
+if [ -f "$OUTPUT_FILE_MARKDOWN" ]; then
+    echo "Warning: $OUTPUT_FILE_MARKDOWN already exists. It will be overwritten."
+    rm "$OUTPUT_FILE_MARKDOWN"
+fi
+
+# Write the HTML header
+cat <<EOF > "$OUTPUT_FILE"
+<!DOCTYPE NETSCAPE-Bookmark-file-1>
+<!-- This is an automatically generated file.
+ It will be read and overwritten.
+ DO NOT EDIT! -->
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+<TITLE>Bookmarks</TITLE>
+<H1>Bookmarks</H1>
+<DL><p>
+EOF
+
+# Function to recursively process bookmarks
+process_bookmarks() {
+    local nodes="$1"
+    local depth="$2"
+
+    echo "$nodes" | jq -c '.[]' | while read -r node; do
+        local name=$(echo "$node" | jq -r '.name // empty')
+        local url=$(echo "$node" | jq -r '.url // empty')
+        local date_added=$(echo "$node" | jq -r '.date_added // empty')
+        local date_modified=$(echo "$node" | jq -r '.date_modified // empty')
+        local children=$(echo "$node" | jq -c '.children // empty')
+
+        if [ -n "$children" ]; then
+            printf "%${depth}s<DT><H3 ADD_DATE=\"$date_added\" LAST_MODIFIED=\"$date_modified\">$name</H3>\n" >> "$OUTPUT_FILE"
+            printf "%${depth}s<DL><p>\n" >> "$OUTPUT_FILE"
+            process_bookmarks "$children" $((depth + 4))
+            printf "%${depth}s</DL><p>\n" >> "$OUTPUT_FILE"
+        elif [ -n "$url" ]; then
+            printf "%${depth}s<DT><A HREF=\"$url\" ADD_DATE=\"$date_added\">$name</A>\n" >> "$OUTPUT_FILE"
+        fi
+    done
+}
+
+# Parse the JSON and process each root
+roots=$(jq -c '.roots' "$INPUT_FILE")
+
+bookmark_bar=$(echo "$roots" | jq -c '.bookmark_bar // empty')
+if [ -n "$bookmark_bar" ]; then
+    name=$(echo "$bookmark_bar" | jq -r '.name // "Bookmarks bar"')
+    date_added=$(echo "$bookmark_bar" | jq -r '.date_added // empty')
+    date_modified=$(echo "$bookmark_bar" | jq -r '.date_modified // empty')
+    children=$(echo "$bookmark_bar" | jq -c '.children // empty')
+
+    printf "<DT><H3 ADD_DATE=\"$date_added\" LAST_MODIFIED=\"$date_modified\" PERSONAL_TOOLBAR_FOLDER=\"true\">$name</H3>\n" >> "$OUTPUT_FILE"
+    printf "<DL><p>\n" >> "$OUTPUT_FILE"
+    process_bookmarks "$children" 4
+    printf "</DL><p>\n" >> "$OUTPUT_FILE"
+fi
+
+other=$(echo "$roots" | jq -c '.other // empty')
+if [ -n "$other" ]; then
+    name=$(echo "$other" | jq -r '.name // "Other bookmarks"')
+    date_added=$(echo "$other" | jq -r '.date_added // empty')
+    date_modified=$(echo "$other" | jq -r '.date_modified // empty')
+    children=$(echo "$other" | jq -c '.children // empty')
+
+    printf "<DT><H3 ADD_DATE=\"$date_added\" LAST_MODIFIED=\"$date_modified\">$name</H3>\n" >> "$OUTPUT_FILE"
+    printf "<DL><p>\n" >> "$OUTPUT_FILE"
+    process_bookmarks "$children" 4
+    printf "</DL><p>\n" >> "$OUTPUT_FILE"
+fi
+
+synced=$(echo "$roots" | jq -c '.synced // empty')
+if [ -n "$synced" ]; then
+    children=$(echo "$synced" | jq -c '.children // empty')
+    process_bookmarks "$children" 4
+fi
+
+# Close the HTML
+echo "</DL><p>" >> "$OUTPUT_FILE"
+
+# Check if the output file was created
+if [ -f "$OUTPUT_FILE" ]; then
+    echo "Success: $OUTPUT_FILE has been created."
+else
+    echo "Error: Failed to create $OUTPUT_FILE."
+    exit 1
+fi
+
+# Generate a Markdown file from the HTML output
+echo "# Bookmarks" > "Bookmark_backup.md"
+
+html2markdown --input "$OUTPUT_FILE" --output "$OUTPUT_FILE_MARKDOWN"
+
+# Check if the Markdown file was created
+if [ -f "$OUTPUT_FILE_MARKDOWN" ]; then
+    echo "Success: $OUTPUT_FILE_MARKDOWN has been created."
+else
+    echo "Error: Failed to create $OUTPUT_FILE_MARKDOWN."
+    exit 1
+fi
