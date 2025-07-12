@@ -46,7 +46,10 @@ fi
 
 for script in $scripts; do
     if echo "$script" | grep -qv "$filter"; then
-        log "filtered: $filter -- $script"
+        # Only show the filters with the dry run flag
+        if [[ $dry == "1" ]]; then
+            log "filtered: $filter -- $script"
+        fi
         continue
     fi
     log "running script: $script"
