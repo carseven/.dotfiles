@@ -51,3 +51,4 @@ go install github.com/air-verse/air@latest
 go install github.com/go-delve/delve/cmd/dlv@latest
 go install honnef.co/go/tools/cmd/staticcheck@latest
 go install github.com/golangci/golangci-lint/cmd/golangci-lint@v1.64.5
+go install github.com/JohannesKaufmann/html-to-markdown/v2/cli/html2markdown@latest
