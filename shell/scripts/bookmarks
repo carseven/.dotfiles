@@ -131,8 +131,6 @@ else
 fi
 
 # Generate a Markdown file from the HTML output
-echo "# Bookmarks" > "Bookmark_backup.md"
-
 html2markdown --input "$OUTPUT_FILE" --output "$OUTPUT_FILE_MARKDOWN"
 
 # Check if the Markdown file was created
