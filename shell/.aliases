@@ -81,6 +81,9 @@ alias gn="git add . && git commit -m 'feat(notes): $(date +%Y-%m-%d.%H:%M:%S)' &
 # Docker
 alias dstop="docker ps | fzf --header-lines 1 | awk '{print \$1}' | xargs -I_ docker stop _"
 
+# Nerd font search and install
+alias font_install="brew search '/font-.*-nerd-font/' | fzf | awk '{ print $1 }' | xargs -I{} brew install --cask {} || true"
+
 # Set man colors
 function man() {
     env \
