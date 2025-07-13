@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # Check latest version https://github.com/neovim/neovim/releases/latest
-version="v0.10.4"
+version="v0.11.2"
 
 # Install nvim for macos
 if [[ "$OSTYPE" == "darwin"* ]]; then
