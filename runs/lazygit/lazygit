@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+# Install lazygit for macos
+if [[ "$OSTYPE" == "darwin"* ]]; then
+    brew install lazygit
+
+
+    cd runs/lazygit
+
+    mkdir -p $HOME/.config/lazygit
+    cp config.yml $HOME/Library/Application\ Support/lazygit/config.yml
+    echo "Copying lazygit configuration files to $HOME/Library/Application Support/lazygit successfully"
+fi

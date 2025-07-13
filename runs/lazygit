@@ -1,6 +1,0 @@
-#!/usr/bin/env bash
-
-# Install lazygit for macos
-if [[ "$OSTYPE" == "darwin"* ]]; then
-    brew install lazygit
-fi
