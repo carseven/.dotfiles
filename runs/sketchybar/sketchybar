@@ -1,0 +1,32 @@
+#!/usr/bin/env bash
+
+# Install karabiner for macos
+if [[ "$OSTYPE" == "darwin"* ]]; then
+    # Install Sketchybar
+    brew install FelixKratz/formulae/sketchybar
+
+    # Copy configuration files
+    cd runs/sketchybar
+
+    # Make sure the configuration directory exists
+    CONFIG_DIR="$HOME/.config/sketchybar"
+    if [ ! -d $CONFIG_DIR ]; then
+        mkdir -p $CONFIG_DIR
+        echo "Created directory: $CONFIG_DIR"
+    fi
+
+    # Check if the plugins directory exists, if not create it
+    if [ ! -d "$CONFIG_DIR/plugins" ]; then
+        mkdir -p "$CONFIG_DIR/plugins"
+        echo "Created directory: $CONFIG_DIR/plugins"
+    fi
+
+    
+    cp sketchybarrc $CONFIG_DIR/sketchybarrc
+    cp plugins/* $CONFIG_DIR/plugins/
+    echo "Sketchybar configuration has been copied to $CONFIG_DIR"
+
+
+    # Start/Restart Sketchybar brew service
+    brew services restart sketchybar
+fi

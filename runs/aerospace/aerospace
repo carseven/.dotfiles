@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+# Install karabiner for macos
+if [[ "$OSTYPE" == "darwin"* ]]; then
+    brew install nikitabobko/tap/aerospace
+
+    cd runs/aerospace
+    cp .aerospace.toml $HOME/.aerospace.toml
+    echo "Aerospace configuration has been copied to $HOME/.aerospace.toml"
+
+    # Reloading Aerospace configuration
+    aerospace reload-config
+fi

@@ -147,6 +147,7 @@ defaults write .GlobalPreferences AppleInterfaceStyleSwitchesAutomatically -bool
 defaults write .GlobalPreferences NSTableViewDefaultSizeMode -int 2
 # - Large
 # defaults write .GlobalPreferences NSTableViewDefaultSizeMode -int 3
+
 # Automatically hide and show the menu bar
 # - Checked
 defaults write .GlobalPreferences _HIHideMenuBar -bool true
@@ -285,16 +286,20 @@ defaults write .GlobalPreferences AppleSpacesSwitchOnActivate -bool true
 # defaults write .GlobalPreferences AppleSpacesSwitchOnActivate -bool false
 
 # Group windows by application
+# This is needed to avoid seen really small windows in mission control when Aerospace is enabled
+# See: https://nikitabobko.github.io/AeroSpace/guide#a-note-on-mission-control
 # - Checked
-# defaults write com.apple.dock expose-group-apps -bool true
+defaults write com.apple.dock expose-group-apps -bool true
 # - Unchecked
-defaults write com.apple.dock expose-group-apps -bool false
+# defaults write com.apple.dock expose-group-apps -bool false
 
 # Displays have separate Spaces
+# This settings needs to be check when using Aerospace
+# See: https://nikitabobko.github.io/AeroSpace/guide#a-note-on-displays-have-separate-spaces
 # - Checked -> Show dock and menu bar on principal display
-# defaults write com.apple.spaces spans-displays -bool true
+defaults write com.apple.spaces spans-displays -bool true
 # - Unchecked -> Show dock and menu bar on every display
-defaults write com.apple.spaces spans-displays -bool false
+# defaults write com.apple.spaces spans-displays -bool false
 
 # Dashboard
 # - Off
