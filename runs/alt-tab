@@ -1,6 +1,0 @@
-#!/usr/bin/env bash
-
-# Install alt-tab for macos
-if [[ "$OSTYPE" == "darwin"* ]]; then
-    brew install alt-tab
-fi
