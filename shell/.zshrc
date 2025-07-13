@@ -34,6 +34,11 @@ for dump in ~/.zcompdump(N.mh+24); do
 done
 compinit -C
 
+# Caparace is a completion framework for zsh, fish, bash and inshellisense
+export CARAPACE_BRIDGES='zsh,fish,bash,inshellisense' # optional
+zstyle ':completion:*' format $'\e[2;37mCompleting %d\e[m'
+source <(carapace _carapace) # Load carapace all completions https://carapace-sh.github.io/carapace-bin/completers.html
+
 # Keybindings
 # bindkey -v # TODO: try vim mode instead of emacs
 bindkey -e # Emacs keybindings mode
