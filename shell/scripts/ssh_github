@@ -1,0 +1,29 @@
+#!/bin/bash
+
+emails=(
+    "carles.serra@hotmail.es"
+    "carles.serra.vendrell@hp.com"
+)
+
+
+domains=(
+    "github.com"
+    "github.azc.ext.hp.com"
+)
+
+# Prompt user to select a domain
+selected_domain=$(printf "%s\n" "${domains[@]}" | fzf --prompt "Select domain: ")
+
+# Prompt user to select an email
+selected_email=$(printf "%s\n" "${emails[@]}" | fzf --prompt "Select email: ") 
+
+# Prompt user to enter the output file name with a default value of 'id_rsa'
+read -p "Enter the output file name (without extension) [id_rsa]: " output_file
+output_file=${output_file:-id_rsa}
+
+# Use the provided file name for the SSH key
+ssh-keygen -t rsa -b 4096 -C $selected_email -f ~/.ssh/$output_file
+ssh-add -K ~/.ssh/$output_file
+ssh-keyscan -t rsa $selected_domain >> ~/.ssh/known_hosts
+pbcopy < ~/.ssh/${output_file}.pub
+open https://$selected_domain/settings/keys
