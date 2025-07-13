@@ -65,6 +65,30 @@
             ]
           },
           {
+            "description": "Open Finder by left_option+f",
+            "manipulators": [
+              {
+                "type": "basic",
+                "from": {
+                  "key_code": "f",
+                  "modifiers": {
+                    "mandatory": [
+                      "left_option"
+                    ],
+                    "optional": [
+                      "caps_lock"
+                    ]
+                  }
+                },
+                "to": [
+                  {
+                    "shell_command": "open -a Finder.app"
+                  }
+                ]
+              }
+            ]
+          },
+          {
             "description": "Open Terminal by left_option+t",
             "manipulators": [
               {
