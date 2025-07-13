@@ -1,17 +1,15 @@
 #!/usr/bin/env bash
 
-# Install jq for macos
+# Install zsh for macos
 if [[ "$OSTYPE" == "darwin"* ]]; then
     brew install zsh
 fi
 
-# Install jq for linux
+# Install zsh for linux
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
     sudo apt-get install zsh
 fi
 
-
-# Add scripts
 
 # Add zsh to /etc/shells
 if ! grep -q $(which zsh) "/etc/shells"; then
