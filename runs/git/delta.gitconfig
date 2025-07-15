@@ -4,7 +4,7 @@
 	dark = true  # use dark mode by default
 	features = catppuccin-mocha  # default theme
 	# Use the following to enable side-by-side diffs by default
-    side-by-side = true
+    side-by-side = false
 	line-numbers = true  # show line numbers
 	hyperlinks = true
 
