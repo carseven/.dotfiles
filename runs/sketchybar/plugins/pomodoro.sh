@@ -49,7 +49,7 @@ start_countdown() {
 stop_countdown() {
     __stop
     afplay "$SOUNDS_PATH/TrackingOff.aiff"
-    sketchybar --set "$NAME" label="No Timer"
+    sketchybar --set "$NAME" label="Start"
 }
 
 # If script is run directly with a duration argument (e.g. ./timer.sh 300)

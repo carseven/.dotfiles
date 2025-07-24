@@ -34,6 +34,11 @@ for dump in ~/.zcompdump(N.mh+24); do
 done
 compinit -C
 
+# Set HP Proxy
+PROXY_URL="http://web-proxy.austin.hpicorp.net:8080"
+export {http,https,ftp}_proxy=$PROXY_URL
+export {HTTP,HTTPS,FTP}_PROXY=$PROXY_URL
+
 # Caparace is a completion framework for zsh, fish, bash and inshellisense
 export CARAPACE_BRIDGES='zsh,fish,bash,inshellisense' # optional
 zstyle ':completion:*' format $'\e[2;37mCompleting %d\e[m'
