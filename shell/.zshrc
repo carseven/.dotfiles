@@ -35,7 +35,7 @@ done
 compinit -C
 
 # Set HP Proxy
-PROXY_URL="http://web-proxy.austin.hpicorp.net:8080"
+PROXY_URL=""
 export {http,https,ftp}_proxy=$PROXY_URL
 export {HTTP,HTTPS,FTP}_PROXY=$PROXY_URL
 
