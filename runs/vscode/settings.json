@@ -26,6 +26,7 @@
   "workbench.tree.indent": 24,
   "workbench.tree.enableStickyScroll": false,
   // Terminal
+  "terminal.integrated.stickyScroll.enabled": false,
   "terminal.integrated.fontSize": 12,
   "terminal.integrated.lineHeight": 1,
   "terminal.integrated.fontFamily": "JetBrainsMono Nerd Font",
