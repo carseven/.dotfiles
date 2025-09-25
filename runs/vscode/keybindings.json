@@ -282,7 +282,13 @@
   },
   {
     "key": "ctrl+o",
-    "command": "workbench.action.openRecent"
+    "command": "workbench.action.openRecent",
+    "when": "!isMac"
+  },
+  {
+    "key": "cmd+o",
+    "command": "workbench.action.openRecent",
+    "when": "isMac"
   },
   {
     "key": "ctrl+r",
