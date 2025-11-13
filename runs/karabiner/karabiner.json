@@ -18,6 +18,30 @@
           {
             "manipulators": [
               {
+                "description": "Change Option+Tab to Command+` (switch app windows)",
+                "from": {
+                  "key_code": "tab",
+                  "modifiers": {
+                    "mandatory": [
+                      "left_option"
+                    ]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "grave_accent_and_tilde",
+                    "modifiers": [
+                      "left_command"
+                    ]
+                  }
+                ],
+                "type": "basic"
+              }
+            ]
+          },
+          {
+            "manipulators": [
+              {
                 "description": "Change caps_lock to control+option+shift (HYPER)",
                 "from": {
                   "key_code": "caps_lock",
