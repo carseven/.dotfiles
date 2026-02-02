@@ -82,13 +82,14 @@ Documentation for things that are not automated.
 
 ### Roadmap
 
+- Automate setup keyboard shortcut for changing window focus instead of manually changing from Settings > Keyboard > Shortcuts > Move focus to next window
 - Regression test from zero
 - Capture control + c to exit the run script
 - capture exit 1 from run script
 - Setup docker to test clean installs (Linux and macos)
 - Automate sudo, ask at the beginning of the script only.
 - Prettify logs and error handling (Better show when script errors, maybe finish script execution?)
-- 
+
 ### Resources
 
 - https://github.com/Gentleman-Programming/Gentleman.Dots
