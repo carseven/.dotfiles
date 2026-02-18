@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+# Install tailscale for macos
+if [[ "$OSTYPE" == "darwin"* ]]; then
+    brew install tailscale
+fi
