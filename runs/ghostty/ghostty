@@ -4,7 +4,9 @@
 if [[ "$OSTYPE" == "darwin"* ]]; then
     brew install ghostty
 
+
     cd runs/ghostty
     mkdir -p $HOME/.config/ghostty
     cp config $HOME/.config/ghostty/config
+    echo "Copied ghostty config to $HOME/.config/ghostty/config"
 fi
