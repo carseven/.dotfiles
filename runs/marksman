@@ -1,6 +1,0 @@
-#!/usr/bin/env bash
-
-# Install marksman for macos
-if [[ "$OSTYPE" == "darwin"* ]]; then
-    brew install marksman
-fi
