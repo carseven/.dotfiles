@@ -4,7 +4,6 @@ adjust-cell-height = 10%
 copy-on-select = true
 font-thicken = true
 mouse-hide-while-typing = true
-macos-option-as-alt = true
 window-padding-y = 0
 window-padding-x = 0
 window-padding-color = extend
