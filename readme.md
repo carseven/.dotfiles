@@ -82,7 +82,8 @@ Documentation for things that are not automated.
 
 ### Roadmap
 
-- Automate setup keyboard shortcut for changing window focus instead of manually changing from Settings > Keyboard > Shortcuts > Move focus to next window
+- Automate setup keyboard shortcut for changing window focus instead of manually changing from Settings > Keyboard > Shortcuts > (Keyboard) Move focus to next window opt + x
+- When laptop is connected to a monitor, automatically change the display settings to mirror the display instead of extending it. If the monitor brightness is removed, it mimics disconnecting the laptop display when connected to a monitor. maybe create an script. Settings > Display > Built-in Display > Mirror display
 - Regression test from zero
 - Capture control + c to exit the run script
 - capture exit 1 from run script
