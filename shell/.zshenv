@@ -10,5 +10,8 @@
 
 source  ~/.path-functions-utils # Load addToPathFront functions
 addToPathFront $HOME/go/bin
-addToPathFront /opt/homebrew/bin # TODO: Check if macos and add
+# Keep this as an early fallback; final PATH precedence is enforced in .zprofile.
+if [[ "$OSTYPE" == darwin* ]]; then
+	addToPathFront /opt/homebrew/bin
+fi
 addToPathFront $HOME/.local/bin

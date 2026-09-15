@@ -1,10 +1,23 @@
+source ~/.path-functions-utils
+
+# macOS /etc/zprofile runs path_helper; apply final user PATH precedence here.
+if [[ "$OSTYPE" == darwin* ]]; then
+  addToPathFront /opt/homebrew/bin
+fi
+
+if [[ -d "$HOME/.local/bin" ]]; then
+  addToPathFront "$HOME/.local/bin"
+fi
+
+if [[ -d "$HOME/go/bin" ]]; then
+  addToPathFront "$HOME/go/bin"
+fi
+
 if [[ -d "/usr/local/go/bin" ]]; then
-    export PATH=$PATH:/usr/local/go/bin
-  else 
-    echo "Go is not installed!"
+  addToPathFront /usr/local/go/bin
 fi
 
 # Only need for manual installation (Ubuntu)
 if [[ -d "$HOME/.tfenv/bin" ]]; then
-    export PATH="$HOME/.tfenv/bin:$PATH"
+  addToPathFront "$HOME/.tfenv/bin"
 fi

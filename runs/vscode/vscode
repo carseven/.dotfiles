@@ -22,5 +22,4 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
     code --install-extension mhutchie.git-graph
     code --install-extension golang.go
     code --install-extension esbenp.prettier-vscode
-    code --install-extension arr.marksman
 fi

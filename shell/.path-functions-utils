@@ -1,11 +1,23 @@
 function addToPath() {
-    if [[ "$PATH" != *"$1"* ]]; then
-        export PATH=$PATH:$1
+    if [[ -z "$1" ]]; then
+        return
     fi
+
+    # Remove any existing occurrence, then append once at the end.
+    export PATH="${PATH//:$1:/:}"
+    export PATH="${PATH#:}"
+    export PATH="${PATH%:}"
+    export PATH="$PATH:$1"
 }
 
 function addToPathFront() {
-    if [[ "$PATH" != *"$1"* ]]; then
-        export PATH=$1:$PATH
+    if [[ -z "$1" ]]; then
+        return
     fi
+
+    # Remove any existing occurrence, then prepend once at the front.
+    export PATH="${PATH//:$1:/:}"
+    export PATH="${PATH#:}"
+    export PATH="${PATH%:}"
+    export PATH="$1:$PATH"
 }
