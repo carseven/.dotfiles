@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+script_dir="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
+
+if ! command -v npx >/dev/null 2>&1; then
+    echo "npx is required to install skills. Install Node.js and npm first." >&2
+    exit 1
+fi
+
+npx --yes skills add mattpocock/skills \
+    --global --agent github-copilot claude-code --skill '*' --yes
+npx --yes skills add danyuchn/asd-ste100-skill \
+    --global --agent github-copilot claude-code --skill asd-ste100 --yes
+npx --yes skills add "$script_dir/personal" \
+    --global --agent github-copilot claude-code --skill pr-review show-me --yes
