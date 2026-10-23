@@ -10,7 +10,6 @@ if [[ "$OSTYPE" == "linux-gnu"* ]]; then
     sudo apt-get install zsh
 fi
 
-
 # Add zsh to /etc/shells
 if ! grep -q $(which zsh) "/etc/shells"; then
     echo 0

@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 
-
 if [[ "$OSTYPE" == "darwin"* ]]; then
     brew install go
 fi
@@ -11,7 +10,7 @@ if [[ "$OSTYPE" == "linux-gnu"* ]]; then
 
     # Check if go is installed.
     # If it is installed, check if it is the latest version.
-    if ! command -v go &> /dev/null; then
+    if ! command -v go &>/dev/null; then
         echo "Go is not installed"
     else
         current_go_version=$(go version | awk '{print $3}')
@@ -43,7 +42,6 @@ if [[ "$OSTYPE" == "linux-gnu"* ]]; then
 
     echo "Go version $go_lastest_version installed!"
 fi
-
 
 # Install golang packages
 go install go.uber.org/mock/mockgen@latest

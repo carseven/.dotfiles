@@ -11,4 +11,3 @@ fi
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
     git clone https://github.com/tfutils/tfenv.git ~/.tfenv
 fi
-

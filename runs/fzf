@@ -9,7 +9,7 @@ fi
 # TODO: Try linux version works properly
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
     # Check if golang is installed
-    if ! command -v go &> /dev/null; then
+    if ! command -v go &>/dev/null; then
         log "golang is not installed"
         execute() { "$@"; }
         execute ./runs/golang

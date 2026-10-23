@@ -1,13 +1,13 @@
 #!/usr/bin/env bash
 
-script_dir="$(cd $(dirname "${BASH_SOURCE[0]}") && pwd)"
+script_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 filter=""
 dry="0"
 
-cd $script_dir
+cd "$script_dir" || exit
 scripts=$(find runs -maxdepth 2 -mindepth 1 -type f -type f \( -perm -u=x -o -perm -g=x -o -perm -o=x \))
 
-while [[ $# > 0 ]]; do
+while (($# > 0)); do
     if [[ "$1" == "--dry" ]]; then
         dry="1"
     else
@@ -18,14 +18,14 @@ done
 
 log() {
     if [[ $dry == "1" ]]; then
-        echo "[DRY_RUN]: $@"
+        printf '[DRY_RUN]: %s\n' "$*"
     else
-        echo "$@"
+        printf '%s\n' "$*"
     fi
 }
 
 execute() {
-    log "execute: $@"
+    log "execute: $*"
     if [[ $dry == "1" ]]; then
         return
     fi
@@ -53,5 +53,5 @@ for script in $scripts; do
         continue
     fi
     log "running script: $script"
-    execute ./$script
+    execute "./$script"
 done
