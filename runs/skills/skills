@@ -1,0 +1,49 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+script_dir="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
+agents=(github-copilot claude-code)
+
+if ! command -v npx >/dev/null 2>&1; then
+    echo "npx is required to install skills. Install Node.js and npm first." >&2
+    exit 1
+fi
+
+add_skills() {
+    local source="$1"
+    shift
+    npx --yes skills add "$source" --global --agent "${agents[@]}" "$@" --yes
+}
+
+add_skills mattpocock/skills --skill '*'
+add_skills danyuchn/asd-ste100-skill --skill asd-ste100
+add_skills JuliusBrussee/caveman --skill caveman caveman-commit caveman-compress caveman-help caveman-review
+add_skills cloudflare/security-audit-skill --skill security-audit
+add_skills "$script_dir/personal" --skill pr-review show-me meeting-to-jira
+
+# RTK hooks: rewrite shell commands through rtk.
+if ! command -v rtk >/dev/null 2>&1; then
+    echo "rtk not found, skipping RTK hooks. Install it with: brew install rtk" >&2
+    exit 0
+fi
+
+# Claude Code: patches ~/.claude/settings.json and writes ~/.claude/RTK.md.
+rtk init --global --auto-patch
+
+# Copilot CLI and VS Code: user-level hook file.
+copilot_hooks_dir="$HOME/.copilot/hooks"
+mkdir -p "$copilot_hooks_dir"
+cat >"$copilot_hooks_dir/rtk-rewrite.json" <<'EOF'
+{
+  "hooks": {
+    "PreToolUse": [
+      {
+        "type": "command",
+        "command": "rtk hook copilot",
+        "cwd": ".",
+        "timeout": 5
+      }
+    ]
+  }
+}
+EOF

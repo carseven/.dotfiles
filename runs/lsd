@@ -6,10 +6,10 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
 fi
 
 # Install jq for linux
-if [[ "$OSTYPE" == "linux-gnu"* ]]; then\
+if [[ "$OSTYPE" == "linux-gnu"* ]]; then
     # Download the lsd bundle
     curl -L -o /tmp/lsd-musl_1.1.2_amd64.deb "https://github.com/lsd-rs/lsd/releases/download/v1.1.2/lsd-musl_1.1.2_amd64.deb"
-    
+
     # Install lsd package
     sudo dpkg -i /tmp/lsd-musl_1.1.2_amd64.deb
 fi

@@ -74,6 +74,27 @@ Using the first argument you can launch only specific scripts. This is really us
 
 ## Documentation
 
+### Agent skills
+
+Install skills for GitHub Copilot and Claude Code:
+
+```shell
+./run skills
+```
+
+Node.js and npm must be available so the command can use `npx skills`.
+The command installs globally without confirmation prompts:
+
+- All skills from [mattpocock/skills](https://github.com/mattpocock/skills).
+- `asd-ste100` from [danyuchn/asd-ste100-skill](https://github.com/danyuchn/asd-ste100-skill).
+- Personal `pr-review` and `show-me` skills from [runs/skills/personal/](runs/skills/personal/).
+
+Only personal skills are stored here. Upstream skills are downloaded during installation.
+Edit personal skills here and rerun `./run skills` to install updates.
+The CLI manages skill installation and agent links. Existing skills with the same names can be replaced.
+The command does not copy or change agent instructions, preferences, permissions, or VS Code configuration.
+Like other executable scripts under `runs/`, it also runs with `./run`.
+
 Documentation for things that are not automated.
 
 - [Windows dotfiles](./doc/windows/readme.md)

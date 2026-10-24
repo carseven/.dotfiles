@@ -4,7 +4,11 @@
 sudo -v
 
 # Keep-alive: update existing `sudo` time stamp until `.setup` has finished
-while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
+while true; do
+    sudo -n true
+    sleep 60
+    kill -0 "$$" || exit
+done 2>/dev/null &
 
 # Close settings to avoid overriding
 osascript -e 'tell application "System Preferences" to quit'
@@ -15,7 +19,6 @@ sudo scutil --set ComputerName "m1"
 # sudo scutil --set LocalHostName "m1"
 # sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string "m1"
 
-
 ## ----------------------------------------
 ##  System and Extras
 ## ----------------------------------------
@@ -23,7 +26,7 @@ echo "Set System and Extras..."
 
 # Disable DS_STORE in Network and USB
 defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true
-defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true 
+defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
 
 # Automatically quit printer app once the print jobs complete
 defaults write com.apple.print.PrintingPrefs "Quit When Finished" -bool true
@@ -37,7 +40,7 @@ defaults write com.apple.LaunchServices LSQuarantine -bool false
 # Restart automatically if the computer freezes
 sudo systemsetup -setrestartfreeze on
 
-# Disable Resume system-wide, 
+# Disable Resume system-wide,
 # Resume is one of the main feature since OS X 10.7 Lion. It’s a system-wide feature that allowing you to immediately get
 # back to the exact state of the app even when system reboots. Use the following command to disable it.
 defaults write com.apple.systempreferences NSQuitAlwaysKeepsWindows -bool false
@@ -182,7 +185,7 @@ defaults write .GlobalPreferences NSQuitAlwaysKeepsWindows -bool false
 
 # Use font smoothing when available
 # - Checked
-defaults -currentHost delete .GlobalPreferences AppleFontSmoothing > /dev/null 2>&1  
+defaults -currentHost delete .GlobalPreferences AppleFontSmoothing >/dev/null 2>&1
 # - Unchecked
 # defaults -currentHost write .GlobalPreferences AppleFontSmoothing -bool false
 
@@ -199,7 +202,7 @@ defaults write com.apple.dock tilesize -int 50
 # - Checked
 # defaults write com.apple.dock magnification -bool true
 # - Unchecked
-defaults delete com.apple.dock magnification > /dev/null 2>&1 
+defaults delete com.apple.dock magnification >/dev/null 2>&1
 
 # `Magnification` Bar
 # @int: size
@@ -209,7 +212,7 @@ defaults delete com.apple.dock magnification > /dev/null 2>&1
 # - Left
 # defaults write com.apple.dock orientation -string "left"
 # - Bottom
-defaults delete com.apple.dock orientation > /dev/null 2>&1 
+defaults delete com.apple.dock orientation >/dev/null 2>&1
 # - Right
 # defaults write com.apple.dock orientation -string "right"
 
@@ -269,7 +272,7 @@ defaults write com.apple.dock show-process-indicators -bool true
 defaults write com.apple.dock show-recents -bool false
 
 # Delete previous persintat-apps config
-defaults delete com.apple.dock persistent-apps > /dev/null 2>&1 
+defaults delete com.apple.dock persistent-apps >/dev/null 2>&1
 
 ## ----------------------------------------
 ##  Mision control
@@ -362,7 +365,7 @@ defaults write .GlobalPreferences AppleLocale -string ${ALOCAL}
 
 # Time format: 24-Hour Time
 # - Checked
-defaults delete .GlobalPreferences AppleICUForce12HourTime > /dev/null 2>&1
+defaults delete .GlobalPreferences AppleICUForce12HourTime >/dev/null 2>&1
 # - Unchecked
 # defaults write .GlobalPreferences AppleICUForce12HourTime -bool true
 
@@ -421,18 +424,18 @@ CurrentUUID="CBUser-${CurrentUUID}"
 # /usr/libexec/PlistBuddy -c "Set :${CurrentUUID}:CBBlueReductionStatus:AutoBlueReductionEnabled 0" ${NPLIST}
 # - Custom
 sudo /usr/libexec/PlistBuddy \
-  -c "Set :${CurrentUUID}:CBBlueReductionStatus:BlueReductionEnabled 1" \
-  -c "Set :${CurrentUUID}:CBBlueReductionStatus:BlueLightReductionSchedule:DayStartHour 07" \
-  -c "Set :${CurrentUUID}:CBBlueReductionStatus:BlueLightReductionSchedule:DayStartMinute 0" \
-  -c "Set :${CurrentUUID}:CBBlueReductionStatus:BlueLightReductionSchedule:NightStartHour 21" \
-  -c "Set :${CurrentUUID}:CBBlueReductionStatus:BlueLightReductionSchedule:NightStartMinute 0" \
-  ${NPLIST} > /dev/null 2>&1
+    -c "Set :${CurrentUUID}:CBBlueReductionStatus:BlueReductionEnabled 1" \
+    -c "Set :${CurrentUUID}:CBBlueReductionStatus:BlueLightReductionSchedule:DayStartHour 07" \
+    -c "Set :${CurrentUUID}:CBBlueReductionStatus:BlueLightReductionSchedule:DayStartMinute 0" \
+    -c "Set :${CurrentUUID}:CBBlueReductionStatus:BlueLightReductionSchedule:NightStartHour 21" \
+    -c "Set :${CurrentUUID}:CBBlueReductionStatus:BlueLightReductionSchedule:NightStartMinute 0" \
+    ${NPLIST} >/dev/null 2>&1
 # - Sunset to Sunrise
 # /usr/libexec/PlistBuddy -c "Set :${CurrentUUID}:CBBlueReductionStatus:AutoBlueReductionEnabled 1" ${NPLIST}
 
 # Color Temperature
 # @int: warmest.2700 coldest.6000
-/usr/libexec/PlistBuddy -c "Set :${CurrentUUID}:CBBlueLightReductionCCTTargetRaw 3300" ${NPLIST} > /dev/null 2>&1
+/usr/libexec/PlistBuddy -c "Set :${CurrentUUID}:CBBlueLightReductionCCTTargetRaw 3300" ${NPLIST} >/dev/null 2>&1
 
 ## ----------------------------------------
 ##  Energy
@@ -467,7 +470,7 @@ echo "Set dateTime..."
 
 # Set date and time automatically
 # - Checked
-sudo systemsetup -setusingnetworktime on > /dev/null
+sudo systemsetup -setusingnetworktime on >/dev/null
 # - Unchecked
 # sudo systemsetup -setusingnetworktime off > /dev/null
 
@@ -505,7 +508,6 @@ defaults -currentHost write com.apple.coreservices.useractivityd.plist ActivityA
 # defaults -currentHost write com.apple.coreservices.useractivityd.plist ActivityReceivingAllowed -bool false
 # defaults -currentHost write com.apple.coreservices.useractivityd.plist ActivityAdvertisingAllowed -bool false
 
-
 # Save to disk (not to iCloud) by default
 defaults write NSGlobalDomain NSDocumentSaveNewDocumentsToCloud -bool false
 
@@ -529,7 +531,6 @@ defaults write com.apple.TimeMachine DoNotOfferNewDisksForBackup -bool true
 # defaults write com.apple.systemuiserver "NSStatusItem Visible com.apple.menuextra.TimeMachine" -bool false
 # IS_TIMEMACHINE=$(defaults read com.apple.systemuiserver menuExtras | grep "TimeMachine")
 # [[ -n ${IS_TIMEMACHINE} ]] && /usr/libexec/PlistBuddy -c "Delete menuExtras:\"/System/Library/CoreServices/Menu Extras/TimeMachine.menu\"" "~"/Library/Preferences/com.apple.systemuiserver.plist
-
 
 ## ----------------------------------------
 ##  Keyboard
@@ -658,13 +659,13 @@ defaults write com.apple.frameworks.diskimages auto-open-ro-root -bool true
 defaults write com.apple.frameworks.diskimages auto-open-rw-root -bool true
 defaults write com.apple.finder OpenWindowForNewRemovableDisk -bool true
 
-# Show Path Bar 
+# Show Path Bar
 defaults write com.apple.finder ShowPathbar -bool false
 
 # Display full POSIX path as Finder window title
 defaults write com.apple.finder _FXShowPosixPathInTitle -bool false
 
-# Show Tab Bar 
+# Show Tab Bar
 defaults write com.apple.finder ShowTabView -bool true
 
 # Show Status Bar
@@ -710,17 +711,16 @@ defaults write com.apple.screencapture include-date -bool false
 # - Default
 # defaults write com.apple.screencapture include-date -bool true
 
-
 ## ----------------------------------------
 ##  Cache Clear
 ## ----------------------------------------
 echo "Resetting macos and clear cache..."
 for app in \
-  "cfprefsd" \
-  "Activity Monitor" "Address Book" "Calendar" \
-  "Contacts" "Dock" "Finder" "Mail" "Messages" \
-  "SystemUIServer" "Terminal" "Transmission" "iCal"; do
-  killall "${app}" > /dev/null 2>&1
+    "cfprefsd" \
+    "Activity Monitor" "Address Book" "Calendar" \
+    "Contacts" "Dock" "Finder" "Mail" "Messages" \
+    "SystemUIServer" "Terminal" "Transmission" "iCal"; do
+    killall "${app}" >/dev/null 2>&1
 done
 
 # Reference: https://github.com/kevinSuttle/macOS-Defaults/blob/master/.macos

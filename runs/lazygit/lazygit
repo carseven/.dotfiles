@@ -4,7 +4,6 @@
 if [[ "$OSTYPE" == "darwin"* ]]; then
     brew install lazygit
 
-
     cd runs/lazygit
 
     mkdir -p $HOME/.config/lazygit

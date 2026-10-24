@@ -1,28 +1,26 @@
 name: CI
-on: push
+on: [push, pull_request]
+
+permissions:
+  contents: read
 
 jobs:
   lint:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - name: Install shfmt
-        run: echo "TODO"
+      - uses: actions/checkout@v4
+      - name: Install shell tools
+        run: sudo apt-get update && sudo apt-get install --no-install-recommends -y shellcheck shfmt
       - name: Check format with shfmt
-        run: echo "TODO format shfmt"
-      - name: Install shellcheck
-        run: echo "TODO install shellcheck"
+        run: find . -type f -perm -111 -not -path './.git/*' -print0 | xargs -0 shfmt -i 4 -d
       - name: Check linting with shellcheck
-        run: echo "TODO lint shellcheck"
-  test-ubuntu:
-    runs-on: ubuntu-latest
+        run: find . -type f -perm -111 -not -path './.git/*' -print0 | xargs -0 shellcheck -S error
+  test:
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest]
+    runs-on: ${{ matrix.os }}
     steps:
-      - uses: actions/checkout@v3
-      - name: Launch install and run scripts
-        run: ./run
-  test-macos:
-    runs-on: macos-latest
-    steps:
-      - uses: actions/checkout@v3
-      - name: Launch install and run scripts
-        run: ./run
+      - uses: actions/checkout@v4
+      - name: Smoke-test the runner without installing packages
+        run: ./run --dry
