@@ -1,6 +1,6 @@
 # Onboarding: Nuevo Atleta
 
-Proceso para crear el perfil del atleta cuando no hay ningún plan en `<coach_dir>/plans/`. El perfil se guarda dentro del informe del plan.
+Proceso para recoger el perfil del atleta cuando no hay ningún plan en `<coach_dir>/plans/`. Lo usa el modo Nuevo plan (`references/mode-nuevo-plan.md`). El perfil se guarda dentro del informe del plan, no en un archivo aparte.
 
 La entrevista cubre los campos **core** del perfil. Los campos avanzados (baselines de recuperación, nutrición, exportación, periodización, métricas de Garmin) se completan progresivamente conforme el coach interactúa con el atleta.
 
@@ -99,20 +99,20 @@ Si el atleta no especifica, asume estos valores por defecto:
 
 ---
 
-## 5. Crear el perfil
+## 5. Preparar el perfil
 
-1. Crear `<coach_dir>/plans/<objetivo>/informe.md` con frontmatter `title` y `tags` (`coach/plan`, `personal/deporte`). Si aún no hay un objetivo concreto, usa un nombre genérico (por ejemplo `plan-inicial`).
-2. Añadir la sección 1 (objetivo o carrera) con lo que el atleta haya dicho.
-3. Añadir la sección 3 «Perfil del atleta» con la estructura de `references/athlete-template.md` y rellenarla con la entrevista
-4. Dejar sin rellenar los apartados no cubiertos y listarlos en 3.10 «Datos por completar» (NO inventar)
-5. El apartado 3.8 «Estado actual» se rellena con la fase inicial (normalmente "Base" o "Reacondicionamiento")
-6. Cuando se diseñe el plan (sección «Rutinas»), añadir en cada rutina un bloque «Contexto del atleta» con los datos del perfil que le afectan
-7. Si tiene Garmin conectado: invocar la skill `garmin` para un pull inicial de métricas y completar 3.3 y 3.4
+No guardes aún el informe: el modo Nuevo plan lo guarda cuando el atleta aprueba el borrador (paso 6 de `mode-nuevo-plan.md`). Prepara el perfil en borrador:
+
+1. Usar la estructura de `references/athlete-template.md` para el apartado 3 «Perfil del atleta» y rellenarla con la entrevista
+2. Dejar sin rellenar los apartados no cubiertos y listarlos en 3.10 «Datos por completar» (NO inventar)
+3. El apartado 3.8 «Estado actual» se rellena con la fase inicial (normalmente "Base" o "Reacondicionamiento")
+4. Si tiene Garmin conectado: invocar la skill `garmin` para un pull inicial de métricas y completar 3.3 y 3.4
+5. Más adelante, al diseñar el plan, cada rutina lleva un bloque «Contexto del atleta» con los datos del perfil que le afectan
 
 ---
 
 ## 6. Post-onboarding
 
-1. Confirmar al usuario: mostrar resumen del perfil creado
+1. Confirmar al usuario: mostrar resumen del perfil
 2. `add_memory(content="Onboarding completado. Perfil creado con [resumen breve]")`
-3. Preguntar: ¿quieres que te prepare un plan de entrenamiento?
+3. Continuar con el paso 2 («Objetivo») de `references/mode-nuevo-plan.md`

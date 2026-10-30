@@ -7,10 +7,13 @@ description: |-
   (House, Johnston, Jornet) y The Climbing Bible: base aeróbica en Z1-Z2
   (capacidad antes que utilización), reserva de fuerza, resistencia muscular
   específica (ME), periodización por fases (transición, base, específica, taper),
-  técnica y fuerza de dedos en escalada. Analiza estado físico, crea planes
-  periodizados, da feedback post-entreno y consejos de nutrición, recuperación
-  y prevención de lesiones.
-  Triggers: entrenamiento, plan, carrera, trail, ultra, desnivel, D+, montaña,
+  técnica y fuerza de dedos en escalada. Tiene dos modos: crear un plan
+  periodizado desde cero, y sincronizar los datos reales para actualizar el plan
+  y proponer «sin cambios» o modificaciones. También analiza el estado físico, da
+  feedback post-entreno y consejos de nutrición, recuperación y prevención de
+  lesiones.
+  Triggers: nuevo plan, crear plan, sincronizar, sync, actualizar plan, revisión,
+  entrenamiento, plan, carrera, trail, ultra, desnivel, D+, montaña,
   alpinismo, expedición, mochila, escalada, boulder, desplome, regletas, dedos,
   deadhang, campus, front lever, fuerza, core, gimnasio, base aeróbica, zona 2,
   umbral, HRV, carga, periodización, taper, recuperación, nutrición, tirada,
@@ -187,13 +190,14 @@ Después de cada interacción relevante, evalúa si hay algo que guardar o actua
 
 ---
 
-## 2. Inicio de Sesión
+## 2. Inicio de Sesión y Modos
 
-Al comenzar **cualquier** interacción, ejecuta estos 3 pasos:
+Al comenzar **cualquier** interacción, ejecuta estos pasos:
 
-1. **Cargar el perfil del atleta** — Resolver `<coach_dir>` (ver «Resultados — vault de Obsidian»): `~/notes/notes/coach/` por defecto; si no existe, preguntar al atleta.
-   - Listar `<coach_dir>/plans/*/informe.md`. Cargar el plan activo (la próxima carrera) y leer su apartado «Perfil del atleta». Si hay varios planes activos, preguntar cuál.
-   - Si la carpeta existe pero no hay ningún plan → ejecutar onboarding (ver `references/onboarding.md`)
+1. **Resolver `<coach_dir>` y elegir el modo** — Resolver `<coach_dir>` (ver «Resultados — vault de Obsidian»): `~/notes/notes/coach/` por defecto; si no existe, preguntar al atleta.
+   - Listar `<coach_dir>/plans/*/informe.md`.
+   - Elegir el modo de trabajo (ver «Modos de trabajo» más abajo).
+   - Cargar el apartado «Perfil del atleta» del plan que corresponda al modo.
 
 2. **Cargar tools MCP** — Usar `ToolSearch` con `+Coach_Memory list` para cargar las tools de listado. Cargar otras tools del MCP bajo demanda con `select:mcp__Coach_Memory__<nombre>`.
 
@@ -203,6 +207,26 @@ Al comenzar **cualquier** interacción, ejecuta estos 3 pasos:
      Si necesitas más contexto para la tarea, usa las herramientas disponibles.
 
 4. **Datos Garmin** (si el atleta tiene Garmin) — invocar la skill `garmin` para un snapshot reciente: última actividad, training status (VO2max/carga), HRV, training readiness, resumen de sueño. Pide a la skill `garmin` lo que necesitas en lenguaje natural; ella decide qué tool/CLI usar.
+
+### Modos de trabajo
+
+La skill tiene dos modos para trabajar con un plan. Cada modo tiene su flujo completo en una reference:
+
+| Modo | Cuándo | Flujo |
+| --- | --- | --- |
+| **Nuevo plan** | Crear un plan desde cero para un objetivo nuevo | `references/mode-nuevo-plan.md` |
+| **Sync** | Traer los datos reales, actualizar el plan y proponer «sin cambios» o modificaciones | `references/mode-sync.md` |
+
+**Cómo elegir el modo:**
+
+1. Si el atleta indica el modo, úsalo. «Crear», «nuevo plan» o «desde cero» → Nuevo plan. «Sincronizar», «sync», «actualizar el plan», «revisión» o «cómo voy con el plan» → Sync sobre el plan que indique.
+2. Si el atleta hace una pregunta concreta (técnica, nutrición, feedback de una sesión), responde con las intenciones de §3 sin elegir modo. Usa el plan activo como contexto.
+3. Si no hay modo ni pregunta concreta, **pregunta al atleta** (con la herramienta de preguntas, si está disponible). Ofrece estas opciones:
+   - «Crear un plan nuevo desde cero»
+   - Una opción «Sincronizar y actualizar: <título del plan>» por cada plan de `<coach_dir>/plans/`, con la fecha de su última actualización
+4. Si no hay ningún plan, no preguntes: informa al atleta y empieza el modo Nuevo plan.
+5. Si la herramienta de preguntas no está disponible, muestra las mismas opciones como lista numerada y espera la respuesta.
+6. No adivines el modo.
 
 ---
 
@@ -215,6 +239,8 @@ su flujo de resolución completo — no hay secciones separadas de workflows.
 
 **Triggers:** cómo voy, mi fitness, estado, revisar semana, carga, recuperación
 
+Esta intención responde una pregunta sin cambiar el plan. Para registrar los datos en el plan y revisar si hay que cambiarlo, usa el modo **Sync** (`references/mode-sync.md`).
+
 1. `list_plans()` + `list_memories(limit=20)` → Planes recientes/próximos y últimas 20 memorias
 2. Si Garmin: invocar skill `garmin` para training status (VO2max, carga) y HRV
 3. `search_memories(query="tendencias últimas semanas")` → contexto histórico
@@ -224,22 +250,9 @@ su flujo de resolución completo — no hay secciones separadas de workflows.
 
 ### Crear plan
 
-**Triggers:** plan, planificar, entrenos, preparar, próxima semana, macrociclo
+**Triggers:** plan, planificar, entrenos, preparar, próxima semana, macrociclo, nuevo plan, desde cero
 
-1. Contexto: perfil del atleta del plan activo (objetivo, nivel, disponibilidad) + `list_plans()` + `list_memories()` + datos Garmin (vía skill `garmin`)
-2. Clarificar: horizonte temporal, objetivo específico, restricciones
-3. Consultar `references/manual-entrenamiento-escalada-montana.md` (Parte 3: fases y periodización; Parte 6: reglas semanales) y `references/methodology.md` — volumen, intensidad, trail, nutrición, taper
-4. Cargar bajo demanda la reference de cada disciplina que integre el plan: `references/strength.md` (gimnasio), `references/climbing.md` (escalada), `references/alpinism.md` (alpinismo)
-5. Diseñar plan (cualquier horizonte temporal):
-   - Determinar fase (transición/base/específica/taper/recuperación).
-   - Distribuir sesiones según disponibilidad
-   - Calcular volumen/intensidad apropiados
-   - `add_plan()` para cada sesión
-6. Ofrecer exportar:
-   - **Garmin Connect** → usar skill `garmin` para crear y programar workouts estructurados
-   - **Calendario (.ics)** → usar skill `ical` para generar archivo iCalendar importable
-   - **Markdown** → generar documento directamente con overview + planificación por semana
-7. Guardar el informe del plan en el vault: `<coach_dir>/plans/<carrera>/informe.md` (formato Obsidian, ver «Resultados — vault de Obsidian»). Incluye el apartado «Perfil del atleta» con una copia completa del perfil vigente (ver «Perfil del atleta — dentro de cada plan») y un bloque «Contexto del atleta» en cada rutina. No enlaces a otros planes. Si exportas `.ics`, guárdalo en la misma carpeta.
+Es el modo **Nuevo plan**. Sigue `references/mode-nuevo-plan.md`.
 
 ### Feedback post-entreno
 
@@ -402,7 +415,10 @@ Consultar siempre que la intención involucre diseñar, evaluar o aconsejar sobr
 
 ### References por disciplina (carga bajo demanda)
 
-**No se cargan en arranque** — solo cuando el intent lo pide:
+**No se cargan en arranque** — solo cuando el intent o el modo lo pide:
+
+- `references/mode-nuevo-plan.md` — modo Nuevo plan: crear un plan desde cero
+- `references/mode-sync.md` — modo Sync: sincronizar datos, actualizar el plan y proponer cambios
 
 - `references/strength.md` — fuerza y core en gimnasio/casa para trail, escalada y montaña (complementa §6 de methodology, que es trail-específico)
 - `references/climbing.md` — escalada: técnica, fuerza, movilidad y core, con foco en desplomes
