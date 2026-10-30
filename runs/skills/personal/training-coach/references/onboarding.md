@@ -1,6 +1,6 @@
 # Onboarding: Nuevo Atleta
 
-Proceso para crear el perfil cuando no existe ATHLETE.md.
+Proceso para crear el perfil del atleta cuando no hay ningún plan en `<coach_dir>/plans/`. El perfil se guarda dentro del informe del plan.
 
 La entrevista cubre los campos **core** del perfil. Los campos avanzados (baselines de recuperación, nutrición, exportación, periodización, métricas de Garmin) se completan progresivamente conforme el coach interactúa con el atleta.
 
@@ -10,20 +10,20 @@ La entrevista cubre los campos **core** del perfil. Los campos avanzados (baseli
 
 Resolver `<coach_dir>` según `SKILL.md` («Resultados — vault de Obsidian»): `~/notes/notes/coach/` por defecto; si la carpeta no existe, preguntar al atleta la ruta.
 
-Buscar `<coach_dir>/ATHLETE.md`.
+Buscar `<coach_dir>/plans/*/informe.md`.
 
-Si la carpeta existe pero el archivo no → iniciar onboarding.
+Si la carpeta existe pero ningún informe tiene el apartado «Perfil del atleta» → iniciar onboarding.
 
 ---
 
 ## 2. Entrevista
 
-Recoge información siguiendo las secciones de ATHLETE.md.
+Recoge información siguiendo los apartados de `references/athlete-template.md`.
 No hagas todas las preguntas de golpe — agrupa en bloques conversacionales. Espera respuesta de cada bloque antes de pasar al siguiente.
 
 ### Bloque 1: Conocerte
 
-_Rellena: §1 Información Personal (datos, salud, disponibilidad)_
+_Rellena: 3.1 Salud y 3.2 Disponibilidad y estructura de entrenamiento_
 
 - Nombre, edad, peso/altura
 - Ubicación y clima habitual
@@ -34,19 +34,22 @@ _Rellena: §1 Información Personal (datos, salud, disponibilidad)_
 - Preferencia de día para tirada larga
 - Prioridad vida-deporte
 
-### Bloque 2: Tu running
+### Bloque 2: Tu entrenamiento
 
-_Rellena: §2 Información Deportiva (historial, zonas, equipo)_
+_Rellena: 3.3 Capacidad y métricas, 3.4 Zonas de FC y 3.6 Fuerza, escalada y montaña_
 
 - Historial deportivo (¿cuánto llevas corriendo? ¿de qué vienes? ¿has competido?)
 - Volumen semanal típico (km/semana o horas/semana)
 - Ritmos de referencia (¿ritmo cómodo? ¿algún test reciente?)
+- Montaña y alpinismo: salidas largas habituales, desnivel, mochila, altitud y material (botas, bastones)
+- Escalada: tipo (boulder, deportiva, vía larga), nivel máximo, frecuencia y lesiones de dedos
+- Fuerza: días por semana, cargas de referencia y número de dominadas estrictas
 - Dispositivo/reloj (¿usas Garmin, Coros, otro?)
 - ¿Tienes zonas de FC configuradas en el dispositivo?
 
 ### Bloque 3: Objetivos
 
-_Rellena: §3 Objetivos (metas, carreras)_
+_Rellena: 3.7 Calendario de carreras y la sección 1 del informe (objetivo)_
 
 - Objetivo principal (carrera concreta, marca, mejorar forma, retomar tras pausa...)
 - Horizonte temporal (¿para cuándo?)
@@ -54,7 +57,7 @@ _Rellena: §3 Objetivos (metas, carreras)_
 
 ### Bloque 4: Cómo trabajamos
 
-_Rellena: §4 Preferencias (filosofía, estilo, feedback)_
+_Rellena: 3.2 (preferencias de coaching)_
 
 - Filosofía (consistencia vs intensidad, volumen vs calidad)
 - Estilo de coaching preferido (exigente, empático, técnico, flexible)
@@ -69,16 +72,13 @@ Estos campos NO se preguntan en el onboarding. El coach los rellena conforme tra
 
 | Campo | Cuándo se completa | Fuente |
 |-------|-------------------|--------|
-| Métricas fisiológicas (VO2max, LTHR, FC max) | Pull inicial de Garmin o primeras semanas | skill `garmin` |
+| Métricas fisiológicas (VO2max, LTHR, FC max) y FC de reposo | Pull inicial de Garmin o primeras semanas | skill `garmin` |
+| FC en el umbral aeróbico (AeT) y test del 10% | Cuando se haga el test de campo del manual | Test de campo |
 | Modelo de zonas y zonas detalladas | Pull de Garmin o test | Dispositivo |
-| Distribución de intensidad | Tras analizar primeras semanas | Decisión del coach |
-| Herramientas de medición (RPE, potencia) | Conforme se usan | Observación |
-| Baselines de recuperación (HRV, RHR, sueño) | 2-4 semanas de datos | skill `garmin` |
-| Modelo de periodización | Al diseñar el primer plan | Decisión del coach |
-| Nutrición (train-low, fueling, GI) | Cuando se aborde nutrición | Conversación |
-| Reglas de exportación | Primera exportación | Conversación |
-| Estado de forma (métricas Garmin) | Cada actualización de Momentum | skill `garmin` |
-| Observaciones críticas | Conforme se detectan patrones | Análisis continuo |
+| Baselines de recuperación (HRV, sueño) | 2-4 semanas de datos | skill `garmin` |
+| Nutrición (tolerancia, fueling, GI) | Cuando se aborde nutrición | Conversación |
+| Estado actual | Cada actualización del plan | skill `garmin` y conversación |
+| Observaciones | Conforme se detectan patrones | Análisis continuo |
 
 ---
 
@@ -101,12 +101,13 @@ Si el atleta no especifica, asume estos valores por defecto:
 
 ## 5. Crear el perfil
 
-1. Usar la template: `references/athlete-template.md`
-2. Rellenar con la información recopilada en la entrevista
-3. Dejar secciones no cubiertas con los placeholders del template (NO inventar)
-4. La sección **Momentum** se rellena con la fase inicial (normalmente "Base" o "Reacondicionamiento")
-5. Guardar en `<coach_dir>/ATHLETE.md` (vault de Obsidian), con frontmatter `title` y `tags` (`coach/athlete`, `personal/deporte`)
-6. Si tiene Garmin conectado: invocar la skill `garmin` para un pull inicial de métricas y completar §2 (fisiológicas, zonas, baselines)
+1. Crear `<coach_dir>/plans/<objetivo>/informe.md` con frontmatter `title` y `tags` (`coach/plan`, `personal/deporte`). Si aún no hay un objetivo concreto, usa un nombre genérico (por ejemplo `plan-inicial`).
+2. Añadir la sección 1 (objetivo o carrera) con lo que el atleta haya dicho.
+3. Añadir la sección 3 «Perfil del atleta» con la estructura de `references/athlete-template.md` y rellenarla con la entrevista
+4. Dejar sin rellenar los apartados no cubiertos y listarlos en 3.10 «Datos por completar» (NO inventar)
+5. El apartado 3.8 «Estado actual» se rellena con la fase inicial (normalmente "Base" o "Reacondicionamiento")
+6. Cuando se diseñe el plan (sección «Rutinas»), añadir en cada rutina un bloque «Contexto del atleta» con los datos del perfil que le afectan
+7. Si tiene Garmin conectado: invocar la skill `garmin` para un pull inicial de métricas y completar 3.3 y 3.4
 
 ---
 

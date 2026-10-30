@@ -1,182 +1,132 @@
-# Atleta: [Nombre]
+# Perfil del atleta — plantilla
 
-## 1. Información Personal
+Estructura del apartado «Perfil del atleta» de un informe de plan (`<coach_dir>/plans/<objetivo>/informe.md`). Copia desde «## 3. Perfil del atleta» y rellénala con datos reales. La numeración 3.x supone que el perfil es la sección 3 del informe. Ajusta los números si cambia.
 
-_Datos biométricos, médicos y logísticos que definen el contexto vital del atleta._
+Reglas:
 
-- Edad/Año nacimiento
-- Peso/Altura
-- Ubicación/Clima habitual
-- Idioma
+- No inventes datos. Deja sin rellenar lo que no sepas y lístalo en 3.10.
+- Anota la fuente y la fecha entre paréntesis en cada métrica.
+- No guardes datos que cambian en horas o en pocos días.
+- Cada plan lleva su propia copia completa del perfil, como snapshot del estado del atleta. No enlaces a otros planes.
+- Cada rutina del plan repite solo lo que le afecta, en un bloque «Contexto del atleta» (ver el final de este archivo).
 
-### Salud
+---
 
-_Condiciones activas que afectan al entrenamiento, y lesiones pasadas relevantes para prevención._
+## 3. Perfil del atleta
 
-- **Condiciones actuales:** [Sin condiciones limitantes registradas]
-- **Historial de lesiones:** [Sin lesiones relevantes registradas]
+### 3.1 Salud
 
-### Disponibilidad y Horario
+_Condiciones activas que afectan al entrenamiento y lesiones pasadas relevantes para prevención._
 
-_Restricciones de calendario fijas y preferencias de conciliación._
+- **Condiciones actuales:**
+- **Historial de lesiones:**
+- **Zonas críticas del objetivo:** tramos o movimientos que cargan la zona lesionada
 
-- **Restricciones fijas:** Días/horas no disponibles para correr (trabajo, compromisos)
-- **Otras actividades deportivas:** Fuerza, escalada, alpinismo, etc. — días y horario
-- **Preferencias:**
-  - Horario preferido para correr
-  - Día preferido para tirada larga
-  - Prioridad vida-deporte
+### 3.2 Disponibilidad y estructura de entrenamiento
 
-## 2. Información Deportiva
+- **Restricciones fijas:** días y horas no disponibles (trabajo, compromisos), acceso a desnivel
+- **Estructura actual:** días de fuerza, escalada, cinta o stepper y salidas de montaña
+- **Preferencias:** día de la tirada larga, horario, prioridad vida-deporte
+- **Preferencias de coaching:** estilo (exigente, empático, técnico, flexible), nivel de detalle del feedback, datos objetivos frente a sensaciones
 
-_Perfil atlético, historial, capacidades fisiológicas y herramientas disponibles._
+### 3.3 Capacidad y métricas
 
-- **Historial deportivo:** Años corriendo, background, nivel
-- **Ritmo de referencia actual:** Ritmo cómodo/conversacional
+_Valores medidos o estimados. Fuente y fecha entre paréntesis._
 
-### Métricas Fisiológicas
+- **Edad, peso y altura:**
+- **Historial deportivo:** años, background, nivel
+- **Ritmo de referencia (llano cómodo):**
+- **Ritmo en montaña con mochila:**
+- **VO2max:**
+- **Umbral de lactato (LT):** bpm | ritmo
+- **Umbral aeróbico (AeT):** bpm
+- **Test del 10%:** diferencia entre la FC en el LT y en el AeT. Si supera el 10%, hay déficit aeróbico (ADS). Ver el manual de entrenamiento de escalada y montaña.
+- **FC máxima:** medida o estimada
+- **FC en reposo (baseline):**
+- **HRV (baseline):** RMSSD y variación típica
+- **Sueño habitual:**
+- **Pruebas de rendimiento:** fecha, protocolo y resultado
 
-_Valores fisiológicos medidos o estimados. Fuente y fecha entre paréntesis._
+### 3.4 Zonas de FC
 
-- VO2max
-- Umbral de Lactato: bpm | ritmo
-- FC máxima (medida o estimada)
+_Referencias de intensidad. Indica el origen: FC máxima, LTHR o reserva cardíaca (Karvonen)._
 
-### Zonas y Umbrales
+- **Modelo:** (origen y fecha)
+- **Z1:** (recuperación activa)
+- **Z2:** (base aeróbica)
+- **Z3:** (tempo)
+- **Z4:** (umbral)
+- **Z5:** (VO2max)
+- **Ritmo de umbral (Z4):**
 
-_Referencias de intensidad. Especificar origen: FC max, LTHR, o reserva cardíaca. La fuente de verdad principal suele ser la configuración del dispositivo._
+### 3.5 Nutrición
 
-- **Modelo de zonas:** Basado en [FC max / LTHR / Reserva]
-- **Zonas de FC:**
-  - Z1: (Recuperación activa)
-  - Z2: (Base aeróbica)
-  - Z3: (Tempo)
-  - Z4: (Umbral)
-  - Z5: (VO2max)
-- **Ritmos de referencia:**
-  - Z2 (Rodaje suave):
-  - Z4 (Calidad):
+- **Tolerancia a entrenar con pocos carbohidratos:**
+- **Sensibilidades digestivas:**
+- **Fueling en carrera:** comida real o geles, g/h tolerados
+- **Gut training:**
 
-### Distribución de Intensidad
+### 3.6 Fuerza, escalada y montaña
 
-_Ratio actual y objetivo entre volumen fácil (Z1-Z2) e intenso (Z4-Z5). Ver metodología §3._
+_Detalles metodológicos en las references de la skill: `strength.md`, `climbing.md`, `alpinism.md`._
 
-- **Distribución actual:** ej: 85/15
-- **Distribución objetivo:** ej: 80/20
-- **Principios aplicados:** Evitar zona gris, método para rodajes base (MAF, FC, sensación), método para calidad
+- **Fuerza/Core:** días por semana, foco actual, cargas de referencia y dominadas estrictas
+- **Escalada:** frecuencia, tipo (boulder, deportiva, vía larga), nivel máximo (redpoint/flash), prioridad, historial de dedos y poleas
+- **Montaña con mochila:** salidas de referencia, desnivel y peso de mochila habitual
+- **Material:** botas, bastones (experiencia), reloj y ecosistema
+- **Alpinismo:** objetivos, experiencia y altitud
 
-### Herramientas de Medición
+### 3.7 Calendario de carreras
 
-_Métricas complementarias a FC que el atleta usa o tiene disponibles._
-
-- **RPE:** ¿Usa RPE como complemento? ¿Calibración fiable?
-- **Potencia:** ¿Tiene Stryd u otro? ¿Lo usa activamente?
-
-### Baselines de Recuperación
-
-_Valores de referencia en estado normal. Necesarios para detectar desviaciones (metodología §5)._
-
-- **HRV:** RMSSD baseline, CV típico
-- **RHR:** Baseline (bpm)
-- **Sueño:** Patrón típico (horas, horario, calidad habitual)
-
-### Equipamiento
-
-_Hardware y material disponible para el entrenamiento._
-
-- Modelo de reloj/GPS
-- Ecosistema (Garmin, Coros, etc.)
-- Zapatillas y material relevante
-
-### Fuerza, escalada y alpinismo
-
-_Disciplinas activas además del trail running. Mantener vacío si no aplica. Detalles metodológicos en `references/strength.md`, `references/climbing.md`, `references/alpinism.md`._
-
-- **Fuerza/Core:** Frecuencia, foco actual (fuerza máxima, resistencia muscular, prevención), tests/PRs si aplica
-- **Escalada:** Frecuencia, tipo (boulder, deportiva, vía larga), nivel máximo (redpoint/flash), tipo de agarre y lesiones de dedos
-- **Alpinismo:** Objetivos, experiencia, carga de mochila habitual y desnivel acumulado de referencia
-
-## 3. Objetivos
-
-_Metas temporales jerarquizadas que guían la periodización del plan._
-
-- **Fecha de definición:** [Mes Año]
-- **Corto Plazo:**
-- **Medio Plazo:**
-- **Largo Plazo (Visión):**
-
-### Calendario de Carreras
-
-_Carreras objetivo y de preparación. Las fechas concretas son necesarias para periodizar y taperizar (metodología §1, §8)._
+_Las fechas son necesarias para periodizar y hacer el taper._
 
 | Fecha | Nombre | Distancia | D+ | Tipo | Prioridad |
-|-------|--------|-----------|-----|------|-----------|
-|  |  |  |  |  | A/B/C |
+| ----- | ------ | --------- | -- | ---- | --------- |
+|       |        |           |    |      | A/B/C     |
 
-### Modelo de Periodización
+### 3.8 Estado actual
 
-_Modelo elegido según perfil y objetivos. Ver metodología §1 para opciones._
+_Contexto vivo del estado físico y del foco del microciclo. Actualizar a menudo._
 
-- **Modelo:** [Lineal / Block / Funnel / Reverse / Ondulante]
-- **Justificación:**
+- **Última actualización:**
+- **Fase:** Transición, Base, Específica, Taper o Recuperación
+- **Volumen reciente:**
+- **Foco:**
 
-## 4. Preferencias de Entrenamiento
+### 3.9 Observaciones
 
-_Pautas explícitas sobre la metodología, estilo de coaching y comunicación._
+_Problemas detectados, patrones y señales positivas. Anota siempre la fecha para saber si siguen vigentes._
 
-- **Filosofía:** ej: Consistencia > Heroicidades
-- **Estilo del coach:** Duro, Empático, Técnico, Flexible...
-- **Feedback:** Explicar el porqué, datos vs sensaciones, nivel de detalle
+- (fecha) Observación
 
-### Datos y Métricas
+### 3.10 Datos por completar
 
-_Cómo prioriza el atleta los datos objetivos vs subjetivos, y protocolo post-actividad._
+_Datos que faltan. Pregúntalos cuando sean relevantes y pásalos al apartado que corresponda._
 
-- **Prioridad:** Datos objetivos vs sensaciones vs mixto
-- **Post-actividad:** ¿Completa RPE, Feel, Notas en Garmin? ¿Sistemáticamente?
+-
 
-### Nutrición
+---
 
-_Tolerancias y estrategia nutricional relevante para el entrenamiento. Ver metodología §7._
+## Bloque «Contexto del atleta» de cada rutina
 
-- **Train-low:** ¿Tolerancia a entrenar con baja disponibilidad de CHO?
-- **Sensibilidades GI:** Alimentos/productos que no tolera
-- **Fueling en carrera:** Experiencia, productos probados, gramos/hora tolerados
-- **Gut training:** ¿Lo practica? ¿Desde cuándo?
+Cada rutina del informe empieza con un callout que repite solo los datos del perfil que le afectan. Cada línea cita el apartado de origen.
 
-### Exportación
+```markdown
+### 6.1 Nombre de la rutina
 
-_Reglas para exportar planes a calendario y dispositivo._
+> [!info] Contexto del atleta (§3)
+> - **Tema:** dato que afecta a esta rutina (§3.x).
+```
 
-- **Incluir:** Qué tipos de sesión exportar (rodajes, series, descansos activos...)
-- **Excluir:** Qué NO exportar (descansos totales, fuerza ya agendada...)
-- **Horarios .ical:** Entre semana / Fin de semana
-- **Formato Garmin:** Qué incluir en `description` de workouts
+Qué incluir según el tipo de rutina:
 
-## 5. Momentum
+| Rutina | Datos del perfil |
+| ------ | ---------------- |
+| Fuerza de pierna o fullbody | Lesiones y reglas de dolor (3.1), estructura semanal (3.2) |
+| Fuerza de torso | Escalada y tirón ya cubiertos (3.6), recuperación (3.3) |
+| Cinta, stepper o cardio | Zonas de FC y métricas (3.3 y 3.4), referencias de ascenso, impacto permitido (3.1) |
+| Tirada larga o salida de montaña | Disponibilidad (3.2), ritmo en montaña (3.3), nutrición (3.5), material y bastones (3.6) |
+| Core y movilidad | Escalada (3.6), lesiones que condicionan el ejercicio (3.1), adherencia (3.2) |
+| Escalada | Nivel, historial de dedos y poleas (3.6), prioridad frente al resto (3.2) |
 
-_Contexto vivo del estado físico/mental actual y foco del microciclo presente. Actualizar frecuentemente._
-
-- **Última actualización:** [DD mes AAAA]
-- **Fase:** [Base / Específico / Taper / Recuperación / Reacondicionamiento]
-
-### Volumen Actual
-
-_Carga semanal actual y estructura típica._
-
-- **Volumen:** km/semana (o TOF para trail)
-- **Estructura:** Sesiones/semana y distribución (ej: 3 running + 2 fuerza)
-
-### Foco Actual
-
-- [Objetivo principal del bloque/semana en curso]
-
-### Estado de Forma (Métricas)
-
-_Snapshot de métricas recientes del dispositivo, pero no métricas que cambien en pocas horas o días._
-
-### Observaciones Críticas
-
-_Issues detectados, patrones de comportamiento, señales positivas. Registro vivo que informa decisiones. Para las observaciones es importante que plasmes también la fecha en la que la registraste, para saber si llevan mucho tiempo, si siguen aplicando en el presente, etc_
-
-- [Observaciones relevantes]
+Si un dato cambia en el perfil, actualiza también los bloques que lo citan.

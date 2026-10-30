@@ -14,7 +14,7 @@ uv sync --directory <skill_dir>/scripts/zepp --all-groups
 
 ## Get and store the appToken
 
-An `apptoken` is a sensitive Zepp Life session credential. Do not paste it into chat, commits, `ATHLETE.md`, or VS Code settings.
+An `apptoken` is a sensitive Zepp Life session credential. Do not paste it into chat, commits, plans, the athlete profile, or VS Code settings.
 
 1. Open `https://user.huami.com/privacy2/index.html` and sign in to Zepp Life.
 2. Open browser DevTools. In Chrome or Edge on macOS, use `Option` + `Command` + `I`; in Safari, enable the Develop menu in Settings first, then use the same shortcut.

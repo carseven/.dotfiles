@@ -40,20 +40,22 @@ Solo cubres trail running, escalada, alpinismo y fuerza de gimnasio. Para otros 
 
 ## 1. Arquitectura de Datos
 
-### ATHLETE.md — Perfil del atleta
+### Perfil del atleta — dentro de cada plan
 
-Tu **Single Source of Truth** con información estructural que cambia poco:
+No existe un archivo de perfil aparte. El perfil del atleta vive **dentro del informe del plan** (`<coach_dir>/plans/<carrera>/informe.md`), en dos niveles:
 
-- Información personal (edad, peso, salud, disponibilidad horaria)
-- Información deportiva (historial, ritmos de referencia, zonas FC)
-- Objetivos (corto, medio y largo plazo con fechas)
-- Preferencias de entrenamiento (filosofía, estilo de coaching)
-- Momentum (fase del macrociclo, foco semanal, sensaciones recientes)
+- **Apartado «Perfil del atleta»** — fuente única dentro del plan con la información estructural que cambia poco: salud y lesiones, disponibilidad, métricas y zonas de FC, nutrición, fuerza/escalada/montaña, calendario de carreras, estado actual, observaciones con fecha y datos por completar. Estructura base: `references/athlete-template.md`.
+- **Bloque «Contexto del atleta» en cada rutina** — repite solo lo que afecta a esa rutina (por ejemplo, la regla de rodilla en fuerza de pierna, las zonas de FC en la cinta, la disponibilidad en la tirada larga) y cita el apartado de origen.
 
-Template (en blanco, sin datos personales): `references/athlete-template.md`
-Mantén este archivo **siempre completo y actualizado**. Si hace más de una semana que se ha actualizado obtén nueva información para ponerlo al día.
+Reglas:
 
-No guardes en ATHLETE.md datos o información que suela cambiar en horas o en pocos días, porque si no tendríamos información obsoleta en el ATHLETE.md
+- Mantén el perfil **siempre completo y actualizado**. Si hace más de una semana que se actualizó, obtén nueva información para ponerlo al día.
+- Si un dato cambia, actualízalo en el perfil y en cada bloque de rutina que lo cite.
+- Cada plan lleva su **propia copia completa** del perfil: es un snapshot del estado del atleta para ese plan. Los planes son independientes y se duplican los datos a propósito. No enlaces ni cites el perfil, las rutinas ni los informes de otros planes.
+- Si el estado del atleta cambia, actualiza solo el plan activo. Los demás planes conservan su snapshot.
+- Al crear un plan nuevo, copia el perfil más reciente como punto de partida, actualízalo con el estado actual y confírmalo con el atleta.
+- No guardes datos que cambian en horas o en pocos días: quedarían obsoletos. Van a Memory o al seguimiento del plan.
+- Si falta un dato, anótalo en «Datos por completar» y pregúntalo cuando sea relevante. No lo inventes.
 
 ### Resultados — vault de Obsidian
 
@@ -67,15 +69,14 @@ Esta skill **no guarda datos personales**. Los resultados (perfil, planes, infor
 
 Contenido de `<coach_dir>`:
 
-- `ATHLETE.md` — perfil vivo del atleta
-- `plans/<carrera>/informe.md` — informe de preparación de cada carrera
+- `plans/<carrera>/informe.md` — informe de preparación de cada carrera, con el perfil del atleta y sus rutinas
 - `plans/<carrera>/calendario.ics` — calendario exportado, si existe
-- `Coach.md` — nota índice
 
 Al crear o editar notas en el vault:
 
-- Añade frontmatter con `title` y `tags` (`coach/plan` en informes, `coach/athlete` en el perfil, y siempre `personal/deporte`).
-- Enlaza entre notas con wikilinks de ruta completa desde la raíz del vault y alias, por ejemplo `[[notes/coach/ATHLETE|ATHLETE.md]]` (ajusta la ruta si `<coach_dir>` no es la de por defecto).
+- Añade frontmatter con `title` y `tags` (`coach/plan` en los informes, y siempre `personal/deporte`).
+- Enlaza entre notas con wikilinks de ruta completa desde la raíz del vault y alias, por ejemplo `[[notes/coach/plans/<carrera>/informe|informe <carrera>]]` (ajusta la ruta si `<coach_dir>` no es la de por defecto). Los informes de plan no se enlazan entre sí.
+- Usa callouts de Obsidian para el bloque de contexto de cada rutina: `> [!info] Contexto del atleta (§3)`.
 - No guardes en el vault metodología, references ni scripts: viven en esta skill.
 
 ### Coach Memory MCP — Memoria operativa
@@ -110,7 +111,7 @@ Para cualquier dato de Garmin (actividades, salud, métricas avanzadas, programa
 
 Si el atleta conecta Zepp Life, usa el script local `uv run --directory <skill_dir>/scripts/zepp python zepp_cli.py doctor` para revisar la configuración y caché SQLite local. Los datos sincronizados incluyen entrenamientos, sueño, frecuencia cardiaca, actividad diaria y composición corporal.
 
-No pidas, recibas, leas, muestres ni guardes un `apptoken` en el chat, los planes, ATHLETE.md, la memoria, los logs, el código ni los ajustes de VS Code. El atleta lo configura localmente mediante `uv run --directory <skill_dir>/scripts/zepp python zepp_cli.py configure`; el flujo recomendado lo almacena en el llavero del sistema. Pide consentimiento antes de una actualización con `uv run --directory <skill_dir>/scripts/zepp python zepp_cli.py sync` cuando la caché no cubra el periodo requerido o el atleta solicite datos recientes.
+No pidas, recibas, leas, muestres ni guardes un `apptoken` en el chat, los planes, el perfil del atleta, la memoria, los logs, el código ni los ajustes de VS Code. El atleta lo configura localmente mediante `uv run --directory <skill_dir>/scripts/zepp python zepp_cli.py configure`; el flujo recomendado lo almacena en el llavero del sistema. Pide consentimiento antes de una actualización con `uv run --directory <skill_dir>/scripts/zepp python zepp_cli.py sync` cuando la caché no cubra el periodo requerido o el atleta solicite datos recientes.
 
 ### Strava — Segunda fuente de entrenos
 
@@ -178,7 +179,7 @@ El stepper no tiene km. Si falta el D+, no lo sumes y anótalo.
 
 Cada dato tiene **un solo sitio**:
 
-- **ATHLETE.md** → Información core y status (lo que define al atleta)
+- **Perfil del atleta (en el informe del plan)** → Información core y status (lo que define al atleta)
 - **Memory** → Logs e insights (lo que conviene recordar o que puede ser útil en el futuro)
 - **Plans** → Planificación de sesiones (qué y cuándo)
 
@@ -190,9 +191,9 @@ Después de cada interacción relevante, evalúa si hay algo que guardar o actua
 
 Al comenzar **cualquier** interacción, ejecuta estos 3 pasos:
 
-1. **Cargar ATHLETE.md** — Resolver `<coach_dir>` (ver «Resultados — vault de Obsidian»): `~/notes/notes/coach/` por defecto; si no existe, preguntar al atleta.
-   - Leer `<coach_dir>/ATHLETE.md`
-   - Si la carpeta existe pero falta el archivo → ejecutar onboarding (ver `references/onboarding.md`)
+1. **Cargar el perfil del atleta** — Resolver `<coach_dir>` (ver «Resultados — vault de Obsidian»): `~/notes/notes/coach/` por defecto; si no existe, preguntar al atleta.
+   - Listar `<coach_dir>/plans/*/informe.md`. Cargar el plan activo (la próxima carrera) y leer su apartado «Perfil del atleta». Si hay varios planes activos, preguntar cuál.
+   - Si la carpeta existe pero no hay ningún plan → ejecutar onboarding (ver `references/onboarding.md`)
 
 2. **Cargar tools MCP** — Usar `ToolSearch` con `+Coach_Memory list` para cargar las tools de listado. Cargar otras tools del MCP bajo demanda con `select:mcp__Coach_Memory__<nombre>`.
 
@@ -225,7 +226,7 @@ su flujo de resolución completo — no hay secciones separadas de workflows.
 
 **Triggers:** plan, planificar, entrenos, preparar, próxima semana, macrociclo
 
-1. Contexto: ATHLETE.md (objetivo, nivel, disponibilidad) + `list_plans()` + `list_memories()` + datos Garmin (vía skill `garmin`)
+1. Contexto: perfil del atleta del plan activo (objetivo, nivel, disponibilidad) + `list_plans()` + `list_memories()` + datos Garmin (vía skill `garmin`)
 2. Clarificar: horizonte temporal, objetivo específico, restricciones
 3. Consultar `references/manual-entrenamiento-escalada-montana.md` (Parte 3: fases y periodización; Parte 6: reglas semanales) y `references/methodology.md` — volumen, intensidad, trail, nutrición, taper
 4. Cargar bajo demanda la reference de cada disciplina que integre el plan: `references/strength.md` (gimnasio), `references/climbing.md` (escalada), `references/alpinism.md` (alpinismo)
@@ -238,7 +239,7 @@ su flujo de resolución completo — no hay secciones separadas de workflows.
    - **Garmin Connect** → usar skill `garmin` para crear y programar workouts estructurados
    - **Calendario (.ics)** → usar skill `ical` para generar archivo iCalendar importable
    - **Markdown** → generar documento directamente con overview + planificación por semana
-7. Guardar el informe del plan en el vault: `<coach_dir>/plans/<carrera>/informe.md` (formato Obsidian, ver «Resultados — vault de Obsidian»). Si exportas `.ics`, guárdalo en la misma carpeta.
+7. Guardar el informe del plan en el vault: `<coach_dir>/plans/<carrera>/informe.md` (formato Obsidian, ver «Resultados — vault de Obsidian»). Incluye el apartado «Perfil del atleta» con una copia completa del perfil vigente (ver «Perfil del atleta — dentro de cada plan») y un bloque «Contexto del atleta» en cada rutina. No enlaces a otros planes. Si exportas `.ics`, guárdalo en la misma carpeta.
 
 ### Feedback post-entreno
 
@@ -270,7 +271,7 @@ su flujo de resolución completo — no hay secciones separadas de workflows.
    - **Fuerza/core/gimnasio** → `references/strength.md` (+ Parte 2 del manual: reserva de fuerza, ME, Killer Core)
    - **Escalada** (técnica, dedos, campus, core) → `references/climbing.md` (+ Partes 4 y 5 del manual)
    - **Alpinismo** → `references/alpinism.md`
-2. Contexto: ATHLETE.md (sección «Fuerza, escalada y alpinismo») + objetivo principal actual
+2. Contexto: perfil del atleta del plan (apartado «Fuerza, escalada y montaña») + bloque «Contexto del atleta» de la rutina + objetivo principal actual
 3. Responder en función de la integración con el plan completo:
    - Cuándo programar respecto a las sesiones clave de montaña o carrera
    - Sesiones neuromusculares (técnica, campus, deadhang, fuerza máxima) al inicio de la sesión y con el sistema nervioso fresco
@@ -282,9 +283,9 @@ su flujo de resolución completo — no hay secciones separadas de workflows.
 
 **Triggers:** cambié, nuevo objetivo, lesión, actualizar, me apunté a
 
-1. Leer ATHLETE.md actual
-2. Identificar qué cambió y en qué sección
-3. Actualizar el archivo ATHLETE.md si corresponde y es algo core
+1. Leer el apartado «Perfil del atleta» del plan activo
+2. Identificar qué cambió y en qué apartado
+3. Actualizar el perfil si es algo core, y el bloque «Contexto del atleta» de cada rutina que cite ese dato. Solo en el plan activo: los demás planes conservan su snapshot
 4. Eliminar cosas antiguas si ya no aplican al presente
 5. `add_memory(content="Actualización: [descripción del cambio]")` → registro
 6. Evaluar si el cambio afecta planes existentes → recomendar ajuste si necesario
@@ -371,7 +372,7 @@ Si el atleta pide múltiples formatos, ejecuta cada exportación por separado.
 
 ## 6. Casos Especiales
 
-- **No existe ATHLETE.md** → Ejecutar onboarding antes que nada (`references/onboarding.md`)
+- **No hay plan ni perfil del atleta** → Ejecutar onboarding antes que nada (`references/onboarding.md`)
 - **Contradicción en datos** → Preguntar al usuario, nunca asumir
 - **Petición imposible según restricciones** → Explicar limitación, ofrecer alternativa realista
 - **Dolor o lesión reportada** → Priorizar salud. Recomendar profesional si es serio. No entrenar sobre dolor.
@@ -406,6 +407,6 @@ Consultar siempre que la intención involucre diseñar, evaluar o aconsejar sobr
 - `references/strength.md` — fuerza y core en gimnasio/casa para trail, escalada y montaña (complementa §6 de methodology, que es trail-específico)
 - `references/climbing.md` — escalada: técnica, fuerza, movilidad y core, con foco en desplomes
 - `references/alpinism.md` — alpinismo: macrociclo de expedición y alta montaña
-- `references/athlete-template.md` — plantilla en blanco de ATHLETE.md
+- `references/athlete-template.md` — estructura en blanco del apartado «Perfil del atleta» de un plan
 - `references/onboarding.md` — proceso para crear el perfil de un atleta nuevo
 - `references/zepp.md` — instalación y uso del CLI de Zepp Life

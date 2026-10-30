@@ -89,7 +89,7 @@ The command installs globally without confirmation prompts:
 - `asd-ste100` from [danyuchn/asd-ste100-skill](https://github.com/danyuchn/asd-ste100-skill).
 - Personal `pr-review`, `show-me` and `training-coach` skills from [runs/skills/personal/](runs/skills/personal/).
 
-The `training-coach` skill coaches trail running, climbing, alpinism and gym strength. It bundles a Zepp Life CLI (`scripts/zepp`) that needs [uv](https://docs.astral.sh/uv/). It keeps no personal data. The athlete profile and the plans live in the Obsidian vault at `~/notes/notes/coach/`. If that folder does not exist, the skill asks for the path. See `references/zepp.md` in the skill for the Zepp setup.
+The `training-coach` skill coaches trail running, climbing, alpinism and gym strength. It bundles a Zepp Life CLI (`scripts/zepp`) that needs [uv](https://docs.astral.sh/uv/). It keeps no personal data. The plans live in the Obsidian vault at `~/notes/notes/coach/`. Each plan is independent and holds its own full snapshot of the athlete profile, and plans never link to each other. Each routine repeats the part of the profile that affects it. If that folder does not exist, the skill asks for the path. See `references/zepp.md` in the skill for the Zepp setup.
 
 Only personal skills are stored here. Upstream skills are downloaded during installation.
 Edit personal skills here and rerun `./run skills` to install updates.

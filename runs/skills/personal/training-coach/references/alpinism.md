@@ -73,4 +73,4 @@ Basado en *Training for the New Alpinism* (House & Johnston). No hay actualmente
 
 - Contenido no verificado aquí contra la fuente original línea a línea — tratar los porcentajes/duraciones como orientativos, ajustables al perfil real del atleta (igual que en el resto de referencias de este repo).
 - La regla del 5-10% de incremento semanal es la misma que ya se aplica en la progresión de tirada larga de los planes de trail activos — no es un concepto nuevo, es la versión "de expedición" del mismo principio.
-- Antes de aplicar cualquier bloque de este archivo a un plan real, revisar contra el historial de lesiones del atleta, en especial rodilla y cuádriceps (ver `ATHLETE.md`) — la carga de mochila progresiva (§3) es la variable de mayor riesgo si se sube demasiado rápido.
+- Antes de aplicar cualquier bloque de este archivo a un plan real, revisar contra el historial de lesiones del atleta, en especial rodilla y cuádriceps (ver el apartado «Salud» del perfil del atleta del plan) — la carga de mochila progresiva (§3) es la variable de mayor riesgo si se sube demasiado rápido.

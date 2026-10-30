@@ -2,6 +2,8 @@
 
 Principios que guían todas las decisiones de planificación y ajuste. Basado en evidencia científica actualizada (2024-2026).
 
+> **Alcance**: este archivo desarrolla sobre todo el trail running y la base común (periodización, carga, recuperación, nutrición, taper). El marco principal para montaña, escalada y alpinismo es `manual-entrenamiento-escalada-montana.md`. La §9 explica cómo encajan.
+
 > **Nota sobre zonas de intensidad**: Esta metodología prescribe siempre por **zonas cardíacas** (Z1-Z5), nunca por rangos de pulsaciones concretos. Las zonas se calculan a partir del perfil de cada atleta (FC máxima, umbral, o reserva cardíaca) y son individuales. Esto permite que las instrucciones sean universales independientemente del nivel, edad o condición del atleta.
 
 ---
@@ -340,3 +342,28 @@ El tiempo de recuperación depende de la distancia, el desnivel, y la fatiga acu
 | **Ultra trail** | 2-4 semanas | Según daño muscular (bajadas largas = más tiempo). Priorizar movilidad y sueño. |
 
 El criterio para volver a la calidad es: sin dolencias, sueño normalizado, HRV vuelto a su baseline, y motivación para entrenar.
+
+---
+
+## 9. Deportes de montaña y outdoor
+
+Para marcha de montaña, escalada y alpinismo, el marco principal es `manual-entrenamiento-escalada-montana.md` (*Training for the New Alpinism*, *Training for the Uphill Athlete* y *The Climbing Bible*). Esta tabla indica qué usar de cada archivo.
+
+| Disciplina | Marco principal | Qué aplicar de este archivo |
+|------------|-----------------|-----------------------------|
+| **Trail running** | §1-§8 de este archivo | Todo. Las zonas Z1-Z5 son individuales. |
+| **Marcha de montaña y ultras caminando** | Manual, Partes 1 y 3 | §2 (time-on-feet), §6 (km-esfuerzo, terreno técnico, calor, altitud), §7 (nutrición) y §8 (taper). |
+| **Escalada** | `climbing.md` y manual, Partes 4 y 5 | §4 (carga) y §5 (recuperación) para la fatiga que comparte con el resto del plan. |
+| **Alpinismo** | `alpinism.md` y manual, Parte 3 | §1 (periodización), §4 (carga) y §6 (altitud). |
+| **Fuerza de gimnasio** | `strength.md` y manual, Parte 2 | §6 (fuerza específica). |
+
+### Reglas comunes para el atleta de montaña
+
+- **Marcha y salidas largas:** prescribe por FC y por desnivel por hora, no por ritmo. Gestiona el volumen en tiempo y D+ (§6). En llano, caminar puede no llegar a Z2: usa pendiente con cinta o stepper.
+- **Progresión:** el volumen semanal o el D+ no suben más del 10% sobre la semana anterior (manual, regla 1).
+- **Mochila:** sube la carga de forma gradual, del 10% al 20-30% del peso corporal (manual, 2.3). En el trabajo con garrafas de agua, vacíalas en la cumbre para proteger las rodillas en la bajada.
+- **Bajadas:** la carga excéntrica cansa más que la subida. Un día con mucha bajada cuenta como día duro (§6, terreno técnico).
+- **Bastones:** practica con ellos en terreno real antes del objetivo.
+- **Cinta como sustituto de la montaña:** la cinta es más fácil (terreno regular, sin bajada, sin equilibrio ni bastones). Compensa con más D+ y recuerda que no entrena el descenso.
+- **Fatiga compartida:** las sesiones neuromusculares de escalada (técnica, campus, deadhang) y la fuerza máxima van con el sistema nervioso fresco, al inicio de la sesión. No las programes después de una salida larga de montaña (manual, regla 4 y Parte 6).
+- **Déficit aeróbico:** si el test del 10% da más del 10% (manual, 1.3), el atleta dedica el 80-90% del tiempo a Z1-Z2 (manual, árbol de decisión de la Parte 6).
