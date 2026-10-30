@@ -28,8 +28,7 @@ Desde la fecha de «Última actualización» del plan (o la última semana con d
 
 1. **Zepp:** ejecuta `doctor`. Si la caché no cubre el periodo, pide consentimiento y ejecuta `sync`. Ver `SKILL.md` («Zepp Life — caché local»).
 2. **Strava:** lee las actividades del periodo en el navegador. El D+ de la cinta está en el título. La fuerza viene de la actividad de Hevy. Ver `SKILL.md` («Strava — Segunda fuente de entrenos»).
-3. **Garmin:** usa la skill `garmin` solo si el atleta usa Garmin.
-4. **Atleta:** para los huecos, pregunta por dolor o molestias (0-10), sueño, enfermedad y viajes.
+3. **Atleta:** para los huecos, pregunta por dolor o molestias (0-10), sueño, enfermedad y viajes.
 
 Une las actividades de Strava y Zepp por fecha y duración. No cuentes dos veces un día de fuerza. Si falta un dato, dilo. No lo inventes. No pidas ni leas un `apptoken`.
 

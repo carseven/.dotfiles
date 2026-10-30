@@ -72,5 +72,5 @@ Las revisiones posteriores del modo Sync se añaden al final con el número sigu
 
 ## 7. Cierre
 
-1. Ofrece exportar un calendario `.ics` (skill `ical`) y los workouts a Garmin (skill `garmin`). Guarda el `.ics` en la misma carpeta del plan.
+1. Ofrece exportar un calendario `.ics` (skill `ical`). Guarda el `.ics` en la misma carpeta del plan.
 2. Termina con el siguiente paso concreto: la primera sesión y cuándo hacer el primer Sync.

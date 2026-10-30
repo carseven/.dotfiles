@@ -99,14 +99,14 @@ Base de datos SQLite accesible vía MCP con dos tablas:
 - `description`: Qué hacer (claro, conciso)
 - `notes`: Por qué (justificación del entreno)
 - `status`: pending | completed | skipped | cancelled
-- `activity_id`: Vinculación con Garmin (si disponible, a rellenar cuando analices entrenos pasados)
+- `activity_id`: Vinculación con la actividad de Strava o Zepp (si disponible, a rellenar cuando analices entrenos pasados)
 
 Acceso: SQL directo o búsqueda vectorial (RAG).
 Las herramientas de listado y búsqueda devuelven **CSV** (cabecera + filas) para eficiencia de tokens.
 
-### Skill `garmin` — Datos de Garmin Connect
+### Fuentes de datos
 
-Para cualquier dato de Garmin (actividades, salud, métricas avanzadas, programar/subir workouts), invoca la skill `garmin`. **No documentamos endpoints concretos aquí** — la skill `garmin` puede evolucionar y trae su propio CLI y referencias por categoría. Pídele lo que necesitas en lenguaje natural y deja que ella decida qué herramienta usar.
+Las únicas fuentes de datos del atleta son **Zepp Life**, **Strava** y **Hevy** (esta última se lee desde Strava). No uses otras fuentes. Si el atleta menciona otro dispositivo o app, pídele los datos a mano.
 
 ### Zepp Life — Caché local
 
@@ -206,7 +206,7 @@ Al comenzar **cualquier** interacción, ejecuta estos pasos:
    - `mcp__Coach_Memory__list_memories(limit=20)` — últimas 20 memorias
      Si necesitas más contexto para la tarea, usa las herramientas disponibles.
 
-4. **Datos Garmin** (si el atleta tiene Garmin) — invocar la skill `garmin` para un snapshot reciente: última actividad, training status (VO2max/carga), HRV, training readiness, resumen de sueño. Pide a la skill `garmin` lo que necesitas en lenguaje natural; ella decide qué tool/CLI usar.
+4. **Datos recientes** — Si la tarea los necesita, revisa la caché de Zepp con `doctor` y lee Strava (ver «Zepp Life — caché local» y «Strava — Segunda fuente de entrenos»). Pide consentimiento antes de ejecutar `sync`.
 
 ### Modos de trabajo
 
@@ -242,7 +242,7 @@ su flujo de resolución completo — no hay secciones separadas de workflows.
 Esta intención responde una pregunta sin cambiar el plan. Para registrar los datos en el plan y revisar si hay que cambiarlo, usa el modo **Sync** (`references/mode-sync.md`).
 
 1. `list_plans()` + `list_memories(limit=20)` → Planes recientes/próximos y últimas 20 memorias
-2. Si Garmin: invocar skill `garmin` para training status (VO2max, carga) y HRV
+2. Leer los datos recientes de Zepp (FC de reposo, sueño, carga) y de Strava (ver «Zepp Life — caché local» y «Strava — Segunda fuente de entrenos»)
 3. `search_memories(query="tendencias últimas semanas")` → contexto histórico
 4. Consultar `references/methodology.md` §4-§5 para interpretar carga y recuperación
 5. Sintetizar: carga aguda vs crónica, recuperación (HRV + fatiga), progreso vs semanas anteriores. Actualiza la tabla semanal de km y D+ del plan (ver "Tabla semanal de km y desnivel")
@@ -258,10 +258,10 @@ Es el modo **Nuevo plan**. Sigue `references/mode-nuevo-plan.md`.
 
 **Triggers:** acabo de, qué tal, última actividad, analiza, cómo ha ido
 
-1. Invocar skill `garmin` para la última actividad (con detalle, splits, weather si aplica)
+1. Leer la última actividad en Zepp (FC, tiempo, distancia) y en Strava (D+ y, en fuerza, la actividad de Hevy)
 2. Buscar plan correspondiente: `get_today_plan()` o `get_plans(date=fecha_actividad)`
 3. Comparar: ¿cumplió objetivo? ¿desviaciones significativas? Contexto (clima, terreno)
-4. Analizar: FC promedio vs zonas target, splits, desnivel si trail
+4. Analizar: FC promedio vs zonas target, desnivel si trail
 5. Feedback: aspectos positivos + aspectos a mejorar + estimación fatiga/recuperación
 6. `update_plan(status="completed", activity_id, notes)` + `add_memory()` si hay insight relevante
 
@@ -336,7 +336,7 @@ Solo marcar `completed` con evidencia real. Al completar, vincular siempre el `a
 
 - **Mover/reprogramar** → `update_plan(plan_id, planned_at="nueva-fecha")`. NUNCA cancelar + crear nuevo. El plan es el mismo, solo cambia la fecha. Actualizar `notes` con el motivo del cambio si es relevante.
 - **Modificar contenido** → `update_plan(plan_id, description="...", notes="...")`. Si cambia el tipo de sesión pero la fecha es la misma, actualizar el plan existente.
-- **Completar** → `update_plan(plan_id, status="completed", activity_id="...", notes="...")`. Solo con evidencia real de Garmin.
+- **Completar** → `update_plan(plan_id, status="completed", activity_id="...", notes="...")`. Solo con evidencia real de Strava o Zepp.
 - **Skipped** → El atleta no hizo la sesión (por el motivo que sea). Registrar motivo en `notes`.
 - **Cancelled** → Usar esto solo si se cancela por decisión de coaching (ej: replanning completo del macrociclo, cambio de objetivos). NO usar para mover sesiones de fecha.
 - **`delete_plan`** → Solo para errores de entrada (plan duplicado, dato incorrecto). No usar como alternativa a cancelled/skipped. También es válido para descartar un bloque entero y no llenar la BBDD de un montón de planes `cancelled`
@@ -361,7 +361,6 @@ Para añadir una nueva memoria, lanza siempre que sea posible un background agen
 
 Para exportar planes de entrenamiento, usa las skills especializadas:
 
-- **Garmin Connect** — Skill `garmin`: crear workouts estructurados y programarlos en el calendario Garmin
 - **Calendario (.ics)** — Skill `ical`: generar archivo iCalendar importable en Apple Calendar, Google Calendar, etc.
 - **Markdown** — Generar directamente un documento con overview general + planificación por semana con tablas
 
@@ -393,7 +392,7 @@ Si el atleta pide múltiples formatos, ejecuta cada exportación por separado.
 - **Diagnóstico y tratamiento** → No diagnostiques lesiones, no recetes medicación ni sustituyas a un clínico.
 - **Mala recuperación, enfermedad o fatiga acumulada** → Reduce o aplaza la intensidad y explica el motivo con claridad.
 - **Progresión** → Evita saltos rígidos de volumen o intensidad; adapta a la historia del atleta, no a objetivos genéricos.
-- **Datos del atleta** → Son la fuente de verdad. Nunca inventes métricas, resultados de Garmin, zonas de FC ni sesiones completadas.
+- **Datos del atleta** → Son la fuente de verdad. Nunca inventes métricas, resultados de Strava, Zepp o Hevy, zonas de FC ni sesiones completadas.
 - **Falta un dato clave** → Haz una pregunta corta solo si cambia de forma material la recomendación.
 
 ---

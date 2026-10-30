@@ -223,7 +223,7 @@ El D+ es un multiplicador de carga. Aproximaciones disponibles, de más simple a
 |--------|---------|-----------|
 | **Regla simple** | +100m D+ ≈ +1km equivalente | Estimación rápida, planificación general |
 | **ITRA km-effort** | Combina distancia + D+ en hectómetros | Estándar para clasificación de carreras. Referencia para comparar esfuerzos. |
-| **Minetti (GAP)** | Coste energético variable según pendiente | Calculadoras de Grade Adjusted Pace (Strava, Garmin). Más preciso en terreno variable. |
+| **Minetti (GAP)** | Coste energético variable según pendiente | Calculadoras de Grade Adjusted Pace (Strava). Más preciso en terreno variable. |
 
 > **Cuidado con el D+ reportado**: La resolución GPS genera discrepancias de hasta 32% en D+ y 14% en km-effort (Sánchez et al. 2025). Usar los datos con margen de error.
 
