@@ -26,7 +26,7 @@ Rules:
 
 Load defaults, then ask only what is missing.
 
-1. If `~/notes/notes/coach/plans/*/informe.md` exists (training-coach), read the active plan's «Perfil del atleta» for: pace in min per km-effort, uphill m/h, injury rules (for example knees: limit steep descents) and weekend availability. Without a plan, use the pace table below and ask.
+1. If `~/notes/notes/coach/plans/*/informe.md` exists (training-coach), read it (read-only) for the active plan's «Perfil del atleta»: pace in min per km-effort, uphill m/h, injury rules (for example knees: limit steep descents) and weekend availability. Without a plan, use the pace table below and ask.
 2. Ask the gaps in one `ask_user` form:
    - **Area and start:** town, trailhead, or "I travel by car/bus".
    - **Targets:** any two of distance, D+, time. D− equals D+ on a loop.
@@ -35,7 +35,7 @@ Load defaults, then ask only what is missing.
    - **Limits:** technicality (sac_scale T1-T3), exposure, steep-descent tolerance.
    - **Date or season.**
    - **Wishes:** summit, ridge, water, view, a named place.
-   - **Tolerance** (default ±10% on each target) and **where to save**.
+   - **Tolerance** (default ±10% on each target) and **where to save** (default `~/Downloads`).
 
 Done when a brief table holds start, shape, two targets, activity, limits and tolerance, each marked given or default.
 
@@ -104,8 +104,8 @@ Done when every risk in the note is either checked against a named source or mar
 ## 6. Deliver
 
 1. Rename the track: `routekit.py set-name in.gpx out.gpx "<Place> <km> km D+<m>"`. Watch apps show this name.
-2. Save to `<routes_dir>`. Default is `~/notes/notes/coach/routes/<slug>/` when `~/notes/notes/coach` exists. Otherwise ask. Write `<slug>.gpx` and `<slug>.md`.
-3. The note has frontmatter (`title`, `tags: [coach/ruta, personal/deporte]`) and these sections: brief, result table (Mapy and GPX figures, km-effort, time at pace, max grade), waypoints, Mapy links, sources with date, hazards and unverified items.
+2. Save to `<out_dir>/<slug>/`. `<out_dir>` is the folder the user named in the brief, otherwise `~/Downloads`. Write `<slug>.gpx` and `<slug>.md`. The skill writes no routes into the Obsidian vault or any other notes folder.
+3. The note is plain Markdown with these sections: brief, result table (Mapy and GPX figures, km-effort, time at pace, max grade), waypoints, Mapy links, sources with date, hazards and unverified items.
 4. Answer in the user's language with the result table, the Mapy short link, the file paths and the open risks.
 
 Mapy links: the long `fnc/v1/route` URL always rebuilds the route. The `mapy.com/s/...` short link is easier to share.
