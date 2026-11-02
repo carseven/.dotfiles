@@ -1,11 +1,11 @@
 ---
 name: route-planner
 description: |-
-  Route planner for hiking, trail running and mountain training in any region (Comunitat Valenciana, Pyrenees, Picos de Europa, Alps...). Interviews the user, finds or invents routes that fit a target distance, ascent, descent or time, rebuilds them in mapy.com and delivers a measured GPX plus a Mapy link. Also recreates routes found on Wikiloc, Komoot, municipal sites or OpenStreetMap.
+  Route planner for hiking, trail running and mountain training in any region (Comunitat Valenciana, Pyrenees, Picos de Europa, Alps...). Interviews the user, finds or invents routes that fit a target distance, ascent, descent or time, rebuilds them in mapy.com and delivers a measured GPX plus a Mapy link. Also recreates routes found on Wikiloc, Komoot, all trails, etc.
   Triggers: ruta, track, GPX, mapy, wikiloc, komoot, ruta circular, salida de montaña, tirada larga, desnivel, D+, D-, "14 km y 700 m", genera una ruta, recrear ruta, route for X km and Y m gain.
 license: MIT
 metadata:
-  author: ivan
+  author: Carles Serra Vendrell
   version: 1.0.0
   category: outdoors
 ---
@@ -41,11 +41,11 @@ Done when a brief table holds start, shape, two targets, activity, limits and to
 
 **Km-effort** = km + D+/100. **Time** = km-effort × pace.
 
-| Activity   | Default pace (min per km-effort)                                   |
-| ---------- | ------------------------------------------------------------------ |
-| Hike       | 15                                                                 |
-| Fast hike  | 12                                                                 |
-| Trail run  | the athlete's recent figure (their flat pace is only a lower bound) |
+| Activity  | Default pace (min per km-effort)                                    |
+| --------- | ------------------------------------------------------------------- |
+| Hike      | 15                                                                  |
+| Fast hike | 12                                                                  |
+| Trail run | the athlete's recent figure (their flat pace is only a lower bound) |
 
 The athlete's own pace from their plan always comes first.
 
@@ -84,14 +84,14 @@ Run `routekit.py stats <gpx> --pace <pace> --splits`, then compare with the brie
 - Recreated route with a reference GPX: `routekit.py compare REF.gpx NEW.gpx` shows at least 95% of the reference within 50 m.
 - Recreated route without a reference GPX: check the geometry on a Mapy screenshot (does it follow the named places in order?) and the stats against two or more published figures. Published D+ for one route varies by ±30% (GPS against DEM), so accept the spread.
 
-| Gap                 | Fix                                                                |
-| ------------------- | ------------------------------------------------------------------ |
-| D+ low              | Add a summit or a climbing detour, or start lower                  |
-| D+ high             | Drop a summit, take the contouring path, start higher              |
-| Distance short      | Add an out-and-back leg or make the loop wider                     |
-| Distance long       | Cut a leg or take a shortcut                                       |
-| Time over           | Cut km-effort and keep the pace fixed                              |
-| Line off the trail  | Move waypoints onto the path or add waypoints. Try `foot_hiking`   |
+| Gap                | Fix                                                              |
+| ------------------ | ---------------------------------------------------------------- |
+| D+ low             | Add a summit or a climbing detour, or start lower                |
+| D+ high            | Drop a summit, take the contouring path, start higher            |
+| Distance short     | Add an out-and-back leg or make the loop wider                   |
+| Distance long      | Cut a leg or take a shortcut                                     |
+| Time over          | Cut km-effort and keep the pace fixed                            |
+| Line off the trail | Move waypoints onto the path or add waypoints. Try `foot_hiking` |
 
 ## 5. Check the terrain
 
