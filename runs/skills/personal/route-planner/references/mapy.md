@@ -25,7 +25,8 @@ The same 8 waypoints near Simat de la Valldigna gave **13.1 km** with `foot_fast
 1. Navigate to the URL. Wait about 8 s for the route to draw.
 2. Run the snippet below in the page (`browser_evaluate`). It waits for the summary, opens the elevation profile, reads the figures, exports the GPX and reads the share link.
 3. Read the `### Result` block at the top of the tool output. The tool saves long outputs to a file, so read that file's head with `view` or `head`.
-4. The download is reported under `### Downloads` as `.../export.gpx`. The name is reused, so copy the file before the next export.
+4. The download is reported under `### Downloads` as `.../export.gpx`. The name is reused, so copy the file before the next export. Save the final file in `~/Downloads` with `routekit.py set-name` (see `SKILL.md`, step 6). In a user's own browser the export already lands in `~/Downloads` as `export.gpx`.
+5. Mapy exports a track (all points) for walking routes. It does not export waypoints.
 
 ```js
 async () => {
@@ -54,14 +55,31 @@ async () => {
 
 Reading the result:
 
-- `summary` is `h:mm h  km`. The time assumes 4 km/h on flat ground and ignores climbing. Do not use it. Use km-effort and the athlete's pace.
+- `summary` is `h:mm h  km`. Mapy assumes 4 km/h on flat ground and adjusts for the elevation profile (help page). Example from the test route: 11.8 km with +698 m shows 4:46 h. Do not use it. Use km-effort and the user's pace.
 - `elevation` is `[max a.s.l., min a.s.l., ascent, descent]`. The thousands separator is a comma (`1,740 m`).
-- Mapy's ascent is lower than the GPX sum: 650 m against 734 m raw and 717 m filtered on one route. Report both.
+- Mapy's ascent is lower than the GPX sum: 650 m against 734 m raw and 717 m filtered on one route. Report both. Mapy says its ascent is approximate and ignores small irregularities. Abroad it uses the SRTM elevation model (Aster in the far north and south).
 - The labels are English. The planner opens in English in a default Playwright browser. If the page is localized, adapt the label strings (`Export`, `Share`, `Elevation profile`).
 
 ## Visual check
 
 `browser_take_screenshot` (viewport) shows the line over the outdoor map. Waypoints are numbered. Red dashes are marked routes. Take the screenshot **before** opening Share, because the dialog hides the map. A cookie banner at the bottom is harmless.
+
+The blue route line covers the trail drawing beneath it. To read terrain, open the plain outdoor map and follow `mapy-legend.md`.
+
+## Mapy features that need a login or Premium
+
+| Feature | Status |
+| --- | --- |
+| Route, elevation summary, GPX export, share link | Free, no login |
+| Elevation chart with gradients, surfaces and road types | Premium. Five free tries when signed in. |
+| Own walking speed, via ferrata routing, jogging in nature | Premium |
+| PRO planner (draw the route by hand) | Premium. Mobile app. |
+
+Source: `https://help.mapy.com/route-planning/tools/`, checked 2 Nov 2026.
+
+## Adding waypoints by hand (user in the Mapy UI)
+
+Click the route line and drag, press the `+` in the planner panel, or hold CTRL and click the map. Do not put waypoints on junctions. Source: `https://help.mapy.com/route-planning/transportation/`.
 
 ## Links to give the user
 

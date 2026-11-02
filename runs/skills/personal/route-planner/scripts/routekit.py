@@ -17,7 +17,28 @@ OVERPASS_MIRRORS = [
     "https://overpass-api.de/api/interpreter",
     "https://overpass.private.coffee/api/interpreter",
     "https://overpass.kumi.systems/api/interpreter",
+    "https://maps.mail.ru/osm/tools/overpass/api/interpreter",  # last resort: third-party mirror run by Mail.ru (VK)
 ]
+SAC_TERRAIN = {
+    "strolling": "smooth wide trail, no exposure",
+    "hiking": "T1: cleared trail, trainers are enough",
+    "mountain_hiking": "T2: stones and steep parts, hiking shoes",
+    "demanding_mountain_hiking": "T3: exposed parts, scree, hands for balance",
+    "alpine_hiking": "T4: hands needed, exposed",
+    "demanding_alpine_hiking": "T5: easy climbing, exposed",
+    "difficult_alpine_hiking": "T6: climbing, severe exposure",
+}
+TRACK_TERRAIN = {
+    "grade1": "paved or compacted track",
+    "grade2": "gravel track, mostly firm",
+    "grade3": "dirt track, mixed firm and soft",
+    "grade4": "soft track, grass or soil",
+    "grade5": "soft track, barely a track",
+}
+ROAD_TYPES = {"motorway", "trunk", "primary", "secondary", "tertiary", "unclassified",
+              "residential", "service", "living_street"}
+HARD_SAC = {"demanding_mountain_hiking", "alpine_hiking", "demanding_alpine_hiking", "difficult_alpine_hiking"}
+PAVED_SURFACES = {"paved", "asphalt", "concrete", "paving_stones", "sett", "cobblestone"}
 NOMINATIM = "https://nominatim.openstreetmap.org/search"
 OPENTOPODATA = "https://api.opentopodata.org/v1/{dataset}"
 USER_AGENT = "route-planner-skill/1.0 (personal training use)"
@@ -456,10 +477,10 @@ def cmd_rel_gpx(a):
 
 def cmd_surface(a):
     pts = read_gpx(a.gpx)
-    lats, lons = [p[0] for p in pts], [p[1] for p in pts]
-    pad = 0.0004
-    bbox = f"{min(lats) - pad},{min(lons) - pad},{max(lats) + pad},{max(lons) + pad}"
-    q = (f'[out:json][timeout:90];way["highway"]({bbox});out geom tags;')
+    lats = [p[0] for p in pts]
+    # ask only for ways near the track: a bounding box of a town returns thousands of streets
+    line = ",".join(f"{p[0]:.5f},{p[1]:.5f}" for p in simplify_to(pts, 300))
+    q = f'[out:json][timeout:90];way["highway"](around:{int(a.snap) + 25},{line});out geom tags;'
     ways = overpass(q)["elements"]
     lat0 = sum(lats) / len(lats)
     way_xy = []
@@ -469,8 +490,8 @@ def cmd_surface(a):
             way_xy.append((w.get("tags", {}), project([(p["lat"], p["lon"]) for p in g], lat0)))
     samples = resample(pts, 50)
     sample_xy = project([(s[0], s[1]) for s in samples], lat0)
-    tally = {}
-    for p in sample_xy:
+    tally, seq = {}, []
+    for s, p in zip(samples, sample_xy):
         best, tags = a.snap, None
         for t, xy in way_xy:
             for i in range(len(xy) - 1):
@@ -478,13 +499,158 @@ def cmd_surface(a):
                 if d < best:
                     best, tags = d, t
         key = "no match" if tags is None else (
-            f"{tags.get('highway')} | sac_scale={tags.get('sac_scale', '-')} | surface={tags.get('surface', '-')}")
+            f"{tags.get('highway')} | sac_scale={tags.get('sac_scale', '-')} | surface={tags.get('surface', '-')}"
+            f" | trail_visibility={tags.get('trail_visibility', '-')} -> {terrain_label(tags)}")
+        hard = tags is not None and (tags.get("sac_scale") in HARD_SAC or tags.get("highway") == "steps")
         tally[key] = tally.get(key, 0) + 1
+        seq.append((s[3], short_label(tags), hard))
     total = sum(tally.values())
     print(f"share of route by OSM way (sampled every 50 m, snap {a.snap} m):")
     for k, v in sorted(tally.items(), key=lambda kv: -kv[1]):
         print(f"  {v / total:5.0%}  {k}")
+    if a.segments:
+        print_segments(seq, cum_total=samples[-1][3], min_run=a.min_run)
     print("note: sac_scale is missing on many OSM ways; '-' means unmapped, not easy.")
+
+
+def short_label(tags):
+    if tags is None:
+        return "no OSM way within snap distance"
+    extra = [f"{k}={tags[k]}" for k in ("surface", "trail_visibility") if k in tags]
+    return ", ".join([terrain_label(tags)] + extra)
+
+
+def print_segments(seq, cum_total, min_run):
+    """Runs of the same way type along the track. Short runs show only when they are hard (T3+ or steps)."""
+    runs = []
+    for d, label, hard in seq:
+        if runs and runs[-1][2] == label:
+            runs[-1][1] = d
+        else:
+            runs.append([d, d, label, hard])
+    shown = []
+    for start, end, label, hard in runs:
+        if end - start + 50 < min_run and not hard:
+            continue
+        if shown and shown[-1][2] == label:
+            shown[-1][1] = end  # same stretch, split only by a short run that is not listed
+        else:
+            shown.append([start, end, label])
+    print(f"segments along the track (runs under {min_run:.0f} m listed only when T3 or harder, or steps):")
+    for start, end, label in shown:
+        print(f"  km {start / 1000:5.1f} - {min(end + 50, cum_total) / 1000:5.1f} | {label}")
+
+
+def terrain_label(tags):
+    """Plain-language terrain of one OSM way. Mapy line styles are in references/mapy-legend.md."""
+    hw = tags.get("highway", "")
+    sac = tags.get("sac_scale")
+    if sac in SAC_TERRAIN:
+        return f"{'track' if hw == 'track' else 'path'}, {SAC_TERRAIN[sac]}"
+    if hw == "steps":
+        return "steps"
+    if hw == "pedestrian":
+        return "pedestrian street"
+    if hw == "track":
+        return TRACK_TERRAIN.get(tags.get("tracktype"), "track, firmness not mapped")
+    if hw in ("path", "footway", "bridleway", "pedestrian", "cycleway"):
+        return "paved path" if tags.get("surface") in PAVED_SURFACES else "path, difficulty not mapped"
+    if hw.removesuffix("_link") in ROAD_TYPES:
+        return "road"
+    return hw or "unknown"
+
+
+def nearest_on_track(p, xy, cum):
+    """Distance in metres from planar point p to the track, and the metres along the track there."""
+    best = (float("inf"), 0.0)
+    for i in range(len(xy) - 1):
+        (ax, ay), (bx, by) = xy[i], xy[i + 1]
+        dx, dy = bx - ax, by - ay
+        L = dx * dx + dy * dy
+        t = 0.0 if L == 0 else max(0.0, min(1.0, ((p[0] - ax) * dx + (p[1] - ay) * dy) / L))
+        d = math.hypot(p[0] - (ax + t * dx), p[1] - (ay + t * dy))
+        if d < best[0]:
+            best = (d, cum[i] + t * (cum[i + 1] - cum[i]))
+    return best
+
+
+def water_kind(tags):
+    return "spring" if tags.get("natural") == "spring" else tags.get("amenity") or tags.get("man_made") or "?"
+
+
+def water_potability(tags):
+    if "drinking_water" in tags:
+        return tags["drinking_water"]
+    return "yes (amenity=drinking_water)" if tags.get("amenity") == "drinking_water" else "unknown"
+
+
+def cmd_near(a):
+    pts = read_gpx(a.gpx)
+    lat0 = sum(p[0] for p in pts) / len(pts)
+    xy = project(pts, lat0)
+    cum = cumulative(pts)
+    for lat, lon in parse_lonlat(a.points):
+        dist, along = nearest_on_track(project([(lat, lon)], lat0)[0], xy, cum)
+        i = min(range(len(pts)), key=lambda k: abs(cum[k] - along))
+        ele = "n/a" if pts[i][2] is None else f"{pts[i][2]:.0f} m"
+        status = "OK" if dist <= a.within else f"MISSED (more than {a.within:.0f} m away)"
+        print(f"{lon:.6f},{lat:.6f} | closest approach {dist:.0f} m | km {along / 1000:.1f} | "
+              f"track elevation there {ele} | {status}")
+
+
+def cmd_water(a):
+    pts = read_gpx(a.gpx)
+    lats, lons = [p[0] for p in pts], [p[1] for p in pts]
+    pad = a.near / 110000.0  # metres to degrees of latitude
+    bbox = f"{min(lats) - pad},{min(lons) - pad},{max(lats) + pad},{max(lons) + pad}"
+    q = ("[out:json][timeout:60];("
+         f'node["natural"="spring"]({bbox});'
+         f'node["amenity"~"^(drinking_water|water_point|fountain)$"]({bbox});'
+         f'node["man_made"~"^(water_tap|water_well)$"]({bbox});'
+         ");out body;")
+    els = overpass(q)["elements"]
+    lat0 = sum(lats) / len(lats)
+    xy = project(pts, lat0)
+    cum = cumulative(pts)
+    on_route, nearby, excluded = [], [], 0
+    for el in els:
+        t = el.get("tags", {})
+        if t.get("drinking_water") == "no" or t.get("access") in ("private", "no"):
+            excluded += 1
+            continue
+        dist, along = nearest_on_track(project([(el["lat"], el["lon"])], lat0)[0], xy, cum)
+        row = (along, dist, water_kind(t), t.get("name", "(no name)"),
+               water_potability(t), el["lon"], el["lat"])
+        if dist <= a.max_dist:
+            on_route.append(row)
+        elif dist <= a.near:
+            nearby.append(row)
+    on_route.sort()
+    nearby.sort(key=lambda r: r[1])
+
+    def show(r):
+        return (f"km {r[0] / 1000:5.1f} | {r[1]:4.0f} m off track | {r[2]} | {r[3]} | "
+                f"potable: {r[4]} | {r[5]:.6f},{r[6]:.6f}")
+
+    if on_route:
+        print(f"water sources within {a.max_dist:.0f} m of the track (OSM):")
+        for r in on_route:
+            print("  " + show(r))
+        marks = [0.0] + [r[0] for r in on_route] + [cum[-1]]
+        gap_i = max(range(len(marks) - 1), key=lambda i: marks[i + 1] - marks[i])
+        print(f"longest stretch without water: {(marks[gap_i + 1] - marks[gap_i]) / 1000:.1f} km "
+              f"(km {marks[gap_i] / 1000:.1f} to km {marks[gap_i + 1] / 1000:.1f})")
+    else:
+        print(f"WARNING: no water source within {a.max_dist:.0f} m of the track in OSM data. "
+              "Tell the user. Unmapped sources may exist.")
+    if nearby:
+        print(f"sources {a.max_dist:.0f}-{a.near:.0f} m from the track (detour options):")
+        for r in nearby[:10]:
+            print("  " + show(r))
+    if excluded:
+        print(f"{excluded} source(s) left out: marked not drinkable or private.")
+    print("note: OSM is incomplete. A mapped spring can be dry in summer or after a dry year, "
+          "and 'potable: unknown' means nobody tagged it. Treat springs and fountains as unverified water.")
 
 
 # ---------------------------------------------------------------- cli
@@ -549,10 +715,24 @@ def main():
     s.add_argument("output")
     s.set_defaults(fn=cmd_rel_gpx)
 
-    s = sub.add_parser("surface", help="OSM path type, sac_scale and surface along a GPX")
+    s = sub.add_parser("surface", help="OSM path type, sac_scale, surface and plain terrain label along a GPX")
     s.add_argument("gpx")
     s.add_argument("--snap", type=float, default=30, help="max metres from track to an OSM way")
+    s.add_argument("--segments", action="store_true", help="also list the km range of each way type")
+    s.add_argument("--min-run", type=float, default=200, help="shortest run in metres listed by --segments")
     s.set_defaults(fn=cmd_surface)
+
+    s = sub.add_parser("near", help="closest approach of a GPX to given points, with km and track elevation there")
+    s.add_argument("gpx")
+    s.add_argument("points", help="'lon,lat;lon,lat;...' for example the summits of the brief")
+    s.add_argument("--within", type=float, default=50, help="metres that count as reached (default 50)")
+    s.set_defaults(fn=cmd_near)
+
+    s = sub.add_parser("water", help="springs, taps and fountains along a GPX; warns when there are none")
+    s.add_argument("gpx")
+    s.add_argument("--max-dist", type=float, default=150, help="metres from the track that count as on route")
+    s.add_argument("--near", type=float, default=1000, help="metres from the track to list detour options")
+    s.set_defaults(fn=cmd_water)
 
     args = ap.parse_args()
     args.fn(args)

@@ -6,11 +6,11 @@ These are checklists, not facts about today. Verify each item with a current off
 
 - **Daylight:** sunset time on the date against start time + expected time + 1 h margin.
 - **Weather window:** AEMET (Spain) or the local service. Plan the turn-back time.
-- **Water:** sources on the route, and whether they flow in that season.
+- **Water:** sources on the route (`routekit.py water`), and whether they flow in that season. A mapped spring can be dry. Many Mediterranean sources are dry in summer.
 - **Exposure:** sac_scale T4 or higher, scrambles, via ferrata, glacier, snow slopes. This skill flags them. It does not plan them.
 - **Access:** closures, permits, quotas, shuttle buses, locked gates, private land.
 - **Phone coverage and emergency number (112 in Spain and the EU).** Tell someone the route and the return time.
-- **Athlete limits:** injury rules from the plan, steep-descent share, total km-effort against recent weeks.
+- **User limits:** injury rules, steep-descent share, total km-effort against what the user says is a normal week.
 
 ## Mediterranean ranges (Comunitat Valenciana, Catalonia, Murcia, Balearics)
 
@@ -19,7 +19,7 @@ These are checklists, not facts about today. Verify each item with a current off
 - Hunting season (typically autumn to winter, often weekends): check local signs and wear visible colours.
 - Heavy autumn rain and flash floods in ravines (barrancs).
 - Sharp limestone, loose stone and scrub on steep paths. Descents are hard on knees and ankles.
-- Locked gates and farm access. Example: Wikiloc comments on the Les Creus track (Tavernes) report a locked gate near the tennis club around km 10.5 and a bypass.
+- Locked gates and farm access. Example: Wikiloc comments on a published loop above Tavernes report a locked gate near the tennis club around km 10.5 and a bypass.
 
 ## Pyrenees and other high ranges (Aragon, Catalonia, Navarre)
 

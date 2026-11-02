@@ -28,12 +28,12 @@ Queries that worked: `ruta pic del masalari tavernes de la valldigna wikiloc` an
 | Municipal and tourism sites            | Official circuit, often with a GPX              | Often downloadable               | Search for the municipality name + `ruta`. The Tavernes town hall page for Pico del Massalari appeared in results but did not load on 2 Nov 2026. |
 | Regional federations (FEDME, FEMECV)   | Homologated GR, PR and SL routes                | Varies                           | Marked routes are the safest line to follow.                       |
 | National park sites                    | Official routes, closures, quotas, buses        | Rarely                           | Needed for Ordesa, Picos de Europa and other parks.                |
-| OpenStreetMap                          | Route relations, peaks with `ele`, path tags    | `routekit.py rel-gpx`            | Open data (ODbL). Needs Overpass, which is often at capacity.      |
+| OpenStreetMap                          | Route relations, peaks with `ele`, path tags, springs and fountains | `routekit.py rel-gpx`, `surface`, `water` | Open data (ODbL). Needs Overpass, which is often at capacity. `routekit.py` tries four public mirrors and a run can take up to 3 minutes. |
 | Nominatim (`routekit.py geocode`)      | Name to `lon,lat`, `ele` of peaks               | Points only                      | Most reliable keyless lookup. One request per second.              |
 | Komoot, AllTrails, Strava              | Stats and previews                              | Login or paywall                 | Use for ideas. Ask the user for a GPX they can download.           |
 | Hikr, Camptocamp, Visorando            | Mountain routes with descriptions (Alps, Pyrenees, France) | Often GPX             | Check the licence of each GPX.                                     |
 | Waymarked Trails (website)             | Marked routes by `ref` (GR 11, PR-CV ...)       | Check the site for export        | The search API (`hiking.waymarkedtrails.org/api/v1/list/search`) answered. The area and GPX endpoints were not confirmed. |
-| Mapy outdoor map (screenshot)          | Marked trails, contours, peak names             | View only                        | Good for choosing a loop shape when Overpass is down.              |
+| Mapy outdoor map (screenshot)          | Marked trails, SAC difficulty by dash pattern, ground symbols, contours, peak names | View only | Good for terrain and for choosing a loop shape when Overpass is down. Legend: `mapy-legend.md`. |
 
 ## Extract from a source page
 
