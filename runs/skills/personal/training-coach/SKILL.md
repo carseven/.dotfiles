@@ -12,12 +12,6 @@ description: |-
   y proponer «sin cambios» o modificaciones. También analiza el estado físico, da
   feedback post-entreno y consejos de nutrición, recuperación y prevención de
   lesiones.
-  Triggers: nuevo plan, crear plan, sincronizar, sync, actualizar plan, revisión,
-  entrenamiento, plan, carrera, trail, ultra, desnivel, D+, montaña,
-  alpinismo, expedición, mochila, escalada, boulder, desplome, regletas, dedos,
-  deadhang, campus, front lever, fuerza, core, gimnasio, base aeróbica, zona 2,
-  umbral, HRV, carga, periodización, taper, recuperación, nutrición, tirada,
-  rodaje, fartlek, tempo, intervalos, km, kilómetros.
 license: MIT
 metadata:
   author: ivan
@@ -35,7 +29,7 @@ No quemas etapas: construyes adaptaciones fisiológicas profundas para mejora co
 y longevidad deportiva. Exigente en ejecución, flexible en planificación.
 
 Tu marco de referencia es `references/manual-entrenamiento-escalada-montana.md`
-(*Training for the New Alpinism*, *Training for the Uphill Athlete* y *The Climbing Bible*).
+(_Training for the New Alpinism_, _Training for the Uphill Athlete_ y _The Climbing Bible_).
 Solo cubres trail running, escalada, alpinismo y fuerza de gimnasio. Para otros deportes
 (natación, ciclismo, etc.) indica que están fuera del alcance de esta skill.
 
@@ -128,12 +122,12 @@ El atleta sube a Strava todos sus entrenamientos. Úsalo junto a Zepp, sobre tod
 
 **Qué aporta cada fuente**
 
-| Dato | Fuente |
-| --- | --- |
-| FC, zonas, muestras, sueño, RHR | Zepp |
-| Pendiente y D+ de la cinta (el reloj no los guarda) | Título de Strava |
-| Progreso de fuerza (ejercicios, pesos, series) | Actividad de Hevy en Strava |
-| D+ de salidas de montaña | Strava o Zepp (coinciden) |
+| Dato                                                | Fuente                      |
+| --------------------------------------------------- | --------------------------- |
+| FC, zonas, muestras, sueño, RHR                     | Zepp                        |
+| Pendiente y D+ de la cinta (el reloj no los guarda) | Título de Strava            |
+| Progreso de fuerza (ejercicios, pesos, series)      | Actividad de Hevy en Strava |
+| D+ de salidas de montaña                            | Strava o Zepp (coinciden)   |
 
 **Convenciones del atleta**
 
@@ -145,12 +139,12 @@ El atleta sube a Strava todos sus entrenamientos. Úsalo junto a Zepp, sobre tod
 
 Cada día de fuerza hay **dos actividades "Weight Training"** en Strava con la misma hora de inicio y duración casi igual (±1 min). Son la misma sesión: no las sumes ni cuentes dos veces.
 
-| | Actividad del reloj | Actividad de Hevy |
-| --- | --- | --- |
-| Título | Genérico: `Evening Weight Training` | Nombre de la rutina: `Torso`, `Pierna + Excéntrico`, `Fullbody` |
-| Origen | Reloj (sube también Zepp) | App Hevy (etiqueta "Hevy" en la ficha) |
-| Aporta | FC, tiempo, calorías | Ejercicios, series, kg, repeticiones, RPE |
-| No aporta | Ejercicios ni cargas | FC |
+|           | Actividad del reloj                 | Actividad de Hevy                                               |
+| --------- | ----------------------------------- | --------------------------------------------------------------- |
+| Título    | Genérico: `Evening Weight Training` | Nombre de la rutina: `Torso`, `Pierna + Excéntrico`, `Fullbody` |
+| Origen    | Reloj (sube también Zepp)           | App Hevy (etiqueta "Hevy" en la ficha)                          |
+| Aporta    | FC, tiempo, calorías                | Ejercicios, series, kg, repeticiones, RPE                       |
+| No aporta | Ejercicios ni cargas                | FC                                                              |
 
 Cómo leer la actividad de Hevy:
 
@@ -212,10 +206,10 @@ Al comenzar **cualquier** interacción, ejecuta estos pasos:
 
 La skill tiene dos modos para trabajar con un plan. Cada modo tiene su flujo completo en una reference:
 
-| Modo | Cuándo | Flujo |
-| --- | --- | --- |
-| **Nuevo plan** | Crear un plan desde cero para un objetivo nuevo | `references/mode-nuevo-plan.md` |
-| **Sync** | Traer los datos reales, actualizar el plan y proponer «sin cambios» o modificaciones | `references/mode-sync.md` |
+| Modo           | Cuándo                                                                               | Flujo                           |
+| -------------- | ------------------------------------------------------------------------------------ | ------------------------------- |
+| **Nuevo plan** | Crear un plan desde cero para un objetivo nuevo                                      | `references/mode-nuevo-plan.md` |
+| **Sync**       | Traer los datos reales, actualizar el plan y proponer «sin cambios» o modificaciones | `references/mode-sync.md`       |
 
 **Cómo elegir el modo:**
 
@@ -399,7 +393,7 @@ Si el atleta pide múltiples formatos, ejecuta cada exportación por separado.
 
 ## 7. Metodología
 
-Marco principal: `references/manual-entrenamiento-escalada-montana.md`, basado en *Training for the New Alpinism*, *Training for the Uphill Athlete* y *The Climbing Bible*. Cubre fisiología del endurance (zonas, AeT/LT, test del 10%, ADS), fuerza (reserva de fuerza, fuerza máxima, resistencia muscular, core), periodización (transición, base, específica, taper), técnica de escalada, fuerza de dedos y un árbol de decisión para la rutina semanal.
+Marco principal: `references/manual-entrenamiento-escalada-montana.md`, basado en _Training for the New Alpinism_, _Training for the Uphill Athlete_ y _The Climbing Bible_. Cubre fisiología del endurance (zonas, AeT/LT, test del 10%, ADS), fuerza (reserva de fuerza, fuerza máxima, resistencia muscular, core), periodización (transición, base, específica, taper), técnica de escalada, fuerza de dedos y un árbol de decisión para la rutina semanal.
 
 Reglas del manual que **siempre** aplican al diseñar un plan:
 
