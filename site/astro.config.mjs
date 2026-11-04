@@ -32,7 +32,6 @@ export default defineConfig({
 						{ label: 'Agent skills', slug: 'reference/skills' },
 					],
 				},
-				{ label: 'Blog', link: '/blog/' },
 			],
 		}),
 	],

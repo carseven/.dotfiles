@@ -1,6 +1,6 @@
 # Website maintenance
 
-The public website uses Astro Starlight for reference documentation and native Astro routes for the blog.
+The public website uses Astro Starlight for guides and reference documentation.
 Its package, lockfile, generated files, and build commands are isolated under [`site/`](../site/).
 
 ## Develop
@@ -38,35 +38,6 @@ Use relative links between content routes, accounting for each generated page's 
 In Astro or MDX expressions, prefix local links and assets with `import.meta.env.BASE_URL`.
 Hard-coded `/guides/` links would break beneath the Pages project path.
 
-## Add a blog post
-
-Create `site/src/content/blog/short-post-name.md` or `.mdx`:
-
-```markdown
----
-title: A descriptive title
-description: One sentence explaining what the reader will learn.
-publishedAt: 2026-11-04
----
-
-Write the post here. The page template supplies the title and publication date.
-```
-
-The filename becomes the post ID and URL, for example `/.dotfiles/blog/short-post-name/`.
-Nested folders produce nested URLs.
-The blog index sorts posts by publication date, newest first.
-All posts are published: there is no draft or future-date filter.
-Keep unfinished posts outside the content collection until ready.
-
-Use `.md` for prose and `.mdx` when a post needs imported components.
-Starlight's integration supplies MDX support.
-Check links from the generated post route, not from its source directory.
-For a top-level post, `../../guides/setup/` links to the setup guide.
-
-Keep current command behavior in the reference pages.
-Posts can explain workflows and trade-offs, but link to reference rather than duplicating large command inventories.
-Review examples for credentials, private host details, and personal data before publication.
-
 ## Validate
 
 ```bash
@@ -80,7 +51,7 @@ npm test
 
 - Every exposed entrypoint has exactly one reference section.
 - Generated local links, anchors, and linked assets resolve beneath `/.dotfiles/`.
-- Internal documentation does not enter the output, and blog routes exist.
+- Internal documentation and removed blog routes do not enter the output.
 
 The tests do not execute workstation installers or follow external links.
 Review rendered pages after layout changes, including narrow-screen navigation.
@@ -106,7 +77,7 @@ Node dependencies are installed only in the documentation workflow, so shell lin
 
 ## Fork or change the address
 
-Update `site` and `base` in Astro configuration, repository/edit links, the blog layout links,
+Update `site` and `base` in Astro configuration, repository/edit links,
 and the deployment branch if needed.
 Update the base-path expectations in `site/scripts/site.test.mjs` as part of the same change.
 Enable Pages on the new repository before expecting a live deployment.
