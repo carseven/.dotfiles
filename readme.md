@@ -52,20 +52,6 @@ Read the [skills reference](./site/src/content/docs/reference/skills.md) first.
 - [Nuphy Keyboard](./doc/keyboards/nuphy-air60v2/readme.md)
 - [Planck Keyboard](./doc/keyboards/planck/readme.md)
 
-## Roadmap
-
-The original list remains here until GitHub Project access is authorized and all eight migrated issues are verified in the project.
-The [migration procedure](./docs/github-project-migration.md) defines that completion check.
-
-- Automate setup keyboard shortcut for changing window focus instead of manually changing from Settings > Keyboard > Shortcuts > (Keyboard) Move focus to next window opt + x
-- When laptop is connected to a monitor, automatically change the display settings to mirror the display instead of extending it. If the monitor brightness is removed, it mimics disconnecting the laptop display when connected to a monitor. maybe create an script. Settings > Display > Built-in Display > Mirror display
-- Regression test from zero
-- Capture control + c to exit the run script
-- capture exit 1 from run script
-- Setup docker to test clean installs (Linux and macos)
-- Automate sudo, ask at the beginning of the script only.
-- Prettify logs and error handling (Better show when script errors, maybe finish script execution?)
-
 ## Resources
 
 - https://github.com/Gentleman-Programming/Gentleman.Dots
