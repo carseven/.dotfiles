@@ -73,6 +73,7 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-Z}' # Make completions case i
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}" # Add colors to completions. Similar to ls --colors
 zstyle ':completion:*' menu no # Disable completion menu, we will use Aloxaf/fzf-tab plugin instead for better expirience
 zstyle ':fzf-tab:*' fzf-command ftb-tmux-popup
+zstyle ':fzf-tab:*' fzf-bindings 'ctrl-space:ignore' 'tab:toggle'
 zstyle ':fzf-tab:complete:cd:*' fzf --preview 'ls $realpath'
 zstyle ':fzf-tab:complete:__zoxide_z:*' fzf --preview 'ls $realpath'
 

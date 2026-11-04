@@ -74,6 +74,12 @@ Using the first argument you can launch only specific scripts. This is really us
 
 ## Documentation
 
+### Zsh completion
+
+In the fzf-tab completion menu, use the arrow keys to navigate.
+Press Tab to select or deselect each result.
+Press Enter to insert the selected results. Ctrl+Space is disabled in this menu.
+
 ### Agent skills
 
 Install skills for GitHub Copilot and Claude Code:
