@@ -45,7 +45,7 @@ test('the reference documents every exposed entrypoint exactly once', async () =
 
 test('all generated local links and assets resolve under the Pages base path', async () => {
 	const htmlFiles = (await filesUnder(dist)).filter((file) => file.endsWith('.html'));
-	assert.ok(htmlFiles.length >= 12, 'expected guides, references, blog index, and a post');
+	assert.ok(htmlFiles.length >= 10, 'expected documentation home, guides, references, and a 404 page');
 	for (const file of htmlFiles) {
 		const html = await readFile(file, 'utf8');
 		const relative = path.relative(dist, file).split(path.sep).join('/');
@@ -74,12 +74,23 @@ test('all generated local links and assets resolve under the Pages base path', a
 	}
 });
 
-test('internal documentation is absent from the published output', async () => {
+test('only documentation routes are published', async () => {
 	const files = (await filesUnder(dist)).map((file) => path.relative(dist, file));
 	for (const file of files) {
 		assert.ok(!/(^|\/)(AGENTS\.md|GLOSSARY\.md|docs|adr)(\/|$)/.test(file), file);
+		assert.ok(!/(^|\/)blog(\/|$)/.test(file), `removed blog output: ${file}`);
 	}
-	for (const required of ['index.html', 'blog/index.html', 'blog/start-small-with-dotfiles/index.html']) {
+	for (const required of [
+		'index.html',
+		'guides/setup/index.html',
+		'guides/workflows/index.html',
+		'guides/customization/index.html',
+		'guides/troubleshooting/index.html',
+		'reference/root-commands/index.html',
+		'reference/installers/index.html',
+		'reference/shell-commands/index.html',
+		'reference/skills/index.html',
+	]) {
 		await access(path.join(dist, required));
 	}
 });

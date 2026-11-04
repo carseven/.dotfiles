@@ -69,4 +69,4 @@ Follow the selected skill's own instructions for those dependencies.
 Their [source instructions](https://github.com/carseven/.dotfiles/tree/main/runs/skills/personal)
 are authoritative for skill-specific workflows.
 Root `./test` does not discover their implementation tests.
-Do not publish service credentials or personal activity data in documentation or blog posts.
+Do not publish service credentials or personal activity data in documentation.

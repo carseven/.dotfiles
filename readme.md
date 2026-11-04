@@ -5,9 +5,9 @@ Review and adapt it before use. This is not a universal or unattended setup tool
 
 ## Documentation
 
-- [User documentation and blog](https://carseven.github.io/.dotfiles/) - available after the first successful Pages deployment.
+- [User documentation](https://carseven.github.io/.dotfiles/) - available after the first successful Pages deployment.
 - [Read the guides in source](./site/src/content/docs/index.md) while the site is not deployed.
-- [Maintainer and agent documentation](./docs/readme.md), including blog authoring and design interviews.
+- [Maintainer and agent documentation](./docs/readme.md), including website maintenance and design interviews.
 - [GitHub issues](https://github.com/carseven/.dotfiles/issues).
 
 ## Start safely

@@ -39,6 +39,5 @@ predict overwritten files, or prove that an installation will succeed.
 - Platform branches describe implemented behavior, not a guarantee of compatibility with every OS release or CPU architecture.
 - There is no automatic backup, rollback, or complete clean-machine test.
 
-The [blog](./blog/) explains the ideas behind this setup.
 Source code, issues, and existing manual configuration notes remain in the
 [GitHub repository](https://github.com/carseven/.dotfiles).

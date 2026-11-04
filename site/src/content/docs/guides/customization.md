@@ -54,6 +54,6 @@ Review those effects independently from application configuration.
 
 ## Website and maintainer changes
 
-Website development, blog authoring, design interviews, and ADR guidance live in the
+Website development, design interviews, and ADR guidance live in the
 [internal documentation](https://github.com/carseven/.dotfiles/tree/main/docs).
 Those files are not included in the published site.
