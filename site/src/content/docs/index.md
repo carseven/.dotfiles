@@ -31,6 +31,9 @@ predict overwritten files, or prove that an installation will succeed.
 | Inspect every installer target | [Installer targets](./reference/installers/) |
 | Learn the eight copied shell scripts | [Shell commands](./reference/shell-commands/) |
 | Install and use agent skills | [Agent skills](./reference/skills/) |
+| Configure Windows and AutoHotkey | [Windows setup](./guides/windows/) |
+| Set up the NuPhy Air60 V2 | [NuPhy Air60 V2](./guides/nuphy-air60-v2/) |
+| Build and flash the custom Planck keymap | [Planck keyboard](./guides/planck-keyboard/) |
 
 ## What this setup does not promise
 
@@ -39,5 +42,4 @@ predict overwritten files, or prove that an installation will succeed.
 - Platform branches describe implemented behavior, not a guarantee of compatibility with every OS release or CPU architecture.
 - There is no automatic backup, rollback, or complete clean-machine test.
 
-Source code, issues, and existing manual configuration notes remain in the
-[GitHub repository](https://github.com/carseven/.dotfiles).
+Source code and issues remain in the [GitHub repository](https://github.com/carseven/.dotfiles).

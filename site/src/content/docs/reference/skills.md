@@ -22,6 +22,7 @@ Rerunning it refreshes the selected skills from their sources.
 - ASD-STE100 for controlled-language writing.
 - Five Caveman skills for terse output and related workflows.
 - Cloudflare's security-audit skill.
+- [`stack-diagram`](https://github.com/caru-ini/stack-diagram) for technology-stack and system-architecture diagrams.
 - Personal skills in this repository: `pr-review`, `show-me`, `meeting-to-jira`, `training-coach`, and `route-planner`.
 
 Upstream names and availability can change because the installer selects all Matt Pocock skills.

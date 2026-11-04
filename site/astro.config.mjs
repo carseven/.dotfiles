@@ -24,6 +24,14 @@ export default defineConfig({
 					],
 				},
 				{
+					label: 'Manual setups',
+					items: [
+						{ label: 'Windows', slug: 'guides/windows' },
+						{ label: 'NuPhy Air60 V2', slug: 'guides/nuphy-air60-v2' },
+						{ label: 'Planck keyboard', slug: 'guides/planck-keyboard' },
+					],
+				},
+				{
 					label: 'Reference',
 					items: [
 						{ label: 'Root commands', slug: 'reference/root-commands' },
