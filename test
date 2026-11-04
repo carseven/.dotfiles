@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+script_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)" || exit 1
+cd "$script_dir" || exit 1
+
+if ! command -v python3 >/dev/null 2>&1; then
+    printf 'Error: Python 3 is required to run shell tests.\n' >&2
+    exit 1
+fi
+
+exec python3 -B -m unittest discover -s shell/tests -p 'test_*.py' -v

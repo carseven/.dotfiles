@@ -1,0 +1,84 @@
+#!/usr/bin/env bash
+
+if [[ $# -eq 1 && ("$1" == "--help" || "$1" == "-h") ]]; then
+    printf 'Usage: gh-approved [pull-request-url ...]\n'
+    printf 'Without URLs, select open PRs assigned to you with fzf (Tab to select, Enter to approve).\n'
+    printf 'Search host: GH_HOST, or github.azc.ext.hp.com by default. Fetches up to 1000 PRs.\n'
+    exit 0
+fi
+
+if ! command -v gh >/dev/null 2>&1; then
+    printf 'Error: GitHub CLI (gh) is required. Install it and run gh auth login --hostname HOST for the URL host.\n' >&2
+    exit 1
+fi
+
+urls=("$@")
+if [[ $# -eq 0 ]]; then
+    if ! command -v fzf >/dev/null 2>&1; then
+        printf 'Error: fzf is required to select assigned pull requests.\n' >&2
+        exit 1
+    fi
+
+    host="${GH_HOST:-github.azc.ext.hp.com}"
+    if prs=$(GH_HOST="$host" gh search prs --assignee '@me' --state open \
+        --sort updated --limit 1000 --json url,title \
+        --jq '.[] | [.url, .title] | @tsv'); then
+        if [[ -z "$prs" ]]; then
+            printf 'No open pull requests assigned to you on %s.\n' "$host"
+            exit 0
+        fi
+    else
+        status=$?
+        printf 'Error: could not fetch assigned pull requests from %s.\n' "$host" >&2
+        exit "$status"
+    fi
+
+    count=0
+    while IFS= read -r _; do
+        count=$((count + 1))
+    done <<<"$prs"
+    if [[ $count -eq 1000 ]]; then
+        printf 'Warning: showing only the 1000 most recently updated assigned pull requests.\n' >&2
+    fi
+
+    if selected=$(fzf --multi --delimiter=$'\t' --prompt='Approve PRs> ' \
+        --header="Assigned PRs on $host | Tab: select | Enter: approve | Esc: cancel" <<<"$prs"); then
+        while IFS=$'\t' read -r url _; do
+            [[ -n "$url" ]] && urls+=("$url")
+        done <<<"$selected"
+    else
+        status=$?
+        if [[ $status -eq 1 || $status -eq 130 ]]; then
+            printf 'No pull requests selected. Nothing approved.\n' >&2
+            exit 0
+        fi
+        printf 'Error: fzf failed to select pull requests.\n' >&2
+        exit "$status"
+    fi
+    if [[ ${#urls[@]} -eq 0 ]]; then
+        printf 'No pull requests selected. Nothing approved.\n' >&2
+        exit 0
+    fi
+fi
+
+url_pattern='^https://[[:alnum:].-]+(:[0-9]+)?/[^/?#[:space:]]+/[^/?#[:space:]]+/pull/[1-9][0-9]*/?([?#][^[:space:]]*)?$'
+for url in "${urls[@]}"; do
+    if [[ ! "$url" =~ $url_pattern ]]; then
+        printf 'Error: invalid pull request URL: %s\nExpected https://HOST/OWNER/REPO/pull/NUMBER.\n' "$url" >&2
+        exit 1
+    fi
+done
+
+status=0
+for url in "${urls[@]}"; do
+    if gh pr review "$url" --approve; then
+        printf 'Approved: %s\n' "$url"
+    else
+        failure=$?
+        printf 'Error: approval failed for %s.\n' "$url" >&2
+        if [[ $status -eq 0 ]]; then
+            status=$failure
+        fi
+    fi
+done
+exit "$status"
