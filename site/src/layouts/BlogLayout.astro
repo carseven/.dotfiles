@@ -1,0 +1,85 @@
+---
+interface Props {
+	title: string;
+	description: string;
+}
+
+const { title, description } = Astro.props;
+const base = import.meta.env.BASE_URL;
+const canonical = new URL(Astro.url.pathname, Astro.site);
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>{title} | .dotfiles</title>
+		<meta name="description" content={description} />
+		<link rel="canonical" href={canonical} />
+		<link rel="icon" type="image/svg+xml" href={`${base}favicon.svg`} />
+		<meta name="color-scheme" content="light dark" />
+	</head>
+	<body>
+		<a class="skip-link" href="#main">Skip to content</a>
+		<header>
+			<a class="brand" href={base}>.dotfiles</a>
+			<nav aria-label="Main navigation">
+				<a href={base}>Documentation</a>
+				<a href={`${base}blog/`} aria-current={Astro.url.pathname === `${base}blog/` ? 'page' : undefined}>Blog</a>
+				<a href="https://github.com/carseven/.dotfiles">GitHub</a>
+			</nav>
+		</header>
+		<main id="main">
+			<slot />
+		</main>
+		<footer>
+			<p>A personal workstation setup. Read the source before running it.</p>
+			<a href={`${base}guides/setup/`}>Safe setup guide</a>
+		</footer>
+	</body>
+</html>
+
+<style is:global>
+	:root {
+		font-family: system-ui, sans-serif;
+		color: #20232b;
+		background: #fafbfc;
+		line-height: 1.7;
+		--accent: #244fc4;
+		--border: #d7dce5;
+	}
+	* { box-sizing: border-box; }
+	body { margin: 0; }
+	a { color: var(--accent); text-underline-offset: 0.2em; }
+	a:hover { text-decoration-thickness: 0.15em; }
+	a:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; }
+	header, main, footer { width: min(100% - 3rem, 76ch); margin-inline: auto; }
+	header { display: flex; flex-wrap: wrap; gap: 1rem 2rem; align-items: center; padding-block: 1.5rem; border-bottom: 1px solid var(--border); }
+	.brand { font-family: ui-monospace, monospace; font-weight: 750; font-size: 1.25rem; text-decoration: none; }
+	nav { display: flex; flex-wrap: wrap; gap: 1rem; }
+	nav a { font-size: 0.95rem; }
+	main { min-height: 60vh; padding-block: 3rem; }
+	h1, h2, h3 { line-height: 1.2; text-wrap: balance; }
+	h1 { font-size: clamp(2rem, 6vw, 3.25rem); letter-spacing: -0.035em; }
+	h2 { margin-top: 2rem; }
+	.kicker, time { font-size: 0.9rem; color: #536077; }
+	.kicker { text-transform: uppercase; letter-spacing: 0.12em; font-weight: 700; }
+	.description { font-size: 1.2rem; }
+	.posts { list-style: none; padding: 0; }
+	.posts > li { padding-block: 1.5rem; border-bottom: 1px solid var(--border); }
+	.posts h2 { margin-top: 0.5rem; }
+	article img { max-width: 100%; height: auto; }
+	pre { padding: 1rem; border-radius: 0.5rem; overflow-x: auto; }
+	:not(pre) > code { font-size: 0.9em; padding: 0.1em 0.3em; background: #e8ecf4; border-radius: 0.2rem; }
+	blockquote { margin-inline: 0; padding-left: 1rem; border-left: 3px solid var(--accent); }
+	footer { padding-block: 2rem; border-top: 1px solid var(--border); font-size: 0.9rem; }
+	.skip-link { position: absolute; top: -5rem; left: 1rem; background: #fff; padding: 0.5rem; }
+	.skip-link:focus { top: 0.5rem; }
+	@media (prefers-color-scheme: dark) {
+		:root { color: #e7eaf0; background: #151820; --accent: #a7bfff; --border: #383f4e; }
+		.kicker, time { color: #aeb9cd; }
+		:not(pre) > code { background: #2b3242; }
+		.skip-link { background: #151820; }
+	}
+</style>
