@@ -1,0 +1,8 @@
+**
+!run
+!runs/
+!runs/**
+!shell/
+!shell/**
+!docker/
+!docker/**

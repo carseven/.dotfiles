@@ -3,18 +3,27 @@
 script_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 filter=""
 dry="0"
+docker_mode="0"
 
 cd "$script_dir" || exit
-scripts=$(find runs -maxdepth 2 -mindepth 1 -type f -type f \( -perm -u=x -o -perm -g=x -o -perm -o=x \))
+scripts=()
+while IFS= read -r script; do
+    scripts+=("$script")
+done < <(find runs -maxdepth 2 -mindepth 1 -type f \( -perm -u=x -o -perm -g=x -o -perm -o=x \))
 
 while (($# > 0)); do
-    if [[ "$1" == "--dry" ]]; then
-        dry="1"
-    else
-        filter="$1"
-    fi
+    case "$1" in
+    --dry) dry="1" ;;
+    --docker) docker_mode="1" ;;
+    *) filter="$1" ;;
+    esac
     shift
 done
+
+if [[ $docker_mode == "1" && $dry == "1" ]]; then
+    printf 'Error: --docker cannot be combined with --dry.\n' >&2
+    exit 2
+fi
 
 log() {
     if [[ $dry == "1" ]]; then
@@ -33,7 +42,7 @@ execute() {
     "$@"
 }
 
-if [[ -z "$scripts" ]]; then
+if ((${#scripts[@]} == 0)); then
     log "No scripts found"
     exit 1
 fi
@@ -44,7 +53,25 @@ else
     log "Filter provided: $filter"
 fi
 
-for script in $scripts; do
+if [[ $docker_mode == "1" ]]; then
+    if ! command -v docker >/dev/null 2>&1; then
+        printf 'Error: Docker is required for --docker.\n' >&2
+        exit 127
+    fi
+
+    docker_image="dotfiles-runner:local"
+    docker build -f "$script_dir/docker/runner.Dockerfile" -t "$docker_image" "$script_dir" || exit $?
+    if [[ -n "$filter" ]]; then
+        docker run --rm "$docker_image" "$filter"
+    else
+        docker run --rm "$docker_image"
+    fi
+    exit $?
+fi
+
+failed=0
+
+for script in "${scripts[@]}"; do
     if echo "$script" | grep -qv "$filter"; then
         # Only show the filters with the dry run flag
         if [[ $dry == "1" ]]; then
@@ -53,5 +80,20 @@ for script in $scripts; do
         continue
     fi
     log "running script: $script"
-    execute "./$script"
+    if [[ $dry == "1" ]]; then
+        execute "./$script"
+        continue
+    fi
+
+    if execute "./$script"; then
+        :
+    else
+        status=$?
+        printf 'Failed: %s (exit status %s)\n' "$script" "$status" >&2
+        failed=1
+    fi
 done
+
+if ((failed)); then
+    exit 1
+fi
