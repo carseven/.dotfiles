@@ -1,0 +1,33 @@
+---
+import { getCollection, render } from 'astro:content';
+import type { CollectionEntry } from 'astro:content';
+import BlogLayout from '../../layouts/BlogLayout.astro';
+
+export async function getStaticPaths() {
+	return (await getCollection('blog')).map((post) => ({
+		params: { id: post.id },
+		props: { post },
+	}));
+}
+
+interface Props {
+	post: CollectionEntry<'blog'>;
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+const published = post.data.publishedAt.toLocaleDateString('en', {
+	year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC',
+});
+---
+
+<BlogLayout title={post.data.title} description={post.data.description}>
+	<article>
+		<p class="kicker">.dotfiles blog</p>
+		<h1>{post.data.title}</h1>
+		<time datetime={post.data.publishedAt.toISOString()}>{published}</time>
+		<p class="description">{post.data.description}</p>
+		<Content />
+	</article>
+	<p><a href={`${import.meta.env.BASE_URL}blog/`}>All posts</a></p>
+</BlogLayout>
