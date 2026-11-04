@@ -80,8 +80,6 @@ In the fzf-tab completion menu, use the arrow keys to navigate.
 Press Tab to select or deselect each result.
 Press Enter to insert the selected results. Ctrl+Space is disabled in this menu.
 
-After editing `shell/.zshrc`, run `./run zsh` and open a new shell to apply changes.
-
 ### Agent skills
 
 Install skills for GitHub Copilot and Claude Code:
