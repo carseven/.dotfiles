@@ -9,7 +9,9 @@ import unittest
 
 ROOT = Path(__file__).resolve().parents[2]
 VSCODE_DIR = ROOT / "runs" / "vscode"
-BRAVE_EXECUTABLE = "/Applications/Brave Browser.app/Contents/MacOS/Brave Browser"
+BRAVE_USER_DATA_DIR = (
+    "${env:HOME}/Library/Application Support/BraveSoftware/Brave-Browser"
+)
 
 
 class VSCodeInstallerTests(unittest.TestCase):
@@ -60,7 +62,7 @@ class VSCodeInstallerTests(unittest.TestCase):
             timeout=10,
         )
 
-    def test_mcp_config_only_launches_brave_with_chrome_devtools(self):
+    def test_mcp_config_only_connects_chrome_devtools_to_existing_brave(self):
         config = json.loads((VSCODE_DIR / "mcp.json").read_text())
         self.assertEqual(list(config["servers"]), ["chrome-devtools"])
         server = config["servers"]["chrome-devtools"]
@@ -71,8 +73,9 @@ class VSCodeInstallerTests(unittest.TestCase):
             [
                 "-y",
                 "chrome-devtools-mcp@latest",
-                "--executablePath",
-                BRAVE_EXECUTABLE,
+                "--autoConnect",
+                "--userDataDir",
+                BRAVE_USER_DATA_DIR,
                 "--no-usage-statistics",
                 "--no-performance-crux",
             ],

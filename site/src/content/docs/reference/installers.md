@@ -282,17 +282,29 @@ Copies settings, keybindings, tasks, and MCP configuration into
 That directory is not created by the target. Each copy replaces the entire
 destination file, including any other servers in the existing MCP configuration.
 
-The MCP configuration contains only Chrome DevTools. It launches Brave from
-`/Applications/Brave Browser.app/Contents/MacOS/Brave Browser`.
+The MCP configuration contains only Chrome DevTools. It attaches to the running
+Brave browser with `--autoConnect` and `--userDataDir`, using
+`${env:HOME}/Library/Application Support/BraveSoftware/Brave-Browser`.
+VS Code resolves `${env:HOME}` to the current user's home directory.
 It requires Brave and Node.js with `npx` available to VS Code. The server uses
 `chrome-devtools-mcp@latest`, which `npx` may download or update when it starts.
 Chrome DevTools officially supports Chrome and Chrome for Testing; Brave is not
-officially supported. Restart the MCP server and start a new agent session
-after updating the configuration.
+officially supported. This setup requires a Brave version with Chromium 144+
+remote debugging support. In your regular Brave window, open
+`brave://inspect/#remote-debugging`, enable remote debugging, and approve
+connection requests when prompted. Keep Brave running.
+Restart the MCP server and start a new agent session after updating the
+configuration.
 
-The server uses its own persistent profile at
-`~/.cache/chrome-devtools-mcp/chrome-profile`, not the regular Brave profile.
-For simultaneous server instances, add `--isolated` to use temporary profiles.
+The server reuses the regular Brave profile and its open tabs, cookies, and
+signed-in sessions. It does not launch a separate browser or use the previous
+`~/.cache/chrome-devtools-mcp/chrome-profile` directory. If Brave is closed or
+remote debugging is disabled, connection fails instead of launching a browser.
+Only approve trusted clients: they can inspect and control tabs in the connected
+profile. Other local applications may also be able to connect while remote
+debugging is enabled. Disable it when you no longer need access.
+Concurrent agent sessions share this browser, so coordinate their tab changes.
+Do not add `--isolated` or `--executablePath` to this attachment configuration.
 The `--no-usage-statistics` and `--no-performance-crux` options disable usage
 statistics and CrUX field-data requests, so performance reports do not include
 CrUX data.

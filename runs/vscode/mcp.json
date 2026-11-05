@@ -7,8 +7,9 @@
       "args": [
         "-y",
         "chrome-devtools-mcp@latest",
-        "--executablePath",
-        "/Applications/Brave Browser.app/Contents/MacOS/Brave Browser",
+        "--autoConnect",
+        "--userDataDir",
+        "${env:HOME}/Library/Application Support/BraveSoftware/Brave-Browser",
         "--no-usage-statistics",
         "--no-performance-crux"
       ]
