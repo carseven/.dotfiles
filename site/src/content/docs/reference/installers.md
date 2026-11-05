@@ -277,8 +277,25 @@ The target does not install a Terraform version or configure its own `PATH` entr
 **Use:** `./run vscode`. **Platform:** macOS only.
 
 Installs Visual Studio Code through Homebrew.
-Copies settings, keybindings, and tasks into `~/Library/Application Support/Code/User/`.
-That directory is not created by the target.
+Copies settings, keybindings, tasks, and MCP configuration into
+`~/Library/Application Support/Code/User/`.
+That directory is not created by the target. Each copy replaces the entire
+destination file, including any other servers in the existing MCP configuration.
+
+The MCP configuration contains only Chrome DevTools. It launches Brave from
+`/Applications/Brave Browser.app/Contents/MacOS/Brave Browser`.
+It requires Brave and Node.js with `npx` available to VS Code. The server uses
+`chrome-devtools-mcp@latest`, which `npx` may download or update when it starts.
+Chrome DevTools officially supports Chrome and Chrome for Testing; Brave is not
+officially supported. Restart the MCP server and start a new agent session
+after updating the configuration.
+
+The server uses its own persistent profile at
+`~/.cache/chrome-devtools-mcp/chrome-profile`, not the regular Brave profile.
+For simultaneous server instances, add `--isolated` to use temporary profiles.
+The `--no-usage-statistics` and `--no-performance-crux` options disable usage
+statistics and CrUX field-data requests, so performance reports do not include
+CrUX data.
 
 Requires the `code` command for extension installation.
 Installs theme and icon extensions, path completion, spell checking, Error Lens,
