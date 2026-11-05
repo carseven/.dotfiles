@@ -6,9 +6,10 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
 
     # Copy cofniguration files
     cd runs/vscode
-    cp settings.json $HOME/Library/Application\ Support/Code/User/settings.json
-    cp keybindings.json $HOME/Library/Application\ Support/Code/User/keybindings.json
-    cp tasks.json $HOME/Library/Application\ Support/Code/User/tasks.json
+    cp settings.json "$HOME/Library/Application Support/Code/User/settings.json"
+    cp keybindings.json "$HOME/Library/Application Support/Code/User/keybindings.json"
+    cp tasks.json "$HOME/Library/Application Support/Code/User/tasks.json"
+    cp mcp.json "$HOME/Library/Application Support/Code/User/mcp.json" || exit 1
 
     # Install extensions
     # TODO: Check if the extension is already installed
