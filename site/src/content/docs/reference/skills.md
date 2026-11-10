@@ -23,7 +23,7 @@ Rerunning it refreshes the selected skills from their sources.
 - Five Caveman skills for terse output and related workflows.
 - Cloudflare's security-audit skill.
 - [`stack-diagram`](https://github.com/caru-ini/stack-diagram) for technology-stack and system-architecture diagrams.
-- Personal skills in this repository: `pr-review`, `show-me`, `meeting-to-jira`, `training-coach`, and `route-planner`.
+- Personal skills in this repository: `pr-review`, `show-me`, `meeting-to-jira`, `training-coach`, `route-planner`, and `hpbw-adr`.
 
 Upstream names and availability can change because the installer selects all Matt Pocock skills.
 Inspect installation output rather than assuming a skill is already available in the active agent session.
@@ -62,6 +62,21 @@ that calls `rtk hook copilot`, uses `.` as its working directory, and has a five
 Without RTK, the script reports that RTK integration was skipped and exits successfully.
 That is not a failure of the preceding skill installation.
 The script does not install RTK itself.
+
+## HPBW architecture decision records
+
+`/hpbw-adr` drafts an ADR and implementation plan for the HP Build Workspace platform.
+It reads Jira, Confluence, and Figma through the user's logged-in browser, finds facts in the repositories at `origin`,
+and runs a `grilling` interview before it writes the ADR in `aec_documentation`.
+It needs the `grilling` skill, `gh`, and the Chrome DevTools MCP server.
+
+AWS access is read-only by design.
+The skill asks before it reads AWS, and sends every call through `runs/skills/personal/hpbw-adr/scripts/aws_ro.py`.
+The guard runs only `describe-*`, `list-*`, and `get-*` operations that do not return secrets or stored data, plus `s3 ls`, and refuses everything else.
+It protects against mistakes and does not replace a read-only AWS role.
+Database access stays with the user: the skill asks for `SHOW`, `DESCRIBE`, or `SELECT` results and never asks for credentials.
+
+Run its guard tests with `python3 -m unittest discover -s runs/skills/personal/hpbw-adr/scripts/tests`.
 
 ## Personal-skill dependencies
 
