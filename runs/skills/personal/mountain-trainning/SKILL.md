@@ -1,6 +1,6 @@
 ---
 name: mountain-trainning
-description: "Use to learn about, plan, or review climbing, aerobic (Z1-Z2 base, AeT, trail running, ski mountaineering, alpinism), and bodyweight strength training, based on four supplied books: Training for the New Alpinism, Training for the Uphill Athlete, The Climbing Bible: Practical Exercises, and Overcoming Gravity."
+description: "Use to learn about, plan, or review climbing, aerobic (Z1-Z2 base, AeT, trail running, half marathon and race-time targets, ski mountaineering, alpinism), and bodyweight strength training, based on four supplied books: Training for the New Alpinism, Training for the Uphill Athlete, The Climbing Bible: Practical Exercises, and Overcoming Gravity."
 ---
 
 # Mountain training
@@ -23,6 +23,8 @@ decision guide, questions to ask the athlete, and known gaps.
 | Alpine periodisation, strength and muscular endurance phases, climbing fitness, altitude, nutrition | [new-alpinism.md](./references/new-alpinism.md) |
 | Climbing technique, footwork, warm-up, finger strength, campus, youth climbers | [climbing-bible.md](./references/climbing-bible.md) |
 | Bodyweight push, pull, core, legs, skills, mobility, injury management | [overcoming-gravity.md](./references/overcoming-gravity.md) |
+| A race-time target, a time trial, or a first running base for a road race | [running-targets.md](./references/running-targets.md) |
+| Climbing tests, finger-training prerequisites, endurance, fear, injury prevention, mobility sessions, a roadmap to a higher grade (course by Alejandro Padilla Crespo, with captions and two papers) | [padilla-course.md](./references/padilla-course.md) |
 
 A plan that mixes training types needs every matching file. If the athlete
 keeps local Markdown conversions of the books in this folder, search them for
@@ -62,6 +64,9 @@ include them, so the references must work without them.
    health constraints. Use the questions at the end of each loaded reference.
    Ask focused questions for missing information before prescribing a
    personalized plan. Do not invent missing values.
+   Read the athlete's own notes for injuries and past advice. If they
+   contradict the athlete's answer, plan around the stricter rule and say so.
+   Confirm race dates and registration deadlines on the organiser's site.
 2. Identify the main objective and the demands of each activity. Account for
    climbing sessions, endurance work, bodyweight strength, and other exercise
    together rather than treating their recovery needs independently.
@@ -73,12 +78,38 @@ include them, so the references must work without them.
    and repetitions where appropriate, effort cues, rest, and progression or
    review criteria. Explain assumptions and identify any information still
    needed. Avoid a test or a hard session as the default starting point.
-5. Invite feedback on completed work, effort, recovery, and symptoms. Adjust
+5. Check the plan before you show it:
+   - Count the training days. They must not exceed the days the athlete has.
+     Show every double session (two sessions in one day) in the schedule.
+   - Count each movement pattern per session. Remove duplicates, for example
+     three presses in one upper-body day, unless the goal needs them.
+   - Use the athlete's own zone model and labels. In the Uphill Athlete
+     model, Zone 2 is the range up to the aerobic threshold and drives the
+     base. Zone 1 is for warm-up and recovery.
+   - Check every date and weekday, and that weekly increases follow the
+     progression rule.
+6. Invite feedback on completed work, effort, recovery, and symptoms. Adjust
    the plan to actual training rather than assuming sessions were completed.
 
 When reviewing a plan, first compare it with the athlete's goal, recent
 training, and recovery. Explain which changes are necessary and why; retain
 what already works.
+
+## Plan document
+
+The athlete follows the plan, so a saved plan holds the plan only.
+Put these in the chat reply, not in the file:
+
+- the analysis of their data and the reasons for each choice
+- caveats about estimates, and open questions
+- book citations and sources
+- notes for the agent
+
+The file keeps the goals, the rules the athlete must follow, the weekly
+template, the calendar, each session in detail, the tests, and a log.
+Keep the style the athlete asks for. Do not apply another skill's template
+unless the athlete asks for it. If the athlete asks to shorten the file,
+cut explanations first.
 
 ## Athlete data
 

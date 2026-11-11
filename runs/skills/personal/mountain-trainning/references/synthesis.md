@@ -26,7 +26,8 @@ The supplied files are Markdown conversions. Figures, charts, tables, and videos
 | General gym strength for mountain sport | New Alpinism, Uphill Athlete | Overcoming Gravity |
 | Bodyweight push, pull, core, skill statics | Overcoming Gravity | none |
 | Climbing technique and footwork drills | Climbing Bible | none |
-| Finger strength and campus | Climbing Bible | none (Overcoming Gravity has none) |
+| Finger strength and campus | Climbing Bible | Padilla course (prerequisites, methods by level) |
+| Climbing tests, endurance, fear, mobility sessions, grade roadmap | Padilla course ([padilla-course.md](./padilla-course.md)) | Climbing Bible |
 | Alpine climbing fitness and pack-carrying | New Alpinism | Climbing Bible (trad and alpine chapter) |
 | Recovery monitoring and overtraining signs | Uphill Athlete, New Alpinism | Overcoming Gravity (tissue-level injury cues) |
 | Injury cautions for elbow, shoulder, wrist | Overcoming Gravity | Climbing Bible |
@@ -48,7 +49,7 @@ The supplied files are Markdown conversions. Figures, charts, tables, and videos
 - **Intensity gate.** Both books use a rule that compares the aerobic and anaerobic thresholds before adding harder work (a gap of about 10 percent). Details and examples differ. [B] Use the version in the file you rely on.
 - **Testing heart rate.** New Alpinism describes a max-HR field test and rejects the "220 minus age" formula. Uphill Athlete does not give a max-HR test. It gives AeT tests instead, from an age-based formula to lactate and lab tests, and it calls the formula conservative. [B] [I] Offer a medical check before any maximal test for older or at-risk athletes.
 - **Strength dosing.** The aerobic books use gym strength as a supporting element and then ME work. Overcoming Gravity treats bodyweight strength as a primary goal with many skill progressions. [B] [I] For a mountain athlete, use Overcoming Gravity for exercise choice and progression, and the aerobic books for how much strength fits around endurance.
-- **Finger strength.** Only the Climbing Bible covers it. [B] If finger load is needed, use that file and add its caution. Do not infer finger prescriptions from Overcoming Gravity.
+- **Finger strength.** The Climbing Bible and the Padilla course cover it. Overcoming Gravity does not. [B] They disagree on who may start hangs. The Climbing Bible allows unloaded hangs for adults. One Padilla video asks for 1–2 years of systematic climbing first, and another allows bodyweight hangs after 6–8 months. [I] For a climber with under one year of experience, plan around the stricter rule: wall-based finger work first, and hangs only after technique and training frequency meet the course criteria, or after a coach agrees. Do not infer finger prescriptions from Overcoming Gravity.
 - **Climbing endurance.** The Climbing Bible companion omits endurance and periodisation. [B] Use New Alpinism for the big-picture structure and treat climbing-specific endurance sessions as [I].
 - **Conflicts inside books.** Each per-book file lists internal contradictions in its numbers (for example warm-up durations, hill-sprint lengths, and tendon-return rates). Mention uncertainty when you quote them.
 
