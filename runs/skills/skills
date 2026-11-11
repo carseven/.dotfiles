@@ -20,7 +20,7 @@ add_skills danyuchn/asd-ste100-skill --skill asd-ste100
 add_skills JuliusBrussee/caveman --skill caveman caveman-commit caveman-compress caveman-help caveman-review
 add_skills cloudflare/security-audit-skill --skill security-audit
 add_skills caru-ini/stack-diagram --skill stack-diagram
-add_skills "$script_dir/personal" --skill pr-review show-me meeting-to-jira training-coach route-planner
+add_skills "$script_dir/personal" --skill pr-review show-me meeting-to-jira training-coach route-planner mountain-trainning zepp strava
 
 # RTK hooks: rewrite shell commands through rtk.
 if ! command -v rtk >/dev/null 2>&1; then
