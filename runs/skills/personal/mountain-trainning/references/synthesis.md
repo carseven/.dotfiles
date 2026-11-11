@@ -65,6 +65,18 @@ The books do not provide one shared plan. Use these rules as defaults, then adap
 6. **Reduce on schedule.** Use planned lighter weeks, and cut load after poor sleep, illness, pain, or low motivation, as the monitoring sections describe.
 7. **Review often.** Compare plan to actual training, then adjust the next block. Do not assume missed sessions happened.
 
+### Competing goals: plan in blocks [I]
+
+Athletes rarely maximise two demanding goals at once. Most split the year into blocks of about 8–12 weeks.
+
+- **One main goal per block.** It gets most of the hard sessions. The other goal gets a maintenance dose. Then the blocks swap.
+- **Maintenance dose (estimate, not from the books).** About one easy run a week of 30–60 min keeps an aerobic base. About one climbing session a week holds a climbing level.
+- **Hard-day budget.** A week holds about 3 hard days. Hard running, hard climbing, finger work, and heavy legs share that budget. Zone 2 running is not a hard day.
+- **Interference.** Easy Zone 2 running interferes little with climbing and strength. Hard intervals on the same day as heavy legs or finger work interfere more.
+- **Climbing level.** For a climber near V2–V3, most gains come from climbing volume, technique, and later finger strength. Running adds little to the grade, so climbing usually goes first.
+- **Race target in a later block.** A road-race pace target (for example 10 km at 5:30/km) needs at least three runs a week. Plan it as its own block. In that block, drop climbing to 1–2 maintenance sessions.
+- **Say the trade-off to the athlete.** If they want both at once, expect slower progress on each.
+
 ## 6. Safety rules for any plan
 
 - This skill gives education, not diagnosis or medical clearance. Ask about injuries, symptoms, and medical restrictions first.

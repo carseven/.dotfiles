@@ -70,6 +70,8 @@ include them, so the references must work without them.
 2. Identify the main objective and the demands of each activity. Account for
    climbing sessions, endurance work, bodyweight strength, and other exercise
    together rather than treating their recovery needs independently.
+   When goals compete, give each block one main goal and a maintenance dose
+   for the rest. See "Competing goals" in the synthesis.
 3. Build from the athlete's recent sustainable workload. Choose exercise
    variations and intensity that fit their experience, available time, and
    recovery. Progress gradually and explain how to reduce load after missed

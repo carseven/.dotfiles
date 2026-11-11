@@ -73,3 +73,4 @@ Running adds impact load. When the athlete also climbs and lifts:
 - Three running days, two strength sessions, and two climbing sessions are seven sessions. Check that they fit the available days.
 - Put heavy leg strength two days before the long run, and keep the run after it easy.
 - Keep the long run on its own day when the available days allow it.
+- If running is only maintenance, keep one easy long run a week and plan any pace target as a later block (see "Competing goals" in the synthesis).
