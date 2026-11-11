@@ -142,6 +142,6 @@ It is not a general updater for the full Xcode application.
 
 ## Skill-local helpers
 
-Route-planner and training-coach contain implementation CLIs with their own dependencies and references.
+Route-planner and the Zepp skill contain implementation CLIs with their own dependencies and references.
 They are not copied general-purpose shell commands.
 Use the relevant personal skill's documentation rather than treating those helpers as supported workstation commands.

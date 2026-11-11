@@ -23,7 +23,13 @@ Rerunning it refreshes the selected skills from their sources.
 - Five Caveman skills for terse output and related workflows.
 - Cloudflare's security-audit skill.
 - [`stack-diagram`](https://github.com/caru-ini/stack-diagram) for technology-stack and system-architecture diagrams.
-- Personal skills in this repository: `pr-review`, `show-me`, `meeting-to-jira`, `training-coach`, `route-planner`, and `hpbw-adr`.
+- Personal skills in this repository: `pr-review`, `show-me`, `meeting-to-jira`, `training-coach`, `route-planner`, `hpbw-adr`, `mountain-trainning`, `zepp`, and `strava`.
+
+The `mountain-trainning` skill summarizes four training books and a climbing course.
+The repository contains neither the books nor the course files. Its `.gitignore` excludes local Markdown conversions of the books, the unpacked course folder `sources/`, and zip files.
+If you keep those files in the skill folder, installation can copy them into global skill directories.
+Check your rights to the files before you share an installed copy.
+The skill works without them. Its references are summaries.
 
 Upstream names and availability can change because the installer selects all Matt Pocock skills.
 Inspect installation output rather than assuming a skill is already available in the active agent session.
@@ -81,6 +87,8 @@ Run its guard tests with `python3 -m unittest discover -s runs/skills/personal/h
 ## Personal-skill dependencies
 
 Personal skills can contain Python helpers or require external services.
+The `zepp` skill syncs a local cache with a CLI that needs `uv` and a Zepp session token stored in the system keychain.
+The `strava` skill reads the athlete's logged-in browser through chrome-devtools and needs no credentials.
 Follow the selected skill's own instructions for those dependencies.
 Their [source instructions](https://github.com/carseven/.dotfiles/tree/main/runs/skills/personal)
 are authoritative for skill-specific workflows.

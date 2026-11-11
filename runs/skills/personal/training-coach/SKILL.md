@@ -102,23 +102,18 @@ Las herramientas de listado y búsqueda devuelven **CSV** (cabecera + filas) par
 
 Las únicas fuentes de datos del atleta son **Zepp Life**, **Strava** y **Hevy** (esta última se lee desde Strava). No uses otras fuentes. Si el atleta menciona otro dispositivo o app, pídele los datos a mano.
 
+Esta skill no lleva scripts ni procedimientos de lectura propios. Usa estas skills:
+
+- **`zepp`** — caché local de Zepp Life: `doctor`, `sync`, lectura de entrenos, sueño y FC.
+- **`strava`** — actividades, títulos y descripciones de Strava (incluido Hevy) con chrome-devtools.
+
 ### Zepp Life — Caché local
 
-`<skill_dir>` es la carpeta de esta skill (normalmente `~/.agents/skills/training-coach`). Instalación, configuración del token y sincronización: `references/zepp.md`.
-
-Si el atleta conecta Zepp Life, usa el script local `uv run --directory <skill_dir>/scripts/zepp python zepp_cli.py doctor` para revisar la configuración y caché SQLite local. Los datos sincronizados incluyen entrenamientos, sueño, frecuencia cardiaca, actividad diaria y composición corporal.
-
-No pidas, recibas, leas, muestres ni guardes un `apptoken` en el chat, los planes, el perfil del atleta, la memoria, los logs, el código ni los ajustes de VS Code. El atleta lo configura localmente mediante `uv run --directory <skill_dir>/scripts/zepp python zepp_cli.py configure`; el flujo recomendado lo almacena en el llavero del sistema. Pide consentimiento antes de una actualización con `uv run --directory <skill_dir>/scripts/zepp python zepp_cli.py sync` cuando la caché no cubra el periodo requerido o el atleta solicite datos recientes.
+Usa la skill `zepp`. Regla del coach: pide consentimiento antes de ejecutar `sync` cuando la caché no cubra el periodo requerido o el atleta pida datos recientes. No pidas, recibas, leas, muestres ni guardes un `apptoken` en el chat, los planes, el perfil del atleta, la memoria, los logs, el código ni los ajustes de VS Code.
 
 ### Strava — Segunda fuente de entrenos
 
-El atleta sube a Strava todos sus entrenamientos. Úsalo junto a Zepp, sobre todo para el desnivel de la cinta y el progreso de fuerza.
-
-**Cómo recuperar los datos**
-
-1. Abre `https://www.strava.com/athlete/training` en el navegador integrado.
-2. Si pide login, deja que el atleta inicie sesión. Nunca pidas ni escribas usuario, contraseña o tokens.
-3. Lee la tabla de actividades (deporte, fecha, título, tiempo, distancia, desnivel). Si falta el periodo, carga más actividades.
+El atleta sube a Strava todos sus entrenamientos. Úsalo junto a Zepp, sobre todo para el desnivel de la cinta y el progreso de fuerza. Para leer Strava usa la skill `strava`.
 
 **Qué aporta cada fuente**
 
@@ -137,25 +132,9 @@ El atleta sube a Strava todos sus entrenamientos. Úsalo junto a Zepp, sobre tod
 
 **Fuerza: reloj + Hevy**
 
-Cada día de fuerza hay **dos actividades "Weight Training"** en Strava con la misma hora de inicio y duración casi igual (±1 min). Son la misma sesión: no las sumes ni cuentes dos veces.
+Cada día de fuerza hay dos actividades en Strava (reloj y Hevy). Son la misma sesión: no las sumes ni cuentes dos veces. La actividad de Hevy aporta ejercicios, series, kg, repeticiones y RPE. La del reloj aporta FC, tiempo y calorías. Formato y lectura: skill `strava`.
 
-|           | Actividad del reloj                 | Actividad de Hevy                                               |
-| --------- | ----------------------------------- | --------------------------------------------------------------- |
-| Título    | Genérico: `Evening Weight Training` | Nombre de la rutina: `Torso`, `Pierna + Excéntrico`, `Fullbody` |
-| Origen    | Reloj (sube también Zepp)           | App Hevy (etiqueta "Hevy" en la ficha)                          |
-| Aporta    | FC, tiempo, calorías                | Ejercicios, series, kg, repeticiones, RPE                       |
-| No aporta | Ejercicios ni cargas                | FC                                                              |
-
-Cómo leer la actividad de Hevy:
-
-1. Abre la ficha de la actividad (`strava.com/activities/<id>`). El id sale de los enlaces de la tabla de actividades.
-2. La descripción empieza con `Logged with hevyapp.com` y lista un bloque por ejercicio.
-3. Cada serie sigue uno de estos formatos:
-   - Con carga: `Set 1: 40 kg x 10 @ 7 rpe` (kg × repeticiones @ RPE).
-   - Peso corporal: `Set 1: 6 reps @ 7.5 rpe`.
-4. Si la descripción aparece recortada, pulsa `•••` (View more) para ver todos los ejercicios.
-5. Para progreso, compara los mismos ejercicios entre sesiones: carga, repeticiones totales y RPE por serie. Una carga igual con RPE más bajo indica mejora.
-6. Para FC y carga cardiaca de esa sesión, usa la actividad del reloj o Zepp.
+Para progreso, compara los mismos ejercicios entre sesiones: carga, repeticiones totales y RPE por serie. Una carga igual con RPE más bajo indica mejora. Para FC y carga cardiaca de esa sesión, usa la actividad del reloj o Zepp.
 
 El día de fuerza no aporta km ni D+ (0 km): no entra en el km-esfuerzo.
 
@@ -418,4 +397,3 @@ Consultar siempre que la intención involucre diseñar, evaluar o aconsejar sobr
 - `references/alpinism.md` — alpinismo: macrociclo de expedición y alta montaña
 - `references/athlete-template.md` — estructura en blanco del apartado «Perfil del atleta» de un plan
 - `references/onboarding.md` — proceso para crear el perfil de un atleta nuevo
-- `references/zepp.md` — instalación y uso del CLI de Zepp Life
