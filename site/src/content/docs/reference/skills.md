@@ -23,6 +23,9 @@ Rerunning it refreshes the selected skills from their sources.
 - Five Caveman skills for terse output and related workflows.
 - Cloudflare's security-audit skill.
 - [`stack-diagram`](https://github.com/caru-ini/stack-diagram) for technology-stack and system-architecture diagrams.
+- [`socratic-tutor`](https://github.com/janestreet/agent_skills/tree/master/socratic-tutor) for Socratic tutoring.
+  The vendored copy is from [revision `7c6715c`](https://github.com/janestreet/agent_skills/tree/7c6715c29548a3b39d4a9545c698ee4fd17a7213/socratic-tutor).
+  Update the local copy and its MIT license to refresh it.
 - Personal skills in this repository: `pr-review`, `show-me`, `meeting-to-jira`, `training-coach`, `route-planner`, `hpbw-adr`, `mountain-trainning`, `zepp`, and `strava`.
 
 The `mountain-trainning` skill summarizes four training books and a climbing course.
