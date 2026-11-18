@@ -23,6 +23,8 @@ Rerunning it refreshes the selected skills from their sources.
 - Five Caveman skills for terse output and related workflows.
 - Cloudflare's security-audit skill.
 - [`stack-diagram`](https://github.com/caru-ini/stack-diagram) for technology-stack and system-architecture diagrams.
+- Six [official Obsidian skills](https://github.com/obsidianmd/obsidian-skills): `obsidian-markdown`, `obsidian-bases`, `json-canvas`, `obsidian-headless`, `defuddle`, and `knap`.
+  The installer excludes `obsidian-cli`.
 - [`socratic-tutor`](https://github.com/janestreet/agent_skills/tree/master/socratic-tutor) for Socratic tutoring.
   The vendored copy is from [revision `7c6715c`](https://github.com/janestreet/agent_skills/tree/7c6715c29548a3b39d4a9545c698ee4fd17a7213/socratic-tutor).
   Update the local copy and its MIT license to refresh it.
@@ -71,6 +73,20 @@ that calls `rtk hook copilot`, uses `.` as its working directory, and has a five
 Without RTK, the script reports that RTK integration was skipped and exits successfully.
 That is not a failure of the preceding skill installation.
 The script does not install RTK itself.
+
+## Obsidian skills
+
+The Markdown, Bases, and JSON Canvas skills guide agents working with Obsidian file formats.
+The installer does not install or configure Obsidian.
+
+The `obsidian-headless` skill covers syncing and publishing without the desktop app.
+It requires Node.js 22 or newer, the `ob` command, and an Obsidian Sync or Publish subscription.
+`defuddle` requires its CLI; `knap` requires Node.js 20 or newer and either its CLI or `npx knap`.
+The installer does not install these tools, configure synchronization, or publish a vault.
+
+Agents can read or change vault files when given access.
+Headless workflows can also sync or publish notes.
+Review tool permissions and back up the vault before synchronization or bulk changes.
 
 ## HPBW architecture decision records
 

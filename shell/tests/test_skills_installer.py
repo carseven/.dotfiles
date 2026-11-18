@@ -11,7 +11,7 @@ INSTALLER = Path(__file__).resolve().parents[2] / "runs" / "skills" / "skills"
 
 
 class SkillsInstallerTests(unittest.TestCase):
-    def test_installs_socratic_tutor_for_both_agents(self):
+    def _run_installer(self):
         with tempfile.TemporaryDirectory(prefix="skills-installer-test-") as directory:
             root = Path(directory)
             bin_dir = root / "bin"
@@ -43,23 +43,55 @@ class SkillsInstallerTests(unittest.TestCase):
             )
 
             self.assertEqual(result.returncode, 0, result.stderr)
-            calls = [json.loads(line) for line in log.read_text().splitlines()]
-            self.assertIn(
+            return [json.loads(line) for line in log.read_text().splitlines()]
+
+    def test_installs_socratic_tutor_for_both_agents(self):
+        calls = self._run_installer()
+        self.assertIn(
+            [
+                "--yes",
+                "skills",
+                "add",
+                str(INSTALLER.parent / "vendor"),
+                "--global",
+                "--agent",
+                "github-copilot",
+                "claude-code",
+                "--skill",
+                "socratic-tutor",
+                "--yes",
+            ],
+            calls,
+        )
+
+    def test_installs_selected_obsidian_skills_for_both_agents(self):
+        calls = self._run_installer()
+        obsidian_calls = [
+            call for call in calls if "obsidianmd/obsidian-skills" in call
+        ]
+        self.assertEqual(
+            obsidian_calls,
+            [
                 [
                     "--yes",
                     "skills",
                     "add",
-                    str(INSTALLER.parent / "vendor"),
+                    "obsidianmd/obsidian-skills",
                     "--global",
                     "--agent",
                     "github-copilot",
                     "claude-code",
                     "--skill",
-                    "socratic-tutor",
+                    "obsidian-markdown",
+                    "obsidian-bases",
+                    "json-canvas",
+                    "obsidian-headless",
+                    "defuddle",
+                    "knap",
                     "--yes",
                 ],
-                calls,
-            )
+            ],
+        )
 
 
 if __name__ == "__main__":
