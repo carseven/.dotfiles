@@ -237,6 +237,7 @@ Installs Rectangle through Homebrew. Window-manager permissions and preferences 
 
 Installs skills globally for GitHub Copilot and Claude Code with unattended confirmation.
 It installs all available Matt Pocock skills, selected third-party skills, and personal skills from this repository.
+The selected Obsidian skills exclude `obsidian-cli`; their optional command-line tools are not installed.
 The `mountain-trainning` skill folder can hold local book conversions and course files that installation copies globally. The repository does not include them.
 This target uses `set -euo pipefail`, unlike most installers.
 
