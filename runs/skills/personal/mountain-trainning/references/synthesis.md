@@ -2,7 +2,7 @@
 
 Read this file first when a plan combines climbing, aerobic work, and bodyweight strength. It compares the four books, shows where each is silent, and states how to combine them. The per-book files hold the detail.
 
-Tags: **[B]** the books state it. **[I]** inference by the author of this skill, not a book claim. Treat [I] items as defaults to confirm with the athlete.
+Tags: **[B]** the books state it. **[SOURCE]** the cited supplementary source states it. **[I]** inference by the author of this skill, not a source claim. Treat [I] items as defaults to confirm with the athlete.
 
 ## 1. Sources
 
@@ -12,14 +12,16 @@ Tags: **[B]** the books state it. **[I]** inference by the author of this skill,
 | *Training for the Uphill Athlete* (House, Johnston, Jornet, 2019) | [uphill-athlete.md](./uphill-athlete.md) | Aerobic physiology, threshold testing, recovery monitoring, running and ski-mountaineering planning, strength and muscular endurance for uphill sport | Technical climbing, drift tests, HRV protocols, figures and sample weeks (missing in conversion) |
 | *The Climbing Bible: Practical Exercises* (Mobråten, Christophersen, 2022) | [climbing-bible.md](./climbing-bible.md) | Climbing technique, footwork, warm-up, wall and finger strength, campus, youth climbers, trad and alpine notes | Aerobic endurance, power-endurance programming, periodisation, mobility, mental training |
 | *Overcoming Gravity*, 2nd ed. (Low, 2016) | [overcoming-gravity.md](./overcoming-gravity.md) | Bodyweight theory, programming, progression families, injury management | Fingers and hangboard, aerobic base, hamstring and glute ladders |
+| *The Training Characteristics of Kilian Jornet* (Jornet, account through 2018) | [trail-running.md](./trail-running.md) | An elite athlete's trail running and ski mountaineering history, terrain skills, and race preparation | A validated plan for other athletes, general fueling or altitude protocols |
 
-The supplied files are Markdown conversions. Figures, charts, tables, and videos are missing or flattened. Each per-book file lists its own gaps. Cross-check any number you plan to prescribe.
+The four book sources are Markdown conversions. Figures, charts, tables, and videos are missing or flattened. Each per-book file lists its own gaps. The Jornet account is a separate PDF and contains unsafe experiments; see its reference before applying it. Cross-check any number you plan to prescribe.
 
 ## 2. Which book answers which question
 
 | Question | Primary source | Secondary |
 |---|---|---|
 | Build an aerobic base for a mountain goal | Uphill Athlete | New Alpinism |
+| Trail terrain, skills, and race preparation | Uphill Athlete | Jornet case study ([trail-running.md](./trail-running.md)) |
 | Define or test heart-rate zones, AeT, LT | Uphill Athlete (tests), New Alpinism (percent-of-max model, max HR field test) | none |
 | Periodise toward a trip or race date | New Alpinism (alpine), Uphill Athlete (running, skimo) | none |
 | Muscular endurance (ME) for climbs and descents | New Alpinism | Uphill Athlete |
@@ -46,6 +48,7 @@ The supplied files are Markdown conversions. Figures, charts, tables, and videos
 ## 4. Where the books differ or leave a gap
 
 - **Zone model.** New Alpinism defines zones as percentages of maximum heart rate, with Zone 1 as the base zone and Zone 2 as a low-value middle zone. Uphill Athlete anchors zones to AeT and LT, and its Zone 3–5 percentages come from a chart missing in the conversion. Both agree that most volume stays low and easy. [B] [I] Do not mix the two models in one plan. Pick the model that matches the athlete's measurements and name it in the plan.
+- **Jornet's zones.** His seven-zone case study labels I1–I3 low intensity, with I3 extending to 85% of VO2max. [SOURCE] It does not map directly to Uphill Athlete's threshold-based zones or establish that all I3 work is below AeT. [I] Keep the models separate; see [trail-running.md](./trail-running.md).
 - **Intensity gate.** Both books use a rule that compares the aerobic and anaerobic thresholds before adding harder work (a gap of about 10 percent). Details and examples differ. [B] Use the version in the file you rely on.
 - **Testing heart rate.** New Alpinism describes a max-HR field test and rejects the "220 minus age" formula. Uphill Athlete does not give a max-HR test. It gives AeT tests instead, from an age-based formula to lactate and lab tests, and it calls the formula conservative. [B] [I] Offer a medical check before any maximal test for older or at-risk athletes.
 - **Strength dosing.** The aerobic books use gym strength as a supporting element and then ME work. Overcoming Gravity treats bodyweight strength as a primary goal with many skill progressions. [B] [I] For a mountain athlete, use Overcoming Gravity for exercise choice and progression, and the aerobic books for how much strength fits around endurance.
@@ -88,6 +91,7 @@ Athletes rarely maximise two demanding goals at once. Most split the year into b
 ## 7. Citing and handling sources
 
 - Cite the book and section for every book-based recommendation. Use the section names in the per-book files, not the conversion's generic "Chapter N" headings.
+- Cite the section and page for the Jornet account, and distinguish his experience from recommendations for the athlete.
 - Give approximate numbers as the book's guidance, not as an exact prescription for this athlete.
 - Summarise in your own words. Do not reproduce long passages from the books or the conversions.
 - State when a figure, table, or video is missing from the conversion.
