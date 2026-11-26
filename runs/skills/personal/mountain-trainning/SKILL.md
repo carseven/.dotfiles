@@ -1,14 +1,14 @@
 ---
 name: mountain-trainning
-description: "Use to learn about, plan, or review climbing, aerobic (Z1-Z2 base, AeT, trail running, half marathon and race-time targets, ski mountaineering, alpinism), and bodyweight strength training, based on four supplied books: Training for the New Alpinism, Training for the Uphill Athlete, The Climbing Bible: Practical Exercises, and Overcoming Gravity."
+description: "Use to learn about, plan, or review climbing, aerobic (Z1-Z2 base, AeT, trail running, half marathon and race-time targets, ski mountaineering, alpinism), and bodyweight strength training, using four training books and supplementary athlete and coaching sources."
 ---
 
 # Mountain training
 
 Help the athlete understand training principles, build an individual plan, or
 review and adjust existing training. Answer in the athlete's language.
-Distinguish the books' advice from your own synthesis and cite the relevant
-book and section when explaining a recommendation.
+Distinguish source material from your own synthesis and cite the relevant
+source and section when explaining a recommendation.
 
 ## References
 
@@ -20,6 +20,7 @@ decision guide, questions to ask the athlete, and known gaps.
 | Topic | Load |
 |---|---|
 | Aerobic base, zones, AeT and LT tests, recovery monitoring, running, ski mountaineering | [uphill-athlete.md](./references/uphill-athlete.md) |
+| Trail-running preparation, terrain-specific skills, and Kilian Jornet's training case study | [trail-running.md](./references/trail-running.md) |
 | Alpine periodisation, strength and muscular endurance phases, climbing fitness, altitude, nutrition | [new-alpinism.md](./references/new-alpinism.md) |
 | Climbing technique, footwork, warm-up, finger strength, campus, youth climbers | [climbing-bible.md](./references/climbing-bible.md) |
 | Bodyweight push, pull, core, legs, skills, mobility, injury management | [overcoming-gravity.md](./references/overcoming-gravity.md) |
@@ -122,9 +123,11 @@ Do not use the `training-coach` skill unless the athlete asks for it.
 
 ## Source handling
 
-The references summarize the supplied Markdown conversions, not verified
-editions of the books. They tag statements as book content, inference, or
-gap. Keep those tags visible when you pass advice to the athlete. The
-conversions lack figures, tables, and videos. If a source or figure is
-missing, say so and avoid presenting unverified details as the book's advice.
-Summarize in your own words rather than reproducing extended copyrighted text.
+The book references summarize supplied Markdown conversions, not verified
+editions. The trail-running reference summarizes an individual athlete's
+account, not a validated general training guide. The references tag statements
+as source content, inference, or gap. Keep those tags visible when you pass
+advice to the athlete. The book conversions lack figures, tables, and videos.
+If source material is missing, say so and avoid presenting unverified details
+as the source's advice. Summarize in your own words rather than reproducing
+extended copyrighted text.
